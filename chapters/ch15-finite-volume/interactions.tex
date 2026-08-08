@@ -1,0 +1,196 @@
+\newpage
+%% [migrated] heading absorbed into chapter wrapper: Hadron Interaction
+
+\section{Maiani-Testa No Go Theorem}
+\begin{itemize}
+    \item Most hadrons are unstable and appear as resonances in scattering or decays of asymptotic states, e.g.
+    \begin{itemize}
+        \item $\rho$ meson in $I=1$ $\pi \pi$ scattering
+        \item $\Delta$ baryon in $I= 3/2$ $\pi N$ scattering
+        \item $K^*$ meson in $B \to K^* \mu \mu \to K \pi \mu \mu$ decays
+    \end{itemize}
+    \item LQFT formulated in Euclidean space numerically at least so that importance sampling can be used. Also formulated in finite volume
+    \begin{itemize}
+        \item No real time evolution so no scattering
+        \item Finite volume so no non-interacting asymptotic states
+    \end{itemize}
+    \item Challenging to learn about hadron interactions and resonances!!
+    \item Maiani and Testa demonstrated the limits of Euclidean LQFT
+    \begin{itemize}
+        \item Euclidean correlators with initial and final states at kinematic thresholds do allow access to physical information
+        \item Away from these points, the connection to physical information is lost (masked by scattering continuum in infinite volume) or made difficult to access (finite volume)
+    \end{itemize}
+    \item Example: $K \to \pi \pi$ weak decay through $4$ quark effective interaction ${\cal O}_4 = \bar{q} \Gamma s \bar{q} \bar{\Gamma} q$ (shown in Fig.~\ref{fig:kpipi})
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{fig-notes-032.jpg}
+        \caption{Decay in the center of mass frame of a kaon to two pions.}
+        \label{fig:kpipi}
+    \end{figure}
+    \begin{itemize}
+        \item This is a physical decay process where $m_K^2 = 2(m_\pi^2 + \vec{\hat{p}}^2))$
+        \item Euclidean correlator
+    \end{itemize}
+\end{itemize}
+\begin{align}
+    &\langle \Omega | \tilde{\chi}_K(\vec{p} = 0, t_1) {\cal O}_4(0) \chi_{\pi \pi}(\vec{p}_\text{tot}, t_2) | \Omega \rangle \nonumber \\
+    &\underset{t_1,t_2 \to \infty}{\slashed\longrightarrow} \# \langle K (\vec{p}) | {\cal O}_4 | \pi(\vec{\hat{p}})\pi(-\vec{\hat{p}}) \rangle \qquad \text{(the physical matrix element)} \nonumber \\
+    &\underset{t_1,t_2 \to \infty}{\longrightarrow} \# \langle K (\vec{p}) | {\cal O}_4 | \pi(\vec{\hat{0}})\pi(-\vec{\hat{0}}) \rangle,
+\end{align}
+which is an unphysical process violating energy conservation!! 
+
+This happens because $E(\pi(0) \pi(0)) < E(\pi(\hat{p})\pi(-\hat{p}))$.
+See Fig.~\ref{fig:FVKpipi} for how this changes in finite volume. In that case, kinematics do not match except for very particular volumes and quark masses.
+
+\begin{figure}
+\includegraphics[max width=\textwidth, center]{fig-notes-033.jpg}
+\caption{An illustration of the loss of physical information in infinite and finite volume.
+\label{fig:FVKpipi}}
+\end{figure}
+
+\section{Finite volume energy levels (Lüscher method)}
+\begin{itemize}
+    \item In a finite volume, the energies of non-interacting particles are quantised
+\end{itemize}
+\begin{equation}
+    E_{\vec{n}} = \sqrt{m^2 + \left(\frac{2 \pi}{L}\right)^2|\vec{n}|^2},
+\end{equation}
+where $\vec{n} = (n_1, n_2, n_3),$ $n_i \in \mathbb{Z}$ (assuming $3+1D$).
+\begin{itemize}
+    \item Two particles in finite volume have energy levels that are shifted by their interactions from the naive sum of the free particle energies, as depicted in Fig.~\ref{fig:int_spec}
+    \item By calculating the energies of states with the quantum numbers of two particles, we can learn information about their scattering phase shift up to inelastic thresholds
+    \begin{itemize}
+        \item This has been known in NR quantum mechanics since the 1930s (Uhlenbeck)
+        \item L\"uscher demonstrated it was also true in relativistic QFT (1986, 1991).
+    \end{itemize}
+\end{itemize}
+\begin{figure}
+\begin{subfigure}{0.3\textwidth}
+\includegraphics[width=1.0\textwidth]{fig-notes-036.jpg}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+\includegraphics[width=1.0\textwidth]{fig-notes-034.jpg}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+\includegraphics[width=1.0\textwidth]{fig-notes-035.jpg}
+\end{subfigure}
+\caption{A depiction of the effect of interactions on the spectrum at finite volume. The first panel shows the behavior of the spectrum as a function of the lattice size $L$, with the second and third panels showing the resultant density of states at two particular values $L_1$ and $L_2$ of $L$.}
+\label{fig:int_spec}
+\end{figure}
+\begin{itemize}
+    \item A straightforward derivation of this relationship can be given in EFT
+\end{itemize}
+\begin{equation}
+    \mathcal{L} = \partial_\mu \phi \partial^\mu \phi + m \phi^2 + c_0 \phi^4 + c_2(\phi \partial \phi)^2 + \ldots
+\end{equation}
+The scattering amplitude is defined as
+\begin{equation}
+    \mathcal{A} \equiv \frac{4 \pi / M}{p \cot \delta(p) - i p}
+\end{equation}
+given by the geometric sum
+
+
+Given by the geometric sum\\
+\includegraphics[width=0.8\linewidth]{fig-notes-086.png}\\
+Which is equal to
+\begin{equation}
+    = \frac{f(p)}{1 - I_0(p) f(p)} \qquad f(p) = \sum_n c_{2n}p^{2n},
+\end{equation}
+and working in the NR limit and using the power divergent subtraction scheme (which removes poles in all integer dimensions), we find
+\begin{equation}
+    I_0^\text{PDS}(p) = \frac{\mu^{4-D}}{(2 \pi)^D}\int \frac{\text{d}^{D-1}k}{E - |k|^2/M + i \varepsilon} = - \frac{M}{4 \pi}(\mu + i p) \text{ where } E =p^2/2m
+\end{equation}
+which implies that
+\begin{equation}
+    p \cot \delta(p) = \frac{4 \pi}{M} \frac{1}{f(p)} + \mu,
+\end{equation}
+which is $\mu$ independent since $c_{2n} = c_{2n}(\mu)$
+
+This is modified in a finite volume as the momentum integrals become discrete (divergent) sums
+\begin{align}
+    I_0(p) \rightarrow I_0^{(L)}(p) &\equiv \frac{1}{L^3}\sum_k^{\text{PDS}}\frac{1}{E-|k|^2/M} \nonumber \\
+    &= \frac{1}{L^3} \sum_{|k|<\Lambda}\frac{1}{E-|k|^2/M} - \int^\Lambda \frac{\text{d}^3 k}{(2\pi)^3}\frac{1}{|k|^2/M} + \int^\text{PDS} \frac{\text{d}^3 k}{(2\pi)^3}\frac{1}{|k|^2/M} \nonumber \\
+    &= \frac{M}{4 \pi}\left[ -\frac{1}{\pi L} \sum_{\vec{n}}^{\Lambda_n} \frac{1}{|\vec{n}|^2 - \frac{L^2 E M}{4 \pi}} - \frac{4 \Lambda_n}{L} - \mu\right], \qquad \Lambda = \frac{2 \pi}{L}\Lambda_n
+\end{align}
+where here to define the PDS regulated sum, we have added and subtracted the divergence in a cutoff and PDS scheme.
+
+The FV scattering amplitude is
+\begin{equation}
+    \mathcal{A}(L) = \frac{f(p)}{1 - f(p)I_0^{(L)}(p)}
+\end{equation}
+which has poles (hence energies in the channel) when
+\begin{equation}
+    0 = \mathcal{A}^{-1}(L) = p \cot \delta(p) - \frac{M \mu}{4 \pi} - I_0^{L}(p),
+\end{equation}
+which implies that
+\begin{equation}
+\label{eq:fv_energies}
+    p \cot \delta(p) - \frac{1}{\pi L}\underset{S\left(\eta=Lp/2\pi\right)}{\underbrace{\left[\sum_{\vec{n}}^{\Lambda_n} \frac{1}{|\vec{n}|^2 - \frac{L^2 p^2}{4 \pi^2}} -4 \pi \Lambda_n\right]}} = 0,
+\end{equation}
+where the term in brackets is a $3D$ zeta function.
+
+Given a calculated FV energy $E = p^2/2m$, the above equation determines $\cot \delta(p)$. See Fig.~\ref{fig:Sfunc}
+%
+Conversely, given $p \cot \delta(p)$, this is an eigenvalue equation solved by the allowed FV energies
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{fig-notes-037.jpg}
+\caption{A visual representation of the allowed FV energies.
+\label{fig:Sfunc}}
+\end{figure}
+\begin{itemize}
+    \item This result also holds relativistically up to inelastic thresholds and up to exponentially suppressed volume effects $\sim \exp(-m L)$ where $m$ is the mass of the lightest hadronic state
+    \item The above assumed a single partial wave and single flavour channel - these assumptions can be relaxed but at the price of there no longer being a $1-1$ correspondence between FV energy and a value of $\hat{p}\cot \delta(\hat{p})$ so in general some assumptions about the structure of $\mathcal{A}$ are needed
+    \item The above also assumed $\vec{p}_{\text{tot}} = \vec{0}$ - also an assumption that can be removed, with different $|\vec{p}_{\text{tot}}|$ leading to additional constraints on $p \cot \delta(p)$.
+\end{itemize}
+\section{Resonances}
+\begin{itemize}
+    \item Resonances do not appear as a single energy level, but rather as significant modifications of the spectrum as a function of $L$ in the region of the resonant energy
+    \item Simple model of two scalar fields
+\end{itemize}
+
+\begin{equation}
+    S = -\kappa_1 \sum_{n,\mu}\phi_n \phi_{n + \hat{\mu}} - \kappa_2 \sum_{n, \mu} \rho_n \rho_{n + \hat{\mu}}  + g \sum_{n, \mu}\rho_n \phi_n \phi_{n + \hat{\mu}}
+\end{equation}
+See Fig.~\ref{fig:resonance}.
+\begin{figure}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\textwidth]{fig-notes-038.jpg}
+\end{subfigure}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\textwidth]{fig-notes-039.jpg}
+\end{subfigure}
+\caption{A visual representation of the effect on the spectrum of a resonance, as a function of $L$.
+\label{fig:resonance}}
+\end{figure}
+\section{Bound states and nuclei}
+\begin{itemize}
+    \item Compact bound states (where $r \ll L$) have only exponential dependence on the volume. From Eq.~\eqref{eq:fv_energies}, it can be shown that
+\end{itemize}
+\begin{equation}
+    \cot \delta(i \kappa) = i - i \sum_{\vec{m}\neq \vec{0}}\frac{e^{- |\vec{m}| \kappa L}}{|\vec{m}|\kappa L},
+\end{equation}
+where $\kappa \to \gamma = \sqrt{2 m B}$ as $L \to \infty$ with $-B = E-2m$ the binding energy
+\begin{itemize}
+    \item Multiple volumes are required to show that a negatively shifted state is a bound state or not
+\end{itemize}
+
+\section{Three and more particle interactions}
+\begin{itemize}
+    \item The quantisation condition above in Eq.\eqref{eq:fv_energies} has been generalised to three particle systems and in principle could be further extended. However the constraints placed on interactions by finite volume energies become increasingly complicated
+    \item An alternative approach is to study the same system in finite volume QCD and in finite volume EFT and match energy levels to determine the unknown low energy coefficients in the EFT. The EFT can then be used in infinite volume to compute physical quantities.
+    \item For near threshold systems with arbitrary numbers of particles, perturbative expansions in $a/L$ (with $a$ the scattering length) are available
+\end{itemize}
+
+  	
+\section{State of the art}
+\begin{itemize}
+    \item Meson-meson interactions are studied quite precisely in non-resonant channels (e.g. $\pi^+ \pi^-$)
+    \item In channels with single resonances, their phase shifts are pretty well mapped out (e.g. $\rho$)
+    \item More complicated resonances with coupling between multiple channels are being studied as the current state of the art
+    \item Channels with $3-$ particles are also studied, well for non-resonant ($\pi^+ \pi^+ K^+$) and somewhat preliminarily for resonant cases
+    \item Systems of many (even $1000$s) of identical $\pi^+$ mesons are also studied numerically
+    \item Meson-baryon scattering has been studied, although with less precision and typically in non-resonant cases ($p \pi^+$) but also for $\Delta$ resonance for example
+    \item Baryon-baryon scattering is numerically challenging and is a frontier of the field
+    \item Nuclei are also studied but as yet not all systematics can be controlled in numerical calculations
+    \item Similar FV techniques allow access to multiparticle matrix elements: $\langle \pi \pi | {\cal O}_{\text{weak}}|K\rangle$ etc
+\end{itemize}

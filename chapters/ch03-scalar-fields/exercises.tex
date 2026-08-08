@@ -1,0 +1,160 @@
+\section*{Exercises}
+\problem
+    {{\it Improved actions and reflection positivity}
+    
+    %Following S Sharpe 
+    Consider a potential $V(\phi)=\lambda |\varphi|^4$ in 4D and construct the isotropic complex scalar field theory action with lattice spacing $a$ that has classical lattice discretisation errors of ${\cal O}(a^6)$ rather than ${\cal O}(a^4)$ using next-to- and next-to-next-to-nearest neighbour couplings. 
+    
+    For the action you have derived, show that the site reflection positivity condition is violated. That is, for
+    $$F=\sum_k \sum_{n_1, \ldots, n_k} f_k\left(n_1, \ldots, n_k\right) \varphi_{n_1} \ldots \varphi_{n_k},$$
+    where $f_k$ is an arbitrary function of the lattice sites $n_i$ with support only for $(n_{i})_{4}\ge 0$, show that there are choices of $F$ where $$\int {\cal D}{\varphi} e^{-S} F(\Theta F)< 0,$$ where $\Theta$ is the site-reflection operation: for a site $n$, $\Theta (n_1, n_2, n_3, n_4)= (n_1, n_2, n_3, -n_4)$ and $\Theta \varphi_n=\varphi^*_{\Theta n}$.
+    }
+    {2344}
+    
+    
+    \problem{{\it Hopping parameter expansion}
+    
+    Calculate the scalar field quantity (zero momentum propagator)
+    $$\chi_2=\sum_n\langle \phi_n \phi_0\rangle $$
+    up to and including ${\cal O}(\kappa^2)$ in terms of the single site integrals
+    $$\gamma_{n}=\int d\phi e^{-s(\phi)}\phi^n$$
+    where $s(\phi)=\phi^2+\lambda(\phi^2-1)^2$ is the single site action.
+    }
+    {7685}
+
+
+
+    
+
+
+
+
+
+\problem
+{{\textit{Free scalar field Lagrangian on a BCH lattice in $d$-dimensions.}}
+
+A body‐centered hypercubic lattice in \(d\) dimensions can be thought of as the union of two interpenetrating hypercubic sublattices. Equivalently, one may view its sites as the vertices of hypercubes along with an additional site at the center of each hypercube. A natural choice for the set of displacement (or “neighbor”) vectors connecting a lattice site \(x\) to its nearest neighbors is
+\[
+N=\left\{v = \frac{a}{2}\,(\pm 1,\, \pm 1,\, \dots,\, \pm 1)\right\},
+\]
+where \(a\) is the edge length of the underlying hypercube and the product runs over all \(d\) directions. There are \(2^d\) such vectors. Note that the squared distance to any nearest neighbor is
+\[
+|v|^2 = \frac{a^2}{4}\,d.
+\]
+
+Construct the scalar field Lagrangian on this geometry such that the correct classical continuum limit is obtained.
+}
+{On a body‐centered hypercubic (BCH) lattice with lattice spacing \(a\), the free massive scalar field theory can be defined by an action that incorporates both the discretized kinetic term (via the BCH Laplacian) and a mass term. One convenient way to write the action is
+
+\[
+S[\phi] = \frac{a^d}{2} \sum_{x\in \text{BCH}} \left\{ \phi(x)\,\Bigl[-\Delta_{\rm BCH}\,\phi(x)\Bigr] + m^2\,\phi(x)^2 \right\},
+\]
+
+where the lattice Laplacian \(\Delta_{\rm BCH}\) is defined by
+
+\[
+\Delta_{\rm BCH}\phi(x) = \frac{8}{2^d\,a^2} \sum_{v\in N}\Bigl[\phi(x+v)-\phi(x)\Bigr],
+\]
+
+In this formulation:
+The coefficients of the shifted field in each of the displacements is the same due to the residual rotational symmetry.
+The factor \(a^d\) converts the lattice sum into a discrete analogue of the continuum integral.
+The normalization \(\frac{8}{2^d\,a^2}\) in the Laplacian is chosen so that, upon taking the Fourier transform, one recovers the continuum expression \(-p^2\) in the limit \(a\to 0\).
+The mass term \(m^2\phi(x)^2\) is simply discretized at each lattice site.
+
+Thus, this action defines a free, massive scalar field on a BCH lattice that reproduces the standard continuum theory in the appropriate limit.
+
+Below is a step‐by‐step derivation of a discretized Laplacian for a free scalar field on a body‐centered hypercubic (BCH) lattice.
+
+---
+
+1. Definition of the Discrete Laplacian
+
+For a function \(\phi(x)\) defined on the BCH lattice, a natural finite-difference Laplacian is obtained by summing over differences between the field at a given site and its values at all nearest neighbors. In order for the continuum limit to match
+\[
+\Delta \phi(x) = \sum_{\mu=1}^d \partial_\mu\partial_\mu \phi(x),
+\]
+we define the lattice Laplacian as
+\[
+\Delta_{\rm BCH}\phi(x) = \frac{1}{\delta^2}\sum_{v\in N}\Bigl[\phi(x+v)-\phi(x)\Bigr],
+\]
+where \(\delta\) is a length scale characteristic of the displacement. A natural choice is the distance to a nearest neighbor,
+\[
+\delta^2 = |v|^2 = \frac{a^2 d}{4}.
+\]
+Thus, we have
+\[
+\Delta_{\rm BCH}\phi(x) = \frac{4}{a^2 d}\sum_{v\in N}\Bigl[\phi(x+v)-\phi(x)\Bigr].
+\]
+
+However, we wish to normalize the operator so that its Fourier transform reproduces exactly \(-p^2\) in the continuum limit. We now show how to fix the normalization.
+
+---
+
+2. Fourier Space Analysis
+
+Assume the field \(\phi(x)\) admits a Fourier representation on the lattice,
+\[
+\phi(x) = \int_{-\pi}^{\pi} \frac{d^d p}{(2\pi)^d}\, e^{i p\cdot x}\, \tilde{\phi}(p).
+\]
+A shift by \(v\) then gives
+\[
+\phi(x+v) = \int \frac{d^d p}{(2\pi)^d}\, e^{i p\cdot (x+v)}\, \tilde{\phi}(p) = e^{ip\cdot v}\,\phi(x) \quad \text{(in Fourier space)}.
+\]
+Thus, the Fourier transform of the Laplacian becomes
+\[
+\widetilde{\Delta_{\rm BCH}}(p) = \frac{4}{a^2 d}\left[\sum_{v\in N}e^{i p\cdot v} - 2^d\right].
+\]
+Since the sum over all \(2^d\) displacement vectors factorizes,
+\[
+\sum_{v\in N}e^{i p\cdot v} = \prod_{\mu=1}^{d}\Bigl(e^{i\frac{p_\mu a}{2}}+e^{-i\frac{p_\mu a}{2}}\Bigr) = \prod_{\mu=1}^{d}2\cos\Bigl(\frac{p_\mu a}{2}\Bigr),
+\]
+we have
+\[
+\widetilde{\Delta_{\rm BCH}}(p) = \frac{4}{a^2 d}\left[2^d\prod_{\mu=1}^{d}\cos\Bigl(\frac{p_\mu a}{2}\Bigr)- 2^d\right] 
+= \frac{4\cdot 2^d}{a^2 d}\left[\prod_{\mu=1}^{d}\cos\Bigl(\frac{p_\mu a}{2}\Bigr)- 1\right].
+\]
+
+---
+
+3. Matching the Continuum Limit
+
+For small momenta \(p\), we can expand the cosine:
+\[
+\cos\Bigl(\frac{p_\mu a}{2}\Bigr) \approx 1 - \frac{p_\mu^2 a^2}{8}.
+\]
+Thus,
+\[
+\prod_{\mu=1}^{d}\cos\Bigl(\frac{p_\mu a}{2}\Bigr) \approx 1 - \frac{a^2}{8}\sum_{\mu=1}^{d}p_\mu^2.
+\]
+Substituting back, we find
+\[
+\widetilde{\Delta_{\rm BCH}}(p) \approx \frac{4\cdot 2^d}{a^2 d}\left[- \frac{a^2}{8}\sum_{\mu=1}^{d}p_\mu^2\right] = - \frac{2^d}{2d}\, p^2.
+\]
+To recover the standard continuum Laplacian \(-p^2\) (without extra factors), we introduce a normalization factor. Defining
+\[
+\Delta_{\rm BCHC}\phi(x) = \frac{8}{2^d a^2}\sum_{v\in N}\Bigl[\phi(x+v)-\phi(x)\Bigr],
+\]
+its Fourier transform becomes
+\[
+\widetilde{\Delta_{\rm BCH}}(p) = \frac{8}{2^d a^2}\Bigl[2^d\prod_{\mu=1}^{d}\cos\Bigl(\frac{p_\mu a}{2}\Bigr)-2^d\Bigr] = \frac{8}{a^2}\Bigl[\prod_{\mu=1}^{d}\cos\Bigl(\frac{p_\mu a}{2}\Bigr)-1\Bigr].
+\]
+Expanding for small \(p\) gives
+\[
+\widetilde{\Delta_{\rm BCH}}(p) \approx \frac{8}{a^2}\left[-\frac{a^2}{8}\,p^2\right] = -p^2,
+\]
+which is precisely the desired continuum behavior.
+
+---
+
+ Final Result
+
+Thus, the Laplacian for a scalar field on a body‐centered hypercubic lattice is given by
+\[
+\boxed{
+\Delta_{\rm BCH}\phi(x) = \frac{8}{2^d\,a^2}\sum_{v\in N}\Bigl[\phi(x+v)-\phi(x)\Bigr],\quad \text{with } v=\frac{a}{2}(\pm 1,\pm 1,\dots,\pm 1).
+}
+\]
+This operator correctly reproduces the continuum Laplacian in the limit \(a\to 0\).
+
+}

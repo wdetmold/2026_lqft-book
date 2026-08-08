@@ -1,0 +1,46 @@
+% Shared preamble — semantic packages only; CUP applies the book design in production.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{simpler-wick}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage{slashed}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{comment}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{imakeidx}
+\makeindex[intoc]
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+
+\graphicspath{{figures/notes/}{figures/}}
+
+% ---------------------------------------------------------------------------
+% Draft apparatus: TODO notes visible in draft builds
+\newcommand{\todo}[1]{\par\noindent\textcolor{red!70!black}{\textbf{TODO:} #1}\par}
+
+% ---------------------------------------------------------------------------
+% Exercises: statement always shown; solutions shown only when \solutionstrue
+% (make solutions). Numbered per chapter.
+\newif\ifsolutions
+% \solutionstrue is set via \IfFileExists on solutions-flag (written by Makefile)
+\IfFileExists{./solutions-flag.tex}{\input{./solutions-flag.tex}}{}
+
+\newcounter{problem}[chapter]
+\newcommand{\problem}[2]{%
+  \par\medskip\hrule\vspace{2mm}%
+  \refstepcounter{problem}%
+  {\noindent\textbf{Exercise \thechapter.\arabic{problem}:} #1\par}%
+  \ifsolutions
+    {\medskip\noindent\textbf{Solution:} #2\par}%
+  \fi
+  \vspace{2mm}\hrule\medskip}

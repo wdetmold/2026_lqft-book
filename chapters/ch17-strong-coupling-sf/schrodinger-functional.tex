@@ -1,0 +1,209 @@
+%% [migrated] heading absorbed into chapter wrapper: Schr\"odinger functional
+\label{sec:schrodinger_functional}
+\begin{itemize}
+  \item Time-evolution kernel in Schr\"odinger representation of QFT
+  \item given a field basis \(\{|A\rangle\}\), a wave functional is
+\begin{equation}
+    \psi[A]=\langle A \mid \psi\rangle
+\end{equation}
+
+and time evolution gives
+
+\begin{equation}
+    \begin{aligned}
+\psi^{\prime}\left[A^{\prime}\right] & =\left\langle A^{\prime}\right| e^{-TH}|\psi\rangle \\
+& =\int D A\left\langle A^{\prime}\right| e^{-T H}|A\rangle\langle A \mid \psi\rangle
+\end{aligned}
+\end{equation}
+
+
+  \item The quantity
+
+\begin{equation}
+    Z\left[A, A^{\prime}\right]=\left\langle A^{\prime}\right| e^{-T H}|A\rangle
+\end{equation}
+
+is the Schr\"odinger functional and depends on the initial and final field configurations
+
+  \item Going back to the steps we took in quantum mechanics in Lecture 1, we see
+
+\begin{equation}
+    Z\left[A, A^{\prime}\right]=\int_{{\cal M}} D \tilde{A} e^{-S[\tilde{A}]}
+\end{equation}
+
+
+which is a partition function for a QFT on a manifold with a boundary \({\cal M}=T^{3} \times[0, T]\) (a 3+1-dimensional cylinder)
+with boundary conditions that
+
+\begin{equation} 
+\widetilde{A}(x)_{x_{0}=0}=A(\vec{x}), \quad\widetilde{A}(x)_{x_{0}=T}=A'(\vec{x})
+\end{equation}
+
+
+  \item Break translational symmetry in \(t\)
+  \item Requires boundary fields for renormalisability (finite set of couterterms) and shown to be multiplicativly renormalisable
+  
+  \item For QCD, boundary conditions are
+
+\begin{equation}
+\begin{array}{ll}
+P_R\left.\psi(x)\right|_{x=0}=\rho,\qquad & 
+P_L\left.\psi(x)\right|_{x_{0}=T}=\rho^{\prime} \\
+\bar{\psi}(x) P_L\left.\right|_{x=0}=\bar{\rho}, & 
+\left.\bar{\psi}(x) P_{R}\right|_{x_{0}=T}=\bar{\rho}^{\prime} \\
+\left.A_{k}(x)\right|_{x=0}=C_{k}, & \left.A_{h}(x)\right|_{x_{0}=T}=C_{k}^{\prime}
+\end{array}
+\end{equation}
+
+  \item Correlation functions can depend on boundary fields
+
+\begin{equation}
+    \langle {\cal O}\rangle=\left.\frac{1}{Z} \int_{M} {\cal O} e^{-S}\right|_{p=p^{\prime}=\bar{p}=\bar{p}^{\prime}=0, C_{k}, C_{k}^{\prime} \text { fixed }}
+\end{equation}
+
+
+Eg: Abelian spatially constant field and trivial configuration for the fermions
+(toron configuration)
+
+\begin{equation}
+    C_{k}=\frac{i}{L}\left(\begin{array}{ccc} \phi_{1}&&\\ & \phi_{2} &\\&& \phi_{3}\end{array}\right), \qquad 
+C_{k}^{\prime}=\frac{i}{L}\left(\begin{array}{ccc} \phi^{\prime} &&\\&\phi_{2}^{\prime} &\\&&\phi_{3}^{\prime}\end{array}\right), \quad k=1,2,3
+\end{equation}
+\begin{equation}
+\rho=\rho^{\prime}=\bar{\rho}=\bar{\rho}^{\prime}=0
+\end{equation}
+
+with
+\begin{equation}
+\begin{array}{ll}
+\phi_{1}=\eta-\pi / 3,\qquad & \phi_{1}^{\prime}=-\phi_{1}-4 \pi / 3 \\
+\phi_{2}=-\eta / 2, & \phi_{2}^{\prime}=-\phi_{3}+\frac{2 \pi}{3} \\
+\phi_{3}=-\eta / 2+\frac{\pi}{3}, & \phi_{3}^{\prime}=-\phi_{2}+2 \pi / 3
+\end{array}
+\end{equation}
+which depend on a single parameter $\eta$ that defines a twist (note that $\text{tr}(C_k)=\text{tr}(C'_k)=0$) and this corresponds to a spatially constant background chromo-electric field \(G_{0 k}=\partial_{0} B_{k}=\frac{C_{k}-C_{k}^{\prime}}{L}\) (linear interpolation)
+
+\end{itemize}
+
+\section{Operator renormalisation}
+
+\begin{itemize}
+  \item Correlation functions can be built from boundary fields
+
+\begin{equation}
+\begin{array}{lll}
+\zeta(\vec{x})=\frac{\delta}{\delta \bar{\rho}{(\vec x)}},\quad & \bar{\zeta}(\vec{x})=\frac{\delta}{\delta \rho(\vec{x})}, & \text{at } t=0\\
+\zeta^{\prime}(\vec{x})=\frac{\delta}{\delta \bar{\rho}^{\prime}(\vec{x})},\quad & \bar{\zeta}^{\prime}(\vec{x})=\frac{\delta}{\delta \rho^{\prime}(\vec{x})},  & \text{at } t=T
+\end{array}     
+\end{equation}
+
+
+(the boundary values \(\rho, \bar{\rho}, \rho^{\prime}, \bar{\rho}^\prime\) ' act as external source)
+
+  \item Gauge invariant bilinear boundary sources
+
+\begin{equation}
+\begin{aligned}
+& \theta^{a}=\int d^{3} y d^{3} z \bar{\zeta}(\vec{y}) \gamma_{5} \tau^{a} \zeta(\vec{z}) \quad \text{at } t=0 \\
+& \theta^{\prime a}=\int d^{3} y d^{3} z \bar{\zeta}^{\prime}(\vec{y}) \gamma_{5} \tau^{a} \zeta^{\prime}(\vec{z}) \quad \text{at } t=T
+\end{aligned}
+\end{equation}
+
+
+  \item These are gauge invariant since the fact the we hold \(C_{k}, C_{k}^{\prime}\) fixed means only spatially constant gauge transforms on the boundary are allowed
+
+\begin{equation}
+C_{k}(x) \rightarrow \Omega(x) C_{k}(x) \Omega^{-1}(x)+\Omega(x) \partial_{k} \Omega^{-1}(x)=C_{k}(x)
+\end{equation}
+
+Thus \(\Omega(x)=\Omega\) and \(\Omega\) commutes with \(C_{k}\).
+
+  \item Consider for \(P^{a}=\sum_{\vec{x}} \bar{\psi}(x) \gamma_{5} \tau^{a} \psi(x)\)
+the correlated functions
+\begin{equation}
+    f_{P}\left(x_{0}\right)=\left\langle\theta^{a} P^{a}\left(x_{4}\right)\right\rangle, \qquad f_{1}=\left\langle\theta^{a} \theta^{\prime a}\right\rangle
+\end{equation}
+as shown in the figure below
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{fig-notes-046.jpg}
+\end{center}
+
+  \item Renermalized versions
+
+\begin{equation}
+f_{P, R}\left(x_{4}\right)=Z_{\zeta}^{2} Z_{P} f_{P}\left(x_{4}\right), \qquad f_{1 R}=Z_{\zeta}^{4} f_{1}
+\end{equation}
+
+\ \item Set \(m=0\), \(x_{4}=T / 2\), and \(L=T\) and define renormalisation via requiring
+
+\begin{equation}
+    Z_{P}\left(g_{0}, T / a\right) \frac{f_{P}(T / 2)}{\sqrt{f_{1}}}=\left.\frac{f_{P}(T / 2)}{\sqrt{f_{1}}}\right|_{\text {tree }}
+\end{equation}
+
+(similar to a MOM scheme)
+
+\end{itemize}
+
+\section{Schr\"odinger-functional coupling}
+
+\begin{itemize}
+  \item Can also give a non-perturbative coupling definition over may order of magnitude
+  \item Use step-scaling to define the coupling in a twisted Schr\"odinger-functional scheme
+  \item Impose above background chromo-electric field by using nontrivial fixed boundaries in time parameterised by the twist \(\eta\)
+  \item At a classical level
+
+\begin{equation}
+    \frac{d S_{\text{classical}}}{d \eta}=\frac{A(\eta)}{g^{2}}
+\end{equation}
+where $A(\eta)$ is known. Here the coupling is the response to variation of the background chromo-electric field
+
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{fig-notes-047.jpg} 
+\end{center}
+
+  \item Define coupling at quantum level as
+
+\begin{equation}
+g^{-2}(L)=\frac{1}{A(\eta)}\left\langle\frac{d \Gamma}{d \eta}\right\rangle=\#\langle\text { boundary plaquettes }\rangle
+\end{equation}
+where the effective action \(\Gamma=-\ln Z\left[C, C^{\prime}\right]\) and is derivative is a sum of boundary plaquettes
+
+\item Note that this works at \(m_{q}=0\) as the boundary fields remove the zero mode
+
+  \item Define a step scaling function $\sigma(u)$  via
+\begin{equation}
+   \sigma(u)=\lim _{a/L \rightarrow 0} \Sigma(u, a / L)
+\end{equation}
+with
+\begin{equation}
+    \Sigma(u, a / L)=\left.\bar{g}^{2}(2 L)\right|_{u=\bar{g}^{2}(L)}
+\end{equation}
+where
+the scale is determined by $L$ and \(a / L\) give discretisation effects.
+
+The step-scaling function is an integrated form of \(\beta(g)\)
+
+\begin{equation}
+    \ln 2=\int_{\sqrt{\sigma(u)}}^{\sqrt{u}} \frac{d g}{\beta(g)}
+\end{equation}
+
+\item To determine this quantity
+\begin{enumerate}
+    \item Perform calculation with bare coupling \(g_{0}\) and \(m_{0}\) and box size \(L\) and compute \(u=g^{2}(L)\). Use same $(g_0,m_0)_1$ and box size \(2 L\), determining \(\Sigma(u, a / L)\)
+\item Repeat for new \(\left(g_{0}, m_{0}\right)_{2}\) and  the same physical box size \(L\) but differed \(N=L / a\). Calculate with \(2 L\) to give \(\Sigma\left(u,(a / L)^{\prime}\right)\)
+\item Repeat for \(\left(g_0, m_{0}\right)_3\), etc and extrapolate to \(a / L \rightarrow 0\) to get \(\sigma(u)\) for the given \(u\)\\
+\item Repeat for range of \(u=g^{-2}(L)\)
+\end{enumerate}
+This gives \(\sigma(u)\) and hence \(\beta(g)\)
+and the procedure is illustrated in the figure below
+
+\includegraphics[max width=\textwidth, center]{fig-notes-048.jpg}\\
+
+
+\end{itemize}
+
+
+
+
+

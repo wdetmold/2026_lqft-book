@@ -1,0 +1,112 @@
+\section*{Exercises}
+\problem{
+{\it Free fermion propagator}
+
+Construct the free propagator for the domain-wall fermion action in infinite volume and compare it to the continuum free propagator.
+}
+{See Capitani}
+
+
+
+\problem {{\it Ginsparg-Wilson operator}
+    %from hep-th/0404034
+    
+The eigenvalues of a massless Dirac operator satisfying the Ginsparg-Wilson relation are of the form  
+$$
+\lambda=\frac{1}{a}\left(1-\mathrm{e}^{i \alpha}\right), \quad \alpha \in \mathbb{R},
+$$
+lying on a circle in the complex plane.
+If $f(\lambda)$ is any bounded function on the spectral circle, show that 
+$$
+{\rm Tr}\left\{\gamma_5 f(D)\right\}=\{f(0)-f(2 / a)\} Q
+$$
+where the trace is over Dirac and function spaces.
+
+Consider a theory with $N_f$ flavours of fermions with masses $m_1,\ldots,m_{N_f}$ with action
+\begin{equation}
+    S=\sum_f \sum_{x,y} \overline\psi_f(x)\left[\left(1-\frac{1}{2} a m_f\right) D(x,y)+m_f\right]\psi_f(y)
+\end{equation}
+Define the scalar and pseudoscalar densities for fermion flavour $r$ and $s$ as 
+\begin{equation}
+S_{r s}(x)=\bar{\psi}_r(x)\left(1-\frac{1}{2} a D\right) \psi_s(x) 
+\end{equation}
+\begin{equation}
+P_{r s}(x)=\bar{\psi}_r(x) \gamma_5\left(1-\frac{1}{2} a D\right) \psi_s(x).
+\end{equation}
+
+For $r<N_f$, consider the quantity
+\begin{equation}
+H=-m_1 \ldots m_r \times a^{4 r} \sum_{x_1, \ldots, x_r}\left\langle P_{r 1}\left(x_1\right) S_{12}\left(x_2\right)S_{23}\left(x_3\right) \ldots S_{(r-1) r}\left(x_r\right)\right\rangle_{\mathrm{F}}\,,
+\end{equation}
+where $\langle\ldots\rangle_F$ implies the fermionic expectation value. Show that $H$ is determined solely by the numbers of left and right chirality zero modes of $D$ and write down an expression for $H$. 
+}
+{1113}
+
+\problem{{\it Three-point correlation functions}
+
+Typically two-point correlation functions are used to determine the spectrum of a lattice field theory. Here you shall consider three--point correlation functions
+
+\begin{enumerate}
+    \item By inserting the resolution of the identity in terms of eigenstates of the transfer matrix (equivalently the Hamiltonian), perform a spectral decomposition of the three-point correlation function
+    \begin{equation}
+        C_{H,\mu}(\vec{p},\vec{q};t,\tau) = 
+        \sum_{\vec{x},\vec{y}}e^{i(\vec{p}\cdot\vec{x}+\vec{q}\cdot\vec{y})}\langle 0 | {\cal O}_H(\vec{x},t) J_\mu(\vec{y},\tau) \tilde{\cal O}_H^\dagger(\vec{0},0)|0\rangle
+    \end{equation}
+    where ${\cal O}_H$ and $\tilde{\cal O}_H$ are localised interpolating operators for some set of quantum numbers $H$ and $J_\mu$ is a fermion bilinear current.
+    What physically meaningful information other than the spectrum of energy eigenstates does this depend on?
+
+    \item Specialise the above to the case where $H$ corresponds to the quantum numbers of the proton and $J_\mu$ is the electromagnetic current operator. Being careful to track spinor and Lorentz indices, show how this can be used to determine the electromagnetic form-factors of the proton as a function of the squared momentum transfer. Note that the Dirac and Pauli form factors, $F_1$ and $F_2$, are defined by
+    \begin{equation}
+        \langle {\rm Prot}(p'=p+q,s') | J_\mu | {\rm Prot}(p,s)\rangle 
+        = \overline u_{s'}(p')\left[ \gamma_\mu F_1(q^2) +i \frac{\sigma_{\mu\nu}q^\nu}{2M} F_2(q^2)  \right]u_{s}(p)\,,
+    \end{equation}
+    where $u(\overline u)$ are spinors, $p(p')$ and $s(s')$ are the momenta and spins of the proton states respectively, and $M$ is the proton mass.
+
+   \item Show explicitly how the above correlation function is determined in terms of quark propagators.
+\end{enumerate}
+}
+{23445 }
+
+\problem{{\it Meson masses}
+%see nussinow
+\begin{enumerate}
+    \item Consider the correlation function 
+    $$
+C_\Gamma({\bf x},{\bf y},t)=\langle 0|\overline{\psi}_d \Gamma \psi_u(\tau, {\bf y}) \overline{\psi}_{u} \Gamma \psi_d(0, {\bf x})| 0\rangle
+$$
+for any choice of Dirac matrix $\Gamma$ and for two degenerate flavours of fermions with $m_u=m_d$.
+Integrate out the fermions to write this in terms of inverses of the Dirac operator, $S_q=D_q^{-1}$ for $q\in\{u,d\}$,
+and show that this implies that $m_{\pi^+}$, corresponding to the lightest state with the quantum numbers of $J^P=0^-$, is the smallest mass in the spectrum of charge $Q=1$ mesons. What constraints on the form of the discretised Dirac operator are needed (hint: consider the properties of the gauge integration measure $d \mu(A)$ (or $d\mu(U)$) that you have assumed)?
+\item Consider the three correlation functions
+\begin{eqnarray}
+&\left\langle 0\left|J_{i \bar{j}}(x)\left[J_{i \bar{j}}(y)\right]^{\dagger}\right| 0\right\rangle=\int \mathrm{d} \mu(A) {\rm tr}\left\{\left[S_i(x, y)\right]^{\dagger} S_j(x, y)\right\}, \\
+&\left\langle 0\left|J_{i \bar{i}}(x)\left[J_{i \bar{i}}(y)\right]^{\dagger}\right| 0\right\rangle=\int \mathrm{d} \mu(A) {\rm tr}\left\{\left[S_i(x, y)\right]^{\dagger} S_i(x, y)\right\}, \\
+&\left\langle 0\left|J_{j \bar{j}}(x)\left[J_{j \bar{j}}(y)\right]^{\dagger}\right| 0\right\rangle=\int \mathrm{d} \mu(A) {\rm tr}\left\{\left[S_j(x, y)\right]^{\dagger} S_j(x, y)\right\}
+\end{eqnarray}
+where $J_{i\bar j}=\overline\psi_i\gamma_5\psi_j$ for flavours $i$ and $j$, and $d\mu(A)$ is the gauge field integration measure.
+
+Use these correlation functions to show that in QCD the inequality $$2m_{B_c}\ge m_{\eta_c} + m_{\eta_b},$$
+where $B_c$, $\eta_c$ and $\eta_b$ are pseudoscalar mesons with flavour content $\{b,\overline{c}\}$, $\{c,\overline{c}\}$ and $\{b,\overline{b}\}$, respectively.
+
+\item Now consider QCD+QED and prove that $m_{\pi^\pm} \ge m_{\pi^0}$.
+
+\end{enumerate}
+}
+{1112}
+
+\problem{
+{\it Overlap propagator}
+%Eq 5.18 of 0102028 -might be hard for the second part at least....
+Show that the free overlap fermion in momentum space is given by
+\begin{equation}
+D=\frac{1}{a}\left\{1-\left[1-\frac{1}{2} a^2 \hat{p}^2-i a \gamma_\mu \stackrel{\circ}{p}_\mu\right]\left[1+\frac{1}{2} a^4 \sum_{\mu<\nu} \hat{p}_\mu^2 \hat{p}_\nu^2\right]^{-1 / 2}\right\},
+\end{equation}
+where $\dot{p}_\mu=(1 / a) \sin \left(a p_\mu\right)$ and $\hat{p}_\mu=(2 / a) \sin \left(a p_\mu / 2\right)$.
+
+Further, show that this corresponds to a position-space propagator that has a K\"all\'en-Lehmann spectral representation
+\begin{equation}
+\left.D^{-1}(x, y)\right|_{x_0>y_0}=\int_0^{\infty} \mathrm{d} E \int_{-\pi / a}^{\pi / a} \frac{\mathrm{~d}^3 \mathbf{p}}{(2 \pi)^3} \rho(E, \mathbf{p}) \mathrm{e}^{-E\left(x_0-y_0\right)+i \mathbf{p}(\mathbf{x}-\mathbf{y})}
+\end{equation}
+with $\overline{u}(p \rho(E,{\bf p}u(p)>0$ for all $u$ and $\overline{u}=u^\dagger \gamma_0$.
+}
+{2342}

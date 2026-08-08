@@ -1,0 +1,314 @@
+\newpage
+
+%% [migrated] part header removed: Advanced Topics
+
+%% [migrated] heading absorbed into chapter wrapper: Perfect Actions
+
+\section{Blocking and fixed points}
+
+\begin{itemize}
+    \item Consider a scalar field $\phi_n$ for $n \in \Lambda$ with lattice spacing $a$ and define blocked fields
+\end{itemize}
+\begin{equation}
+    \chi_{n_B} = b \sum_n \omega (2 n_B - n) \phi_n,
+\end{equation}
+where $b$ is a scale factor, $\omega(x)$ specifies how the original fields should be averaged to give the blocked fields and $\sum_n \omega(2n_B - n) = 1.$ Here $n_B \in \Lambda_B$ (see Fig.~\ref{fig:block}).
+\begin{figure}
+\includegraphics[max width=0.5\textwidth]{fig-notes-043.jpg}
+\caption{A blocked lattice with a lattice spacing double that of the original lattice, using the simple blocking described in the text.}
+\label{fig:block}
+\end{figure}
+\begin{itemize}
+    \item A simple choice for $\Lambda_B$ and $\omega$ is
+\end{itemize}
+\begin{equation}
+    \omega(2 n_B - n) = \begin{cases}
+        2^{-D}, \text{ in hypercube around } n_B \\
+        0, \text{ otherwise.}
+    \end{cases}
+\end{equation}
+\begin{itemize}
+    \item Having defined a blocking, the $\phi_n$ variables can be integrated out of the original action $S[\phi]$ to define $S'[\chi]$
+\end{itemize}
+\begin{equation}
+\label{eq:blocking_action}
+    \exp(-S'[\chi]) = \prod_n \int \text{d}\phi_n \prod_{n_B}\delta\left(\chi_{n_B} - b \sum_n \omega(2 n_B - n) \phi_n \right)e^{-S[\phi]},
+\end{equation}
+where $b=2$ classically.
+%
+\begin{itemize}
+    \item Since this blocking (an RG transformation) is acting at the cutoff scale, physics is unaltered by it, so the partition function before/after the transform is (approx) unchanged:
+\end{itemize}
+\begin{equation}
+    Z' = \int \prod_{n_B}\text{d}\chi_{n_B}e^{-S'[\chi]} = \int \prod_n \text{d}\phi_ne^{-S[\phi]} = Z
+\end{equation}
+\begin{itemize}
+    \item Generalizing Eq.~\eqref{eq:blocking_action} slightly ($t \to \infty$ gives the original case, $\mathcal{N}(k)$ is a normalisation to guarantee $Z' = Z$)
+\end{itemize}
+\begin{equation}
+    \exp(-S'[\chi]) = \mathcal{N}(\kappa) \prod_n \int \text{d}\phi_n \exp\left(-S[\phi] - \kappa \sum_{n_B}\left(\chi_{n_B} - b \sum_n \omega(2 n_B - n) \phi_n\right)^2\right)
+\end{equation}
+\begin{itemize}
+    \item The goal of the RGT is to integrate out short distance modes (at the cutoff scale) and there is significant freedom in defining it. More generally,
+\end{itemize}
+\begin{equation}
+    \exp(-S'[\chi]) = \int \mathcal{D}\phi \prod_{n_B}f(\chi_{n_B}, \phi) e^{-S[\phi]}
+    \label{eq:effact}
+\end{equation}
+where the transform should be covariant under symmetry transformations and should result in $S'[\chi]$ remaining local. For example, if $S[\phi]$ and $\mathcal{D}\phi$ are invariant under a symmetry $\phi \to R \phi$, then the new action will be invariant under $\chi \to R \chi$ if $f(R\chi, \phi) = f(\chi, R^{-1}\phi).$ (see by change of variables in Eq.~\eqref{eq:effact}
+\begin{itemize}
+    \item As a blocking transform is made $a \to a'=2a$, this reduces the dimensionless correlation length $\xi \to \xi' = \xi/2$.
+    \item The original action can be written as a sum of an infinite number of monomials
+\end{itemize}
+\begin{equation}
+    S[\phi] = \sum_\alpha \kappa_\alpha \op_\alpha[\phi],
+\end{equation}
+where the $\kappa_\alpha$ are couplings/coefficients, with e.g. $\op_1 = \phi^2, \op_2 = \partial_\mu \phi \partial_\mu \phi, \op_{27} = \phi^4 \partial_\mu \phi^3 \partial_\mu \phi \ldots$ The transformed action can similarly be written in the same monomials
+\begin{equation}
+    S'[\chi] = \sum_\alpha \kappa_\alpha' \op_\alpha[\chi],
+\end{equation}
+with different coefficients.
+
+\begin{itemize}
+    \item The RGT is a shift couplings $\{\kappa_\alpha\} \to \{ \kappa'_\alpha \}$ and repeated blockings result in an RG flow
+    \item There may be fixed points in this flow where $\{ \kappa_\alpha^*\} \to \{ \kappa_\alpha^*\}$, at which the flow defines the fixed point action
+\end{itemize}
+\begin{equation}
+    S_\text{FP}[\phi] = \sum_\alpha \kappa_\alpha^* \op_\alpha[\phi]
+\end{equation}
+\begin{itemize}
+    \item Since $\xi \to \xi' = \xi/2$ under the RGT, at a fixed point either $\xi = 0$ or $\xi = \infty$, with the latter being of interest for continuum physics
+    \item The set of points in coupling space where $\xi = \infty$ defines the critical surface and the RGT drives theories not on the surface away from it ($\xi \to \xi/2$)
+    \item Near a FP, $\{ \kappa_\alpha = \kappa_\alpha^* + \Delta \kappa_\alpha\}$ with $\Delta\kappa_\alpha$ small, we can consider how the RGT acts on $\Delta \kappa_\alpha \to \Delta \kappa_\alpha'$. Expanding around $\{\kappa^*\}$,
+\end{itemize}
+\begin{align}
+    \Delta \kappa_\alpha' &= \Delta \kappa_\alpha'(\{\kappa\}) \\ &= \Delta \kappa'_\alpha(\{\kappa^*\}) + \sum_\beta \frac{\partial}{\partial \kappa_\beta}\Delta \kappa_\alpha'(\{\kappa\})|_{\kappa = \kappa^*}\Delta\kappa_\beta + \op(\Delta \kappa^2) \\
+    &= \sum_\beta T_{\alpha \beta}\Delta \kappa_\beta,
+\end{align}
+where the first term on the second line vanishes by the fixed point nature of $\kappa^*$ and where
+\begin{equation}
+    T_{\alpha \beta} = \frac{\partial}{\partial \kappa_\beta}\Delta \kappa'_\alpha(\{\kappa\})|_{\kappa = \kappa^*}
+\end{equation}
+
+\begin{itemize}
+    \item The matrix $T$ has eigenvectors $h^a$ and eigenvalues $\lambda^a$, $T h^a = \lambda^a h^a$, which define eigenoperators $h_a[\phi] = \sum_\alpha h^a_\alpha \op_\alpha[\phi]$ with which the action can be expanded
+\end{itemize}
+\begin{equation}
+    S[{\phi}] = S_\text{FP}[\phi] + \sum_a c_a h_a[\phi]
+\end{equation}
+\begin{itemize}
+    \item As the RG flow is applied, $c_a \to c_a \lambda_a \to c_a \lambda_a^2 \to \ldots$, so directions with $|\lambda^a|>1$ grow in strength while those with $|\lambda_a|<1$ become irrelevant and those which $|\lambda| = 1$ are ``marginal''
+    \item In the case of YM theory, the lattice action can be discretised in many ways but with a given continuum limit $S_\text{YM} = \frac{\beta}{2N}\int \operatorname{tr}[F_{\mu \nu}^2]$, so we can write
+\end{itemize}
+\begin{equation}
+    \beta S_\text{latt}(\{\kappa_\alpha\}) = \beta \sum_\alpha \kappa_\alpha \op_\alpha[U] 
+\end{equation}
+with $\kappa_1 = 1$ and the RGT: $\{\beta, \kappa_1, \kappa_2, \ldots\} \to \{\beta', \kappa_1', \kappa_2', \ldots\}$
+\begin{itemize}
+    \item The expected flow is as shown in Fig.~\ref{fig:exp_flow}. Starting on/close to the critical surface, flow is initially towards $\kappa^\ast$ because all of the $\lambda$'s are less than 1 except one which is weakly relevant (and so pushes away with blocking)
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig-notes-044.jpg}
+    \caption{The expected RG flow for YM theory, showing the critical surface at $\beta = \infty$ and the axes for $\kappa_1, \kappa_2$.
+    \label{fig:exp_flow}}
+\end{figure}
+\begin{itemize}
+    \item Under RGT, a point on the critical surface will approach the fixed point $\{\beta = \infty, \kappa^*\}$ and then move away along the renormalised trajectory. Near $\beta = \infty$, the RT is perpendicular to the critical surface.
+    \item A general point at $0 \ll \beta \ll \infty$ will flow towards the FP before being repelled along the RT
+    \item On the RT, there are no lattice artifacts!
+    \begin{itemize}
+        \item In the infinitesimal neighbourhood of the FP, there are no cutoff effects for long distance quantities
+        \item An arbitrary point on the RT is connected to the infinitesimal neighbourhood of the FP by (an infinite number of) RGTs
+        \item Since the RGT increases lattice spacing by $2$, even a quantity defined by a single lattice separation $(\phi(x)\phi(x+a))$ at an arbitrary point is long distance near the FP. By definition, each RGT preserves the value of quantities that can be formulated in the blocked degrees of freedom.
+    \end{itemize}
+    \item The FP action is classically perfect.
+\end{itemize}
+
+\section{ $O(N)$ model in \(d=2\)}
+\begin{itemize}
+    \item Consider an $O(N)$ field $\vec{s}_n$ with $|\vec{s}_n| = 1$ with $n \in \Lambda_{2D}$ and lattice action
+\end{itemize}
+\begin{equation}
+    \beta S[\vec{s}_n] = \frac{\beta}{2} \sum_{n, \mu} \nabla_\mu \vec{s}_n \cdot \nabla_\mu \vec{s}_n
+\end{equation}
+with $\nabla^\mu \vec{s}_n = \vec{s}_{n + \hat{\mu}} - \vec{s}_n$.
+\begin{itemize}
+    \item Denote blocked spins $\vec{R}_{n_B}$ on the blocked lattice $\Lambda_B$ with $|\vec{R}_{n_B}|^2 = 1$, the RGT is then
+\end{itemize}
+\begin{equation}
+    \exp(-\beta' S'[\vec{R}]) = \int \mathcal{D}\vec{s}\exp[-\beta(S[\vec{s}] + T(\vec{R}, \vec{s}))],
+\end{equation}
+where $\int \mathcal{D}\vec{s} =\int \prod_n \int \text{d}\vec{s}_n \delta(\vec{s}^2 - 1)$ and $T(\vec{R}, \vec{s})$ defines the blocking.
+\begin{itemize}
+    \item A choice is
+\end{itemize}
+\begin{equation}
+    T_1(\vec{R}, \vec{s}) = \sum_{n_B}-\kappa \vec{R}_{n_B}\cdot \vec{\Sigma}_{n_B} + N(|\Sigma_{n_B}|),
+\end{equation}
+where $\vec{\Sigma}_{n_B} = \sum_{n \in {\cal N}(n_B)}\vec{s}_n$ sums spins in the neighbourhood (${\cal N}({n}_B)$) of blocked site $n_B$  and $N(|\Sigma_{n_B}|)$ can be calculated so the partition function matches. Here the $\kappa \to \infty$ limit would set $\vec{R}_{n_B} = \frac{\vec{\Sigma}_{n_B}}{|\Sigma_{n_B}|}$, parallel to the block average.
+
+\section{SU(N) Yang-Mills}
+\begin{itemize}
+    \item For a lattice gauge field implemented with link degrees of freedom, blocking can be performed from the original variables $\{ U_\mu(n)\}$ to coarsened variables $\{V_\mu(n_B)\}$ with scale factor $2$ as follows
+\end{itemize}
+\begin{equation}
+    \exp(-\beta'S'[V]) = \int \mathcal{D}U \exp(-\beta(S[U] + T_G(V,U))), \qquad  \mathcal{D}U = \prod_{n,\mu}\text{d}U_\mu(n)
+\end{equation}
+
+with
+
+\begin{equation}
+    T_G[V,U] = \sum_{n_B, \mu}\left\{-\frac{\kappa}{N}\operatorname{ReTr}[V_\mu(n_B)Q^\dagger_\mu(n_B)] + N(Q_\mu(n_B)) \right\},
+\end{equation}
+where equivalence of the partition function requires
+\begin{equation}
+    \exp(N(Q)) = \int \text{d}W \exp[\frac{\beta \kappa}{N}\operatorname{ReTr}[W Q^\dagger]],
+\end{equation}
+where $\text{d}W$ is the Haar measure and a choice for $Q$ is 
+\begin{equation}
+    \includegraphics[width=0.5\linewidth]{fig-notes-087.png}.
+\end{equation}
+Note that $c$ is a free parameter and that $Q \notin SU(3)$; other choices are likely better.
+
+\section{Free fermions}
+
+\begin{itemize}
+    \item Consider a general lattice fermion action
+\end{itemize}
+\begin{equation}
+    S[\bar{\psi}, \psi] = \sum_{n,m} \bar{\psi}_n D(n-m) \psi_m \quad D(n) = \rho_\mu(n) \gamma_\mu + \lambda(n)
+\end{equation}
+and for Wilson fermions
+\begin{align}
+    \rho_\mu(n) &= \frac{1}{2}(\delta_{n+\hat{\mu}, 0} - \delta_{n - \hat{\mu}, 0}) \\
+    \lambda(n) &= (m+4)\delta_{n,0} - \sum_\mu(\delta_{n - \hat{\mu}, 0} + \delta_{n + \hat{\mu}, 0}),
+\end{align}
+which yields
+\begin{align}
+    \rho_\mu(k) &= i \sin(k_\mu) \\
+    \lambda(k) &= m + 2 \sum_\mu \sin^2\left(\frac{k_\mu}{2}\right).
+\end{align}
+\begin{itemize}
+    \item For the blocked action with blocked fields $\chi, \bar{\chi} \in \Lambda_B$, we have
+\end{itemize}
+\begin{equation}
+    \exp(-S'[\bar{\chi}, \chi]) = \int \mathcal{D}\psi \mathcal{D}\bar{\psi}\exp[-S[\bar{\psi}, \psi] + T_F(\bar{\chi}, \chi; \bar{\psi}, \psi)],
+\end{equation}
+where
+\begin{equation}
+    T_F(\bar{\chi}, \chi; \bar{\psi}, \psi] = \kappa_F \sum_{n_B}\left(\bar{\chi}_{n_B} - b_F \sum_n \bar{\psi}_n \omega(2n_B - n)\right)\left(\chi_{n_B} - b_F \sum_n \omega(2 n_B - n) \psi_n\right),
+\end{equation}
+with $b_F = 2^{3/2}$, $\omega$ specifies the blocking and is assumed diagonal in Dirac space for simplicity.
+\begin{itemize}
+    \item For the choice of $\omega$ discussed before, where it is equal to $2^{-D}$ in a hypercube and $0$ outside, it can be shown that the fermion propagator after iterating the blocking transform is given by
+\end{itemize}
+\begin{equation}
+    \tilde{D}^{-1}(p) = -i \sum_l \frac{\gamma_\mu(q+2 \pi l)_\mu}{(q + 2 \pi l)^2}\prod_\nu \frac{\sin^4(\frac{q_\nu}{2}+ \pi l_\nu)}{(\frac{q_\nu}{2}+ \pi l_\nu)^4} + \frac{2}{\kappa_F},
+\end{equation}
+where the sum over $l$ is over the doublers. The propagator has a single pole (no doubling). The $1/\kappa_F$ term, arising from blocking, breaks chiral symmetry and is ultra-local in position space and very importantly satisfies GW relation!
+\begin{equation}
+    \{\tilde{D}^{-1}, \gamma_5\} = \frac{4}{\kappa_F}\gamma_5,
+\end{equation}
+and this last property generalises to the interacting QCD case.
+\section{QCD} 
+\begin{itemize}
+    \item Combine the two blockings
+\end{itemize}
+\begin{equation}
+    \exp[-\beta S_G'(V) - S_F'(\bar{\chi}, \chi,V))] = \int \mathcal{D}\bar{\psi}\mathcal{D}\psi\mathcal{D}U \exp[-\beta\{S_G(U) + T_G[U,V]\} - \{S_F[\bar{\psi},\psi] + T_F(\bar{\chi}, \chi,V; \bar{\psi}, \psi; U)\}],
+\end{equation}
+where $T_G$ is the same as above but $T_F$ must involve parallel transport
+\begin{equation}
+    T_F(\bar{\chi}, \chi,V; \bar{\psi}, \psi; U) = \kappa_F \sum_{n_B}\left(\bar{\chi}_{n_B} - b_F\sum_n \bar{\psi}_n \omega^\dagger(n, n_B, U)\right)\left(\chi_{n_B} - b_F \sum_n \omega(n, n_B, U) \psi_n\right),
+\end{equation}
+with $\omega(n, n_B, U)$ built from e.g. the shortest path of links between $n$ and $n_B.$
+
+\section{Saddle point approximation to the FP action}
+\begin{itemize}
+    \item For asymptotically free theories such as $O(N)$ in $d=2$, QCD in $d=4$, there is a fixed point at $\beta = \infty$ and the path integral can be calculated using saddle point approx
+    \item For $O(N)$ in $d=2$, evaluating
+\end{itemize}
+\begin{equation}
+    \int \mathcal{D}\vec{s} \exp[-\beta(S[\vec{s}]+T[\vec{R},\vec{s}])]
+\end{equation}
+selects the $\vec{s}$ that minimises $S[\vec{s}] + T[\vec{R}, \vec{s}]$ for a given $\vec{R}$. This implies
+\begin{equation}
+    S'(\vec{R}) = \min_{\{\vec{s}\}}[S[\vec{s}] + T[\vec{R}, \vec{s}]],
+\end{equation}
+so at the fixed point
+\begin{align}
+    S_\text{FP}[\vec{R}] &= \min_{\{\vec{s}\}}[S_\text{FP}[\vec{s}] + T[\vec{R}, \vec{s}]] \\
+    &= \min_{\{\vec{s}\}}[S_\text{FP}[\vec{s}] - \kappa \sum_{n_B}(\vec{R}_{n_B} \cdot \vec{\Sigma}_{n_B}) + N(|\vec{\Sigma}_{n_B}|)],
+\end{align}
+where again $\vec{\Sigma}_{n_B} = \sum_{n \in {\cal N}(n_B)}\vec{s}_n$.
+\begin{itemize}
+    \item For QCD, the $\beta \to \infty$ saddle point of the gauge integral leads to
+\end{itemize}
+\begin{equation}
+    S_G'[V] = \min_U [ S_G[U] + T_G^\infty[V,U]],
+\end{equation}
+where $T_G^\infty$ denotes that $N[Q]$ is evaluated as $\beta \to \infty$. This implies
+\begin{equation}
+\label{eq:saddle_point_gauge}
+    S_G^\text{FP}[V] = \min_U \left[ S_G^\text{FP}[U] - \frac{\kappa_G}{N} \sum_{n_B, \mu} \operatorname{ReTr}(V_\mu(n_B) Q_\mu^\dagger(n_B)) - \max_W[\operatorname{ReTr}[WQ^\dagger(n_B)]]\right],
+\end{equation}
+where the last term implements normalisation as $\beta \to \infty$ and $W \in SU(N)$. The fermionic integral remains and is evaluated at this $U_\text{min}$,
+\begin{equation}
+    e^{-S_F'[\bar{\chi}, \chi, U]} = \int \mathcal{D}\bar{\psi}\mathcal{D}\psi \exp[-S_F[\bar{\psi}, \psi, U_\text{min}] + T_F[\bar{\chi}, \chi; \bar{\psi}, \psi; U_\text{min}]].
+\end{equation}
+Since $S_F = \bar{\psi}D \psi$ and $T_F$ above are bilinear in $\bar{\psi}, \psi$, the Gaussian integral can be performed and at the fixed point
+\begin{align}
+    \int \mathcal{D} \bar{\psi} \mathcal{D}\psi & \exp[-\bar{\psi} D \psi + \kappa_F(\bar{\chi} - b \bar{\psi} \omega^\dagger)(\chi - b \omega \psi)] \\ &= \int \mathcal{D} \bar{\psi} \mathcal{D}\psi \exp[-\bar{\psi}(D+ \kappa_F b^2 \omega^\dagger \omega)\psi - \kappa_F b^2(\bar{\chi} \omega \psi - \bar{\psi} \omega^\dagger \chi) + \kappa \bar{\chi} \chi] \\
+    & = \exp[\kappa \bar{\chi} \chi - \kappa_F^2 b^2 \bar{\chi} \omega (D + \kappa_F b^2 \omega^\dagger \omega)^{-1}\omega^\dagger \chi)]\operatorname{det}(D + \kappa_F b^2 \omega^\dagger \omega),
+\end{align}
+where the determinant is to be absorbed in the overall normalisation and we have evaluated the integrals using the change of variables
+\begin{align}
+    \psi' &= \psi - \kappa_F b (D + \kappa_F b^2 \omega^\dagger \omega)^{-1}\chi \\
+    \bar{\psi}' &= \bar{\psi} - \kappa_F b \chi(D + \kappa_F b^2 \omega^\dagger \omega).
+\end{align}
+Equating the exponents at the fixed point, we then find
+\begin{equation}
+\label{eq:saddle_point_D}
+    D_\text{FP}[V](n_B, n_B') = \kappa_F \delta_{n_B n_B'} - \kappa_F^2 b_F^2 \omega(U_\text{min})_{n_B, n}[D_\text{FP}[U_\text{min}] + \kappa_F b_F^2 \omega^\dagger(U_\text{min})\omega(U_\text{min})]^{-1}_{n,n'}\omega^\dagger(U_\text{min})_{n', n_B'}
+\end{equation}
+\begin{itemize}
+    \item These saddle point results are non-perturbative and valid for rough configurations as well as smooth
+\end{itemize}
+
+\section{Solving the FP action for QCD}
+\begin{itemize}
+    \item For weak fields (close to the classical vacuum), the FP equations can be expanded perturbatively
+    \item More generally, the FP equations are ``solved'' by parameterising the fixed point action and then minimising the difference between the LHS and RHS of Eqs.~\eqref{eq:saddle_point_D} and \eqref{eq:saddle_point_gauge}
+    \begin{enumerate}
+        \item Define parameterisation
+        \begin{equation}
+            S_G^\text{FP}[U] = \sum_{l \in \mathcal{L}}\sum_m c_m(l)\left(\frac{1}{N}\operatorname{ReTr}[I - U_l]\right)^m,
+        \end{equation}
+        where $\mathcal{L}$ is a set of closed loops, $U_l$ is a Wilson loop along path $l$, and $c_m(l)$ are undetermined parameters, and for the fermions
+        \begin{equation}
+            D_\text{FP}[U]_{nn'} = \sum_{k=1}^{16}\Gamma_k \sum_{p \in \mathcal{P}_{nn'}}c^{(k,p)}_{n,m}[U]U_p,
+        \end{equation}
+        where $\mathcal{P}_{nn'}$ is a set of paths from $n$ to $n'$ and $U_p$ is a product of links along path $p$.
+        \item For a given $V$, minimise the RHS of Eq.~\eqref{eq:saddle_point_gauge} to find $U_\text{min}$
+        \item Use $U_\text{min}$ and $V$ in Eq.~\eqref{eq:saddle_point_gauge} with the parameterised $S_G^{FP}$ to determine the coefficients $c_m(l)$
+        \item Minimise the norm of the FP action equation to determine the $c_m(l)$
+        \item Use the matching of Dirac operators to determine the $c_{n,m}^{(k,p)}$
+    \end{enumerate}
+\end{itemize}
+\section{Results with perfect actions}
+
+\begin{itemize}
+    \item The FP construction has been implemented and tested in the late $90$s and early $2000$s
+    \begin{itemize}
+        \item Small cutoff effects were seen
+        \item The spectrum of the Dirac operator is well-behaved
+        \item The chiral properties are manifest
+        \item The numerical cost to use the FP action is $\mathcal{O}(10)\times$ that of the Wilson action
+    \end{itemize}
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig-notes-088.png}
+    \label{fig:lambda}
+\end{figure}

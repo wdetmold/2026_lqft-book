@@ -1,0 +1,195 @@
+\newpage
+%% [migrated] heading absorbed into chapter wrapper: Hadronic Matrix Elements
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig-notes-085.png}
+    \caption{The diagram for an elastic electron proton collision, showing that a hadronic matrix element is necessary to calculate the rate of this process.}
+    \label{fig:ep_scatter}
+\end{figure}
+\begin{itemize}
+  \item In many situations, physical quantities are accessed from hadronic matrix elements of external-to-QCD currents/operators
+  \begin{itemize}
+      \item These typically arise as the strong interaction pieces of a more complicated process such as electron scattering on a proton as shown in Fig.~\ref{fig:ep_scatter}, which depends on $\langle p(p)| J^\mu | p(p + q)\rangle$
+  \end{itemize}
+\end{itemize}
+
+
+\section{Vacuum matrix element}
+\begin{itemize}
+    \item The ``simplest'' matrix elements are those in the vacuum state and involve hadrons implicitly
+    \begin{itemize}
+        \item The expectation values of fields: $\langle \Omega | \bar{\psi}(x) \psi(x) | \Omega \rangle$ = chiral condensate
+        \item The vacuum polarisation (relevant for $(g-2)_\mu$):
+    \end{itemize}
+\end{itemize}
+\begin{equation}
+    P_{\mu \nu} = \langle \Omega | J_\mu(x) J_\nu(y) | \Omega \rangle
+\end{equation}
+
+
+\section{Two-point hadron-to-vacuum correlation functions}
+\begin{itemize}
+    \item For quantities such as meson decay constants, meson and baryon distribution amplitudes, proton decay matrix elements, the relevant matrix element is of the form
+\end{itemize}
+\begin{equation}
+    \langle H(\vec{p}) | \tilde{{\cal O}}(\vec{p}) | \Omega \rangle
+\end{equation}
+which can be accessed from two point functions
+\begin{equation}
+    \langle \tilde{\chi}_H(\vec{p},t) {\cal O}(\vec{0},0)\rangle
+\end{equation}
+that are analysed very much like hadron two-point functions above (depicted in Fig.~\ref{fig:hvac})
+\begin{align}
+    \langle \tilde{\chi}_H(\vec{p},t){\cal O}(\vec{0},0)\rangle &= \frac{1}{Z}\sum_{\vec{x}} \operatorname{Tr}\left[ e^{-\hat{H} T} \chi_H(\vec{x}, t) {\cal O}(\vec{0}, 0)\right] e^{i \vec{p} \cdot \vec{x}} \nonumber \\
+    &= \sum_n e^{- E_n t}\langle \Omega | \chi_H(\vec{0}, 0) | H_n(\vec{p})\rangle \langle H_n(\vec{p}) | {\cal O} | \Omega \rangle \nonumber \\
+    &= \sum_n e^{-E_n t} Z_n(\vec{p}) \langle H_n(\vec{p})|{\cal O}|\Omega\rangle,
+\end{align}
+with $Z_n(\vec{p})$ and $E_n$ the same as can be determined from $\langle \tilde{\chi}(\vec{p},t) \chi^\dagger(\vec{0},0)\rangle$. Note that unlike $\chi_H$, ${\cal O}$ should likely be a local operator.
+\begin{figure}
+    \centering
+    \includegraphics[max width=0.5\textwidth]{fig-notes-030.jpg}
+    \caption{The diagram for the hadron-to-vacuum correlation function.}
+    \label{fig:hvac}
+\end{figure}
+Thus,
+\begin{equation}
+    \langle H_0(\vec{p})| {\cal O}|\Omega \rangle = \sqrt{\lim_{t\to\infty} \frac{\langle\tilde{\chi}_H(\vec{p}, t) {\cal O} \rangle \langle {\cal O} \tilde{\chi}^\dagger_H(-\vec{p}, t)\rangle}{\langle\tilde{\chi}_H(\vec{p},t) \tilde{\chi}_H^\dagger(\vec{p}, t) \rangle}}
+\end{equation}
+
+\section{Three-point correlation functions}
+\begin{itemize}
+    \item Common examples of hadronic matrix elements accessible from three point functions are $\langle H_1 | {\cal O} | H_1 \rangle, \langle H_1 | {\cal O} | H_2 \rangle$ (i.e. including transitions)
+    \begin{itemize}
+        \item In terms of electroweak hadron structure ${\cal O} = J^\mu_\text{EM}, J^\mu_\text{EW}$ are most relevant and determine the form factors describing hadron EW structure (e.g. $\langle \pi(\vec{p})|\tilde{J}_\mu(\vec{q})|\pi(\vec{p} - \vec{q})\rangle \sim F_\pi(q^2)$)
+        \item In quark flavour physics, a common example is the flavour changing neutral current decay $B \to K$. Such decays are mediated by physics at the electroweak scale and above and from the point of view of QCD enter through an effective low energy Hamiltonian
+    \end{itemize}
+\end{itemize}
+\begin{equation}
+    H_\text{weak} = \sum_i C_i(\mu){\cal O}_i(\mu),
+\end{equation}
+where the $C_i$ are Wilson coefficients which depend on high scale physics and where for $\Delta S = \Delta B = 1$ processes the lowest dimension operators are $4q$ operators
+\begin{equation}
+    {\cal O} \sim \bar{q} \Gamma b \bar{s} \Gamma q
+\end{equation}
+and the required non-perturbative information is in the matrix elements $\langle K | {\cal O} | B \rangle$.
+\begin{itemize}
+    \item In such cases, we look at three-point functions to extract these matrix elements:
+\end{itemize}
+
+\begin{align}
+    C_3(\vec{p}, \vec{q}; t, \tau) &= \langle \Omega | \tilde{\chi}_{H_1}(\vec{p}, t) \tilde{{\cal O}}(\vec{q}, \tau) \chi_{H_2}^\dagger(\vec{0}, 0) | \Omega \rangle \nonumber \\
+    &= \sum_{\vec{x}, \vec{y}}\operatorname{Tr}\left [ e^{-\hat{H}T} \chi_{H_1}(\vec{x}, t) {\cal O}(\vec{y}, \tau) \chi^\dagger_{H_2}(\vec{0}, 0) \right] e^{i \vec{p} \cdot \vec{x}} e^{i \vec{q} \cdot \vec{y}} \nonumber \\
+    &\underset{T \to \infty}{\longrightarrow} \sum_{\vec{x}, \vec{y}} \sum_{n,m} \langle \Omega | \chi_{H_1}(\vec{x}, t) | n \rangle \langle n | {\cal O}(\vec{y}, \tau) | m \rangle \langle m | \chi_{H_2}^\dagger(\vec{0}, 0 ) | \Omega \rangle e^{i \vec{p} \cdot \vec{x}} e^{i \vec{q} \cdot \vec{y}} \nonumber \\
+    &= \sum_{n,m}e^{-E_n(\vec{p}) t}e^{-(E_m(\vec{p} + \vec{q}) - E_n(\vec{p})) \tau} \langle \Omega | \chi_{H_1} | n(\vec{p})\rangle \langle n(\vec{p}) | {\cal O} | m(\vec{p}+ \vec{q})\rangle \langle m(\vec{p} + \vec{q}) | \chi_{H_2}^\dagger | \Omega \rangle \nonumber \\
+    &\underset{\tau, t-\tau \to \infty}{\longrightarrow}e^{-E_0^{H_1}(\vec{p})(t-\tau)} e^{-E_0^{H_2}\tau} \langle \Omega | \chi_{H_1} | H_1(\vec{p} \rangle \langle H_1(\vec{p}) | {\cal O} | H_2(\vec{p}+\vec{q}) \rangle \langle H_2(\vec{p}+\vec{q}) | \chi_{H_2}^\dagger | \Omega \rangle,
+\end{align}
+where on the last line the two matrix elements involving $\chi$ are overlap factors and the other matrix element is the desired matrix element.
+\begin{itemize}
+    \item The energies and overlap factors can be determined from two-point correlation functions not involving the operator ${\cal O}$ and thus the above gives access to the matrix element
+    \item In the simplest case of spin-zero hadrons with $H_1 = H_2$ and $\vec{q} = 0$, the matrix element is given by the simple ratio
+\end{itemize}
+\begin{equation}
+    \langle H(\vec{p}) | {\cal O} | H(\vec{p}) \rangle = \lim_{\tau, t-\tau \to \infty}\frac{C_3(\vec{p}, \vec{0};t,\tau)}{C(\vec{p},t)}
+\end{equation}
+\begin{itemize}
+    \item In other cases, more complicated ratios or coupled analyses of $2-$ and $3-$point functions are needed including details related to spin indices of hadrons
+    \item For studies of parton distribution functions, ${\cal O}$ can be a nonlocal bilinear operator ${\cal O} = \bar{\psi}(x) W_C(x,y) \psi(y)$, where $W_C$ is a Wilson line.
+\end{itemize}
+
+\section{Four- and higher-point correlation functions}
+
+\begin{itemize}
+    \item More complicated correlation functions can be used to access additional physics such as second order electroweak processes
+    \begin{itemize}
+        \item $K \to \pi \nu \bar{\nu}$
+        \item $p p \to n n e e \nu \nu$ or $p p \to n n e e$
+        \item the hadronic tensor $T^{\mu \nu} \sim \langle p | J^\mu J^\nu | p \rangle$ relevant in DIS
+        \item ...
+    \end{itemize}
+    \item These represent the current state of the art but additional quantities may require more complicated correlation functions 
+\end{itemize}
+
+\section{Operator renormalisation}
+\begin{itemize}
+    \item Operators defined from bare lattice fields are not renormalised and to connect to physics an additional step is required
+    \begin{itemize}
+        \item This is the case even for operators that are renormalisation scale independent since the lattice discretisation can introduce a finite shift (e.g. axial current): 
+        \begin{equation}
+            {\cal O}_{1,\text{bare}} = Z_1^{-1}\mathcal{O}_{1, \text{ren}}
+        \end{equation}
+        \item Since the lattice regulator introduces a dimensionful scale, it allows for mixing of operators of different dimensions 
+        \begin{equation}
+            {\cal O}_{1,\text{bare}} = Z_{11}^{-1}{\cal O}_{1, \text{ren}} + Z_{21}^{-1} a^n {\cal O}_{2, \text{ren}} + \ldots
+        \end{equation}
+        where $n$ can be less than $0$ leading to power divergent operator mixing, which complicates life
+    \end{itemize}
+    \item For renormalisation scheme and scale dependent operators (most operators) it is also necessary to arrive at results in a scheme used by the broad community such as $\overline{\text{MS}}$
+    \item Operator renormalisation can be performed in multiple ways
+    \begin{itemize}
+        \item Perturbatively using analytic/numerical calculation of Feynman diagrams derived from the lattice action and lattice regulated intergrals - typically the same loop calculations must also be done in DR-$\overline{\text{MS}}$ to connect to $\overline{\text{MS}}$ renormalisation scheme: 
+        \begin{equation}
+            Z \sim 1 - (\text{loops})_\text{latt} + (\text{loops})_\text{DR}.
+        \end{equation}
+        Lattice PT is notoriously complicated and poorly convergent.
+        \item Non-perturbatively using the Rome-Southampton method (RI-MOM). This makes use of an intermediate renormalisation scheme that can be defined in a regulator independent way such as a momentum subtraction scheme\
+        \item Non-perturbatively using the Schr\"odinger functional step-scaling method which uses the lattice size $L \sim \mu^{-1}$ as the renormalisation scale and allows running of operators to be probed over large scale differences by not requiring all scales to be represented in a single lattice geometry (see later)
+    \end{itemize}
+    \item The RI-MOM (RI-SMOM actually) scheme is defined by requiring a given $n-$point function to take its tree-level value at some scale $\mu$ of the external momenta.  Consider the axial current as an example
+\end{itemize}
+
+\begin{equation}
+{}_\text{bare}A^a_{\mu 5} = \bar{\psi}(n)\gamma_\mu\gamma_5 \psi(n)
+\end{equation}
+Correlation function in momentum space:
+\begin{equation}
+    \langle \Omega | \tilde{\psi}(p) \overline{\tilde{\psi}}(q)|\Omega\rangle = (2 \pi)^4 \delta^4(p+q)S(p)
+\end{equation}
+\begin{equation}
+    \Lambda_A(p,q) = \langle \Omega | \tilde{\psi}(p)_\text{bare}\tilde{A}_{35}^3(q)\overline{\tilde{\psi}}(p')|\Omega \rangle = (2 \pi)^4 \delta(p+q+p')S(p)\Gamma_A(p,q)S(p+q),
+\end{equation}
+where $\Gamma_A$ is the vertex function $\Gamma_A(p,q) = S^{-1}(p)\Lambda_A(p,q)S^{-1}(p+q)$. At tree level,
+\begin{equation}
+    \Gamma_A(p,q)_\text{tree} = \gamma_3 \gamma_5 \tau^3
+\end{equation}
+We also have renormalised fields and operator
+\begin{equation}
+    \psi_R = Z_\psi^{1/2}\psi, \qquad A_{\mu 5}^a = Z_A {}_\text{bare}A_{\mu 5}^a,
+\end{equation}
+so the renormalised vertex function is 
+\begin{equation}
+    \Gamma_A^{(R)}(p,q) = Z_A Z_\psi^{-1}\Gamma_A(p,q)
+\end{equation}
+Mom-scheme (in chiral limit): vertex function is tree level at fixed scale $\mu \gg \Lambda_{\text{QCD}}$
+\begin{equation}
+    \Gamma_A^{(R)}(p_1, p_2 - p_1)|_{p_1^2 = p_2^2 = (p_2 - p_1)^2 = \mu^2} = Z_A Z_\psi^{-1} \Gamma_A(p_1, p_2 - p_1)|_{\text{same}} = \Gamma_A(p,-2p)|_\text{tree} = \gamma_3 \gamma_5 \tau^3 \Rightarrow Z_A Z_\psi^{-1}
+\end{equation}
+{\color{red} check the $-2p$ value}
+\begin{figure}
+\label{fig:vert_func}
+\includegraphics[max width=0.5\textwidth, center]{fig-notes-031.jpg}
+\caption{The diagram representing the vertex function that we calculate.}
+\end{figure}
+
+\begin{itemize}
+    \item For LQCD we must fix the gauge for quark momenta to be defined: Landau gauge $(\partial_\mu A_\mu = 0)$. It is necessary to check whether gauge dependence of the results is small.
+    \item The symmetric momentum point $p_1^2 = p_2^2 = (p_1 - p_2)^2 = \mu^2$ with $\Lambda_{\text{QCD}} \ll \mu^2 \ll 1/a^2$ is chosen such that all momenta are perturbative and discretisation effects are small (ideally at least). For other momenta choices care must be taken due to non-perturbative contributions.
+    \item Quark wavefunction renormalisation from
+\end{itemize}
+\begin{equation}
+    Z_\psi(\mu) = \left. \frac{\operatorname{tr}\left[S_0^{-1}(p)S^{-1}(p)\right]}{\operatorname{tr}\left[S_0^{-1}(p)S_0^{-1}(p)\right]}\right|_{p^2=\mu^2},
+\end{equation}
+where $S_0^{-1} = -i \sum_\mu \gamma_\mu \sin(a p_\mu)$ is the bare (lattice) propagator.
+\begin{itemize}
+    \item Since the MOM schemes are regulator independent, the continuum limit can be taken at this point: $Z_A$ has lattice artifacts that must be removed
+    \item This gives the Z factors needed to define the matrix element in RI-SMOM scheme. For operators that are scheme and scale dependent (i.e. not this example), a perturbative matching is required to go from RI-SMOM scheme to e.g. $\overline{\text{MS}}$ scheme
+\end{itemize}
+
+\section{State of the art matrix elements}
+\begin{itemize}
+    \item Calculations of matrix elements of bilinear operators in single meson states is accurate to $<1\%$ in some cases
+    \item Calculations of $\langle K | {\cal O}_{4q}| \pi \pi \rangle$ are more complicated but have ${\cal O}(10\%)$ accuracy
+    \item Calculations of baryon matrix elements are also challenging, with the most precise consensus values being for $g_A$ with ${\cal O}(2\%)$ uncertainty
+    \item Nuclear matrix elements are a frontier topic
+    \item Second order weak processes are another frontier
+    \item See FLAG for up-to-date values
+\end{itemize}

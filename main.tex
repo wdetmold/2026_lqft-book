@@ -1,0 +1,54 @@
+% Lattice Quantum Field Theory and Phenomenology — book manuscript
+% Build: latexmk (see Makefile). Solutions build: make solutions
+\documentclass[11pt]{book}
+\input{preamble}
+\input{macros}
+
+% Uncomment to compile only some chapters (fast iteration):
+%\includeonly{chapters/ch03-scalar-fields/ch03}
+
+\begin{document}
+\frontmatter
+\title{Lattice Quantum Field Theory and Phenomenology}
+\author{Will Detmold}
+\date{\today\\[2mm]\normalsize Draft --- do not distribute}
+\maketitle
+\input{frontmatter/preface}
+\tableofcontents
+
+\mainmatter
+\part{Foundations}
+\include{chapters/ch01-introduction/ch01}
+\include{chapters/ch02-path-integrals/ch02}
+\include{chapters/ch03-scalar-fields/ch03}
+\include{chapters/ch04-gauge-fields/ch04}
+\include{chapters/ch05-hamiltonian-lgt/ch05}
+\include{chapters/ch06-lattice-fermions/ch06}
+\include{chapters/ch07-improvement-continuum/ch07}
+
+\part{Computation}
+\include{chapters/ch08-monte-carlo/ch08}
+\include{chapters/ch09-gradient-flow/ch09}
+\include{chapters/ch10-data-analysis/ch10}
+\include{chapters/ch11-ml-methods/ch11}
+
+\part{Phenomenology}
+\include{chapters/ch12-thermodynamics/ch12}
+\include{chapters/ch13-spectroscopy/ch13}
+\include{chapters/ch14-matrix-elements/ch14}
+\include{chapters/ch15-finite-volume/ch15}
+\include{chapters/ch16-isospin-qed/ch16}
+\include{chapters/ch17-strong-coupling-sf/ch17}
+\include{chapters/ch18-lattice-bsm/ch18}
+
+\part{Frontiers}
+\include{chapters/ch19-chiral-gauge/ch19}
+\include{chapters/ch20-lattice-susy/ch20}
+\include{chapters/ch21-perfect-actions/ch21}
+\include{chapters/ch22-quantum-simulation/ch22}
+
+\backmatter
+\bibliographystyle{unsrtnat}
+\bibliography{refs/references}
+\printindex
+\end{document}

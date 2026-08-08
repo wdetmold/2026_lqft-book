@@ -1,0 +1,5 @@
+% Semantic macro layer — one place for notation. Add here, never inline.
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand{\op}[0]{\mathcal{O}}
+\newcommand{\pslash}{p\!\!\!/}

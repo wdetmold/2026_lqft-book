@@ -1,0 +1,318 @@
+\newpage
+%% [migrated] part header removed: LQFT Phenomenology
+
+\begin{itemize}
+  \item Lattice methods are used in nuclear and particle physics to study the phenomenology of QCD in various contexts that we will briefly discuss
+\end{itemize}
+\section{Anatomy of a LQCD calculation}
+\begin{itemize}
+\item We now have all the tools to undertake many different LQFT calculations. Here we will walk through the steps required to perform a lattice QCD calculation of a physical quantity $\mathcal{P}$
+\end{itemize}
+\begin{enumerate}
+    \item Define what correlation function(s) $\langle \mathcal{O} \rangle$ provides access to $\mathcal{P}$ - there may be multiple options to choose from or you may need to invent a new one. 
+    \begin{itemize}
+        \item It is useful to understand the precision goals of your calculation as they should influence computational choices.
+    \end{itemize}
+    \item Decide on what QCD theory you will use, in particular, which flavours of quark are included. Decide what discretised action (gauge \& fermion) you are going to use - ideally any action would suffice, but some choices will be better and/or more practical than others.
+    \begin{itemize}
+        \item e.g. if chiral symmetry prevents operator mixing, a chiral fermion discretisation would be useful
+        \item the computational costs vary significantly with this choice (otherwise every calculation would use overlap fermions)
+    \end{itemize}
+    \item Decide on what parameter sets you will do calculations at and how you will tune them. A full specification amounts to sets $\mathcal{S}_i = \{\text{action params, lattice geometry, statistical goal}\}$
+    \begin{itemize}
+        \item the key goal here is to understand what computations you will need in order to reach the continuum, infinite volume limit with physical values of the quark masses and with sufficient statistical and systematic control that your resulting $\mathcal{P}$ will be reliable.
+        \item For the action parameters (bare quark masses \& gauge coupling) it is useful to define the parameter space trajectory you will explore (see Fig.~\ref{fig:ac_param_trajectories} for an example)
+        \item In order to tune the quark masses to their physical values and determine the lattice spacing in physical units, the same number of experimentally determined quantities must be used (and computed): often the masses of various mesons and baryons are chosen along with the static quark potential or the electric field energy extracted from ``Wilson flow''
+        \item Ideally this tuning would be done taking the infinite volume limit at each set of action parameters
+        \item This procedure is almost always undertaken iteratively, defining new parameter sets to use as more is learnt about the system.
+    \end{itemize}
+    \item Choose and optimise algorithms for the tasks of
+    \begin{enumerate}
+        \item generating representative samples of gluon configurations
+        \item calculating fermion matrix inverses for construction of correlation functions
+        \item contracting fermion inverses appropriately for the given correlation functions
+    \end{enumerate}
+    \begin{itemize}
+        \item Different parts of the calculations have different numerical cost structures
+        \item Optimised code libraries exist for some of these tasks, others must be developed
+    \end{itemize}
+    \item Apply for the necessary computer time/find rich benefactor and run the calculations
+    \begin{itemize}
+        \item Here there are also optimisations of costs and time for the computations to explore
+    \end{itemize}
+    \item For a fixed parameter set $\mathcal{S}_i$, perform statistical analyses to extract information about $\langle \mathcal{O} \rangle(\mathcal{S}_i)$
+    \item Perform analyses of the set of $\{\langle \mathcal{O} \rangle ( \mathcal{S}_i)\}$ to arrive at the physical values of $\mathcal{P}$ in the continuum, infinite volume and physical quark mass limits
+    \begin{enumerate}
+        \item Statistical uncertainties at each $\mathcal{S}_i$ must be carefully propagated
+        \item The forms of $a \rightarrow 0, L \rightarrow \infty, m_q \rightarrow m_q^\text{phys}$ extrapolations/interpolations can often be constrained by effective field theory methods.
+        \item For different quantities (and precision goals) these extrapolations are differently challenging
+    \end{enumerate}
+\end{enumerate}
+\begin{figure}
+\includegraphics[max width=0.8\textwidth, center]{fig-notes-022.jpg}
+\caption{Example: Wilson gauge and fermion action for a single quark flavour.\label{fig:ac_param_trajectories}
+}
+\end{figure}
+
+\begin{itemize}
+    \item The above is the case for simple, easy to define quantities but much more complicated scenarios in which the steps above do not factorise
+    \begin{itemize}
+        \item e.g., if $\mathcal{P}$ is determined by mass or volume dependence, analysis does not neatly factorise
+    \end{itemize}
+    \item Since these calculations require a lot of computing, the gauge configurations (and also in some cases the quark propagators) are saved and can be reused for other physics goals - this may constrain the parameter sets $\mathcal{S}_i$ that are used
+\end{itemize}
+
+\section{State-of-the-art}
+
+\begin{itemize}
+    \item LQCD calculations are often carried out by large collaborations, with state of the art parameter sets for staggered/Wilson fermions using quark masses including the physical values and lattice geometries up to $128^3\times256$ with lattice spacings $0.04 \text{ fm} < a < 0.15 \text{ fm}$ typical. For chiral fermions the lattice geometries are a factor of $\sim 2$ smaller in each dimension. Typically $\mathcal{O}(100)-\mathcal{O}(1000)$ somewhat independent configurations are produced
+    \item Typical state of the art calculations include $N_f = 2+1$ dynamical fermions, setting $m_u = m_d \neq m_s$ and include physical values of these masses. Some calculations include charm quarks and even bottom quarks at the smallest lattice spacings. Occasionally isospin breaking is included explicitly.
+    \item State-of-the-art calculations for some quantities include QED as well as QCD [since QED is not asymptotically free, it has no continuum limit and should be thought of as an effective theory]
+    \item State of the art calculations use tailored variants of HMC for gauge field generation and typically use multigrid fermion inverters. These are implemented in community libraries
+
+\(\left.\begin{array}{l}\text { - MILC } \\ \text { - chroma } \\ \text { - Grid + GPT (grid python toolkit) } \\ \text { - qlua } \\ \text { - openqcd }  \\ \text { - simulateQCD }  \\ \text { - tmqcd } \\ \text { - ... }\end{array}\right\}+\) quda inverters\\
+These calculations use many millions of CPU/GPU hours
+\end{itemize}
+
+%% [migrated] heading absorbed into chapter wrapper: QCD thermodynamics
+\begin{itemize}
+    \item QCD has a rich structure at nonzero temperature and/or density, with a conjectured phase diagram shown in Fig.~\ref{fig:phase}
+    \item But there are many question marks that need understanding and exploring this is the basis for the whole heavy ion collider program at RHIC@BNL and CERN
+    \item Lattice QCD is also instrumental in understanding various features
+    \item As in statistical mechanics, nonzero temperature and chemical potentials can be introduced into the grand canonical partition function as
+\begin{figure}
+\includegraphics[max width=0.8\textwidth, center]{fig-notes-023.jpg}
+\caption{Conjectured QCD phase diagram.
+\label{fig:phase}
+}
+\end{figure}
+\begin{equation}
+Z\left[T, V, \mu_{i}\right]=\operatorname{Tr}\left[e^{-\beta\left(\hat{H}-\mu_{i} \hat{N}_i\right)}\right]_{V}
+\end{equation}
+with $\beta = 1 / k_B T$ and $N_i = \bar{\psi}_i \gamma_4 \psi_i$ for each flavour of quark and with the subscript $V=L^3$ to indicate a finite spatial volume
+
+\item In terms of a path integral,
+\begin{equation}
+    Z[T,V,\mu_i] = \int \mathcal{D}U \mathcal{D}\bar{\psi}\mathcal{D}\psi \exp[-S[T,V,\mu_i]]
+\end{equation}
+with
+\begin{equation}
+    S[T,V,\mu_i] = \int_-^\beta \text{d}x_4 \int_V \text{d}^3\vec{x}\left[\mathcal{L}_\text{QCD} + \mu_i \bar{\psi}_i \gamma_4 \psi_i \right],
+\end{equation}
+where $\mathcal{L}_\text{QCD}$ depends on the quark masses as before.
+\end{itemize}
+
+\section{Thermodynamic Quantities}
+
+\begin{itemize}
+    \item In terms of $Z$, basic thermodynamic quantities can be defined (note $\frac{1}{T^3}\frac{\ln Z}{V}$ = $-\frac{1}{T^4}$ free energy if homogeneous system)
+    \begin{itemize}
+        \item Pressure $\frac{P}{T^4} = \frac{1}{T^3}\frac{\partial \ln Z[T,V,\mu_i]}{\partial V}$
+        \item energy density $\frac{\varepsilon}{T^4} = - \frac{1}{V T^4}\frac{\partial \ln Z[T,V,\mu_i]}{\partial(1/T)}$
+        \item number $\frac{n_j}{T^3} = \frac{1}{VT^3}\frac{\partial \ln Z[T,V,\mu_i]}{\partial(\mu_j/T)}$ (NB: fugacities are $\exp(\mu_i/T)$)
+        \item entropy density $s = (\varepsilon + P)/T$ (NB: the interaction measure $I = \varepsilon - 3 P$ is useful)
+        \item speed of sound $c_s^2 = \frac{\partial P}{\partial \varepsilon}$
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item These can be computed perturbatively at asymptotically high energy and modeled at low energy using the hadron resonance gas model
+    \item To compute thermodynamic quantities in lattice QCD one can consider an anisotropic lattice geometry $L^3 \times L_4$ with $L = a N_s, L_4 = a_t N_t = T^{-1}$ with $\xi \equiv a_s/a_t$ the anisotropy and note that
+\begin{align}
+\varepsilon &= -\frac{1}{N_t V}\frac{\partial}{\partial a_t}[\ln Z]|_{a_s = a_t} \nonumber \\
+P &= \frac{1}{3 N_t V}\frac{\partial}{\partial a_s}[\ln Z]|_{a_s = a_t},
+\end{align}
+in the case of an isotropic action. Or, more simply
+\begin{align}
+\label{eq:int_measure}
+    I = \varepsilon - 3 P &= -\frac{1}{N_t V} \frac{\partial \ln Z}{\partial \ln a}\nonumber \\
+    &= \frac{T}{V}\beta_\text{LAT}(g) \frac{\partial \ln Z}{\partial g_0} \nonumber \\
+    &= \frac{T}{V}\beta_\text{LAT}(g) \left \langle - \frac{\partial S}{\partial g_0}\right \rangle,
+\end{align}
+where there is no need for anisotropy at all and we have used $\beta_\text{LAT}(g) = -\frac{\text{d}g_0(a)}{\text{d}\ln a}$. We have specialised to pure gauge theory, but fermions can be included.
+
+    \item Since the above quantities contain vacuum contributions, it is usual to look at differences with respect to zero temperature
+\begin{equation}
+    \frac{1}{T^4}\Delta I = \frac{1}{T^4}[I(T,V,\mu_i) - I(0,V,\mu_i)] = -4 L_t^4 \frac{\beta_\text{LAT}(g)}{g^3}\left\langle\sum_P \text{Re} \operatorname{Tr}(P)_T - \sum_P \text{Re} \operatorname{Tr}(P)_{T=0}\right\rangle
+\end{equation}
+which must be computed on $2$ ensembles that only differ in their temporal extent.
+
+    \item Using Eq.~\eqref{eq:int_measure} and the definitions above, 
+\begin{equation}
+    a^4 \Delta P = a^4(P(T) - P(0)) = - \int_{\ln a_0}^{\ln a}\text{d} \ln a' \Delta I a'^4,
+\end{equation}
+which is equivalent to integration over $T$, and then $\Delta \varepsilon = \Delta I + 3 \Delta P$.
+    \item These quantities characterise the QCD equation of state and can be compared to low and high temperature expectations.
+    \item From extensive lattice calculations, the picture is as demonstrated in Fig.~\ref{fig:thermo} with $N_f = 3$.
+    \item Since the addition of chemical potential makes the Euclidean action complex, $\exp[-S]$ is no longer interpretable as a probability measure and so importance sampling is inapplicable - a sign/phase problem
+    \begin{itemize}
+        \item There are exceptions to this such as if gauge group is $SU(2)$ or $G_2$ which have only (pseudo-)real representations or for $SU(3)$ with $\mu_u = - \mu_d$ (isospin chemical potential)
+    \end{itemize}
+    \item It is useful to expand thermodynamic quantities about zero $\mu_i$, e.g.
+\begin{figure}
+\includegraphics[max width=0.8\textwidth, center]{fig-notes-024.jpg}
+\caption{Thermodynamic observables, as determined by the lattice, as a function of temperature.
+\label{fig:thermo}
+}
+\end{figure}
+
+\begin{equation}
+\frac{P}{T^{4}}=\sum_{i, j, k} \frac{1}{i!j!k!} \chi_{i j k}(T)\left(\frac{\mu_{u}}{T}\right)^{i}\left(\frac{\mu_{d}}{T}\right)^{j}\left(\frac{\mu_{s}}{T}\right)^{k}
+\end{equation}
+
+with susceptibilities
+
+\begin{equation}
+\chi_{ijk}(T)=\frac{\partial^{i+j+k}(P/T^4)}{\partial(\mu_u/T)^i \partial(\mu_d/T)^j \partial(\mu_s/T)^k}
+\end{equation}
+
+which can be computed for small \(i,j,k\) but become increasingly noisy as $i,j,k$ increase.
+\end{itemize}
+
+\section{Phase Diagram}
+\begin{itemize}
+  \item At zero chemical potential, QCD is confining at low temperature but deconfines at high temperature (asymptotic freedom guarantees this) and a crucial question is at what temperature this happens and what is the nature of this transition
+  \item In Yang Mills theory, an order parameter for confinement is $\langle P \rangle$ where the Polyakov loop
+\begin{equation}
+    P = \frac{1}{V}\sum_{\vec{x}} P(\vec{x}) \text{ with } P(\vec{x}) = \operatorname{tr} \left[ \prod _{t=0}^{N_t - 1} U_4(\vec{x}, t) \right],
+\end{equation}
+with $\langle P \rangle = 0 \Leftrightarrow \text{confinement}$ and $\langle P \rangle \neq 0 \Leftrightarrow \text{deconfinement}$
+
+To see this, note that the correlator between two Polyakov loops separated by a spatial distance $R$ is related to the potential between an infinitely massive quark and antiquark
+\begin{equation}
+    \langle P(\vec{0})P(\vec{R})^\dagger \rangle \sim \exp{(-a N_t F_{\bar{Q}Q})(R)},
+\end{equation}
+where $F_{\bar{Q} Q}(R)$ is the free energy of the static $Q \bar{Q}$ system.
+
+Since $\lim_{R\to\infty}\langle P(0)P(\vec{R})^\dagger \rangle = \langle P(0)\rangle \langle P(R)^\dagger\rangle = |\langle P \rangle |^2$, in order for $F_{\bar{Q}Q}(R) \sim \sigma R$, corresponding to linear confinement, we must have $\langle P \rangle = 0$.
+
+At large $T$, $\langle P \rangle \neq 0$ since the colour interactions are screened by the quark-gluon plasma
+
+Numerically, we can study $\langle | P |\rangle$ or its susceptibility $\chi_P = V(\langle P^2 \rangle - \langle P \rangle^2)$, shown schematically in Fig.~\ref{fig:polyakov} and Fig.~\ref{fig:sus} respectively.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig-notes-025.jpg}
+    \caption{A schematic showing the behavior of the Polyakov loop as a function of temperature.}
+    \label{fig:polyakov}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig-notes-026.jpg}
+    \caption{A schematic showing the behavior of the susceptibility corresponding to the Polyakov loop as a function of temperature.}
+    \label{fig:sus}
+\end{figure}
+
+    \item The deconfining transition corresponds to the spontaneous breaking of the $Z_{N_c}\subset SU(N_c)$ center symmetry
+\begin{equation}
+    Z_{N_c} : g \rightarrow z g \text{ with } z \in \{N_c\text{th roots of unity} = e^{2 i \pi n/N_c} \mathbb{I}_{N_c} \}
+\end{equation}
+Applying this transformation to $U_4(\vec{n}, t_0)$, the action is invariant but a Polyakov loop is not: $P \rightarrow z P$.
+
+Since $U, zU, \ldots, z^{N_c - 1}U$ are equally probable in the $Z_{N_c}$-symmetric phase,
+\begin{equation}
+    \langle P \rangle = \frac{1}{N_c}\langle P + z P + \ldots + z^{N_c - 1} P \rangle = \frac{1}{N_c} \sum_{n = 0}^{N_c - 1}e^{2 i \pi n /N_c}\langle P \rangle = 0.
+\end{equation}
+In the broken phase $\langle|P|\rangle \neq 0$.
+%
+These dynamics are shown pictorially in Fig.~\ref{fig:roots_of_unity}.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig-notes-080.png}
+    \caption{Samples of $P$ in the broken and unbroken phases ($N_c = 3$).)}
+    \label{fig:roots_of_unity}
+\end{figure}
+
+    \item In QCD, the presence of light fermions breaks the above picture of linear confinement and the Polyakov loop is no longer an order parameter. Indeed, $\langle P \rangle$ is seem to vary smoothly vs $T$ in QCD. Without an order parameter, defining the deconfinement transition is inherently ambiguous.
+    \item At nonzero temperature as one moves into the quark gluon plasma phase where interactions become weak due to asymptotic freedom, spontaneous breaking of chiral symmetry must also disappear (it does not occur at any order in perturbation theory)
+    \item An order parameter for $\chi$SB is the chiral condensate,
+\begin{equation}
+    \mathcal{M} = \frac{m_s}{T^4} \langle \bar{\psi}_f \psi_f \rangle = \frac{m_s}{V T^3}\frac{\partial \ln Z}{\partial m_f} \quad \left[\langle\bar{\psi}\psi\rangle = \int_0^\infty \text{d}\lambda \frac{2 m_l \rho(\lambda)}{\lambda^2 + m_l^2}\right]
+\end{equation}
+for $f = 1, \ldots, N_F$. The $m_s \neq 0$ prefactor is included to make $\mathcal{M}$ RG-invariant.
+    \item This quantity or its susceptibility $\chi_l(T) = 2 \frac{\partial \langle \bar{\psi}_l \psi_l \rangle}{\partial m_l}$, with $l = u,d$, is studied extensively (as shown in Figs.~\ref{fig:chi_cond},\ref{fig:chi_sus}) to ascertain the transition temperature.
+\end{itemize}
+
+\begin{figure}
+\includegraphics[max width=0.6\textwidth, center]{fig-notes-029.jpg}
+\caption{Schematic of the chiral condensate as a function of temperature.\label{fig:chi_cond}
+}
+\end{figure}
+\begin{figure}
+
+\includegraphics[max width=0.6\textwidth, center]{fig-notes-027.jpg}
+\caption{Schematic of the susceptibility of the chiral condensate as a function of temperature.\label{fig:chi_sus}}
+\end{figure}
+\begin{itemize}
+    \item Careful analysis shows that in $2 + 1$ flavour QCD the chiral crossover temperature for physical quark masses is $T_c = 155(10) \text{ MeV}$.
+    \item The chiral symmetry restoration transition is studied more generally, leading to the picture depicted in Fig.~\ref{fig:chi_sym_rest} [Ding et al 1504.05274]
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig-notes-028.jpg}
+    \caption{A diagram of the behavior of chiral symmetry restoration as a function of the quark masses.
+    \label{fig:chi_sym_rest}}
+\end{figure}
+
+\section{Axial symmetry restoration}
+\begin{itemize}
+    \item $U_A(1)$ symmetry is anomalous and is broken in QCD at zero temperature by topologically non-trivial configurations of the gluon field. It is expected to be restored at high temperature as the importance of instantons decreases due to screening of colour charge.
+        \item There is no order parameter for $U_A(1)$ restoration but under a $U_A(1)$ transformation $\vec{\pi} = \bar{\psi} \gamma_5 \vec{\tau} \psi \rightarrow \bar{\psi} \vec{\tau} \psi = a_1$, so if it is restored the pion and $a_1$ mesons should be degenerate. The quantity
+\begin{equation}
+    \chi_A = \sum_n (\langle \pi^+(n) \pi^-(0) \rangle - \langle a_1^\dagger(n) a_1(0) \rangle) = \int_0^\infty \text{d}\lambda \frac{4 m_l^2 \rho(\lambda)}{(\lambda^2 + m_l^2)^2}
+\end{equation}
+indeed shows interesting behavior, shown in Fig.~\ref{fig:asr}, falling to zero somewhat above $T_C$.
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig-notes-081.png}
+    \caption{The quantity characterising the nondegeneracy between the pion and the $a_1$ as a function of temperature, showing axial symmetry restoration above $T_C$.
+        \label{fig:asr}}
+\end{figure}
+
+\section{Critical end point}
+
+\begin{itemize}
+    \item A key goal of QCD thermodynamics is to determine the position and nature of the critical point at $\mu \neq 0$ at which the $1$st order phase transition starts
+    \item Nonzero $\mu_q$ is problematic and only limited information can be obtained. Methods include:
+    \begin{itemize}
+        \item Use imaginary chemical potential and analytically continue to real $\mu$
+        \item Taylor expand about $\mu = 0$ using susceptibilities and estimate radius of convergence using $\chi^n/\chi^{n-2}$ since the critical point is a singularity
+        \item reweighting: consider a partition function that treats the chemical potential as part of the observable
+    \end{itemize}
+\end{itemize}
+\begin{align}
+    \langle \mathcal{O} \rangle_\mu &= \frac{\int \text{d} U \operatorname{det} D(\mu) e^{-S} \mathcal{O}}{\int \text{d} U \operatorname{det} D(\mu) e^{-S}} = \frac{\int \text{d} U \operatorname{det} D(\mu=0) e^{-S} \frac{\operatorname{det}D(\mu)}{\operatorname{det}D(0)} \mathcal{O}}{\int \text{d} U \operatorname{det} D(\mu=0) e^{-S} \frac{\operatorname{det}D(\mu)}{\operatorname{det}D(0)} } \nonumber \\
+    &= \frac{\left \langle \frac{\operatorname{det}D(\mu)}{\operatorname{det}D(0)} \mathcal{O}\right \rangle_{\mu=0}}{\left \langle \frac{\operatorname{det}D(\mu)}{\operatorname{det}D(0)} \right \rangle_{\mu=0}}
+\end{align}
+\begin{itemize}
+    \item None of these approaches work extremely well but by using them there are some indications of the position of the CEP
+\end{itemize}
+
+\section{ Transport Properties}
+\begin{itemize}
+    \item In order to characterise the properties of the QGP, the way in which the medium responds to excitations ($=$ transport properties) can be investigated by looking at correlation functions between local operators
+    \item For example, taking two vector currents $J_\mu(x) = \bar{q}\gamma_\mu q$,
+\begin{align}
+    G_{VV}^{\alpha \beta}(\vec{p}, t) &= \int \text{d}^3 x e^{i \vec{p}\cdot \vec{x}}\langle J^\alpha(0)J^\beta(\vec{x},t)\rangle \nonumber \\
+    &= \int \frac{\text{d} \omega}{2 \pi}\rho_{VV}^{\alpha \beta}(\omega, \vec{p}) K(\omega, t),  \quad \text{where }\  K(\omega, t) = \frac{\cosh (\omega(t - 1/2T))}{\sinh(\omega/2T)}
+\end{align}
+defines the spectral function $\rho_{VV}$
+Note that this requires undoing the Legendre transformation to get $\rho$. In terms of this, the electrical conductivity is given by
+\begin{equation}
+    \sigma = \frac{1}{6}\sum_f Q_f^2 \lim_{\omega \to 0} \lim_{|\vec{p}|\to 0} \sum_{i=1}^3 \frac{\rho_{VV}^{ii}(\omega, \vec{p}, T)}{\omega}
+\end{equation}
+
+    \item Using two energy momentum tensors as currents,
+\begin{align}
+    G^{\mu \nu \rho \sigma} &= \int \text{d}^3 x e^{i p x} \langle T^{\mu \nu}(0) T^{\rho \sigma}(\vec{x}, t) \rangle \nonumber \\
+    &= \int \frac{\text{d} \omega}{2 \pi}\rho^{\mu \nu \rho \sigma}(\omega, \vec{p}) K(\omega, t)
+\end{align}
+the sheer and bulk viscosities are then given by
+\begin{align}
+    \eta &= \pi \lim_{\omega \to 0} \lim_{\vec{p}\to 0} \frac{\rho^{1212}(\omega, \vec{p})}{\omega}\nonumber \\
+    \xi &= \frac{\pi}{9} \lim_{\omega \to 0} \lim_{\vec{p} \to 0}\sum_{k,l}\frac{\rho^{kk ll}(\omega, \vec{p})}{\omega}
+\end{align}
+
+    \item We could also compute entanglement entropy along similar lines. {\color{red} TO DO}
+\end{itemize}
