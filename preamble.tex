@@ -44,3 +44,14 @@
     {\medskip\noindent\textbf{Solution:} #2\par}%
   \fi
   \vspace{2mm}\hrule\medskip}
+
+% ---------------------------------------------------------------------------
+% Figure-redraw review: original sketch beside proposed redraw. Once a redraw
+% is approved, replace \redrawcompare{old}{new} by \includegraphics{new}.
+\newcommand{\redrawcompare}[2]{%
+  \begin{minipage}[c]{0.48\linewidth}\centering
+    \includegraphics[width=\linewidth]{#1}\\[1mm]{\scriptsize notes original}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.48\linewidth}\centering
+    \includegraphics[width=\linewidth]{#2}\\[1mm]{\scriptsize proposed redraw}
+  \end{minipage}}
