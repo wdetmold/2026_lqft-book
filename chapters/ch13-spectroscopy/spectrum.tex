@@ -2,19 +2,19 @@
 %% [migrated] heading absorbed into chapter wrapper: Hadron spectroscopy
 
 \begin{itemize}
-    \item A central property of QCD is the spectrum of stable particles, defined by the lowest energy state of each set of unique quantum numbers that are preserved by QCD:
+    \item A central property of QCD is the spectrum of stable particles\aidx{hadron spectrum}, defined by the lowest energy state of each set of unique quantum numbers that are preserved by QCD:
 \end{itemize}
 \begin{equation}
     \pi, K, D, B, D_s, B_s, B_c, p, n, \Lambda, \Sigma, \ldots, d, {}^3\text{He}, {}^3_\Lambda\text{He}, \ldots, T_{cc}^+(cc \bar{u}\bar{d})
 \end{equation}
 \begin{itemize}
-    \item For resonances (``particles'' that are unstable) in Minkowski space, it is possible to extract information about them from the excited states at finite volume
+    \item For resonances (``particles'' that are unstable) in Minkowski space, it is possible to extract information about them from the excited states\aidx{excited states} at finite volume
 \end{itemize}
 
 \section{Interpolating operators}
 
 \begin{itemize}
-    \item The simplest way to determine such energies is through calculation of a two-point correlation function involving ``interpolating operators'' that create and destroy states with the appropriate quantum numbers from the vacuum state
+    \item The simplest way to determine such energies is through calculation of a two-point correlation function\aidx{correlation function!two-point} involving ``interpolating operators\aidx{interpolating operator}'' that create and destroy states with the appropriate quantum numbers from the vacuum state
     \begin{itemize}
         \item Quantum numbers are: baryon number, strangeness, charmness, bottomness, isospin ($I^2, I_z$ - assuming $m_u = m_d$, otherwise charge), parity, lattice spatial symmetries (reflections, discrete rotations: $H(3) \subset O(3)$) \& total $3-$momentum
         \item For a given set of quantum numbers, the Hilbert space of states in a lattice field theory is infinite dimension since the bosonic fields on each site can take an infinite number of values. On a computer, since the discretised, compactified lattice system has finite number of degrees of freedom and the field operator basis $\{ |\Phi_i(n) \rangle = \hat{\Phi}_i(n) | \Omega \rangle\}$ is finite dimensional due to numerical precision, the Hilbert space is finite dimensional, but very large.
@@ -22,7 +22,7 @@
     \end{itemize}
     \item Simple interpolating operators are local products of fields (here we work with Dirac fermions)
 \end{itemize}
-First, we consider the (negative) charged pion:
+First, we consider the (negative) charged pion\aidx{interpolating operator!pion}:
 \begin{equation}
     \pi^-(n) = \bar{u}(n)\gamma_5 d(n) = \bar{u}_\alpha^a (\gamma_5)_{\alpha \beta}d_\beta^a
 \end{equation}
@@ -31,7 +31,7 @@ First, we consider the (negative) charged pion:
     \item $\pi^-(n) \underset{P}{\rightarrow} \bar{u}(p_n) \gamma_4 \gamma_5 \gamma_4 d(p_n) = - \bar{u}(p_n) \gamma_5 d(p_n) = -\pi^-(p_n)$, so this is parity odd (where $p_n \equiv (-\vec{n}, n_t)$
     \item $\pi^- \underset{C}{\rightarrow} - u^T C \gamma_5 C^{-1} \bar{d}^T = - u^T \gamma_5^T \bar{d}^T = \bar{d} \gamma_5 u = \pi^+(n)$, as expected (with $C = \gamma_2 \gamma_4$).
 \end{itemize}
-Now we consider the proton:
+Now we consider the proton\aidx{interpolating operator!proton}:
 \begin{align}
     p_\gamma(x) &= \varepsilon_{abc}(u^{Ta}(x)C\gamma_5 d^b(x)) u^c_\gamma(x) \nonumber \\
     &= \varepsilon_{abc} u_\alpha^a (C \gamma_5)_{\alpha \beta} d_\beta^b u_\gamma^c
@@ -40,7 +40,7 @@ Now we consider the proton:
     \item This has $J = 1/2 \Rightarrow G_1$ representation of the double cover of $H(3)$ since the $(u^T C \gamma_5 d)$ antisymmetrises the spins of $\{u,d\}$ making a spin$-0$ diquark
     \item $P:$ not fixed $p_\gamma(n) \underset{P}{\rightarrow} \gamma_4 p_\gamma(p_n)$, but $p_\delta (1 \pm \gamma_4)_{\delta \gamma}$ has $P = \pm 1$
 \end{itemize}
-And finally the deuteron ($B=2, J=1, I=0$):
+And finally the deuteron\aidx{interpolating operator!deuteron} ($B=2, J=1, I=0$):
 \begin{align}
     d_i(n) &= p_\gamma^T(n) (C {\gamma_i})_{\gamma \delta} n_\delta(n) \nonumber \\
     &= \varepsilon_{abc} \varepsilon_{def} (u^{T a} C \gamma_5 d^b) (u^{T c} C \gamma_i d^f) (d^{T d} C \gamma_5 u^e),
@@ -94,14 +94,14 @@ where $f_i$ runs over the quarks and antiquarks in $H$, but even for $N_q = 2$ t
 \end{equation}
 \begin{itemize}
     \item To be gauge covariant, ${}^SH(\vec{m}, \vec{n}; n_t, \{U\})$ must be a parallel transporter from $(\vec{m}, n_t)$ to $(\vec{n}, n_t)$, $\Rightarrow$ the interpolators are gauge invariant
-    \item One simple smearing (wall smearing) that can be implemented cheaply by first gauge fixing to Coulomb gauge is to project quarks to a fixed momentum
+    \item One simple smearing (wall smearing\aidx{smearing!wall}) that can be implemented cheaply by first gauge fixing to Coulomb gauge\aidx{gauge fixing!Coulomb} is to project quarks to a fixed momentum
 \end{itemize}
 \begin{equation}
      {}^{\vec{p}}H_{\alpha \beta}^{a b}(\vec{m}, \vec{n}; n_t, \{U\}) = \delta_{a b} \delta_{\alpha \beta} e^{i \vec{p} \cdot \vec{m}}
 \end{equation}
 (a quark of fixed $3-$momentum is only the same thing on all configs in this gauge)
 \begin{itemize}
-    \item An example of a gauge covariant smearing is Jacobi smearing
+    \item An example of a gauge covariant smearing\aidx{smearing} is Jacobi smearing\aidx{smearing!Jacobi}
 \end{itemize}
 \begin{equation}
     H = K^{-1} = \frac{1}{1 - \kappa D_S}
@@ -115,13 +115,13 @@ Note that in practice this is applied iteratively (see below) rather than as an 
     \item In Eq.~\eqref{eq:smear}, the sum over quarks and antiquarks is minimally over the valence content of the state (e.g. $\{ u,d\}$ for a $\pi^-$) but can easily be extended beyond that
     \begin{itemize}
         \item For a meson, the simplest operator might be $\bar{q} \Gamma q$, but other operators such as $\bar{q} \Gamma q \bar{q} \Gamma' q$ may have larger overlap onto particular eigenstates
-        \item Glueballs may have enterpolating operators constructed entirely from gauge invariant combinations of links. They also have overlap with isoscalar quark interpolators
-        \item Closed paths of links can be added to any operator and may increase the overlap factors for particular states
+        \item Glueballs\aidx{interpolating operator!glueball} may have enterpolating operators constructed entirely from gauge invariant combinations of links. They also have overlap with isoscalar quark interpolators
+        \item Closed paths of links can be added to any operator and may increase the overlap factors\aidx{overlap factor} for particular states
     \end{itemize}
 \end{itemize}
 \section{Two point correlation functions}
 \begin{itemize}
-    \item Given interpolating operators, the bilocal two-point function (pion case)
+    \item Given interpolating operators\aidx{interpolating operator}, the bilocal two-point function\aidx{correlation function!two-point} (pion case)
 \end{itemize}
 
 \begin{align}
@@ -142,7 +142,7 @@ This is represented diagrammatically in Fig.~\ref{fig:two_pt_pion}.
 \end{figure}
 
 \begin{itemize}
-    \item For a proton, need a bit more care so there are multiple possible Wick contractions
+    \item For a proton, need a bit more care so there are multiple possible Wick contractions\aidx{Wick contractions}
 \end{itemize}
 \begin{align}
     \langle \tilde{\chi}_{p \alpha}(\vec{p},t) \bar{\tilde{\chi}}_{p \beta}(\vec{p}, 0) \rangle \Gamma_{\beta \alpha} 
@@ -168,7 +168,7 @@ Computation is done in a number of steps
     \begin{equation}
         {}^S \mathcal{S}_\alpha^a(\vec{x}, t ; \vec{x}_0, t_0, a_0, \alpha_0) = {}^S H_{\alpha \alpha_0}^{a a_0}(\vec{x}, t;\vec{x}_0, t_0, \{U\}) \delta_{t t_0} \delta_{a a_0} \delta_{\alpha \alpha_0}
     \end{equation}
-    \item Solve for the smeared-source, unsmeared-sink  (LS) propagator using CG etc
+    \item Solve for the smeared-source, unsmeared-sink  (LS) propagator using CG etc\aidx{algorithm!conjugate gradient}
     \begin{equation}
         D {}^{LS}S = {}^S \mathcal{S}
     \end{equation}
@@ -178,13 +178,13 @@ Computation is done in a number of steps
     \end{equation}
     where smearing is applied iteratively with $\kappa, n$ as parameters: ${}^S \mathcal{S}^{(n)} = \mathcal{S}_0 + \kappa D_S {}^S \mathcal{S}^{(n-1)}$
     
-    \item Contract propagators together to form appropriate correlation functions
+    \item Contract propagators together to form appropriate correlation functions\aidx{correlation function}
 \end{enumerate}
 
 \section{Flavour singlet states}
 
 \begin{itemize}
-  \item A correlation function for a flavour singlet set of quantum numbers presents an additional complication. Consider
+  \item A correlation function for a flavour singlet\aidx{flavour singlet states} set of quantum numbers presents an additional complication. Consider
 \end{itemize}
 \begin{align}
     \sum_{\vec{x}} \langle \bar{q}(\vec{x},t) \Gamma q(\vec{x}, t) \bar{q}(\vec{0},0)\Gamma' q(\vec{0}, 0) \rangle &\sim \sum_{\vec{x}} \bigg\{ \operatorname{tr}[\Gamma S_q(\vec{x},t;\vec{0},0)\Gamma' S_q(\vec{0},0;\vec{x},t)] \nonumber \\
@@ -199,10 +199,10 @@ and these contributions are shown diagrammatically in Fig~\ref{fig:fss}
     \label{fig:fss}
 \end{figure}
 \begin{itemize}
-    \item The first term is just like the $\pi^-$ case above, but the second requires knowledge of the quark propagator from every point to itself which would require solution of $V$ linear systems and is infeasible
+    \item The first term is just like the $\pi^-$ case above, but the second requires knowledge of the quark propagator\aidx{quark propagator} from every point to itself\aidx{disconnected contributions} which would require solution of $V$ linear systems and is infeasible
     \item There are multiple methods for estimating the trace of the inverse of a matrix: $\operatorname{tr}[D^{-1}]$ where the trace is over space(time) and Dirac/colour indices
     \begin{itemize}
-        \item Hutchinson trace estimation: given a set of $N_H$ random $\mathbb{Z}_2$ vectors $\{z_{(i)}\}$ distributed such that for each entry $z_{(i)j}$, $j \in \{ 1, \ldots, N_d N_c V \}$, $\text{Pr}(z_j = \pm 1) = \frac{1}{2}$ then
+        \item Hutchinson trace estimation\aidx{trace estimation!Hutchinson}: given a set of $N_H$ random $\mathbb{Z}_2$ vectors $\{z_{(i)}\}$ distributed such that for each entry $z_{(i)j}$, $j \in \{ 1, \ldots, N_d N_c V \}$, $\text{Pr}(z_j = \pm 1) = \frac{1}{2}$ then
         \begin{equation}
             \operatorname{tr}[A] = \frac{1}{N_H}\sum_i z_{(i)}^T A z_{(i)} + \mathcal{O}(\frac{1}{\sqrt{N_H}})
         \end{equation}
@@ -210,22 +210,22 @@ and these contributions are shown diagrammatically in Fig~\ref{fig:fss}
         \begin{equation}
             \operatorname{tr}[f(A)] = \frac{1}{N_H}\sum_i z_{(i)}^T f(A) z_{(i)} + \mathcal{O}(\frac{1}{\sqrt{N_H}})
         \end{equation}
-        \item For efficiency this is typically combined with ``dilution'' in which for each $\mathbb{Z}_2$ vector, non-zero values are only allowed in a subset of elements
+        \item For efficiency this is typically combined with ``dilution\aidx{trace estimation!dilution}'' in which for each $\mathbb{Z}_2$ vector, non-zero values are only allowed in a subset of elements
         \item Other variants of the noise (i.e. not $\mathbb{Z}_2$) are also used
-        \item The current state-of-the-art is known as hierarchical probing but the details are omitted
+        \item The current state-of-the-art is known as hierarchical probing\aidx{trace estimation!hierarchical probing} but the details are omitted
     \end{itemize}
     \item Whatever method is used, the numerical cost is large compared to that required for flavour non-singlets
-    \item Access to flavour singlet spectrum is important for glueball spectroscopy in QCD since gluonic interpolating operators mix with flavour singlet quark operators and in understanding the $\eta'$ mass and the Witten-Veneziano formula
+    \item Access to flavour singlet spectrum is important for glueball spectroscopy\aidx{interpolating operator!glueball} in QCD since gluonic interpolating operators\aidx{interpolating operator} mix with flavour singlet quark operators and in understanding the $\eta'$ mass and the Witten-Veneziano formula\aidx{Witten-Veneziano formula}
     \begin{equation}
         m_{\eta'}^2(m_q = 0) = \frac{4 N_f}{f_0^2}\chi_\infty,
     \end{equation}
-    where $f_0$ is the singlet decay constant and $\chi_\infty$ is the topological susceptibility in YM $\chi_\infty \sim \langle Q^2 \rangle$.
+    where $f_0$ is the singlet decay constant and $\chi_\infty$ is the topological susceptibility\aidx{topological susceptibility} in YM $\chi_\infty \sim \langle Q^2 \rangle$.
 \end{itemize}
 
 \section{The transfer operator}
 \begin{itemize}
-    \item The transfer operator $(\hat{T} = e^{- a \hat{H}})$ governs the Euclidean time evolution of correlation functions and is applicable to propagate states between timeslices of the lattice geometry provided no operators are on these timeslices
-    \item A given two-point function (with $\tilde \chi_a(\vec{p}, t) = \sum_{\vec{x}} e^{i \vec{p} \cdot \vec{x}} \chi_a(\vec{x}, t)$):
+    \item The transfer operator\aidx{transfer operator} $(\hat{T} = e^{- a \hat{H}})$ governs the Euclidean time evolution of correlation functions\aidx{correlation function} and is applicable to propagate states between timeslices of the lattice geometry provided no operators are on these timeslices
+    \item A given two-point function\aidx{correlation function!two-point} (with $\tilde \chi_a(\vec{p}, t) = \sum_{\vec{x}} e^{i \vec{p} \cdot \vec{x}} \chi_a(\vec{x}, t)$):
 \end{itemize}
 \begin{align}
     C(\vec{p}, t) &= \frac{1}{Z}\operatorname{Tr}\left(e^{-\hat{H} T}\tilde{\chi}_a(\vec{p}, t) \chi_b^\dagger(\vec{0}, 0) \right) \nonumber \\
@@ -237,24 +237,24 @@ and these contributions are shown diagrammatically in Fig~\ref{fig:fss}
 \end{align}
 where for a complete set of eigenstates of $\hat H$, $\sum_n |n\rangle\langle n|=\mathbb{I}$, and in the last step we have used that $\chi_a(\vec{x}, 0) = e^{-i \hat{p} \cdot \vec{x}} \chi_a(\vec{0}, 0) e^{i \hat{p} \cdot \vec{x}}$, and we define the matrix elements on the last line to be $Z_{nm}^a$ and $Z_{nm}^{b \dagger}$, respectively.
 
-Taking the large $T$ limit forces $|m \rangle \rightarrow |\Omega \rangle$, the vacuum state, with $\vec{p}_m = \vec{0}$ and the partition function $Z \rightarrow 1$. The sum $\sum_x \rightarrow \delta(\vec{p} - \vec{p}_n)$ since $\vec{p}_m = \vec{0}$ and, choosing $\chi_a = \chi_b = \chi$ for simplicity, this yields
+Taking the large $T$ limit forces $|m \rangle \rightarrow |\Omega \rangle$, the vacuum state, with $\vec{p}_m = \vec{0}$ and the partition function\aidx{partition function} $Z \rightarrow 1$. The sum $\sum_x \rightarrow \delta(\vec{p} - \vec{p}_n)$ since $\vec{p}_m = \vec{0}$ and, choosing $\chi_a = \chi_b = \chi$ for simplicity, this yields
 \begin{align}
     &= \sum_{n(\vec{p})}\exp(-E_n(\vec{p})t)  | \langle \Omega | \chi | n(\vec{p}) \rangle |^2 \nonumber \\
     &= \sum_n | Z_n(\vec{p})|^2 e^{-E_n(\vec{p})t},
 \end{align}
 where $Z_n(\vec{p})$ is referred to as the ``overlap'' of $\chi$ onto state $|n\rangle$.
 
-That is, up to the effects of the finite temporal extent (which can also be included), the existence of a positive definite transfer matrix guarantees that correlation functions are weighted sums of exponentials in $t$ and if the source and sink are identical they are sums with positive coefficients
+That is, up to the effects of the finite temporal extent (which can also be included), the existence of a positive definite transfer matrix\aidx{transfer matrix} guarantees that correlation functions are weighted sums of exponentials in $t$ and if the source and sink are identical they are sums with positive coefficients
 
 \begin{itemize}
     \item Typically the stochastic estimates of the time series $C(\vec{p}, t)$ are used to extract the lowest energy $E_0(\vec{p})$ of the given quantum numbers which requires constraining a single exponential to the large-time behaviour of $C(\vec{p},t)$ (NB: fits must account for the correlations between different timeslices in $C(t)$)
-    \item More sophisticated fitting strategies (and precise data) allow excited state energies $E_n(\vec{p})$, $n> 0$, to be determined but it becomes increasingly challenging and is formally an ill-posed problem as the number of unknown energies is larger than the extent of any time series that can be calculated
+    \item More sophisticated fitting strategies (and precise data) allow excited state energies\aidx{excited states} $E_n(\vec{p})$, $n> 0$, to be determined but it becomes increasingly challenging and is formally an ill-posed problem as the number of unknown energies is larger than the extent of any time series that can be calculated
     \item ``Thermal effects'' from the finite temporal extent of the lattice geometry are incorporated by incorporating contributions where $|m \rangle \neq | \Omega \rangle$ in Eq.~\eqref{eq:c2}. For these contributions, hadronic states propagate through/around the temporal boundary and care must be taken to implement time-reversal correctly
 \end{itemize}
 
 \section{Matrices of correlation functions}
 \begin{itemize}
-    \item Given a set of quantum numbers, many interpolating operators can be constructed. It is possible to make use of a set of operators $\{\chi_1, \ldots, \chi_p \}$ to form a matrix of correlation functions
+    \item Given a set of quantum numbers, many interpolating operators\aidx{interpolating operator} can be constructed. It is possible to make use of a set of operators $\{\chi_1, \ldots, \chi_p \}$ to form a matrix of correlation functions\aidx{correlation function}
 \end{itemize}
 \begin{equation}
     C_{ij}(\vec{p}, t) = \langle \tilde{\chi}_i(\vec{p}, t) \tilde{\chi}^\dagger_j(\vec{p}, 0) \rangle,
@@ -263,8 +263,8 @@ which by translational symmetry is equal to $\langle \tilde{\chi}_i(\vec{p}, t) 
 
 \begin{itemize}
     \item By construction the matrix $C$ is Hermitian (after averaging over samples)
-    \item A variational approach can be used to construct the linear combination of the $\chi_i$'s that best interpolates to a particular state
-    \item This can be phrased as a generalised eigenvalue problem
+    \item A variational approach\aidx{variational method} can be used to construct the linear combination of the $\chi_i$'s that best interpolates to a particular state
+    \item This can be phrased as a generalised eigenvalue problem\aidx{generalised eigenvalue problem}
 \end{itemize}
 
 \begin{equation}
@@ -285,18 +285,18 @@ where
 \end{equation}
 \begin{itemize}
     \item Note that in order for the variational approach to be guaranteed to determine the spectrum, the set of operators must form a basis for the Hilbert space which is vastly impractical. The results of the variational approach are however rigorous upper bounds on the energies of states of the system.
-    \item Matrices of correlation functions can also be analysed using fits to constrained sums of exponentials
+    \item Matrices of correlation functions\aidx{correlation function!matrix of} can also be analysed using fits to constrained sums of exponentials
     \item Matrices (or vectors) of correlation functions that are not hermitian (or even not square) provide information about the states of the system but given the lack of symmetry between the source and sink, do not provide rigorous upper bounds and should be interpreted as stochastic estimators of energies that may be biased away from the $t \rightarrow \infty$ limit
     \begin{itemize}
         \item Useful techniques here are: matrix-Prony, generalised-pencil-of-functions
     \end{itemize}
-    \item Linear combinations of interpolating operators can also be optimised for other goals such as reducing the sample variance (see later)
+    \item Linear combinations of interpolating operators can also be optimised for other goals such as reducing the sample variance\aidx{correlation function!statistical behaviour} (see later)
 \end{itemize}
 
 \section{Rayleigh-Ritz methods}
 
 \begin{itemize}
-  \item A single correlation function corresponds to to matrix element of the transfer matrix. Here we assume a symmetric correlation function
+  \item A single correlation function corresponds to to matrix element of the transfer matrix\aidx{transfer matrix}\aidx{transfer operator}. Here we assume a symmetric correlation function
 
 \begin{equation}
 \begin{aligned}
@@ -305,7 +305,7 @@ C(t) & =\langle \Omega| \psi(t) \psi^{\dagger}(0)|\Omega\rangle \\
 \end{aligned}
 \end{equation}
 where $|\psi\rangle=\psi(0)|\Omega\rangle$
-  \item We can use the correlation function to generate a Kryloy space
+  \item We can use the correlation function to generate a Kryloy space\aidx{linear solver!Krylov}
 
 
 \begin{equation}
@@ -324,7 +324,7 @@ C(i+j)=\left\langle k_{i} \mid k_{j}\right\rangle=\langle\psi| T^{i+j}|\psi\rang
 
 Now, \(\left|k_{i}\right\rangle\) are not eigenstates of \(T\), so \(G_{i j} \neq \delta_{i j}\)
 
-  \item Introduce Cholesky decomposition \(G=L^{\dagger} L\) and define
+  \item Introduce Cholesky decomposition\aidx{Rayleigh-Ritz method} \(G=L^{\dagger} L\) and define
 \begin{equation}
 \left| v_{i}\right\rangle=\sum_j(L^{-1})_{ji} \left|k_j\right\rangle
 \end{equation}
@@ -339,19 +339,19 @@ and
 where $T^{(m)}$ is the $m^{\text{th}}$ iteration approximation to $\hat T$
 
   \item Eigenvalues of \(T^{(m)} \underset{m \rightarrow \infty}{\rightarrow}\) eigenvalues of \(T\)
-  \item Extract by solving the Generalised Eigenvalue Problem (GEVP)
+  \item Extract by solving the Generalised Eigenvalue Problem (GEVP)\aidx{generalised eigenvalue problem}
 
 \begin{equation}
 M \vec{g}_{k}=\lambda_{k} G \vec{g}_{k}
 \end{equation}
 
-  \item Can be extended to asymmetric correlation functions and to matrices of correlation function [see 2503.17357]
+  \item Can be extended to asymmetric correlation functions\aidx{correlation function} and to matrices of correlation function [see 2503.17357]
 \end{itemize}
 
 
 \section{Statistical behaviour of correlation functions}
 \begin{itemize}
-    \item Since the Monte Carlo approach provides stochastic estimators of correlation functions it is important to understand their statistical behaviour
+    \item Since the Monte Carlo approach provides stochastic estimators of correlation functions\aidx{correlation function} it is important to understand their statistical behaviour
     \item Defining a single sample of a correlation function as $\mathcal{C}(t)$ such that 
 \end{itemize}
 \begin{equation}
@@ -361,12 +361,12 @@ where the mean is the correlation function estimator
 \begin{equation}
     C(t) = \langle \mathcal{C}(t) \rangle = \frac{1}{N}\sum_i^N \mathcal{C}_i(t) = \hat{C}(t) + \mathcal{O}\left(\frac{1}{\sqrt{N}}\right),
 \end{equation}
-where $\hat{C}(t)$ is the exact correlation function, and the sample variance is given by
+where $\hat{C}(t)$ is the exact correlation function, and the sample variance\aidx{correlation function!statistical behaviour} is given by
 \begin{equation}
     \text{var}(C(t)) = \langle | \mathcal{C}(t)|^2 \rangle - |\langle \mathcal{C}(t) \rangle | ^2
 \end{equation}
 \begin{itemize}
-    \item Since QCD is local, far separated regions of spacetime larger than any physical length scale are effectively decorrelated, volume averaging (in which correlation functions are computed in distinct regions) can be used as a means to construct an improved estimator. In the $V \rightarrow \infty$ limit, a single ``master field'' configuration is all that is required but only in the limit - away from $V = \infty$, you must sample sufficiently
+    \item Since QCD is local, far separated regions of spacetime larger than any physical length scale are effectively decorrelated, volume averaging\aidx{volume averaging} (in which correlation functions are computed in distinct regions) can be used as a means to construct an improved estimator. In the $V \rightarrow \infty$ limit, a single ``master field\aidx{master field}'' configuration is all that is required but only in the limit - away from $V = \infty$, you must sample sufficiently
     \item The large time behaviour of the above estimator can be assessed as follows (Parisi and Lepage originated the simplest form of this argument)
     \begin{itemize}
         \item given $\mathcal{O}$ and $\tilde{\mathcal{O}}$, the mean
@@ -409,14 +409,14 @@ where $E_{|\mathcal{O}|^2}$ is the energy of the lowest state $|n\rangle$ such t
     \end{itemize}
     \item Note that these estimates ignore interactions in the $| \mathcal{O}|^2$ case
     \item The exponential decrease in signal to noise is borne out in data
-    \item There is a close but not fully quantified connection between this signal-to-noise problem at the sign problem at finite density
+    \item There is a close but not fully quantified connection between this signal-to-noise problem\aidx{signal-to-noise ratio} at the sign problem at finite density\aidx{sign problem}
 \end{itemize}
 
 
 \section{The state -of - the -art}
 \begin{itemize}
-    \item The low energy stable states in the hadron spectrum are reproduced to few percent accuracy $(\pi, K, p, \Lambda, \Lambda_b, \ldots)$ - THIS IS A BIG DEAL! IT IS NECESSARY EVIDENCE THAT QCD DESCRIBES THE STRONG INTERACTIONS
-    \item In the bottom and charm sectors, a number of LQCD predictions have been verified
+    \item The low energy stable states in the hadron spectrum\aidx{hadron spectrum} are reproduced to few percent accuracy $(\pi, K, p, \Lambda, \Lambda_b, \ldots)$ - THIS IS A BIG DEAL! IT IS NECESSARY EVIDENCE THAT QCD DESCRIBES THE STRONG INTERACTIONS
+    \item In the bottom and charm sectors, a number of LQCD\aidx{lattice QCD (LQCD)} predictions have been verified
     \item The isospin splittings from $m_u \neq m_d$ and QED have been investigated by a number of groups and agree with experiment for e.g. $m_n - m_p$
-    \item The state of the art using variational methods extracts $\mathcal{O}(20)$ states of the given system 
+    \item The state of the art using variational methods\aidx{variational method} extracts $\mathcal{O}(20)$ states of the given system 
 \end{itemize}

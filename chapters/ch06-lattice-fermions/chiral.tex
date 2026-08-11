@@ -1,21 +1,21 @@
 \section{Chiral symmetry \& lattice fermions}
 
 \begin{itemize}
-  \item Approximate chiral symmetry is crucial to phenomenology of QCD. For $N_f = 3$ ``light'' flavours of quarks $(m_f < \Lambda_\text{QCD} \sim \text{typical QCD scale} \sim m_\text{proton})$ there is an approximate
+  \item Approximate chiral symmetry\aidx{chiral symmetry} is crucial to phenomenology of QCD. For $N_f = 3$ ``light'' flavours of quarks $(m_f < \Lambda_\text{QCD} \sim \text{typical QCD scale} \sim m_\text{proton})$ there is an approximate
 \end{itemize}
 
 \begin{equation}
 S U_{L}\left(N_{f}\right) \times \operatorname{SU}_{R}\left(N_{f}\right) \times U_{V}(1) \times U_{A}(1)
 \end{equation}
 
-symmetry of the lagrangian. Quark masses break the symmetry explicitly but even for \(m_{q}=0\), the strong dynamics of QCD spontaneously breaks the symmetry
+symmetry of the lagrangian. Quark masses break the symmetry explicitly but even for \(m_{q}=0\), the strong dynamics of QCD spontaneously breaks\aidx{spontaneous symmetry breaking} the symmetry
 
 \begin{equation}
 S U_{L}\left(N_{f}\right) \times S U_{R}\left(N_{f}\right) \times U_{V}(1) \times U_{A}(1) \rightarrow S U_{V}\left(N_{f}\right) \times U_{V}(1)
 \end{equation}
 
 \begin{itemize}
-  \item Spontaneous symmetry breaking is characterised by a nonzero expectation value for the chiral condensate
+  \item Spontaneous symmetry breaking\aidx{chiral symmetry!spontaneous breaking} is character\aidx{characters (group)}ised by a nonzero expectation value for the chiral condensate\aidx{chiral condensate}
 \end{itemize}
 
 \begin{equation}
@@ -23,14 +23,14 @@ S U_{L}\left(N_{f}\right) \times S U_{R}\left(N_{f}\right) \times U_{V}(1) \time
 \end{equation}
 
 \begin{itemize}
-    \item SSB leads to the appearance of Goldstone bosons which would be massless if $m_q \neq 0$ but remain very light even for $m_q^\text{phys}$. In nature, the pseudoscalar meson octet $(\pi^0, \pi^+, \pi^-, K^-, K^0, \bar{K}^0, K^+, \eta)$ are very light compared to typical hadrons such as the proton
-    \item Although the QCD action has an axial $U_A(1)$ symmetry classically, this is broken by quantum effects (anomalous) since the path integral measure is not invariant (the Adler-Bell-Jackiw anomaly)
+    \item SSB leads to the appearance of Goldstone bosons which would be massless if $m_q \neq 0$ but remain very light even for $m_q^\text{phys}$. In nature, the pseudoscalar meson octet\aidx{Goldstone bosons} $(\pi^0, \pi^+, \pi^-, K^-, K^0, \bar{K}^0, K^+, \eta)$ are very light compared to typical hadrons such as the proton
+    \item Although the QCD action has an axial $U_A(1)$ symmetry classically, this is broken by quantum effects (anomalous) since the path integral\aidx{path integral} measure is not invariant (the Adler-Bell-Jackiw anomaly\aidx{axial anomaly})
 \end{itemize}
 
 \begin{equation}
 \partial_{\mu} J_{A}^{\mu}=-2 i m \bar{\psi}{\gamma_{5}} \psi+\frac{g^{2}}{16 \pi^{2} }\varepsilon_{\mu \nu \rho \sigma} F_{\mu \nu} F_{\rho \sigma},
 \end{equation}
-where the last term is anomalous and can be derived using Fujikawa's method.
+where the last term is anomalous and can be derived using Fujikawa's method\aidx{Fujikawa's method}.
 
 \begin{itemize}
   \item It is important that lattice discretisations are able to reproduce this physics
@@ -39,14 +39,14 @@ where the last term is anomalous and can be derived using Fujikawa's method.
       \item Wilson removed doublers but explicitly broke chiral symmetry
       \item Staggered fermions reduced doublers ($2^{D/2}$ rather than $2^D$) and maintained some chiral symmetry
   \end{itemize}
-  \item Another way around NN no-go theorem is to redefine chiral symmetry
-  \item Based on RG blocking, Ginsparg and Wilson noted that chiral symmetry would be recoverd in the continuum if at finite lattice spacing
+  \item Another way around NN no-go theorem\aidx{Nielsen-Ninomiya theorem} is to redefine chiral symmetry
+  \item Based on RG blocking, Ginsparg and Wilson noted that chiral symmetry would be recoverd in the continuum if at finite lattice spacing\aidx{lattice spacing}
 \end{itemize}
 
 \begin{equation}
 \boxed{\left\{D, \gamma_{5}\right\}=a D \gamma_{5} D},
 \end{equation}
-where $D$ is a lattice Dirac operator. This is known as the Ginsparg-Wilson relation.
+where $D$ is a lattice Dirac operator\aidx{Dirac operator}. This is known as the Ginsparg-Wilson relation\aidx{Ginsparg-Wilson relation}.
 
 \begin{itemize}
   \item Requiring the GW relation rather than \(\left\{D, \gamma_{5}\right\}=0\) allows a chiral symmetry to be defined at \(a \neq 0\). The appropriate symmetry was found by L\"uscher: for a Dirac spinor
@@ -71,7 +71,7 @@ where we have used from GW that
     D \gamma_5 \left(1- \frac{a}{2}D\right) + \left(1 - \frac{a}{2}D\right)\gamma_5 D = 0
 \end{equation}
 \begin{itemize}
-  \item Defining modified chiral projectors as
+  \item Defining modified chiral projectors\aidx{chiral symmetry!lattice (L\"uscher)} as
 \end{itemize}
 
 \begin{equation}
@@ -130,7 +130,7 @@ m\left(\bar{\psi}_{L} \psi_{R}+\bar{\psi}_{R} \psi_{L}\right)=m \bar{\psi}\left(
 \left\{\gamma_{5}, D\right\}=a D {\gamma_5} R D
 \end{equation}
 
-for a local operator \(R\) (strictly ultra-local = exponentially localised)\\
+for a local operator \(R\) (strictly ultra-local = exponentially localised\aidx{locality (of lattice Dirac operators)})\\
 Immediately this implies
 
 \begin{equation}
@@ -146,7 +146,7 @@ D+D^{\dagger}=a D^{\dagger} R D \quad \text { where } D^{\dagger}=\gamma_{5} D \
 \left\{\gamma_5, D^{-1}(x, y)\right\}=a \gamma_{5} \delta(x-y)
 \end{equation}
 
-which means that the fermion propagator only violates chirality locally
+which means that the fermion propagator\aidx{fermion propagator} only violates chirality locally
 
 \begin{itemize}
   \item Spectrum of $D$
@@ -163,7 +163,7 @@ Also, since \(\slashed{D} \gamma_5 = - \gamma_5 \slashed{D}, \quad \gamma_5 |v_\
 \end{equation}
 
 and non-zero eigenvalues are paired\\
-For the zero modes $\slashed{D}|v_0^{(i)}\rangle = 0$, $\slashed{D}\gamma_5 | v_0^{(i)}\rangle = 0$ so $\gamma_5|v_0^{(i)}\rangle$ is also a zero mode and in this subspace we can choose zero modes such that they are eigenstates of \(\gamma_5\) too
+For the zero modes\aidx{zero modes (of Dirac operator)} $\slashed{D}|v_0^{(i)}\rangle = 0$, $\slashed{D}\gamma_5 | v_0^{(i)}\rangle = 0$ so $\gamma_5|v_0^{(i)}\rangle$ is also a zero mode and in this subspace we can choose zero modes such that they are eigenstates of \(\gamma_5\) too
 
 \begin{equation}
 \gamma_{5}\left|v_{0}^{(i)}\right\rangle= \pm\left|v_{0}^{(i)}\right\rangle
@@ -172,7 +172,7 @@ For the zero modes $\slashed{D}|v_0^{(i)}\rangle = 0$, $\slashed{D}\gamma_5 | v_
 (eigenvalues \(= \pm 1\), since \(\gamma_{5}^{2}=1\) and \(\gamma^\dagger_5=\gamma_5\) )
 
 \begin{itemize}
-  \item For a lattice Dirac operator obeying the GW relation, \(\gamma_{5}\)-hermiticity constrains the spectrum to have real or complex conjugate eigenvalues. Eigenvalues of \(D\) are determined by
+  \item For a lattice Dirac operator obeying the GW relation, \(\gamma_{5}\)-hermiticity\aidx{gamma5Hermiticity@$\gamma_5$-Hermiticity} constrains the spectrum to have real or complex conjugate eigenvalues. Eigenvalues of \(D\) are determined by
 \end{itemize}
 \begin{equation}
     P(\lambda) = \operatorname{det}(D-\lambda I) = \operatorname{det}(\gamma_5^2D - \lambda I) = \operatorname{det}(D^\dagger - \lambda I) = \operatorname{det}(D - \lambda^* I)^* = P^*(\lambda^*),
@@ -203,7 +203,7 @@ and writing $\lambda = x+iy$ this yields
 \begin{equation}
     \left(x-\frac{1}{a}\right)^2 + y^2 = \frac{1}{a^2}.
 \end{equation}
-This is the equation of a circle on which the doubler modes must all live, shown in Fig.~\ref{fig:doubler_circle}. The only real solutions are $\lambda = 0, \frac{2}{a}$ and doubler modes all live at $2/a$.
+This is the equation of a circle on which the doubler modes\aidx{fermion doubling} must all live, shown in Fig.~\ref{fig:doubler_circle}. The only real solutions are $\lambda = 0, \frac{2}{a}$ and doubler modes all live at $2/a$.
 \begin{figure}
     \centering
     \redrawcompare{fig-notes-076.png}{fig-redraw-076.pdf}
@@ -275,27 +275,27 @@ Thus for a quantity
 \begin{equation}
 \langle\theta\rangle=\frac{1}{2} \int \mathcal{D} \bar{\psi}\mathcal{D}\psi \theta[\psi, \bar{\psi}] e^{S},
 \end{equation}
-where the action $S$ obeys the GW relation, the variation under a flavour singlet axial transformation is
+where the action $S$ obeys the GW relation, the variation under a flavour singlet\aidx{flavour singlet states} axial transformation is
 
 \begin{equation}
 \langle\delta \theta\rangle=-a\operatorname{tr}\left[\gamma_{5} D\right]\langle\theta\rangle
 \end{equation}
 
 \begin{itemize}
-    \item Just as in Fujikawa's method in the continuum, the ABJ anomaly arises from the measure rather than a change in the action. For Wilson fermions, it can be shown that the ABJ anomaly is reproduced via the variation of the action under chiral transformation (for which the measure is invariant). Note: Unlike in Fujikawa's method in the continuum, the set of eigenvalues of $D$ is finite in the lattice-regulated theory, so $\operatorname{Tr}[\gamma_5] = \sum_\text{modes}(\operatorname{tr}[\gamma_5] = 0)$. Note also that any symmetry that is exact on the lattice will be exact in the continuum limit, while any symmetry that is anomalous in the continuum must be broken on the lattice
+    \item Just as in Fujikawa's method in the continuum, the ABJ anomaly arises from the measure rather than a change in the action. For Wilson fermions\aidx{fermions!Wilson}, it can be shown that the ABJ anomaly is reproduced via the variation of the action under chiral transformation (for which the measure is invariant). Note: Unlike in Fujikawa's method in the continuum, the set of eigenvalues of $D$ is finite in the lattice-regulated theory, so $\operatorname{Tr}[\gamma_5] = \sum_\text{modes}(\operatorname{tr}[\gamma_5] = 0)$. Note also that any symmetry that is exact on the lattice will be exact in the continuum limit\aidx{continuum limit}, while any symmetry that is anomalous in the continuum must be broken on the lattice
 \end{itemize}
 
 \section{The overlap operator}
 
 \begin{itemize}
-  \item Neuberger (following work of Narayanan\& Neuberger) introduced the overlap Dirac operator that explicitly satisfies the GW relation
+  \item Neuberger (following work of Narayanan\& Neuberger) introduced the overlap Dirac operator\aidx{Dirac operator}\aidx{fermions!overlap} that explicitly satisfies the GW relation\aidx{Ginsparg-Wilson relation}
 \end{itemize}
 
 \begin{equation}
 D_{O}=\frac{1}{a}\left(1+\gamma_{5} \operatorname{sign}(H)\right), \quad H=\gamma_{5} A
 \end{equation}
 
-where \(A\) is a \(\gamma_{5}\)-Hermitian kernel often based on the Wilson Dirac operator: \(A=a D_{W}-(1+s)\) with $s \in (-1, 1)$. Note that realizing this construction would work was very nontrivial.\\
+where \(A\) is a \(\gamma_{5}\)-Hermitian kernel often based on the Wilson Dirac operator\aidx{fermions!Wilson}: \(A=a D_{W}-(1+s)\) with $s \in (-1, 1)$. Note that realizing this construction would work was very nontrivial.\\
 This can also be written as
 \begin{equation}
     D_O = \frac{1}{a}\left(1 + \gamma_5 H / \sqrt{H^2}\right),
@@ -315,7 +315,7 @@ which is well-defined since $H^2 = \gamma_5 A \gamma_5 A = A^\dagger A$.
 \end{align}
 
 \begin{itemize}
-    \item The overlap operator looks non-local since it involves $(H^2)^{-1/2}$, but it is in fact ``local'' in the sense that for sufficiently smooth fields
+    \item The overlap operator looks non-local\aidx{locality (of lattice Dirac operators)} since it involves $(H^2)^{-1/2}$, but it is in fact ``local'' in the sense that for sufficiently smooth fields
 \end{itemize}
 \begin{equation}
     |D_O(n,m)| \leq C \exp{(-\gamma|n-m|)},
@@ -331,7 +331,7 @@ where $\gamma$ is a fixed distance in lattice units, and in particular $C,\gamma
 \end{align}
 where $\overset{\circ}k_\mu \equiv \frac{1}{a}\sin(a k_\mu)$ and $\hat{k}_\mu = \frac{2}{a}\sin(\frac{a}{2}k_\mu)$. This is an analytic function of $k$ inside $\mathcal{B}$ and is periodic; it is invertible everywhere in $\mathcal{B}$ except at $k_\mu = (0,0,0,0)$, and for $k$ near $(0,0,0,0)$, $\tilde{D}_O(k) \sim i \gamma_\mu k_\mu + \mathcal{O}(a^2)$
 \begin{itemize}
-  \item The overlap operator maps the spectrum of its kernel operator onto the GW circle discussed above (see Fig.~\ref{fig:overlap_gw_circle})
+  \item The overlap operator maps the spectrum of its kernel operator onto the GW circle\aidx{Ginsparg-Wilson relation!eigenvalue circle} discussed above (see Fig.~\ref{fig:overlap_gw_circle})
   \item Numerically implementing \(D_{O}\) is non-trivial and expensive as the sign function must be approximated carefully
 \begin{figure}
     \centering
@@ -344,7 +344,7 @@ where $\overset{\circ}k_\mu \equiv \frac{1}{a}\sin(a k_\mu)$ and $\hat{k}_\mu = 
 \section{Domain Wall Fermions}
 
   \begin{itemize}
-  \item Somewhat before the development of overlap fermions, Kaplan introduced domain-wall fermions that approximately satisfy the GW relation (they satisfy it exactly in a limit)
+  \item Somewhat before the development of overlap fermions, Kaplan introduced domain-wall fermions\aidx{fermions!domain-wall} that approximately satisfy the GW relation\aidx{Ginsparg-Wilson relation} (they satisfy it exactly in a limit)
   \item The fundamental idea behind DWF is best explored first in the continuum. Consider a free fermion in $5$D Euclidean spacetime with coordinates $(x_\mu, s)$. This satisfies the Dirac equation
 \end{itemize}
 \begin{equation}
@@ -428,7 +428,7 @@ where
 \begin{equation}
     D = M[1 - \gamma_5 \text{sign}(Q)], \qquad Q = \gamma_5(M - \gamma_\mu \partial_\mu)
 \end{equation}
-which is the $4$D overlap operator!
+which is the $4$D overlap operator\aidx{fermions!overlap}!
 \begin{itemize}
     \item Now consider a $5$D lattice $\Lambda_{5D} = \Lambda \times Z_{N_5}$ with $N_5$ sites in the $5$th dimension (See Blum et al hep-lat/0007038). The DWF action is (this formulation follows Shamir and Furman\& Shamir)
 \end{itemize}
@@ -446,7 +446,7 @@ where $D_W$ is the $4$D Wilson operator with mass $M_5$ ($[0 \leq M_5 \leq 2]$ f
 \end{equation}
 Here, $m$ will turn out to be the light fermion mass and the $1-\delta$ terms block hopping to the boundary slices if $m=0$. $D_5^{(DW)}$ is independent of the gauge field.
 \begin{itemize}
-    \item For $m=0$, the spectrum contains one RH Weyl fermion near the $s=0$ boundary and a LH Weyl fermion near the $s = N_5 - 1$ boundary. The spectrum also contains a tower of massive states that extend across the $5$th dimension with masses $\mathcal{O}(M)$
+    \item For $m=0$, the spectrum contains one RH Weyl fermion\aidx{fermions!Weyl} near the $s=0$ boundary and a LH Weyl fermion near the $s = N_5 - 1$ boundary. The spectrum also contains a tower of massive states that extend across the $5$th dimension with masses $\mathcal{O}(M)$
     \item The $4$D fields we are interested in can be defined as
 \end{itemize}
 \begin{align}
@@ -460,7 +460,7 @@ so for example the scalar bilinear is built from modes coupling between boundari
 which is exactly the structure of the \(m\) term in \(D_{5}^{(\text{DW})}\)
 
 \begin{itemize}
-  \item Since the massive modes extending across the $5$th dimension are unwanted, Furman \& Shamir introduced bosonic Pauli-Villars fields to explicitly cancel them:
+  \item Since the massive modes extending across the $5$th dimension are unwanted, Furman \& Shamir introduced bosonic Pauli-Villars\aidx{Pauli-Villars fields} fields to explicitly cancel them:
 \end{itemize}
 \begin{equation}
     Z_{DWF} = \int \mathcal{D}\bar{\Psi}\mathcal{D}\Psi\mathcal{D}U\mathcal{D}\bar{\Phi}\mathcal{D}\Phi \exp[-S_{DWF}[\bar{\Psi},\Psi,U]-S_{PF}[\bar{\Phi}, \Phi, U] - S_G[U]]
@@ -491,7 +491,7 @@ where $H$ is related to $\gamma_5 D_W$ (in a somewhat complicated way, but it wo
 In the limit $N_5 \rightarrow \infty$, $\tanh \rightarrow \operatorname{sign}$, so the right hand side of Eq.~\eqref{eq:det_rat} goes to $\operatorname{det}(D_{O})$ which is the contribution of a single massless fermion.
 
 \begin{itemize}
-  \item To compute correlation functions in \(4 D\) which are those we care about, the relation of the $4$D fields to the $5$D fields must be used
+  \item To compute correlation functions\aidx{correlation function} in \(4 D\) which are those we care about, the relation of the $4$D fields to the $5$D fields must be used
 \end{itemize}
 \begin{equation}
     \langle \mathcal{O}(\psi, \bar{\psi}) \rangle = \frac{1}{Z_{DWF}} \frac{\delta}{\delta \eta} \ldots \frac{\delta}{\delta \bar{\eta}}Z_{DWF}[\eta, \bar{\eta}]|_{\eta=\bar{\eta}=0}
@@ -504,15 +504,15 @@ where
 has the sources coupling to the physical chiral field combinations
 
 \begin{itemize}
-    \item DW fermions are approximately chirally symmetric for $m = 0$. Due to the overlap of the RH and LH modes localised at the boundaries for $N_5 \neq \infty$, there is a ``residual mass'' that is generated which vanishes exponentially fast with $N_5 \rightarrow \infty$.
-    \item DWF work because there is no chiral symmetry in $D = $odd dimensional spacetimes [there is no ``$\gamma_5$'' additional object in the Clifford algebra]
+    \item DW fermions are approximately chirally symmetric for $m = 0$. Due to the overlap of the RH and LH modes localised at the boundaries for $N_5 \neq \infty$, there is a ``residual mass\aidx{residual mass}'' that is generated which vanishes exponentially fast with $N_5 \rightarrow \infty$.
+    \item DWF work because there is no chiral symmetry\aidx{chiral symmetry} in $D = $odd dimensional spacetimes [there is no ``$\gamma_5$'' additional object in the Clifford algebra]
 \end{itemize}
 
 \section{Other chiral fermions}
 \begin{itemize}
-  \item There are a few other fermion discretisations that (approximately) satisfy the GW relation
+  \item There are a few other fermion discretisations that (approximately) satisfy the GW relation\aidx{Ginsparg-Wilson relation}
   \begin{itemize}
-  \item Perfect / fixed-point fermions (more later)
-  \item Chirally improved fermions: expand general action in terns of paths and tune coeffs to satisfy GW relation
+  \item Perfect / fixed-point fermions\aidx{fermions!fixed-point (perfect)} (more later)
+  \item Chirally improved fermions\aidx{fermions!chirally improved}: expand general action in terns of paths and tune coeffs to satisfy GW relation
   \end{itemize}
 \end{itemize}

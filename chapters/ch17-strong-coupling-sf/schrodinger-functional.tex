@@ -2,7 +2,7 @@
 \label{sec:schrodinger_functional}
 \begin{itemize}
   \item Time-evolution kernel in Schr\"odinger representation of QFT
-  \item given a field basis \(\{|A\rangle\}\), a wave functional is
+  \item given a field basis \(\{|A\rangle\}\), a wave functional\aidx{wave functional} is
 \begin{equation}
     \psi[A]=\langle A \mid \psi\rangle
 \end{equation}
@@ -32,8 +32,8 @@ is the Schr\"odinger functional and depends on the initial and final field confi
 \end{equation}
 
 
-which is a partition function for a QFT on a manifold with a boundary \({\cal M}=T^{3} \times[0, T]\) (a 3+1-dimensional cylinder)
-with boundary conditions that
+which is a partition function\aidx{partition function} for a QFT on a manifold with a boundary \({\cal M}=T^{3} \times[0, T]\) (a 3+1-dimensional cylinder)
+with boundary conditions\aidx{Schrödinger functional!boundary conditions} that
 
 \begin{equation} 
 \widetilde{A}(x)_{x_{0}=0}=A(\vec{x}), \quad\widetilde{A}(x)_{x_{0}=T}=A'(\vec{x})
@@ -41,7 +41,7 @@ with boundary conditions that
 
 
   \item Break translational symmetry in \(t\)
-  \item Requires boundary fields for renormalisability (finite set of couterterms) and shown to be multiplicativly renormalisable
+  \item Requires boundary fields for renormalisability\aidx{Schrödinger functional!renormalisability} (finite set of couterterms) and shown to be multiplicativly renormalisable
   
   \item For QCD, boundary conditions are
 
@@ -63,7 +63,7 @@ P_L\left.\psi(x)\right|_{x_{0}=T}=\rho^{\prime} \\
 
 
 Eg: Abelian spatially constant field and trivial configuration for the fermions
-(toron configuration)
+(toron configuration\aidx{toron configuration})
 
 \begin{equation}
     C_{k}=\frac{i}{L}\left(\begin{array}{ccc} \phi_{1}&&\\ & \phi_{2} &\\&& \phi_{3}\end{array}\right), \qquad 
@@ -81,14 +81,14 @@ with
 \phi_{3}=-\eta / 2+\frac{\pi}{3}, & \phi_{3}^{\prime}=-\phi_{2}+2 \pi / 3
 \end{array}
 \end{equation}
-which depend on a single parameter $\eta$ that defines a twist (note that $\text{tr}(C_k)=\text{tr}(C'_k)=0$) and this corresponds to a spatially constant background chromo-electric field \(G_{0 k}=\partial_{0} B_{k}=\frac{C_{k}-C_{k}^{\prime}}{L}\) (linear interpolation)
+which depend on a single parameter $\eta$ that defines a twist\aidx{twisted Schrödinger functional scheme} (note that $\text{tr}(C_k)=\text{tr}(C'_k)=0$) and this corresponds to a spatially constant background chromo-electric field\aidx{background chromo-electric field} \(G_{0 k}=\partial_{0} B_{k}=\frac{C_{k}-C_{k}^{\prime}}{L}\) (linear interpolation)
 
 \end{itemize}
 
 \section{Operator renormalisation}
 
 \begin{itemize}
-  \item Correlation functions can be built from boundary fields
+  \item Correlation functions can be built from boundary fields\aidx{Schrödinger functional!boundary conditions}
 
 \begin{equation}
 \begin{array}{lll}
@@ -100,7 +100,7 @@ which depend on a single parameter $\eta$ that defines a twist (note that $\text
 
 (the boundary values \(\rho, \bar{\rho}, \rho^{\prime}, \bar{\rho}^\prime\) ' act as external source)
 
-  \item Gauge invariant bilinear boundary sources
+  \item Gauge invariant bilinear boundary sources\aidx{Schrödinger functional!boundary sources}
 
 \begin{equation}
 \begin{aligned}
@@ -148,9 +148,9 @@ f_{P, R}\left(x_{4}\right)=Z_{\zeta}^{2} Z_{P} f_{P}\left(x_{4}\right), \qquad f
 \section{Schr\"odinger-functional coupling}
 
 \begin{itemize}
-  \item Can also give a non-perturbative coupling definition over may order of magnitude
-  \item Use step-scaling to define the coupling in a twisted Schr\"odinger-functional scheme
-  \item Impose above background chromo-electric field by using nontrivial fixed boundaries in time parameterised by the twist \(\eta\)
+  \item Can also give a non-perturbative coupling definition\aidx{running coupling} over may order of magnitude
+  \item Use step-scaling\aidx{step scaling} to define the coupling in a twisted Schr\"odinger-functional scheme
+  \item Impose above background chromo-electric field\aidx{background chromo-electric field} by using nontrivial fixed boundaries in time parameterised by the twist \(\eta\)
   \item At a classical level
 
 \begin{equation}
@@ -167,11 +167,11 @@ where $A(\eta)$ is known. Here the coupling is the response to variation of the 
 \begin{equation}
 g^{-2}(L)=\frac{1}{A(\eta)}\left\langle\frac{d \Gamma}{d \eta}\right\rangle=\#\langle\text { boundary plaquettes }\rangle
 \end{equation}
-where the effective action \(\Gamma=-\ln Z\left[C, C^{\prime}\right]\) and is derivative is a sum of boundary plaquettes
+where the effective action\aidx{effective action} \(\Gamma=-\ln Z\left[C, C^{\prime}\right]\) and is derivative is a sum of boundary plaquette\aidx{plaquette}s\aidx{Schrödinger functional!coupling}
 
-\item Note that this works at \(m_{q}=0\) as the boundary fields remove the zero mode
+\item Note that this works at \(m_{q}=0\) as the boundary fields\aidx{Schrödinger functional!boundary conditions} remove the zero mode\aidx{zero mode, removal of}\aidx{zero modes (of Dirac operator)}
 
-  \item Define a step scaling function $\sigma(u)$  via
+  \item Define a step scaling function\aidx{step scaling!function $\sigma(u)$} $\sigma(u)$  via
 \begin{equation}
    \sigma(u)=\lim _{a/L \rightarrow 0} \Sigma(u, a / L)
 \end{equation}
@@ -190,7 +190,7 @@ The step-scaling function is an integrated form of \(\beta(g)\)
 
 \item To determine this quantity
 \begin{enumerate}
-    \item Perform calculation with bare coupling \(g_{0}\) and \(m_{0}\) and box size \(L\) and compute \(u=g^{2}(L)\). Use same $(g_0,m_0)_1$ and box size \(2 L\), determining \(\Sigma(u, a / L)\)
+    \item Perform calculation with bare coupling\aidx{coupling!bare} \(g_{0}\) and \(m_{0}\) and box size \(L\) and compute \(u=g^{2}(L)\). Use same $(g_0,m_0)_1$ and box size \(2 L\), determining \(\Sigma(u, a / L)\)
 \item Repeat for new \(\left(g_{0}, m_{0}\right)_{2}\) and  the same physical box size \(L\) but differed \(N=L / a\). Calculate with \(2 L\) to give \(\Sigma\left(u,(a / L)^{\prime}\right)\)
 \item Repeat for \(\left(g_0, m_{0}\right)_3\), etc and extrapolate to \(a / L \rightarrow 0\) to get \(\sigma(u)\) for the given \(u\)\\
 \item Repeat for range of \(u=g^{-2}(L)\)

@@ -29,7 +29,7 @@ where $\varphi=\varphi(\vec{x}, t) $
 \end{equation}
 
   \item Following what we did for quantum mechanics, we shall discretise time but we also will discretise space
-  \item Define a $Z^d$ spatial lattice of points separated by a distance $a$ (the lattice spacing)
+  \item Define a $Z^d$ spatial lattice of points separated by a distance $a$ (the lattice spacing\aidx{lattice spacing})
 \begin{equation}
 \begin{aligned}
 & \vec{x} \rightarrow a \vec{n} \quad n_{i} \in\{0,1, \ldots, N-1\},\ i\in\{1,\ldots,d\} \\
@@ -38,7 +38,7 @@ where $\varphi=\varphi(\vec{x}, t) $
 \end{equation}
 
   \item Physical extent $L=Na$ in each direction and spatial volume\(V_{d}=L^{d}\)\\
-  \item Assume spatially periodic boundary conditions: identify \(n_{i}=N\) with \(n_{i}=0\)
+  \item Assume spatially periodic boundary conditions\aidx{Schrödinger functional!boundary conditions}\aidx{boundary conditions!periodic}: identify \(n_{i}=N\) with \(n_{i}=0\)
   \item Discretisation replaces derivatives by finite differences and integrals by sums, for example
 
 \begin{equation}
@@ -81,13 +81,13 @@ and
 \langle\varphi | \pi\rangle=\left(\frac{a^{d}}{2 \pi}\right)^{N^d / 2} \exp \left[i a^{d} \sum_{\vec{n} \in \Lambda_{d}} \pi(\vec{n}) \varphi(\vec{n})\right].
 \end{equation}
 
-  \item Now let us consider imaginary time evolution as before
+  \item Now let us consider imaginary time\aidx{imaginary time} evolution as before
 
 \begin{equation}
 \exp (-\tau \hat{H})=\lim _{N_{\tau} \rightarrow \infty}(\hat{T}(\varepsilon))^{N_{T}} \quad \varepsilon=\frac{\tau}{N_{T}}
 \end{equation}
 
-with the transfer matrix operator
+with the transfer matrix\aidx{transfer operator} operator\aidx{transfer matrix}
 
 \begin{equation}
 \hat{T}(\varepsilon)=\exp \left(-\frac{\varepsilon}{2} \hat{U}\right) \exp \left(-\varepsilon \hat{H}_{0}\right) \exp \left(-\frac{\varepsilon}{2} \hat{U}\right)
@@ -139,7 +139,7 @@ and thus
 with \(C=\left(a^{d} / 2 \pi \varepsilon\right)^{N^{d} / 2}\)\\
 which depends on the fields on timeslice \(s\) and \(s+1\)
 
-  \item We can use this to construct the partition function or correlation functions (with $\tau=\varepsilon N_{\tau}$, $t=\varepsilon N_{t}$)
+  \item We can use this to construct the partition function\aidx{partition function} or correlation functions\aidx{correlation function} (with $\tau=\varepsilon N_{\tau}$, $t=\varepsilon N_{t}$)
 
 \begin{equation}
 \begin{aligned}
@@ -194,14 +194,14 @@ then we can write
 \end{aligned}
 \end{equation}
 
-  \item With a small change from the central difference in space that arose from canonical quantization to a forward difference, we can make space and time symmetric
+  \item With a small change from the central difference\aidx{finite difference!central} in space that arose from canonical quantization to a forward difference\aidx{finite difference!forward}, we can make space and time symmetric
 
 \begin{equation}
 S_{\varepsilon}[\varphi]=a^{d+1} \sum_{n_{\mu} \in \Lambda}\left\{\frac{1}{2 a^{2}} \sum_{v=1}^{d_{1}+1}\left[\varphi\left(n_{\mu}+\hat{v}\right)-\varphi\left(n_{\mu}\right)\right]^{2}+\frac{m^{2}}{2} \varphi\left(n_{\mu}\right)^{2}+V\left(\varphi\left(n_{\mu}\right)\right)\right\}
 \label{eq:scalar_euclidean_action}
 \end{equation}
 
-where \(\varphi\left(n_{\mu}\right)=\varphi_{n_{4}}(\vec{n})\). Note that we could also make all finite differences central differences, but that breaks reflection positivity.
+where \(\varphi\left(n_{\mu}\right)=\varphi_{n_{4}}(\vec{n})\). Note that we could also make all finite differences central differences, but that breaks reflection positivity\aidx{reflection positivity}.
 
   \item Defining \(\mathcal{D} \varphi=\prod_{s=0}^{N_{\tau}-1} \mathcal{D} \varphi_{s}=\prod_{s=0}^{N_{\tau}-1} \prod_{\vec{n}\in\Lambda_d} d \varphi_{s}(\vec{n})\)
 
@@ -224,8 +224,8 @@ and e.g.
 
 \begin{itemize}
   \item The quantity \(Z(\tau)\) above was constructed with the boundary condition that \(\varphi_{N_{t}}=\varphi_{0}\) (i.e. periodic in time)\\
-This was a mathematical convenience but has a close analogy with quantum statistical mechanics at non-zero temperature.
-  \item If \(\beta=(k T)^{-1}\) (with \(k=\) Boltzmann's constant) then the partition function
+This was a mathematical convenience but has a close analogy with quantum statistical mechanics\aidx{statistical mechanics, relation to} at non-zero temperature\aidx{temperature}.
+  \item If \(\beta=(k T)^{-1}\) (with \(k=\) Boltzmann's constant) then the partition function\aidx{partition function}
 
 \begin{equation}
 Z(\beta)=\operatorname{tr}\left(e^{-\beta \hat H}\right)
@@ -239,18 +239,18 @@ and thermal expectation values are
 
 for the physical temperature \(T\) with \(\varphi(x+\beta \hat{t})=\varphi(x)\)
 
-  \item For a lattice geometry with temporal extent \(N_{t}, \beta=a_{t} N_{t} \Rightarrow T=\frac{1}{k a_{t} N_{t}}\), where $a_t$ is the temporal lattice spacing
+  \item For a lattice geometry with temporal extent \(N_{t}, \beta=a_{t} N_{t} \Rightarrow T=\frac{1}{k a_{t} N_{t}}\), where $a_t$ is the temporal lattice spacing\aidx{lattice spacing}
   \item The temperature can be varied by changing the \# of sites in the temporal direction at fixed lattice spacing \(a_{t}\)
-  \item Alternatively one con consider an anisotropic discretisation which allows the spatial lattice spacing to be held fixed while the temporal extent is charges continuously for a fixed number of sites
-  \item For zero-temperature physics, in which $N_t\to\infty$, any boundary conditions can be chosen and lead to effects that are suppressed as $e^{-N_t}$. For example, Dirichelet boundary conditions are sometimes used in gauge theories as they allow gauge field topology to change 
+  \item Alternatively one con consider an anisotropic discretisation\aidx{lattice!anisotropic} which allows the spatial lattice spacing to be held fixed while the temporal extent is charges continuously for a fixed number of sites
+  \item For zero-temperature physics, in which $N_t\to\infty$, any boundary conditions\aidx{Schrödinger functional!boundary conditions} can be chosen and lead to effects that are suppressed as $e^{-N_t}$. For example, Dirichelet boundary conditions\aidx{boundary conditions!Dirichlet} are sometimes used in gauge theories as they allow gauge field topology to change 
   
   \end{itemize}
 
 \section{Free lattice scalar propagator}
 
 \begin{itemize}
-  \item Consider the action above \(\quad S_{E}[\varphi]=a^{d+1} \sum_{n_{\mu}\in\Lambda}\left\{\frac{1}{2 a^{2}} \sum_{v=1}^{d+1}\left[\varphi\left(n_{\mu}+\hat{\nu}\right)-\varphi\left(n_{\mu}\right)\right]^{2}+\frac{m^{2}}{2} \varphi\left(n_{\mu}\right)^{2}+V\left(\varphi\left(n_{\mu}\right)\right)\right\}\) with \(V=0\) in periodic boundary conditions
-  \item Can rewrite in terms of a Klein-Gordon operator
+  \item Consider the action above \(\quad S_{E}[\varphi]=a^{d+1} \sum_{n_{\mu}\in\Lambda}\left\{\frac{1}{2 a^{2}} \sum_{v=1}^{d+1}\left[\varphi\left(n_{\mu}+\hat{\nu}\right)-\varphi\left(n_{\mu}\right)\right]^{2}+\frac{m^{2}}{2} \varphi\left(n_{\mu}\right)^{2}+V\left(\varphi\left(n_{\mu}\right)\right)\right\}\) with \(V=0\) in periodic boundary conditions\aidx{Schrödinger functional!boundary conditions}\aidx{boundary conditions!periodic}
+  \item Can rewrite in terms of a Klein-Gordon operator\aidx{Klein-Gordon operator}
 
 \begin{equation}
 \begin{aligned}
@@ -300,7 +300,7 @@ and restoring dimensional quantities
 G_{p} \rightarrow a^{2} G(p) \quad G(p)=\frac{1}{m^{2}+a^{-2} \sum_{r}\left(2-2 \cos \left(a p_{\mu}\right)\right)} \xrightarrow{a \rightarrow 0} \frac{1}{\underbrace{m^{2}+p^{2}}_{\substack{\text { Euclidean free } \\ \text { propagator }}}}+\theta\left(a^{2}\right)
 \end{equation}
 
-  \item Defining the partition function with external source \(J\)
+  \item Defining the partition function\aidx{partition function} with external source \(J\)
 
 \begin{equation}
 Z[J]=\int \mathcal{D} \varphi \exp \left(-S+\sum_{k} \varphi_{k} J_{k}\right)
@@ -388,7 +388,7 @@ G(\vec{x}, t \rightarrow \infty) \sim e^{-m t}
 
 
 \section{The transfer matrix \& reflection positivity}
-The transfer matrix introduced above defines the time evolution of time-sliced fields
+The transfer matrix\aidx{transfer operator} introduced above defines the time evolution of time-sliced fields
 
 \begin{itemize}
   \item In the \(d+1\) dimensional setting, time-sliced fields are
@@ -398,7 +398,7 @@ The transfer matrix introduced above defines the time evolution of time-sliced f
 \phi_{s}=\left\{\varphi(x) \mid x_{4}=s\right\}
 \end{equation}
 
-and the Euclidean action (Eq.~\eqref{eq:scalar_euclidean_action}) can be separated as
+and the Euclidean action\aidx{action!Euclidean} (Eq.~\eqref{eq:scalar_euclidean_action}) can be separated as
 
 \begin{equation}
 S_{E}(\varphi)=\sum_{s=0}^{N_t-1} L\left[\phi_{s+1}, \phi_{s}\right]
@@ -434,7 +434,7 @@ takes states defined on one timeslice to the next.
 \end{equation}
 
 \begin{itemize}
-  \item The transfer matrix defines the lattice Hamiltonian through its matrix element or formally at an operator level
+  \item The transfer matrix defines the lattice Hamiltonian\aidx{Hamiltonian!lattice} through its matrix element or formally at an operator level
 \end{itemize}
 
 \begin{equation}
@@ -442,18 +442,18 @@ takes states defined on one timeslice to the next.
 \end{equation}
 
 \begin{itemize}
-  \item In order for a Euclidean QFT to have an analytic continuation to a well-defined Minkowski-space QFT, its Green functions (referred to as Schwinger functions) must satisfy various requirements (Osterwalder-Schrader axioms). 
+  \item In order for a Euclidean QFT to have an analytic continuation to a well-defined Minkowski-space QFT, its Green functions (referred to as Schwinger functions\aidx{Schwinger functions}) must satisfy various requirements (Osterwalder-Schrader axioms\aidx{Osterwalder-Schrader axioms}). 
   \begin{enumerate}
       \item Temperedness of Schwinger functions
       \item Euclidean covariance ($\langle {\cal O}(R\cdot x+a)\rangle=\langle {\cal O}(x)\rangle$ for $R\in SO(D),\ a\in \mathbb{R}^D$)
       \item (Reflection) positivity
       \item Symmetry: invariance under permutations
-      \item Cluster property ($\underset{\lambda\to\infty}{\lim}\langle {\cal O}(\lambda a)\tilde{\cal O}(0)\rangle-\langle{\cal O}(\lambda a)\rangle\langle\tilde{\cal O}(0)\rangle\to0$)
+      \item Cluster property\aidx{cluster property} ($\underset{\lambda\to\infty}{\lim}\langle {\cal O}(\lambda a)\tilde{\cal O}(0)\rangle-\langle{\cal O}(\lambda a)\rangle\langle\tilde{\cal O}(0)\rangle\to0$)
   \end{enumerate}
-  Most of these are analogous to the Wightman axioms of Minkowski field theory
+  Most of these are analogous to the Wightman axioms\aidx{Wightman axioms} of Minkowski field theory
   An important one related to time reversal (although Euclidean time is not special) is called reflection positivity of all Schwinger functions
-[NB: for scalar theories, OS reconstruction thm details how the Minkowski space theory can be built]
-  \item Euclidean time reflection is
+[NB: for scalar theories, OS reconstruction thm\aidx{Osterwalder-Schrader reconstruction theorem} details how the Minkowski space theory can be built]
+  \item Euclidean time reflection\aidx{reflection positivity} is
 \end{itemize}
 
 \begin{equation}
@@ -497,7 +497,7 @@ Which implies that
 \begin{equation}
  \sum_{j, k} \int d x_{1} \ldots d x_j d y_{1} \ldots d y_{k} f_{j}^{*}\left(x_{1}, \ldots x_{j}\right) f_{k}\left(y_{1} \ldots y_{k}\right)\left\langle\Omega\left|\theta \varphi\left(x_{1}\right) \ldots \theta \varphi\left(x_{j}\right) \varphi\left(y_{1}\right) \ldots \varphi\left(y_{k}\right)\right| \Omega \right\rangle\geq 0 
 \end{equation}
-or as a path integral 
+or as a path integral\aidx{path integral} 
 \begin{equation}
  \sum_{j,k} \int d x_{1} \ldots d x_{j} d y_{1} \ldots y_{k} f_{j}^{*}\left(x_{1}, \ldots x_{j}\right) f_{k}\left(y_{1}, \ldots y_{k}\right) \frac{1}{Z} \int \mathcal{D} \varphi \theta \varphi\left(x_{1}\right) \ldots \theta \varphi\left(x_{j}\right) \varphi\left(y_{1} \right) \ldots \varphi\left(y_{k}\right) e^{-S[\varphi]} \geqslant 0
  \label{eq:refpos_PI}
@@ -516,7 +516,7 @@ Then \(\Theta F=F^\ast\) and reflection positivity implies
 That is $\langle \Psi | \Psi \rangle \geq 0$,
 so the Hilbert space has a positive normal inner product.
 
-\item [(B)] Shift the same \(F\) by $n$ temporal lattice spacings in the positive direction to define \(F^{\prime}\) and \(\left|\Psi^{\prime}\right\rangle=F^{\prime}|\Omega\rangle\) and now \(\Theta F^{\prime}\) is separated from \(F^{\prime}\) by \(2 n\) temporal sites\\
+\item [(B)] Shift the same \(F\) by $n$ temporal lattice spacing\aidx{lattice spacing}s in the positive direction to define \(F^{\prime}\) and \(\left|\Psi^{\prime}\right\rangle=F^{\prime}|\Omega\rangle\) and now \(\Theta F^{\prime}\) is separated from \(F^{\prime}\) by \(2 n\) temporal sites\\
 But the transfer matrix connects
 
 \begin{equation}
@@ -529,11 +529,11 @@ So reflection positivity requires
 \left\langle\theta F^{\prime} F^{\prime}\right\rangle=\langle\Psi| T^{2 n}|\Psi\rangle \geqslant 0
 \end{equation}
 
-Thus \(\hat{T}^{2 n}=e^{-2 n a \hat{H}}\) must be a positive operator and hence eigenvalues of $\hat{H}$ are real.
+Thus \(\hat{T}^{2 n}=e^{-2 n a \hat{H}}\) must be a positive operator\aidx{transfer matrix} and hence eigenvalues of $\hat{H}$ are real.
 
 \end{enumerate}
 
-  \item Reflection positivity of all correlation functions ensures a Hilbert space and well-defined Hamiltonian (Hermitian in its Minkowski form) exists
+  \item Reflection positivity of all correlation functions\aidx{correlation function} ensures a Hilbert space and well-defined Hamiltonian (Hermitian in its Minkowski form) exists
   \item For the lattice scalar theory above, one can test reflection positivity in two ways:
 
 \begin{enumerate}
@@ -571,7 +571,7 @@ So the positivity criterion in path integral form, Eq.~\eqref{eq:refpos_PI}, is
 and we see that the positivity criterion is met.
 
   \item Reflection positivity is not guaranteed. Euclidean lattice theories without it are difficult to interpret
-  \item e.g. staggered fermions (later) are site reflection positive not link reflection positive so \(\hat{T}^{2}\) is positive \& real \& bounded but \(\hat{T}\) is not but still $\hat{T}^2 = e^{- 2 a \hat{H}}$ defines a Hermitian Hamiltonian after analytic continuation
+  \item e.g. staggered fermions\aidx{fermions!staggered} (later) are site reflection positive\aidx{reflection positivity!site reflection} not link reflection positive\aidx{reflection positivity!link reflection} so \(\hat{T}^{2}\) is positive \& real \& bounded but \(\hat{T}\) is not but still $\hat{T}^2 = e^{- 2 a \hat{H}}$ defines a Hermitian Hamiltonian after analytic continuation
   \item The scalar action with a symmetric finite difference in time contains terms $\phi_{\vec{n},n_4+1}\phi_{\vec{n},n_4-1}$ which break positivity. However the complex eigenvalues $\lambda$ of the resulting $\hat{H}$ have $\text{Re}(\lambda) \sim \frac{1}{a}$ so are expected to have negligible effects on low energy physics
 \end{itemize}
 \section{ $O(n)$ models}
@@ -594,9 +594,9 @@ and we see that the positivity criterion is met.
 where \(\Omega(\theta) \in O(n)\) parameterized by \(\vec{\theta} \quad\left[\Omega^{\top}(\theta) \Omega(\theta)=1\right]\)
 
 \begin{itemize}
-  \item Let is specify to a quartic potential \(\quad V=\frac{m_0^{2}}{2} \varphi^{T} \varphi+\frac{\lambda_0}{4}\left(\varphi^{T} \varphi\right)^{2}\) which is only bounded from below if \(\lambda_{0} \geqslant 0\)
+  \item Let is specify to a quartic potential\aidx{quartic potential} \(\quad V=\frac{m_0^{2}}{2} \varphi^{T} \varphi+\frac{\lambda_0}{4}\left(\varphi^{T} \varphi\right)^{2}\) which is only bounded from below if \(\lambda_{0} \geqslant 0\)
   \item If \(m_{0}^{2} \geqslant 0\), ground state has \(\langle\varphi\rangle=0\) and retains \(O(n)\) symmetry
-  \item If \(m_{0}^{2}<0\), potential is minimized at \(\varphi_{g}^{T} \varphi_{g}=\left|\varphi_{g}\right|^{2}=v^{2}=-m_{0}^{2} / \lambda_{0}>0\) and in infinite volume for $d \geq 2$ spatial dimensions the vacuum spontaneously breaks the $O(n)$ symmetry [Mermin-Wagner \& Coleman Theorems prohibit SSB in $d=0,1$] [no degenerate vacua in finite volume - Witten in QFT and Strings: a course for mathematicians]
+  \item If \(m_{0}^{2}<0\), potential is minimized at \(\varphi_{g}^{T} \varphi_{g}=\left|\varphi_{g}\right|^{2}=v^{2}=-m_{0}^{2} / \lambda_{0}>0\) and in infinite volume for $d \geq 2$ spatial dimensions the vacuum spontaneously breaks\aidx{chiral symmetry!spontaneous breaking}\aidx{spontaneous symmetry breaking} the $O(n)$ symmetry [Mermin-Wagner\aidx{Mermin-Wagner theorem} \& Coleman Theorems\aidx{Coleman theorem} prohibit SSB in $d=0,1$] [no degenerate vacua in finite volume - Witten in QFT and Strings: a course for mathematicians]
 
   \item Can add explicitly symmetry breaking terms
 \end{itemize}
@@ -634,7 +634,7 @@ m_{\sigma}^2=2 \lambda_0 v^2+\varepsilon / v, \qquad m_{\pi}^{2} \sim \varepsilo
 and for \(\varepsilon \rightarrow 0\), the \(\pi_{k}\) become massless
 
 \begin{itemize}
-  \item Discretising the theory using forward finite differences \(\left(\partial_{\mu} \varphi_{n}^{a}=\left(\varphi_{n+\hat{\mu}}^{a}-\varphi_{n}^{a}\right) / a\right)\) gives the action
+  \item Discretising the theory using forward finite difference\aidx{finite difference!forward}s \(\left(\partial_{\mu} \varphi_{n}^{a}=\left(\varphi_{n+\hat{\mu}}^{a}-\varphi_{n}^{a}\right) / a\right)\) gives the action
 \end{itemize}
 
 \begin{equation}
@@ -656,8 +656,8 @@ S=\sum_{n}\left\{-2 \kappa \sum_{\mu} \phi_{n}^{a} \phi_{n+\hat{\mu}}^{a}+\phi_{
 \begin{itemize}
   \item For \(\lambda \rightarrow \infty\) the last term forces \(|\phi|^{2}=1\) and the theory reduces to a spin system 
   \begin{itemize}
-      \item for $n=1$, this is the $d+1$-dimensional Ising model
-      \item for $n=3, d=2$ this is the $3d$ Heisenberg model
+      \item for $n=1$, this is the $d+1$-dimensional Ising model\aidx{Ising model}
+      \item for $n=3, d=2$ this is the $3d$ Heisenberg model\aidx{Heisenberg model}
   \end{itemize}
 \item In terms of the new parameters \(\kappa, \lambda\), we expect that
 
@@ -669,13 +669,13 @@ v \delta_{a 0} & |\kappa| > \kappa_{c}(\lambda)
 \end{array}\right.
 \end{equation}
 where $\kappa_{c}(\lambda=0)=1 / 8$ in $ D=4$
-and by mean field arguments the vev can be shown to behave as
+and by mean field arguments\aidx{mean field approximation} the vev\aidx{vacuum expectation value (vev)} can be shown to behave as
 
 \begin{equation}
 v^{2} \sim\left(\kappa-\kappa_{c}(\lambda)\right),
 \end{equation}
 
-vanishing smoothly as the critical line is approached\\
+vanishing smoothly as the critical line\aidx{critical line} is approached\\
 
 The argument goes as follows: consider a single site probability in the Ising mode limit ($\phi=\pm1$ only) with $\langle \phi_n\rangle=v\ne0$,
 \begin{equation}
@@ -690,7 +690,7 @@ where the last result follows from mean field ($\sum_\mu(\sigma_{n+\hat\mu}+\sig
 \end{equation}
 Expanding for small $v$: $v=16\kappa v (1-(16\kappa v)^2/3+\ldots))$ which for small $\kappa -\kappa_c>0$ gives $v=\pm\sqrt{48(\kappa-\kappa_c)}$ where $\kappa_c=1/16$ (the mean field Ising value - for $\kappa<\kappa_c$ there are no solutions).
 
-\item The schematic phase diagram is shown in  Fig.~\ref{fig:On_phase}
+\item The schematic phase diagram\aidx{phase diagram}\aidx{phase diagram!QCD} is shown in  Fig.~\ref{fig:On_phase}
 \begin{figure}
     \centering
     \redrawcompare{fig-notes-003.jpg}{fig-redraw-003.pdf}
@@ -699,8 +699,8 @@ Expanding for small $v$: $v=16\kappa v (1-(16\kappa v)^2/3+\ldots))$ which for s
 \end{figure}
 
 
-  \item Importantly the transition line is a second order phase transition (order parameter \(v\) is continuous but its derivative is not)
-  \item physical scales diverge when measured in lattice units as the critical line is approached and physics becomes independent of the discretisation - a continuum limit
+  \item Importantly the transition line is a second order phase transition\aidx{phase transition, second-order} (order parameter\aidx{order parameter} \(v\) is continuous but its derivative is not)
+  \item physical scales diverge when measured in lattice units as the critical line is approached and physics becomes independent of the discretisation - a continuum limit\aidx{continuum limit}
 \item However, we need to go beyond the mean field limit\\
 \end{itemize}
 
@@ -709,14 +709,14 @@ Expanding for small $v$: $v=16\kappa v (1-(16\kappa v)^2/3+\ldots))$ which for s
 \section{Weak coupling expansion}
 
 \begin{itemize}
-  \item Just like in continuum QFT, it is possible (and sometimes useful) to perform a perturbative expansion of the lattice regulated path integral (ie in the region shown in Fig.~\ref{fig:weak_phase}
+  \item Just like in continuum QFT, it is possible (and sometimes useful) to perform a perturbative expansion of the lattice regulated path integral\aidx{path integral} (ie in the region shown in Fig.~\ref{fig:weak_phase}
   \begin{figure}
       \centering
       \redrawcompare{fig-notes-004.jpg}{fig-redraw-004.pdf}
-      \caption{Region of phase diagram studied in the weak coupling expansion.
+      \caption{Region of phase diagram\aidx{phase diagram}\aidx{phase diagram!QCD} studied in the weak coupling expansion.
       \label{ig:weak_phase}}
   \end{figure}
-  \item From what we saw with the single component field, the free propagator in the case of $O(n)$ is given by
+  \item From what we saw with the single component field, the free propagator\aidx{scalar field!propagator} in the case of $O(n)$ is given by
 \end{itemize}
 
 \begin{equation}
@@ -724,7 +724,7 @@ G_{0}^{\alpha \beta}(p)=\frac{\delta_{\alpha \beta}}{m_{0}^{2}+2 \sum_{\mu}\left
 \end{equation}
 
 \begin{itemize}
-  \item Recall the vertex functions (one-particle irreducible $n$-point functions) are generated by the effective action
+  \item Recall the vertex functions (one-particle irreducible $n$-point functions) are generated by the effective action\aidx{Schrödinger functional!coupling}\aidx{effective action}
 \end{itemize}
 
 \begin{equation}
@@ -735,7 +735,7 @@ G_{0}^{\alpha \beta}(p)=\frac{\delta_{\alpha \beta}}{m_{0}^{2}+2 \sum_{\mu}\left
 
 where \(v=\langle\varphi\rangle\) is the classical minimum \(\left.\frac{\delta \Gamma}{\delta \bar{\varphi}}\right|_{\bar{\varphi}=v}=0\), dropping all flavor labels.
 
-This object is related to the partition function $Z[J]$, which generates all diagrams, as $W[J]\equiv-\log Z[J]$ generates all connected diagrams and $\Gamma$ is then the Legendre transform of $W$ ($\Gamma[\bar\varphi]=-\int dx \bar\varphi(x)J(x)+W[J]$).
+This object is related to the partition function\aidx{partition function} $Z[J]$, which generates all diagrams, as $W[J]\equiv-\log Z[J]$ generates all connected diagrams and $\Gamma$ is then the Legendre transform of $W$ ($\Gamma[\bar\varphi]=-\int dx \bar\varphi(x)J(x)+W[J]$).
 
 Note that
 
@@ -756,7 +756,7 @@ At tree level the classical action \(S[\bar{\varphi}]\) generates the tree level
 
 \begin{itemize}
   \item Our goal in perturbation theory is to determine the \(\Gamma^{(j)}\left(p_{1} \ldots p_{j}\right)\) order by order in couplings
-  \item The connected green functions are then given by (take functional derivative of \(W / \Gamma\) ) the following (and shown in Fig.~\ref{fig:weak_3_4_pt})
+  \item The connected green functions\aidx{Green functions!connected} are then given by (take functional derivative of \(W / \Gamma\) ) the following (and shown in Fig.~\ref{fig:weak_3_4_pt})
 \end{itemize}
 
 \begin{equation}
@@ -786,13 +786,13 @@ G^{1234} =& \langle \varphi(x_1) \ldots \varphi(x_4) \rangle_{conn} = -G_{1 1^\p
 \end{equation}
 
 \begin{itemize}
-  \item Perturbation theory with a lattice regulator proceeds similarly to what you have done before with Feynman rules
+  \item Perturbation theory with a lattice regulator\aidx{lattice quantum field theory (LQFT)}\aidx{perturbation theory!lattice}\aidx{regulator!lattice} proceeds similarly to what you have done before with Feynman rules\aidx{Feynman rules}
   \begin{itemize}
   \item Lines are associated with propagators \(G^{i j}\)
   \item Vertices come from couplings in Lagrangian
   \item Inner vertices conserve momentum modulo $2 \pi$
   \item Symmetry factors are as in continuum
-  \item Loop momenta are integrated over first Brillouin zone
+  \item Loop momenta are integrated over first Brillouin zone\aidx{Brillouin zone}\aidx{Brillouin zone, first}
 \begin{equation}
 \int_{q}=\frac{1}{(2 \pi)^{D}} \int_{-\pi / a}^{\pi / a} d q_1 \ldots \int_{-\pi / a}^{\pi / a} dq_{D},
 \end{equation}
@@ -800,7 +800,7 @@ where we have assumed infinite volume.
   \end{itemize}
 
   \item For the \(O(n)\) model, interactions depend on whether \(v=\langle\varphi\rangle\) is zero or not\\
-  \item In the symmetric phase, there is only a four point interaction, but in the broken phase there is also a three point interaction (replacing one of the legs in the four point interaction with an insertion of the vev)
+  \item In the symmetric phase, there is only a four point interaction, but in the broken phase there is also a three point interaction (replacing one of the legs in the four point interaction with an insertion of the vev\aidx{vacuum expectation value (vev)})
   \item Focus on the symmetric phase and compute \(\Gamma^{(2)}\) and \(\Gamma^{\text {(4)}}\) using $\Gamma^{(3)}=0$ in Eq.~\eqref{eq:weak_4pt}
 [Broken phase covered in Montvay \& M\"unster]
   \item To one loop order in momentum space
@@ -862,7 +862,7 @@ I_{2}\left(m_{0}, p\right)=\int_{q} \frac{1}{m_{0}^{2}+\hat{q}^{2}} \frac{1}{m_{
 \end{equation}
 
 \begin{itemize}
-  \item Lattice regulated integrals are quite ugly and need different techniques to dim. reg., e.g. in \(D=4\)
+  \item Lattice regulated integrals\aidx{lattice-regulated integrals} are quite ugly and need different techniques to dim. reg., e.g. in \(D=4\)
 \end{itemize}
 %
 \begin{equation}
@@ -918,10 +918,10 @@ Thus
 \end{equation}
 
 \begin{itemize}
-  \item Renormalisation: renormalised quantities should be regulator independent
+  \item Renormalisation\aidx{renormalisation}: renormalised quantities should be regulator independent
   \begin{itemize}
-      \item In this theory, there are two couplings and a field renormalization
-      \item The two-point vertex function fixes $Z$ and $m_R$ (recall that $\Gamma^R_{(n)} = Z^{n/2}\Gamma_{(n)}$)
+      \item In this theory, there are two couplings and a field renormalization\aidx{field renormalisation}
+      \item The two-point vertex function\aidx{vertex function} fixes $Z$ and $m_R$ (recall that $\Gamma^R_{(n)} = Z^{n/2}\Gamma_{(n)}$)
   \end{itemize}
 
 \begin{equation}
@@ -929,7 +929,7 @@ Thus
 \end{equation}
 
     \begin{itemize}
-        \item Since the one-loop diagram contributing to the two-point function is momentum independent, 
+        \item Since the one-loop diagram contributing to the two-point function\aidx{correlation function!two-point} is momentum independent, 
         \begin{equation}
             Z = 1 + O(\lambda_0^2),
         \end{equation}
@@ -966,7 +966,7 @@ using $\left(t_{\alpha_1 \alpha_2 \alpha_3 \alpha_4} + t_{\alpha_1 \alpha_3 \alp
     =& - 2 \lambda_R S_{\alpha_1 \ldots \alpha_4} - \frac{2 \lambda_R^2}{16 \pi^2}t_{\alpha_1 \ldots \alpha_4} \int_0^1 \text{d}x \log \left[ \frac{m_R^2 + x(1-x)(p_1 + p_2)^2}{m_R^2}\right] + \text{2 perms} + O(\lambda_R^3)
 \end{align}
 which are independent of $a$ and of $r_0, r_1$ (which are regulator artifacts)
-\item Weak coupling expansion describes the theory for small $\lambda_0, \lambda_R$ and we can already make statements about the field theory in the continuum limit for this region, for example computing the $\beta$-function, but let's learn more first
+\item Weak coupling expansion\aidx{expansion!weak-coupling} describes the theory for small $\lambda_0, \lambda_R$ and we can already make statements about the field theory in the continuum limit\aidx{continuum limit} for this region, for example computing the $\beta$-function, but let's learn more first
 \end{itemize}
 
 \section{Hopping expansion (aka: high temperature expansion)} 
@@ -1011,7 +1011,7 @@ Z_{0} & =\int \mathcal{D} \phi\left[\prod_{n} e^{-s\left(\phi_{n}\right)} \right
 & =\left(\int d \phi e^{-s(\phi)}\right)^{\Omega}=z_{0}^{\Omega} 
 \end{aligned}
 \end{equation}
-where $z_0$ is the single site partition function and $\Omega$ is the total number of sites.
+where $z_0$ is the single site partition function\aidx{partition function}\aidx{partition function!single-site} and $\Omega$ is the total number of sites.
 
 \begin{equation}
 \begin{aligned}
@@ -1092,7 +1092,7 @@ Thus
 \\
 
 \begin{itemize}
-  \item To learn about renormalisation, need to compute the following (ie propagator and 4-point vertex)
+  \item To learn about renormalisation, need to compute the following (ie propagator and 4-point vertex\aidx{vertex function})
 
 \begin{equation}
 \begin{aligned}
@@ -1130,7 +1130,7 @@ Thus we know renormalized quantities in the region shown in Fig.~\ref{fig:hoppdi
 \begin{figure}
     \centering
     \redrawcompare{fig-notes-007.jpg}{fig-redraw-007.pdf}
-    \caption{Region of $O(n)$ phase diagram controlled by the hopping expansion.
+    \caption{Region of $O(n)$ phase diagram\aidx{phase diagram}\aidx{phase diagram!QCD} controlled by the hopping expansion.
     \label{fig:hoppdiag2}}
 \end{figure}
 and at \(\kappa / \kappa_{c}=0.95, m_{R}\) and \(g_{R}\) are monotonic with
@@ -1146,8 +1146,8 @@ and at \(\kappa / \kappa_{c}=0.95, m_{R}\) and \(g_{R}\) are monotonic with
 \end{center}
 
 \begin{itemize}
-  \item Since \(m_{R}=\overline{m_{R}} a<1\), cutoff effects are mild (and get smaller as $\kappa\to\kappa_c$) so at \(\kappa / \kappa_{c}=0.95\) are in scaling region
-\item Since $\lambda_R/(16\pi^2)\lesssim 1/3$, renormalised perturbation theory works in this regime (even though $\lambda_0\to\infty$!)
+  \item Since \(m_{R}=\overline{m_{R}} a<1\), cutoff effects\aidx{cutoff effects}\aidx{lattice artifacts} are mild (and get smaller as $\kappa\to\kappa_c$) so at \(\kappa / \kappa_{c}=0.95\) are in scaling region\aidx{scaling region}
+\item Since $\lambda_R/(16\pi^2)\lesssim 1/3$, renormalised perturbation theory\aidx{perturbation theory!renormalised} works in this regime (even though $\lambda_0\to\infty$!)
 \item L\&W showed that with 3 loop calculations, errors are $<1$\%.
 \end{itemize}
 \end{itemize}
@@ -1170,13 +1170,13 @@ with \(Z, m_{R}\) and \(\lambda_{R}\) defined by
 \end{equation}
 (we will use $g_R$ to be generic here)
 \begin{itemize}
-  \item ``Wilson (-Kadanoff)''-like RGE
+  \item ``Wilson (-Kadanoff)''-like RGE\aidx{renormalisation group equations}
 
-Wilsonian approach to RG is how does action change (infinite \# couplings) as modes are integrated out to leave low energy physics unchanged.
+Wilsonian approach to RG\aidx{renormalisation group!Wilsonian (Wilson-Kadanoff)} is how does action change (infinite \# couplings) as modes are integrated out to leave low energy physics unchanged.
 
-Consider the set of bare theories with the same renormalized $g_R$ - these define a one parameter subspace in the $m_0 a$, $\lambda_0 \sim g_0$ plane and every point on it has a different $m_R a = \frac{1}{\Lambda}$, where $\Lambda$ is the cutoff. $m_R a$ is then a dimensionless quantity characterizing the cutoff.
+Consider the set of bare theories with the same renormalized $g_R$ - these define a one parameter subspace in the $m_0 a$, $\lambda_0 \sim g_0$ plane and every point on it has a different $m_R a = \frac{1}{\Lambda}$, where $\Lambda$ is the cutoff. $m_R a$ is then a dimensionless quantity character\aidx{characters (group)}izing the cutoff.
 
-Renormalized vertex functions differ from the continuum limit by scaling violations
+Renormalized vertex functions\aidx{vertex function} differ from the continuum limit\aidx{continuum limit} by scaling violations\aidx{scaling violations}
 \begin{equation}
     \Gamma_R^{(n)} (\ldots, m_R a) = \Gamma_R^{(n)}(\ldots, 0) + \mathcal{O}(a^2 (\log a)^k),
 \end{equation}
@@ -1204,10 +1204,10 @@ where
 The dependence on \(m_{R} a\) comes only from scaling violations. \(\beta_{WK}(g_0)\) controls how $g_0$ changes with the cutoff.
 
 
-  \item Callan-Symanzik RGE
+  \item Callan-Symanzik RGE\aidx{Callan-Symanzik equation}
 
 
-How does renorm coupling change as cutoff changes for fixed bare coupling?
+How does renorm coupling change as cutoff changes for fixed bare coupling\aidx{coupling!bare}?
 
 \begin{align}
     m_R \frac{\text{d}}{\text{d} m_R}\Gamma^{(n)}_R(p_i, g_R, m_R, m_R a) =  m_R \frac{\partial}{\partial m_R}\Gamma^{(n)}_R + m_R \frac{\partial g_R}{\partial m_R} \frac{\partial}{\partial g_R}\Gamma^{(n)}_R \\
@@ -1235,7 +1235,7 @@ The RHS of Eq.~\eqref{eq:CS_rge} is actually the renormalized vertex function wi
 Since the LHS involves derivatives of renormalized vertex functions, which are also finite in this limit, $\beta_{CS}$ and $\gamma_{CS}$ must have continuum limits, and since they are dimensionless they are independent of $m_R a$ up to scaling violations.
 %
 
-    \item The two types of beta functions are related
+    \item The two types of beta functions\aidx{beta function@$\beta$-function} are related
 \end{itemize}
 \begin{align}
     0 = a \frac{\text{d}}{\text{d}a} g_R(g_0, m_R a) &= \left \{ a \frac{\partial}{\partial a} + a \frac{\partial g_0}{\partial a} \frac{\partial}{\partial g_0}\right \} g_R \nonumber \\
@@ -1255,12 +1255,12 @@ Since the LHS involves derivatives of renormalized vertex functions, which are a
     \centering
     \redrawcompare{fig-notes-091.pdf}{fig-redraw-091.pdf}\qquad
     \redrawcompare{fig-notes-092.pdf}{fig-redraw-092.pdf}
-    \caption{Left: Potential $\beta_{CS}(g_R)$, with two IR fixed points where theory converges as cutoff $\to\infty$ and one UV fixed point which repels as cutoff is taken away.
+    \caption{Left: Potential $\beta_{CS}(g_R)$, with two IR fixed point\aidx{fixed point!infrared (IR)}\aidx{infrared fixed point}s where theory converges as cutoff $\to\infty$ and one UV fixed point\aidx{fixed point!ultraviolet (UV)} which repels as cutoff is taken away.
     Right: The flow is opposite for $\beta_{WK}$. Given the same fixed point structure, the flow in terms of the bare parameters is shown. For $g_1\leq g_R \leq g_3$, the curves reach $m_R a=0$ so have a continuum limit.
     \label{fig:potential_flow}}
 \end{figure}
 \begin{itemize}
-  \item In the regime of $g_R \rightarrow 0$, $\beta_{CS}$ and $\gamma_{CS}$ can be computed in renormalized perturbation theory. Close to $a \rightarrow 0$ this can be done in the continuum theory
+  \item In the regime of $g_R \rightarrow 0$, $\beta_{CS}$ and $\gamma_{CS}$ can be computed in renormalized perturbation theory\aidx{perturbation theory!renormalised}. Close to $a \rightarrow 0$ this can be done in the continuum theory
 \end{itemize}
 
 \begin{equation}
@@ -1285,7 +1285,7 @@ Since $g_R = g_0 + \mathcal{O}(g_0^2)$, $\beta_{WK}(g_0) = \hat{\beta}_1 g_0^2 +
 \begin{itemize}
   \item But Eq.~\eqref{eq:one-loop-RGE} only makes sense for $g_R \rightarrow 0$, what about larger values?
 \end{itemize}
-\(\Rightarrow\) Back to Lüscher-Weisz (LW) results\\
+\(\Rightarrow\) Back to Lüscher-Weisz (LW)\aidx{Lüscher-Weisz analysis} results\\
 \begin{figure}
     \centering
     \redrawcompare{fig-notes-056.png}{fig-redraw-056.pdf}
@@ -1294,8 +1294,8 @@ Since $g_R = g_0 + \mathcal{O}(g_0^2)$, $\beta_{WK}(g_0) = \hat{\beta}_1 g_0^2 +
 \end{figure}
 
 \begin{itemize}
-    \item LW integrated RGE up to critical line for the region where the hopping parameter expansion is controlled, finding no other fixed points!!
-    \item LW also showed through other techniques that we won't go into that the phase diagram is also controlled for $\kappa > \kappa_C$ in the scaling regime (and numerical calculations can be performed)
+    \item LW integrated RGE up to critical line\aidx{critical line} for the region where the hopping parameter\aidx{kappa@$\kappa$ (hopping parameter)} expansion\aidx{expansion!hopping} is controlled, finding no other fixed points!!
+    \item LW also showed through other techniques that we won't go into that the phase diagram\aidx{phase diagram}\aidx{phase diagram!QCD} is also controlled for $\kappa > \kappa_C$ in the scaling regime\aidx{scaling region} (and numerical calculations can be performed)
     \item Finally, curves of constant $\lambda_R$ take the form depicted in Fig.~\ref{fig:lam0_curves}. 
 \end{itemize}
 \begin{figure}
@@ -1318,7 +1318,7 @@ Note that LW use $\bar{\lambda} = - \frac{1}{2} \left(\frac{\gamma_4 - 3 \gamma_
     $31$ & $0.5$
 \end{tabular}
 \end{table}
-In all cases except $\lambda_R = 0$, the bare coupling $\rightarrow \infty$ before the continuum limit is reached (i.e. reaches $\bar{\lambda} = 1$ for $\kappa < \kappa_C$, see Fig.~\ref{fig:On_beta_func_final}. This means that for any non-zero renormalized coupling, there is no continuum limit!!
+In all cases except $\lambda_R = 0$, the bare coupling $\rightarrow \infty$ before the continuum limit is reached (i.e. reaches $\bar{\lambda} = 1$ for $\kappa < \kappa_C$, see Fig.~\ref{fig:On_beta_func_final}. This means that for any non-zero renormalized coupling\aidx{coupling!renormalised}, there is no continuum limit\aidx{triviality}!!
 \begin{figure}
     \centering
     \redrawcompare{fig-notes-057.png}{fig-redraw-057.pdf}

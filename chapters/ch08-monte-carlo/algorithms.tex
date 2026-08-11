@@ -1,7 +1,7 @@
 %% [migrated] heading absorbed into chapter wrapper: Basic algorithms for LQFT
 A good reference for more detail is [L\"uscher 1002.4232]
 \begin{itemize}
-  \item The basic numerical task in LQFT is evaluation of correlation functions which corresponds to very high dimensional integrals with specific structure
+  \item The basic numerical task in LQFT\aidx{lattice quantum field theory (LQFT)} is evaluation of correlation functions\aidx{correlation function} which corresponds to very high dimensional integrals with specific structure
 \end{itemize}
 
 \begin{equation}
@@ -11,7 +11,7 @@ A good reference for more detail is [L\"uscher 1002.4232]
 where only $\mathcal{O}$ changes for different physical quantities in the same theory
 
 \begin{itemize}
-  \item For fermionic theories, Grassman integration is done analytically and requires determinants and inverses of the Dirac operator
+  \item For fermionic theories, Grassman integration is done analytically and requires determinants and inverses of the Dirac operator\aidx{Dirac operator}
 \end{itemize}
 
 \begin{align}
@@ -87,7 +87,7 @@ These probability measures correlate the variables $\phi(x)$ and inverting $x = 
 
 \section{Markov Chains}
 \begin{itemize}
-    \item A Markov chain is a stochastic sequence of states/configurations of the degrees of freedom of a system defined by a transition probability $T(s,s')$ from a state $s'$ to a state $s$ in which the transition only depends on $s$ and $s'$ and not on other states in the chain:
+    \item A Markov chain is a stochastic sequence of states/configurations of the degrees of freedom of a system defined by a transition probability\aidx{Markov chain!transition probability} $T(s,s')$ from a state $s'$ to a state $s$ in which the transition only depends on $s$ and $s'$ and not on other states in the chain:
 \end{itemize}
 \begin{equation}
     T: \mathcal{S} \rightarrow \mathcal{S}, \quad \text{where }\mathcal{S}\text{ is the space of all possible states}
@@ -119,10 +119,10 @@ The transition probabilities satisfy
 
 \begin{itemize}
   \item To solve our sampling problem, we want to generate a set of samples distributed according to an equilibrium probability distribution $P_\text{eq}(s)$ that is given by the Boltzmann factor $e^{-S(\phi)}$ with a state $s$ representing the degrees of freedom of the fields $\phi(x) \:\forall x \in \Lambda$
-  \item To generate these samples, a Markov process needs to have two properties
+  \item To generate these samples, a Markov process\aidx{Markov chain} needs to have two properties
 \end{itemize}
 \begin{enumerate}
-  \item The process must have \(P_{\text{eq}}\) as a fixed point. That is
+  \item The process must have \(P_{\text{eq}}\) as a fixed point\aidx{infrared fixed point}. That is
 \end{enumerate}
 
 \begin{equation}
@@ -141,7 +141,7 @@ so that once the chain has reached this distribution, it does not leave it
 as can be seen by multiplying the RHS by $1$; $s'$ is fixed. This says that the probability of reaching a state equals the probability of leaving it.
 
 \begin{itemize}
-  \item The balance condition is guaranteed by the detailed balance condition (easier to impose)
+  \item The balance condition is guaranteed by the detailed balance condition\aidx{detailed balance} (easier to impose)
 \end{itemize}
 
 \begin{equation}
@@ -150,7 +150,7 @@ T(s', s) P_{\text{eq}}(s)=T\left(s, s^{\prime}\right) P_{\text{eq}}\left(s^{\pri
 
 \begin{enumerate}
   \setcounter{enumi}{1}
-  \item Since the integral that is being sampled is over all values of the fields the Markov process should be ergodic: it is possible to get to every state. Thus $0 < T(s, s')^n < 1 \quad \forall s,s'$ and some $n$. It does not need to be a single step to get to every state.
+  \item Since the integral that is being sampled is over all values of the fields the Markov process should be ergodic\aidx{Markov chain!ergodicity}: it is possible to get to every state. Thus $0 < T(s, s')^n < 1 \quad \forall s,s'$ and some $n$. It does not need to be a single step to get to every state.
 \end{enumerate}
 \begin{itemize}
     \item A Markov process satisfying these criteria is guaranteed to reach $P_\text{eq}$ after many steps starting from any state. After reaching $P_\text{eq}$, new states are produced in the sequence with this probability distribution
@@ -193,11 +193,11 @@ where the first equality follows from the definition of $E'$ and the definition 
   \begin{itemize}
   \item After a few steps, the samples that are drawn will be far from the equilibrium distribution (they will represent samples from the initial distribution). As more steps are taken the distribution will thermalise to the target distribution
   \item Once the distribution has thermalised, new samples drawn will be representative of the target distribution. However evolving many Markov processes is expensive
-  \item For an individual Markov process after thermalisation, sequences of samples will be representative of the target distribution. However these sequences will have autocorrelation (in most cases): nearby samples in the sequence will be closely related
+  \item For an individual Markov process after thermalisation\aidx{Markov chain!thermalisation}, sequences of samples will be representative of the target distribution. However these sequences will have autocorrelation (in most cases): nearby samples in the sequence will be closely related
   \end{itemize}
 \end{itemize}
 
-For a sequence of states \(\left\{s_{1}, \ldots  s_{N}\right\}\) and a quantity \(A(s)\) the integrated autocorrelation time is approximated by
+For a sequence of states \(\left\{s_{1}, \ldots  s_{N}\right\}\) and a quantity \(A(s)\) the integrated autocorrelation time\aidx{autocorrelation!integrated time} is approximated by
 
 \begin{equation}
 \tau_{\text {int}, A}=\frac{1}{2}+\sum_{j=1}^{N} \Gamma_{A}(J)
@@ -214,7 +214,7 @@ and the autocorrelation function is
 \begin{equation}
 C_{A}(j)=\left\langle\left(A_{i}-\langle A\rangle\right)\left(A_{i+j}-\langle A\rangle\right)\right\rangle
 \end{equation}
-with $A_i \equiv A(s_i)$ and $\langle A \rangle = \frac{1}{N}\sum_i A_i$. NB: this is observable dependent, we can define the exponential autocorrelation time as $\tau_\text{exp} = \operatorname{sup}_A \tau_{\text{int},A}$.
+with $A_i \equiv A(s_i)$ and $\langle A \rangle = \frac{1}{N}\sum_i A_i$. NB: this is observable dependent, we can define the exponential autocorrelation time\aidx{autocorrelation} as $\tau_\text{exp} = \operatorname{sup}_A \tau_{\text{int},A}$.
 
 For correlated samples, the variances of samples is
 
@@ -227,7 +227,7 @@ where
 \begin{equation}
 \sigma_{A}^{2}=\left\langle\frac{1}{N^{2}}\left(\sum_{i=1}^{N}\left(A_{i}-\langle A\rangle\right)\right)^{2}\right\rangle
 \end{equation}
-and thus the effective number of independent samples for quantity $A$ is $N_\text{indep} = N/(2 \tau_{\text{int},A})$.
+and thus the effective number of independent samples\aidx{independent samples, effective number of} for quantity $A$ is $N_\text{indep} = N/(2 \tau_{\text{int},A})$.
 \begin{itemize}
     \item These autocorrelations must be accounted for in reliable statistical analysis. Alternatively, samples can be retained only after each $2 \tau_{\text{int},A}$ updates
 \end{itemize}
@@ -241,28 +241,28 @@ and thus the effective number of independent samples for quantity $A$ is $N_\tex
 
 \section{Heatbath Algorithm}
 \begin{itemize}
-    \item Since $P_\text{eq} = \frac{1}{Z}e^{-S_\text{eff}(s)}$ is known up to the normalisation, choosing the transition probability
+    \item Since $P_\text{eq} = \frac{1}{Z}e^{-S_\text{eff}(s)}$ is known up to the normalisation, choosing the transition probability\aidx{Markov chain!transition probability}
 \end{itemize}
 \begin{equation}
     T_{\text{HB}}(s', s) = \frac{1}{Z} e^{-S_\text{eff}(s')}
 \end{equation}
 
-satisfies detailed balance trivially:
+satisfies detailed balance\aidx{detailed balance} trivially:
 \begin{align}
     T_{\text{HB}}(s', s)P_\text{eq}(s) &= \frac{1}{Z^2} e^{-S_\text{eff}(s')}e^{-S_\text{eff}(s)} \nonumber \\
     &=T_{\text{HB}}(s,s') P_\text{eq}(s')
 \end{align}
 
 \begin{itemize}
-  \item However given that $s$ represents an entire field configuration over continuous degrees of freedom in our context there is no way to efficiently use such a global heatbath efficiently
+  \item However given that $s$ represents an entire field configuration over continuous degrees of freedom in our context there is no way to efficiently use such a global heatbath\aidx{algorithm!heatbath} efficiently
 \end{itemize}
 
 \section{Metropolis Algorithm}
 \begin{itemize}
-    \item An algorithm satisfying detailed balance can be constructed as follows from an arbitrary initial state $s$
+    \item An algorithm satisfying detailed balance\aidx{detailed balance} can be constructed as follows from an arbitrary initial state $s$
 \end{itemize}
 \begin{enumerate}
-    \item Choose an updated state $s'$ according to an efficiently implementable transition probability $T_0(s', s)$
+    \item Choose an updated state $s'$ according to an efficiently implementable transition probability\aidx{Markov chain!transition probability} $T_0(s', s)$
     \item Accept or reject the proposed sample according to
 \end{enumerate}
 \begin{equation}
@@ -288,7 +288,7 @@ where $\Delta S \equiv S_\text{eff}(s') - S_\text{eff}(s)$.
     \item For a field theory, an update $T_0$ can be to change a single degree of freedom in some specified way. For local actions this will change the action only locally so $T_\text{ac}$ is efficient to compute (cost $\approx \mathcal{O}(V)$).
     \begin{itemize}
         \item This can be repeated sweeping through each d.o.f. and then the acceptance step be performed, or acceptance can be performed immediately (but then the new configuration will be very correlated with the old one)
-        \item For theories involving fermions $S_\text{eff}[\phi] \supset \operatorname{tr}\ln (D[\phi])$ is very nonlocal and so updating a single d.o.f. requires computing the entire $S_\text{eff}$, so the cost of the algorithm is $\mathcal{O}(V^2)$ - this is impractical for e.g. QCD
+        \item For theories involving fermions $S_\text{eff}[\phi] \supset \operatorname{tr}\ln (D[\phi])$ is very nonlocal\aidx{locality (of lattice Dirac operators)} and so updating a single d.o.f. requires computing the entire $S_\text{eff}$, so the cost of the algorithm is $\mathcal{O}(V^2)$ - this is impractical for e.g. QCD
     \end{itemize}
 \end{itemize}
 
@@ -306,7 +306,7 @@ where $\Delta S \equiv S_\text{eff}(s') - S_\text{eff}(s)$.
 \end{equation}
 for $A$ a positive definite Hermitian matrix and $c = \pi^{\text{dim }A}$ constant (note in particular that this assumes $A$ has no zero eigenvalues).
 \begin{itemize}
-    \item Thus scalar ``pseudofermion'' fields can be used to represent the fermion determinant, so for fermions + gauge fields
+    \item Thus scalar ``pseudofermion\aidx{pseudofermions}'' fields can be used to represent the fermion determinant\aidx{fermion determinant}, so for fermions + gauge fields
 \end{itemize}
 \begin{align}
     Z &= \int \mathcal{D}U\mathcal{D}\bar{\psi}\mathcal{D}\psi e^{-S[U] - \int \bar{\psi}D[U]\psi} = \int \mathcal{D}U \det[D[U]]e^{-S[U]} \nonumber \\
@@ -321,19 +321,19 @@ for $A$ a positive definite Hermitian matrix and $c = \pi^{\text{dim }A}$ consta
     \begin{equation}
         \det D_u \det D_d = (\det D_l)^2 = \det D_l \det D_l^\dagger = \det(D_l D_l^\dagger) > 0
     \end{equation}
-    \item It also holds for a single flavour for a Dirac operator obeying the GW relation since eigenvalues come in complex conjugate pairs (also staggered fermions)
-    \item It does not hold for a single flavour of Wilson fermions, since $\det D_W \in \mathbb{R}$ but not guaranteed to be positive. However for large enough mass and lattice volume, negative eigenvalues are exponentially suppressed and it is typical to use for e.g. strange quarks $\det D_s \approx [\det D_s^\dagger D_s]^{1/2}$
-    \item In the presence of fermion chemical potential or the QCD $\theta$-term the determinant is nonpositive and importance sampling fails
+    \item It also holds for a single flavour for a Dirac operator\aidx{Dirac operator} obeying the GW relation\aidx{Ginsparg-Wilson relation} since eigenvalues come in complex conjugate pairs (also staggered fermions\aidx{fermions!staggered})
+    \item It does not hold for a single flavour of Wilson fermions\aidx{fermions!Wilson}, since $\det D_W \in \mathbb{R}$ but not guaranteed to be positive. However for large enough mass and lattice volume, negative eigenvalues are exponentially suppressed and it is typical to use for e.g. strange quarks $\det D_s \approx [\det D_s^\dagger D_s]^{1/2}$
+    \item In the presence of fermion chemical potential\aidx{chemical potential} or the QCD $\theta$-term the determinant is nonpositive and importance sampling fails\aidx{importance sampling}
 \end{enumerate}
 
 \begin{itemize}
-  \item Since \(D^{-1}[U]\) is very non-local, the Metropolis algorithm will be very inefficient
+  \item Since \(D^{-1}[U]\) is very non-local\aidx{locality (of lattice Dirac operators)}, the Metropolis algorithm\aidx{algorithm!Metropolis} will be very inefficient
 \end{itemize}
 
 
 \section{Hybrid Monte-Carlo Algorithm}
 \begin{itemize}
-    \item HMC introduces auxiliary canonical momenta conjugate to the field degrees of freedom and uses Hamilton's equations to evolve the system according to molecular dynamics
+    \item HMC introduces auxiliary canonical momenta\aidx{algorithm!hybrid Monte Carlo} conjugate to the field degrees of freedom and uses Hamilton's equations\aidx{molecular dynamics} to evolve the system according to molecular dynamics
     \begin{itemize}
         \item This algorithm was developed for QCD simulations (Duane et al. 1987) but now sees much more use in statistics under the name of Hamiltonian Monte Carlo
     \end{itemize}
@@ -342,16 +342,16 @@ for $A$ a positive definite Hermitian matrix and $c = \pi^{\text{dim }A}$ consta
         \dot{p} = - \frac{\partial H}{\partial q} = - \frac{\partial S}{\partial q}, \qquad \dot{q} = \frac{\partial H}{\partial p} = p,
     \end{equation}
     where $q$ and $p$ are a set of variables and conjugate momenta. By integrating these equations, a trajectory in phase space $(q,p)$ is mapped out along which $H$ is constant.
-    \item HMC uses these equations to propose new ``$q$''s that will have constant action and the update probability satisfies ergodicity and detailed balance provided the integration along the HMC trajectory is symplectic (area preserving) and reversible
-    \item Specifying to a theory with $N_f = 2$ fermions and gauge fields, we can write a modified partition function (just multiplying by a constant)
+    \item HMC uses these equations to propose new ``$q$''s that will have constant action and the update probability satisfies ergodicity\aidx{Markov chain!ergodicity} and detailed balance\aidx{detailed balance} provided the integration along the HMC trajectory is symplectic (area preserving) and reversible
+    \item Specifying to a theory with $N_f = 2$ fermions and gauge fields, we can write a modified partition function\aidx{partition function} (just multiplying by a constant)
 \end{itemize}
 \begin{equation}
     Z' = \int \mathcal{D}U \mathcal{D}P \mathcal{D}\phi \mathcal{D}\phi^\dagger \exp\left\{-S[U] - \sum_{n.m}\phi_n^\dagger (D^\dagger D[U])^{-1}\phi_m - \operatorname{Tr}\sum_{\mu,n} P_\mu^2(n) \right\},
 \end{equation}
-where the $P_\mu(n) \in g$ are elements of the Lie algebra $g$ and are conjugate to $Q_\mu(n)$ where $U_\mu(n) = \exp(i Q_\mu(n))$; note that the pseudofermion fields have spin and colour components.
+where the $P_\mu(n) \in g$ are elements of the Lie algebra $g$ and are conjugate to $Q_\mu(n)$ where $U_\mu(n) = \exp(i Q_\mu(n))$; note that the pseudofermion\aidx{pseudofermions} fields have spin and colour components.
 
 \begin{itemize}
-    \item Since correlation functions will never contain $P_\mu$'s they are unchanged
+    \item Since correlation functions\aidx{correlation function} will never contain $P_\mu$'s they are unchanged
     \item The $P_\mu^a(n)$ are independent variables and are distributed as Gaussians of unit variance
 \end{itemize}
 \begin{itemize}
@@ -369,7 +369,7 @@ This can be done in $4$ steps:
     \begin{equation}
         \dot{P}_\mu(n) = -\frac{\partial H}{\partial Q_\mu(n)}, \qquad \dot{Q}_\mu(n) = \frac{\partial H}{\partial P_\mu(n)} = P_\mu(n)
     \end{equation}
-    using a symplectic, reversible integrator (e.g. leapfrog integrator). This deterministically defines $T_{MD}(\{P',Q'\},\{P,q\})$.
+    using a symplectic, reversible integrator (e.g. leapfrog integrator\aidx{leapfrog integrator}). This deterministically defines $T_{MD}(\{P',Q'\},\{P,q\})$.
     \item Accept-reject step: Using
     \begin{equation}
         T_\text{ac}(\{P',Q'\},\{P,Q\}) = \operatorname{min}(1,\exp(-H(P',Q')+H(P,Q)))
@@ -379,7 +379,7 @@ This can be done in $4$ steps:
 
 
 \begin{itemize}
-  \item The transition probability
+  \item The transition probability\aidx{Markov chain!transition probability}
 \end{itemize}
 
 \begin{equation}
@@ -388,7 +388,7 @@ T(Q',Q) = \int \mathcal{D}P \mathcal{D}P'T_\text{ac}(\{P',Q'\},\{P,Q\})e^{-\sum_
 
 satisfies detailed balance (proof in G\& L).
 \begin{itemize}
-    \item A symplectic integrator such as leapfrog is reversible and area preserving as required for Hamiltonian system. For each integration step of length $\varepsilon$,
+    \item A symplectic integrator such as leapfrog\aidx{symplectic integrator} is reversible and area preserving as required for Hamiltonian system. For each integration step of length $\varepsilon$,
     \begin{enumerate}
         \item $P(\varepsilon/2) = P(0) - \varepsilon/2 \frac{\partial H}{\partial Q}|_{Q(0)}$
         \item $Q(\varepsilon) = Q(0) + \varepsilon \frac{\partial H}{\partial P}|_{P(\varepsilon/2)}$
@@ -404,7 +404,7 @@ satisfies detailed balance (proof in G\& L).
 
     \item The transformation for each step is triangular so the Jacobian is trivial, ($dP dQ = dP' dQ'$)
     \item It is also easy to see that this integration is reversible
-    \item Numerical errors in the integration mean that $\Delta H \neq 0$ along the integrated trajectory (leapfrog has $\mathcal{O}(\varepsilon^2)$ errors, but higher-order integrators exist). Without such errors, there would be no need for the accept-reject step. These errors also accumulate as the trajectory length grows, so in practice one balances how far in configuration space one moves with the acceptance
+    \item Numerical errors in the integration mean that $\Delta H \neq 0$ along the integrated trajectory (leapfrog has $\mathcal{O}(\varepsilon^2)$ errors, but higher-order integrators exist). Without such errors, there would be no need for the accept-reject\aidx{algorithm!Metropolis} step. These errors also accumulate as the trajectory length grows, so in practice one balances how far in configuration space one moves with the acceptance
     \item The forces on momenta are complicated to compute
 
 
@@ -419,7 +419,7 @@ and the latter term involves evaluating $\chi = (D^\dagger D)^{-1}\phi$ which is
 
 \section{Linear System Solvers}
 \begin{itemize}
-    \item In calculating correlation functions with fermion fields after integrating out the fermion fields we are left with products of $D^{-1}[U]$ acting on e.g. a spin-colour vector $\rho$ which can be computed by solving
+    \item In calculating correlation functions\aidx{correlation function} with fermion fields after integrating out the fermion fields we are left with products of $D^{-1}[U]$ acting on e.g. a spin-colour vector $\rho$ which can be computed by solving
 \begin{equation}
     D(x,y) G(y) = \rho(x) \quad \Longrightarrow \quad G(y) = D^{-1}(x,y)\rho(x)
 \end{equation}
@@ -435,9 +435,9 @@ and the latter term involves evaluating $\chi = (D^\dagger D)^{-1}\phi$ which is
 
 \begin{itemize}
     \item The most efficient direct solvers (e.g., LU factorisation) scale as $\mathcal{O}(N^3)$ for an $N \times N$ linear system whcih is impractical for $V \sim 10^8$
-    \item Iterative methods  construct successively improving approximations to $x$: $x_1 \rightarrow x_2 \rightarrow \ldots \rightarrow x_N$ with $\|x_{i+1} - \hat{x} \| < \|x_{i} - \hat{x} \|$ where $\hat{x}$ is the exact solution
-    \item Krylov solvers are a class of iterative methods that work well for the sparse systems under consideration and scale only as $\mathcal{O}(N)$
-    \item The conjugate gradient algorithm (CG) works well for Hermitian systems (NB: $D$ is not Hermitian but $D^{-1} = D^\dagger (D D^\dagger)^{-1}$, so it suffices to work with $A = D D^\dagger$ which is Hermitian)
+    \item Iterative methods\aidx{linear solver}  construct successively improving approximations to $x$: $x_1 \rightarrow x_2 \rightarrow \ldots \rightarrow x_N$ with $\|x_{i+1} - \hat{x} \| < \|x_{i} - \hat{x} \|$ where $\hat{x}$ is the exact solution
+    \item Krylov solvers\aidx{linear solver!Krylov} are a class of iterative methods that work well for the sparse systems under consideration and scale only as $\mathcal{O}(N)$
+    \item The conjugate gradient algorithm (CG)\aidx{algorithm!conjugate gradient} works well for Hermitian systems (NB: $D$ is not Hermitian but $D^{-1} = D^\dagger (D D^\dagger)^{-1}$, so it suffices to work with $A = D D^\dagger$ which is Hermitian)
     \begin{itemize}
         \item CG proceeds via minimising the quadratic form
         \begin{equation}
@@ -475,20 +475,20 @@ CG Algorithm$(A, \vec{b}, \text{tol})$:
 \end{algorithmic}
 \begin{itemize}
     \item CG is implemented solely in terms of matrix-vector and vector-vector operations
-    \item Typically the number of iterations required for convergence to a particular precision is set by the condition number of the matrix $A$
+    \item Typically the number of iterations required for convergence to a particular precision is set by the condition number\aidx{condition number} of the matrix $A$
 \end{itemize}
 \begin{equation}
     C(A) \equiv \frac{\lambda_\text{max}}{\lambda_\text{min}} = \text{ratio of largest to smallest eigenvalue}
 \end{equation}
 \begin{itemize}
     \item Since the lowest eigenvalue of $D^\dagger D$ is set (up to gauge field fluctuations) by $m_q$ light quarks are more challenging numerically
-    \item Other variants are appropriate for non-Hermitian cases and may have faster convergence (BiCG-stab)
-    \item Matrices can be preconditioned in many ways (even-odd, ILU, SSGR, Schwartz, Multigrid) to accelerate convergence
-    \item The low eigenvalues of the matrix can be ``deflated'' (removed), also accelerating convergence
+    \item Other variants are appropriate for non-Hermitian cases and may have faster convergence (BiCG-stab\aidx{linear solver!BiCGstab})
+    \item Matrices can be preconditioned in many ways (even-odd, ILU, SSGR, Schwartz, Multigrid\aidx{preconditioning}\aidx{preconditioning!multigrid}) to accelerate convergence
+    \item The low eigenvalues of the matrix\aidx{deflation} can be ``deflated'' (removed), also accelerating convergence
 \end{itemize}
 
 \section{Other algorithmic tasks}
 \begin{itemize}
-    \item Overlap fermions require the matrix sign function which is most optimally approximated using Zolotarev rational functions
+    \item Overlap fermions\aidx{fermions!overlap} require the matrix sign function which is most optimally approximated using Zolotarev rational functions\aidx{matrix sign function}
     \item It is also necessary to compute $\operatorname{Tr}(D^{-1}(x,x))$ in some cases: this uses algorithms similar to linear solvers
 \end{itemize}

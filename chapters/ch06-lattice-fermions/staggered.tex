@@ -1,8 +1,8 @@
 \section{Staggered \& Dirac-K\"ahler Fermions}
 
 \begin{itemize}
-  \item Staggered (Kogut-Susskind) fermions were introduced very soon after Wilson's paper and ane have the feature of reducing the doubling problem from \(2^{D} \rightarrow 2^{D / 2}\) modes while maintaining a chiral symmetry
-  \item Dirac-Kähler fermions are related to staggered fermions but have a very nice geometrical interpretation
+  \item Staggered (Kogut-Susskind) fermions\aidx{fermions!staggered} were introduced very soon after Wilson's paper and ane have the feature of reducing the doubling problem\aidx{fermion doubling} from \(2^{D} \rightarrow 2^{D / 2}\) modes while maintaining a chiral symmetry\aidx{chiral symmetry}
+  \item Dirac-Kähler fermions\aidx{fermions!Dirac-K\"ahler} are related to staggered fermions but have a very nice geometrical interpretation
   \item Consider the naive free fermion action with zero bare mass  (ref: Bodwin \& Kovacs PRD 38(1988) 1206)
 \end{itemize}
 
@@ -10,7 +10,7 @@
 S_{\text{naive}}=\frac{a^{D}}{2 a} \sum_{n} \sum_{\mu} \bar{\psi}({n}) \gamma_{\mu}\{\psi(n+\hat{\mu})-\psi(n-\hat{\mu})\}
 \end{equation}
 
-and diagonalise the Dirac matrices via the transformation (Kawamoto-Smit)
+and diagonalise the Dirac matrices\aidx{Dirac matrices, Euclidean}\aidx{Kawamoto-Smit transformation} via the transformation (Kawamoto-Smit)
 \begin{equation}
 \psi({n}) \rightarrow \Gamma^{n} \phi({n}),
 \qquad \bar{\psi}({n}) \rightarrow \bar{\phi}_({n}) \Gamma^{n \dagger} 
@@ -110,7 +110,7 @@ Writing the indices explicitly
 \end{aligned}
 \end{equation}
 
-where the tensor product is of a matrix acting on spinor indices with one acting on flavour/taste.
+where the tensor product is of a matrix acting on spinor indices with one acting on flavour/taste\aidx{taste (staggered fermions)}.
 
 Writing \(t_{\mu}=\gamma_{\mu}^{T}, t_{5}=\gamma_{5}^{T}\) as flavour/taste matrices and defining
 
@@ -125,7 +125,7 @@ S_{\text {naive }}=\frac{(2 a)^{D}}{4 a} \sum_{x, \mu} \bar{q}(x)\left\{A_{\mu}(
 \end{equation}
 
 \begin{itemize}
-  \item If this is now made gauge covariant using straight links, it defines the Kähler-Dirac action
+  \item If this is now made gauge covariant using straight links, it defines the Kähler-Dirac action\aidx{K\"ahler-Dirac equation}
 \end{itemize}
 
 \begin{equation}
@@ -138,7 +138,7 @@ A_{\mu}\left[U_{\mu}(x) U_{\mu}(x+\hat{\mu}) q(x+2 \hat{\mu})-U_{\mu}^{\dagger}(
 \end{equation}
 
 \begin{itemize}
-  \item The inverse free fermion propagator for a single "flavour" in momentum space is
+  \item The inverse free fermion propagator\aidx{fermion propagator} for a single "flavour" in momentum space is
 \end{itemize}
 
 \begin{equation}
@@ -175,7 +175,7 @@ when \(\mathbf{U}_{\eta_{i}}(x)\) is a certain product of links in the \(2^{D}\)
 Now the procedure used for DK fermions can be returned to, but a much more complicated action arises which we will omit
 
 \begin{itemize}
-  \item Staggered (and Dirac-K\"ahler) fermions have interesting symmetries, one of which is a remnant \(U_{A}(1)\) chiral symmetry
+  \item Staggered (and Dirac-K\"ahler) fermions have interesting symmetries, one of which is a remnant\aidx{chiral symmetry!remnant, staggered} \(U_{A}(1)\) chiral symmetry
 \end{itemize}
 
 \begin{equation}
@@ -183,15 +183,15 @@ Now the procedure used for DK fermions can be returned to, but a much more compl
 \end{equation}
 
 which mixes spinor and ``flavour'' indices.
-This symmetry is sufficient to prevent additive mass renormalisation
+This symmetry is sufficient to prevent additive mass renormalisation\aidx{additive mass renormalisation}
 
 \begin{itemize}
-  \item The four flavour that a staggered/DK fermion generates are degenerate in the continuum limit, so not useful for quark phenomenology. To get back to a single flavour the fourth root of the fermion determinant is taken.
+  \item The four flavour that a staggered/DK fermion generates are degenerate in the continuum limit\aidx{continuum limit}, so not useful for quark phenomenology. To get back to a single flavour the fourth root of the fermion determinant\aidx{fermion determinant} is taken.
   \begin{itemize}
-      \item This makes the theory nonlocal at nonzero lattice spacing in fairly violent ways and should probably be avoided
+      \item This makes the theory nonlocal\aidx{locality (of lattice Dirac operators)} at nonzero lattice spacing\aidx{lattice spacing} in fairly violent ways and should probably be avoided
       \item See various papers by Creutz and Golterman\&Shamir on the topic and an overview of the issue in Lattice 2005 by Sharpe
   \end{itemize}
-  \item Rooted staggered fermions are used in large scale numerical QCD calculations because their nice chiral properties make them relativity cheap to use with light quark masses and they are easily $\mathcal{O}(a^2)$ accurate.\\
+  \item Rooted staggered fermions\aidx{rooting (staggered fermions)} are used in large scale numerical QCD calculations because their nice chiral properties make them relativity cheap to use with light quark masses and they are easily $\mathcal{O}(a^2)$ accurate.\\
 
 \section{Geometric interpretation of DK fermions}
 
@@ -204,7 +204,7 @@ This symmetry is sufficient to prevent additive mass renormalisation
 \omega^{k}=\sum_{i_{1}<\ldots<i_{k}} \omega_{i_{1} \ldots i_{k}}(x) d x_{i_{1}} \wedge \ldots \wedge d x_{i_{k}},
 \end{equation}
 
-where \(\quad d x_{i} \wedge d x_{j}=-d x_{\jmath} \wedge d x_{i} \quad\) (wedge product). [in other words the set $\{dx_{i_1}\wedge\ldots dx_{i_k}\}$ forms a basis for $k-$forms]
+where \(\quad d x_{i} \wedge d x_{j}=-d x_{\jmath} \wedge d x_{i} \quad\) (wedge product\aidx{differential forms}). [in other words the set $\{dx_{i_1}\wedge\ldots dx_{i_k}\}$ forms a basis for $k-$forms]
 
 \begin{itemize}
   \item \(d x_{\mu_{1}} \wedge \ldots \wedge d x_{\mu_{h}} \equiv d x_{H} \quad H=\left\{\mu_{1}, \ldots, \mu_{h}\right\} \quad \mu_{1}<\mu_{2}<\ldots<\mu_{h}\)
@@ -242,7 +242,7 @@ where \(\quad d x_{i} \wedge d x_{j}=-d x_{\jmath} \wedge d x_{i} \quad\) (wedge
 \end{equation}
 
 \begin{itemize}
-  \item The Clifford product (bilinear and associative)
+  \item The Clifford product\aidx{Clifford product} (bilinear and associative)
 \end{itemize}
 
 \begin{equation}
@@ -256,9 +256,9 @@ where \(\quad d x_{i} \wedge d x_{j}=-d x_{\jmath} \wedge d x_{i} \quad\) (wedge
     \item NB: The Clifford product behaves like $\gamma$ matrices, because $d x_\mu \vee d x_\nu + d x_\nu \vee d x _\mu = 2 \delta_{\mu \nu}$
     \item With partial derivatives acting on the coefficients $\Phi_H(x)$, one can define
     \begin{itemize}
-        \item Exterior derivatives$d \equiv dx_\mu \wedge \partial_\mu$
-        \item Coderivative $\delta = \varepsilon_\mu \neg \partial_\mu$ ($\delta = - \star^{-1}d\star$, where $\star$ is the familiar Hodge star)
-        \item K\"ahler-Dirac operator $d-\delta = dx_\mu \vee \partial_\mu$
+        \item Exterior derivatives\aidx{exterior derivative}$d \equiv dx_\mu \wedge \partial_\mu$
+        \item Coderivative\aidx{coderivative} $\delta = \varepsilon_\mu \neg \partial_\mu$ ($\delta = - \star^{-1}d\star$, where $\star$ is the familiar Hodge star\aidx{Hodge star})
+        \item K\"ahler-Dirac operator\aidx{Dirac operator} $d-\delta = dx_\mu \vee \partial_\mu$
     \end{itemize}
     \item I.e. $d\Phi = dx_\mu \wedge \partial_\mu \Phi$, $\delta\Phi =  \varepsilon_\mu \neg \partial_\mu \Phi$, $(d-\delta)\Phi = dx_\mu \vee \partial_\mu \Phi$
     \item Note that $d^2 = \delta^2 = 0$, since $dd\Phi = d(dx_\mu\wedge \partial_\mu\Phi) = dx_\nu \wedge dx_\mu \wedge \partial_\mu \partial_\nu \Phi = 0$.
@@ -278,7 +278,7 @@ where \(\quad d x_{i} \wedge d x_{j}=-d x_{\jmath} \wedge d x_{i} \quad\) (wedge
 \end{equation}
 
 \begin{itemize}
-  \item To see what the KDE implies, define the product of Dirac matrices
+  \item To see what the KDE\aidx{K\"ahler-Dirac equation} implies, define the product of Dirac matrices\aidx{Dirac matrices, Euclidean}
 \end{itemize}
 
 \begin{equation}
@@ -328,7 +328,7 @@ must hold for each $Z_c^{(b)}$ since basis
 for each \(b=1,2,3,4 \Rightarrow 4\) independent Dirac equations
 
 \begin{itemize}
-  \item The global symmetry $\phi^{(b)}\rightarrow \Omega_{bd}\phi^{(d)}, \Omega \in SU(4)$ relating these solutions is the Susskind flavour symmetry
+  \item The global symmetry $\phi^{(b)}\rightarrow \Omega_{bd}\phi^{(d)}, \Omega \in SU(4)$ relating these solutions is the Susskind flavour symmetry\aidx{Susskind flavour symmetry}
   \item Defining the scalar product $(\Phi, \Xi) \equiv \sum_H \Phi_H(x)\Xi_H(x)$, the KD action
 \end{itemize}
 \begin{align}
@@ -338,8 +338,8 @@ for each \(b=1,2,3,4 \Rightarrow 4\) independent Dirac equations
 where $dx_{1234}=dx_1\wedge dx_2\wedge dx_3 \wedge dx_4$
 
 \begin{itemize}
-  \item Now, we can transition to lattice, making use of relations between $p$-form complexes and linear functions on simplicial complexes (triangulation of manifolds) - de Rham's theorem
-  \item The lattice geometry is a cubical complex consisting of $p-$cubes $p=0,1,2,3,4$ where $p=0$ are points, $p=1$ are links, ...
+  \item Now, we can transition to lattice, making use of relations between $p$-form complexes and linear functions on simplicial complexes (triangulation of manifolds) - de Rham's theorem\aidx{de Rham's theorem}
+  \item The lattice geometry is a cubical complex\aidx{chains and cochains} consisting of $p-$cubes $p=0,1,2,3,4$ where $p=0$ are points, $p=1$ are links, ...
   \item Using $H = \{ \mu_1, \ldots, \mu_h\}$ as before, a $h-$cube is $(x,H) = (x, \mu_1, \ldots, \mu_h)$ with $\mu_1 < \mu_2 < \ldots < \mu_h$.
   \item A chain is a linear combination of $p-$cubes
   \begin{equation}
@@ -359,7 +359,7 @@ where $dx_{1234}=dx_1\wedge dx_2\wedge dx_3 \wedge dx_4$
 & \nabla(x, H)=\sum_{\mu \in {}^c H} \rho_{\{\mu\},H}\{(x-\hat{\mu}, H \cup\{\mu))-(x, H \cup\{\mu\})\},
 \end{aligned}
 \end{equation}
-where ${}^c H = \{1234\}\backslash H$ is the complement and the $\rho$ are sign functions for the reordering, $\rho^{H,K} = (-1)^\alpha$ where $\alpha$ is the number of pairs $(i,j) \in H \times K$ with $i<j$.
+where ${}^c H = \{1234\}\backslash H$ is the complement and the $\rho$ are sign function\aidx{fermions!overlap}s for the reordering, $\rho^{H,K} = (-1)^\alpha$ where $\alpha$ is the number of pairs $(i,j) \in H \times K$ with $i<j$.
 %
 See Fig.~\ref{fig:boundary} and Fig.~\ref{fig:coboundary} for examples of the action of these operators on a $1-$chain.
 \begin{figure}
@@ -413,7 +413,7 @@ for
 \end{equation}
 with the translation operator $T_\mu d^{x,H} = d^{{x - \hat{\mu}},H}$, and where again $\rho$ are sign functions.
 \begin{itemize}
-    \item The operators $\Delta, \nabla, \breve{\Delta},$ and $\breve{\nabla}$ are all nilpotent, and the dual operators are defined by Stokes formula
+    \item The operators $\Delta, \nabla, \breve{\Delta},$ and $\breve{\nabla}$ are all nilpotent\aidx{Q-exact action@$Q$-exact action}, and the dual operators are defined by Stokes formula
 \end{itemize}
 
 \begin{equation}
@@ -433,7 +433,7 @@ with the translation operator $T_\mu d^{x,H} = d^{{x - \hat{\mu}},H}$, and where
     (\breve{\Delta} - \breve{\nabla} + m )\breve{\Phi} = 0
 \end{equation}
 \begin{itemize}
-    \item The coefficients in expanding the general cochain are the fermion fields in the KD (or staggered) form: $(x, \{\})$ is at the site, $(x, \{\mu\})$ is a link $x \rightarrow x + \hat{\mu}$ which can be thought of as a site on the half lattice, $(x,\{\mu, \nu\})$ is the $\mu \nu$ plaquette which can be assigned to the half lattice as shown in Fig.~\ref{fig:plaq_half_lat}, and so on
+    \item The coefficients in expanding the general cochain are the fermion fields in the KD (or staggered) form: $(x, \{\})$ is at the site, $(x, \{\mu\})$ is a link $x \rightarrow x + \hat{\mu}$ which can be thought of as a site on the half lattice, $(x,\{\mu, \nu\})$ is the $\mu \nu$ plaquette\aidx{plaquette} which can be assigned to the half lattice as shown in Fig.~\ref{fig:plaq_half_lat}, and so on
 \end{itemize}
 \begin{figure}
     \centering
@@ -445,8 +445,8 @@ with the translation operator $T_\mu d^{x,H} = d^{{x - \hat{\mu}},H}$, and where
   \begin{itemize}
   \item Other types of fermions that have been introduced include
     \begin{itemize}
-      \item SLAC fermion: chirally invariant but non-local
-      \item Minimally doubled fermions: Only 2 doublers (Borici-Creutz/Karsten-Wilczek)
+      \item SLAC fermion\aidx{fermions!SLAC}: chirally invariant but non-local\aidx{locality (of lattice Dirac operators)}
+      \item Minimally doubled fermions\aidx{fermions!minimally doubled}: Only 2 doublers\aidx{fermion doubling} (Borici-Creutz/Karsten-Wilczek)
       \item $D234$ fermions (improved beyond $\mathcal{O}(a^2)$)
       \item \ldots
     \end{itemize}

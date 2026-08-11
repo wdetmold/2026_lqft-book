@@ -1,11 +1,11 @@
 \section*{Exercises}
 \problem{
-{\it Wilson loops}
+{\it Wilson loops\aidx{Wilson loop}}
 % See Appendix A of Tomboulis & Yaffe  Comm Math Phys 100, 313, 1985 Finite Temp SU2 gauage theory
 
 Consider a reflection $\Theta$ that maps two equal partitions of a lattice geometry, $\Lambda_{\pm}$, into each other: $\Theta(\Lambda_\pm)=\Lambda_\mp$. A reflection positive measure guarantees that for any quantity $F$ that has support only on the degrees of freedom in $\Lambda_+$, $\langle F\Theta(F)\rangle\ge0$.
 \begin{enumerate}
-    \item[(a)] Show that for two observables $F$ and $G$ with support in $\Lambda_+$, reflection positivity implies that 
+    \item[(a)] Show that for two observables $F$ and $G$ with support in $\Lambda_+$, reflection positivity\aidx{reflection positivity} implies that 
     $$
     |\langle F \Theta(G)\rangle|\leq \sqrt{\langle F\Theta(F)\rangle \langle G\Theta(G)\rangle}
     $$
@@ -15,13 +15,13 @@ Now consider rectangular Wilson loops $W_{I,J}$ of size $I\times J$ in pure Yang
 \begin{enumerate}
     \item[(b)] Use reflection positivity to show that  $W_{1,1} \leq {W_{1,2}}^{1/2}$.
     \item[(c)] Extend your argument to prove that $W_{1,1} \leq {W_{I,J}}^{1/IJ}$ for all $I,J\in \mathbb{Z}^+$.
-    \item[(d)] Discuss how this provides an upper bound on the rate of growth of the static quark potential
+    \item[(d)] Discuss how this provides an upper bound on the rate of growth of the static quark potential\aidx{static quark potential}
     $$V(R)=-\lim_{T\to\infty}W_{R,T}/T.$$
 \end{enumerate}
 }
 {
 First argue that $\langle \ldots,\Theta(\ldots)\rangle$ is an inner product on $\Lambda_+$ because of reflection positivity. Then Cauchy-Schwartz immediately implies (a). 
-Then set F=product of 3 sides of plaquette and G=4th side. Then for reflection in plane containing G, $\Theta(G)=G^\dagger$ so $G\Theta(G)=1$ and $F\Theta(F)=W_{2,1}$ is 2x1 loop
+Then set F=product of 3 sides of plaquette\aidx{plaquette} and G=4th side. Then for reflection in plane containing G, $\Theta(G)=G^\dagger$ so $G\Theta(G)=1$ and $F\Theta(F)=W_{2,1}$ is 2x1 loop
  Now repeat this procedure for 2x1 to bound 4x1 etc. 
  For J not multiple of 2, use eg 2x1 loop reflected at 1.5a to give 
 \begin{eqnarray}
@@ -61,7 +61,7 @@ Prove the following statements
     }
     {224}
 
-\problem{{\it Haar measure}
+\problem{{\it Haar measure\aidx{Haar measure}}
 
     The Haar measure on a group G with elements $U\in G$ parameterised as $U=U(\omega)$ for $\omega=(\omega_1,\ldots,\omega_n)$ is
     $$
@@ -102,7 +102,7 @@ Prove the following statements
     
 \problem{{\it Gauge actions for SU(N)}
 \begin{enumerate}
-    \item Show that the Wilson gauge action 
+    \item Show that the Wilson gauge action\aidx{Wilson gauge action} 
     $$
     S_W=-\frac{\beta}{2N}\sum_{P_{\mu\nu}}\{ {\rm tr}[P_{\mu\nu}]+{\rm tr}[P^{-1}_{\mu\nu}]\}
     $$
@@ -116,7 +116,7 @@ Prove the following statements
     $$
         R_{\mu\mu\nu}= U_\mu(n) U_\mu(n+\hat\mu) U_\nu(n+2\hat\mu)U^{-1}_\mu(n+\hat\mu+\hat\nu)U^{-1}_\mu(n+\hat\nu)U^{-1}_\nu(n).
     $$
-    Show that the correct continuum limit is obtained. Find $\gamma$ and $\hat\beta$ such that the leading discretisation artifacts are ${\cal O}(a^4)$ and find the relation between $\hat\beta$ and $\beta$ in the unimproved action.
+    Show that the correct continuum limit\aidx{continuum limit} is obtained. Find $\gamma$ and $\hat\beta$ such that the leading discretisation artifacts\aidx{improvement, $\mathcal{O}(a)$}\aidx{improvement, $\mathcal{O}(a)$} are ${\cal O}(a^4)$ and find the relation between $\hat\beta$ and $\beta$ in the unimproved action.
     
     \item Consider the Manton action
     $$

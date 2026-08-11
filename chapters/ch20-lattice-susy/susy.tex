@@ -2,21 +2,21 @@
 
 %% [migrated] heading absorbed into chapter wrapper: Lattice Supersymmetry
 \section{Supersymmetry}
-[Catterall, Kaplan, Ünsal 0903.4881]
+[Catterall, Kaplan\aidx{fermions!domain-wall}, Ünsal 0903.4881]
 \begin{itemize}
-    \item SUSY is the unique allowed extension of the Poincare symmetry (Coleman-Mandula theorem) and this is interesting to understand in QFTs
+    \item SUSY\aidx{supersymmetry} is the unique allowed extension of the Poincare symmetry (Coleman-Mandula theorem\aidx{Coleman-Mandula theorem}) and this is interesting to understand in QFTs
     \begin{itemize}
         \item Improves UV behaviour of theories, protects scalars from naturally having masses far in the UV. Potentially relevant phenomenologically (although no hints of SUSY at the LHC so far)
         \item More can typically be computed analytically in SUSY theories
         \item Form a key component of string theory and are dual to gravitational theories under the AdS/CFT correspondence
-        \item If they occur in nature, supersymmetries must be broken at low scales as we don't observe degenerate spectrum of bosons and fermions, but SUSY breaking typically does not occur in perturbation theory, hence need for lattice methods
+        \item If they occur in nature, supersymmetries must be broken at low scales as we don't observe degenerate spectrum of bosons and fermions, but SUSY breaking typically does not occur in perturbation theory\aidx{supersymmetry!breaking}, hence need for lattice methods
     \end{itemize}
-    \item Early attempts to define SUSY theories using a lattice regulator ran into several difficulties
+    \item Early attempts to define SUSY theories using a lattice regulator\aidx{lattice quantum field theory (LQFT)}\aidx{regulator!lattice}\aidx{supersymmetry!lattice} ran into several difficulties
     \begin{itemize}
         \item Lattice regulator breaks $SO(D)$ $[SO(D-1,1)]$ symmetry and does not allow infinitesimal translations; the commutator of SUSY generators is the generator of such transformations
         \item Gauge fields (bosons) are usually placed on links while fermions are placed on sites
-        \item Lattice actions for fermions have doubling so $\# \text{fermions} \neq \# \text{bosons}$; the Wilson term removes doublers but breaks SUSY
-        \item Since SUSY seems unavoidably broken, (potentially relevant) SUSY-breaking operators will be induced radiatively and their coefficients must be fine-tuned to approach the continuum limit - hard!
+        \item Lattice actions for fermions have doubling so $\# \text{fermions} \neq \# \text{bosons}$; the Wilson term\aidx{Wilson term} removes doublers\aidx{fermion doubling} but breaks SUSY
+        \item Since SUSY seems unavoidably broken, (potentially relevant) SUSY-breaking operators will be induced radiatively and their coefficients must be fine-tuned\aidx{counterterms} to approach the continuum limit\aidx{continuum limit} - hard!
     \end{itemize}
     \item The generators of Poincare symmetry are momenta $P^\mu$ that generate spacetime translations and $M_{\mu \nu} = -M_{\nu \mu}$ that generate Lorentz transformations (rotations and boosts). The commutator structure is
 \end{itemize}
@@ -47,7 +47,7 @@ Note that $Q$ and $\bar{Q}$ are Grassmann objects, so $\{Q,Q\} = \{\bar{Q},\bar{
 
 \begin{itemize}
     \item Since $P^0 = H$, $Q_\alpha$ commutes with the Hamiltonian, so states related by $Q$s are degenerate ``superpartners''
-    \item It is possible to add multiple supercharges and have consistent algebra with $Q_\alpha^I, \bar{Q}_{\dot{\beta}}^I$, $I = 1, \ldots, \mathcal{N}$ (extended supersymmetry)
+    \item It is possible to add multiple supercharges\aidx{supercharge} and have consistent algebra with $Q_\alpha^I, \bar{Q}_{\dot{\beta}}^I$, $I = 1, \ldots, \mathcal{N}$ (extended supersymmetry\aidx{supersymmetry!extended})
     \begin{itemize}
         \item The allowed values of $\mathcal{N}$ depend on the spacetime dimension but is constrained such that no d.o.f. have spin greater than $2$.
         \item The larger the supersymmetry, the more constrained the field content and interactions are. E.g. for $\mathcal{N} = 1$ in $d = 4$, there are multiplets where each state in the multiplet is related by supersymmetry transformations:
@@ -59,40 +59,40 @@ Note that $Q$ and $\bar{Q}$ are Grassmann objects, so $\{Q,Q\} = \{\bar{Q},\bar{
         \end{itemize}
         \item For larger $\mathcal{N}$ there are fewer, larger multiplets
     \end{itemize}
-    \item Supersymmetric theories often have global chiral symmetries (R-symmetries). These do not commute with supercharges and different parts of supermultiplets transform differently. These R symmetries are catalogued for different $(D, \mathcal{N})$. For $D=2, \mathcal{N}=2$ has $8$ supercharges, with an $SO(2)_\text{Euclidean}$ and $SO(4) \times SU(2)$ R-symmetry. $D=4, \mathcal{N} = 1$ with $4$ supercharges has $SO(4)_\text{Euclidean}$ and $U(1)$ R-symmetry.
+    \item Supersymmetric theories often have global chiral symmetries (R-symmetries\aidx{R-symmetry}). These do not commute with supercharges and different parts of supermultiplets transform differently. These R symmetries are catalogued for different $(D, \mathcal{N})$. For $D=2, \mathcal{N}=2$ has $8$ supercharges, with an $SO(2)_\text{Euclidean}$ and $SO(4) \times SU(2)$ R-symmetry. $D=4, \mathcal{N} = 1$ with $4$ supercharges has $SO(4)_\text{Euclidean}$ and $U(1)$ R-symmetry.
     \item R-symmetries will be particularly important in our discussion and only theories with $G_R$ R-symmetry with $SO(D)_E \times SO(D)_R \subset SO(D)_E \times G_R$ can be treated by the following techniques
 \end{itemize}
 
 \section{Accidental Symmetries}
 \begin{itemize}
-  \item An interesting question to consider is why (Euclidean) Poincare symmetry arises in the continuum limit of a lattice field theory on a hypercubic lattice.
+  \item An interesting question to consider is why (Euclidean) Poincare symmetry arises in the continuum limit\aidx{Poincaré symmetry!emergence in continuum limit}\aidx{continuum limit} of a lattice field theory on a hypercubic lattice.
   \begin{itemize}
       \item The lattice action is invariant under discrete translations and $H(4)$ transformations which form a subgroup of Poincare symmetry. However it could be that quantum effects induce operators consistent with the smaller symmetry that break the full symmetry.
       \item In $d=4$, the lowest dimension operator of this type is a dim$-6$ operator, $\sum_\mu \bar{\psi} \gamma_\mu D_\mu^3 \psi$. Because this is dim$-6$, it comes with a coefficient that must be $\mathcal{O}(a^2)$ and thus is irrelevant as the continuum limit is taken.
       \item The presence of the partial symmetry is sufficient to disallow operators such as $\bar{\psi}D_1 \psi$ that are potentially not irrelevant as $a \to 0$ and whose coefficients would need to be tuned such that Poincare symmetry emerges as $a \to 0$
       \item For a less symmetric discretisation this may not be the case
   \end{itemize}
-  \item A counter-example is the Wilson term $\bar{\psi}D^2 \psi$, which is dim-$5$, which breaks chiral symmetry. Even if the bare mass is set to zero, without chiral symmetry nothing prevents quantum effects from generating $\bar{\psi} \psi$ through e.g.
+  \item A counter-example is the Wilson term\aidx{Wilson term} $\bar{\psi}D^2 \psi$, which is dim-$5$, which breaks chiral symmetry\aidx{chiral symmetry}. Even if the bare mass is set to zero, without chiral symmetry nothing prevents quantum effects from generating $\bar{\psi} \psi$ through e.g.
 \end{itemize}
 
 \includegraphics[width=0.8\linewidth]{fig-notes-089.png}
 
 (the insertion is $aD^2$ as the Wilson term has an explicit $a$ by dimensional counting) and thus to achieve a particular renormalised mass requires tuning of $m_0 \bar{\psi} \psi$ to $1/a$ accuracy
 \begin{itemize}
-    \item Because of the issues above, SUSY cannot be an exact symmetry of a LFT, but with enough tuning of operators, it may be a symmetry that emerges in the continuum limit
+    \item Because of the issues above, SUSY\aidx{supersymmetry} cannot be an exact symmetry of a LFT\aidx{supersymmetry!lattice}, but with enough tuning of operators, it may be a symmetry that emerges in the continuum limit\aidx{accidental symmetry}
     \item $\mathcal{N} = 1$ SYM in $D=4$ can be treated this way. This theory has Lagrangian
 \end{itemize}
 
 \begin{equation}
     \mathcal{L} = \operatorname{Tr}\left[ \bar{\psi} i \bar{\sigma}^m D_m \psi - \frac{1}{4} V_{mn}V^{mn}\right],
 \end{equation}
-where $\psi_a$ $(a = 1,2)$ is the gluino, $\bar{\sigma} = (1, -\vec{\sigma})$, $V_{mn}$ is the field strength of gluon $V_m$, and both $\psi_a$ and $V_m$ transform in the adjoint of the gauge group
+where $\psi_a$ $(a = 1,2)$ is the gluino\aidx{gluino}, $\bar{\sigma} = (1, -\vec{\sigma})$, $V_{mn}$ is the field strength of gluon $V_m$, and both $\psi_a$ and $V_m$ transform in the adjoint of the gauge group
 \begin{itemize}
     \item Here, only a single relevant operator $m(\psi_a \psi^a + \text{h.c.})$ could appear but would break SUSY
-    \item Classically, $\psi \to e^{i \alpha} \psi$ is a global symmetry but it does not commute with SUSY (since it only acts on gluinos and not gluons) so it is an R-symmetry
+    \item Classically, $\psi \to e^{i \alpha} \psi$ is a global symmetry but it does not commute with SUSY (since it only acts on gluinos and not gluons) so it is an R-symmetry\aidx{R-symmetry}
     \item Quantum effects break this $U(1)_R \to \mathbb{Z}_{2N}$ for an $SU(N)$ gauge group, but the gluino mass term is disallowed by this R-symmetry
-    \item A lattice version of this theory can either use a Wilson term to remove doublers (but breaking the $\mathbb{Z}_{2N}$ R-symmetry) or use chiral fermions. In the former case a bare $m$ must be introduced and tuned such that $m_\text{gluino} = 0$. In the latter case, the SUSY will emerge in the continuum
-    \item This $\mathcal{N} = 1$ SYM theory contains no scalar particles, just a gauged adjoint Majorana fermion. For SUSY theories with scalars (e.g. MSSM), nothing prevents undesirable (and SUSY-breaking) generation of $\phi^2$ and other relevant operators so the problem is more challenging
+    \item A lattice version of this theory can either use a Wilson term to remove doublers\aidx{fermion doubling} (but breaking the $\mathbb{Z}_{2N}$ R-symmetry) or use chiral fermions. In the former case a bare $m$ must be introduced and tuned such that $m_\text{gluino} = 0$. In the latter case, the SUSY will emerge in the continuum
+    \item This $\mathcal{N} = 1$ SYM theory contains no scalar particles, just a gauged adjoint Majorana fermion\aidx{Majorana fermion}. For SUSY theories with scalars (e.g. MSSM), nothing prevents undesirable (and SUSY-breaking) generation of $\phi^2$ and other relevant operators so the problem is more challenging
     \item A way out is suggested by the $SO(4)$ $\Rightarrow$ $H(4)$ case above. Perhaps it will be sufficient to preserve a subset of the full SUSY such that relevant SUSY breaking operators are forbidden in which case the full SUSY will emerge in the continuum - this will be the case for some theories. N.B.: a subalgebra of SUSY will be preserved, not a subgroup, since SUSY transformations are necessarily infinitesimal.
 \end{itemize}
 
@@ -103,7 +103,7 @@ where $\psi_a$ $(a = 1,2)$ is the gluino, $\bar{\sigma} = (1, -\vec{\sigma})$, $
 \begin{equation}
     S = \int \text{d}t \left \{ \frac{1}{2}\left( \frac{\text{d} \phi}{\text{d} t}\right)^2 + \frac{1}{2} P'(\phi)^2 + \frac{1}{2} \psi_i \frac{\text{d}\psi_i}{\text{d}t} + i \psi_1 \psi_2 P''(\phi)\right \},
 \end{equation}
-where $P(\phi)$ is the ``superpotential'' and is an arbitrary polynomial
+where $P(\phi)$ is the ``superpotential\aidx{superpotential}'' and is an arbitrary polynomial
 \begin{itemize}
     \item This action is invariant under two Grassmannian variations (i.e. supersymmetries),
 \end{itemize}
@@ -158,8 +158,8 @@ where $\varepsilon_A$ and $\tilde\varepsilon_A$ are associated with the two vari
 \begin{equation}
     \frac{\text{d}}{dt}\phi(t) \to \Delta^+ \phi = [\phi(t+a) - \phi(t)]/a,
 \end{equation}
-a forward difference operator sufficient to remove doubles, but this breaks the supersymmetries.
-    \item The step Eq.~\eqref{eq:leib} used the Leibniz rule $\partial[\phi \psi] = [\partial \phi] \psi + \phi [\partial \psi]$, which does not hold for a finite difference operator:
+a forward difference\aidx{finite difference!forward} operator sufficient to remove doubles, but this breaks the supersymmetries.
+    \item The step Eq.~\eqref{eq:leib} used the Leibniz rule\aidx{Leibniz rule} $\partial[\phi \psi] = [\partial \phi] \psi + \phi [\partial \psi]$, which does not hold for a finite difference operator:
 \begin{align}
     \Delta^t(\phi \psi) &= \frac{1}{a}(\phi(x+a) \psi(x+a) - \phi(x) \psi(x)) \nonumber \\
     &= \frac{1}{a}(\phi(x+a)[\psi(x) - \psi(x) + \psi(x+a)] - \phi(x) \psi(x)) \nonumber \\
@@ -174,19 +174,19 @@ Indeed there is a theorem that no local finite difference operator satisfies Lei
 \end{equation}
 where we have integrated by parts for the second equality and used Eq.~\eqref{eq:leib} to set $\Delta^+\phi P''=\Delta^+P'$ and defined $\Delta^-f=[f(t)-f(t-a)]/a$.
 
-    \item The discretised classical action is not SUSY invariant, and thus the quantum effective action can develop additional relevant SUSY-violating interactions.
+    \item The discretised classical action is not SUSY\aidx{supersymmetry} invariant, and thus the quantum effective action\aidx{Schrödinger functional!coupling}\aidx{effective action} can develop additional relevant SUSY-violating interactions\aidx{supersymmetry!breaking}.
     \begin{itemize}
         \item Taking $P'(\phi) = m \phi + g\phi^3$, this can be seen to happen in lattice perturbation theory. The one loop contribution to the $\phi$ propagator due to fermion loops is\\
 \includegraphics[width=0.8\linewidth]{fig-notes-090.png} 
         \item The lattice result is twice as large because the doubler also contributes for $k \sim \frac{\pi}{a}$, i.e. small loops
         \item In this case SUSY can be restored by adding a counterterm to make $m_\text{boson} = m_\text{fermion}$, $S_\text{latt} \to S_\text{latt} + 3g \sum_t \phi^2(t)$
     \end{itemize}
-    \item In general, for super-renormalisable theories the counterterms needed to restore SUSY to a lattice theory can be calculated in lattice perturbation theory but this will not be feasible in $d=4$
+    \item In general, for super-renormalisable theories the counterterms\aidx{counterterms} needed to restore SUSY to a lattice theory can be calculated in lattice perturbation theory but this will not be feasible in $d=4$
 \end{itemize}
 
 \section{Lattice QM with exact SUSY}
 \begin{itemize}
-    \item In this model, we can find a subset of the two SUSYs that is preserved in the lattice action
+    \item In this model, we can find a subset of the two SUSY\aidx{supersymmetry}s that is preserved in the lattice action
     \item With a symmetric finite difference $\Delta^s\phi = (\phi(x+a) - \phi(x-a))/2a$ (this also holds for $\Delta^+, \Delta^-$), we have
 \end{itemize}
 \begin{equation}
@@ -231,14 +231,14 @@ To arrive at the second line note that
         \delta\phi = \psi \varepsilon, \quad \delta \psi = 0, \quad \delta \bar{\psi} = (\Delta^s\phi + P'(\phi))\varepsilon
     \end{equation}
     and is exact.
-    \item This operator is nilpotent: $\delta^2 = 0$ i.e. $\{Q,Q\} = 0$, so there is no clear conflict of discrete lattice with infinitesimal translations on the RHS
-    \item The partition function is
+    \item This operator is nilpotent\aidx{Q-exact action@$Q$-exact action}: $\delta^2 = 0$ i.e. $\{Q,Q\} = 0$, so there is no clear conflict of discrete lattice with infinitesimal translations on the RHS
+    \item The partition function\aidx{partition function} is
 \end{itemize}
 \begin{equation}
     Z = \int \mathcal{D}\phi \mathcal{D}\psi \mathcal{D}\bar{\psi}e^{-S_B - S_F} = \int \mathcal{D}\phi \operatorname{det}(\Delta^S + P'') e^{-S_B}.
 \end{equation}
 \begin{itemize}
-    \item Now let $\phi \to N = \Delta^s\phi + P'(\phi)$, called the Nicolai map, with Jacobian
+    \item Now let $\phi \to N = \Delta^s\phi + P'(\phi)$, called the Nicolai map\aidx{Nicolai map}, with Jacobian
 \end{itemize}
 \begin{equation}
     \operatorname{det}\frac{\text{d}N}{\text{d}\phi} = \operatorname{det}(\Delta^s + P'').
@@ -251,7 +251,7 @@ Since $S_B = \sum_t N^2$,
 \end{equation}
 that is, the partition function is a sum of simple uncoupled oscillators.
 \begin{itemize}
-    \item Introducing an auxiliary field $B$,
+    \item Introducing an auxiliary field\aidx{auxiliary field} $B$,
 \end{itemize}
 \begin{equation}
     e^{-S_B} = \int \text{d}B \exp\left[ -B(\Delta^s\phi + P'(\phi)) - \frac{1}{2}B^2\right].
@@ -267,24 +267,24 @@ where $Q$ is Grassmann (absorbed the $\varepsilon$) and corresponds to the super
 \begin{equation}
     S_\text{exact} = Q \sum_t \bar{\psi}\left(-\Delta^s\phi - P'(\phi) - \frac{1}{2}B\right),
 \end{equation}
-and its invariance follows from the nilpotency of $Q$. Note that this looks a lot like BRST, and the action of SQM can be derived by gauge fixing a topological theory.
+and its invariance follows from the nilpotency of $Q$. Note that this looks a lot like BRST, and the action of SQM\aidx{supersymmetry!quantum mechanics} can be derived by gauge fixing a topological theory.
 \begin{itemize}
-    \item The above approach made use of a twisting of the variables to find a scalar supercharge that could be preserved in the lattice action, $Q^2 = 0$ and $S_\text{latt} = Q \Lambda$. This is a general tactic to approach many SUSY theories (requires starting with more SUSY)
-    \item As well as this approach, there is another equivalent method known as orbifolding
+    \item The above approach made use of a twisting of the variables\aidx{twisting} to find a scalar supercharge\aidx{supercharge} that could be preserved in the lattice action, $Q^2 = 0$ and $S_\text{latt} = Q \Lambda$. This is a general tactic to approach many SUSY theories (requires starting with more SUSY)
+    \item As well as this approach, there is another equivalent method known as orbifolding\aidx{orbifolding}
 \end{itemize}
 
 
 
 \section{Wess-Zumino Model}
 \begin{itemize}
-    \item Generalise what happened in SQM to a QFT. The simplest (?) case is the WZ model with $\mathcal{N}=2$ in $d=2$. The continuum action
+    \item Generalise what happened in SQM\aidx{supersymmetry!quantum mechanics} to a QFT. The simplest (?) case is the WZ model\aidx{Wess-Zumino model} with $\mathcal{N}=2$ in $d=2$. The continuum action
 \end{itemize}
 \begin{equation}
     S_\text{WZ} = \int \text{d}^2 x \{\partial_\mu \phi \partial_\mu \phi^\dagger + W'(\phi) W'(\phi^\dagger) + \bar{\psi} \partial_\mu \gamma_\mu \psi + i \bar{\psi}(P_R W''(\phi) + P_L W''(\phi^\dagger)) \psi\},
 \end{equation}
 where the first two terms define the boson action $S_B$ and the remaining terms define the fermionic action $S_F$.
 
-This action contains a complex scalar field $\phi$ and a Dirac fermion $\psi$ (the L and R projectors $P_{L,R} = \frac{1}{2}(1 \mp \gamma_5)$ select each of the two Weyl fermions) and in $2D$ the chiral basis for Dirac matrices is
+This action contains a complex scalar field $\phi$ and a Dirac fermion $\psi$ (the L and R projectors $P_{L,R} = \frac{1}{2}(1 \mp \gamma_5)$ select each of the two Weyl fermions\aidx{fermions!Weyl}) and in $2D$ the chiral basis for Dirac matrices\aidx{Dirac matrices, Euclidean} is
 \begin{equation}
     \gamma_0 = \begin{pmatrix}
         0 & 1 \\
@@ -315,7 +315,7 @@ where we have
     \end{pmatrix}.
 \end{equation}
 \begin{itemize}
-    \item The Nicolai map $(\phi,\phi^\dagger)\to(N,N^\dagger)$, given by
+    \item The Nicolai map\aidx{Nicolai map} $(\phi,\phi^\dagger)\to(N,N^\dagger)$, given by
 \end{itemize}
 \begin{equation}
     \mathcal{N}(\phi) = \partial_{\bar{z}}\phi + i W'(\phi^\dagger), \quad \mathcal{N}^\dagger(\phi) = \partial_z \phi^\dagger - i W'(\phi),
@@ -342,7 +342,7 @@ So,
     &= \int \mathcal{D} \mathcal{N} \mathcal{D} \mathcal{N}^\dagger e^{-\int \mathcal{N} \mathcal{N}^\dagger}
 \end{align}
 \begin{itemize}
-    \item As in SQM, the Nicolai map allows construction of a lattice action with an exact SUSY. Writing
+    \item As in SQM, the Nicolai map allows construction of a lattice action with an exact SUSY\aidx{supersymmetry}. Writing
 \end{itemize}
 \begin{equation}
     \psi = \begin{pmatrix}
@@ -357,7 +357,7 @@ we then have
 \begin{equation}
     S_\text{latt}^{WZ} = \sum_x \left\{ (\Delta^s_{\bar{z}} \phi + i W'_L(\phi^\dagger)) (\Delta^s_z \phi^\dagger - i W_L'(\phi)) + \omega^\dagger(\Delta^s_{\bar{z}} \lambda + i W_L''(\phi^\dagger) \omega) + \lambda^\dagger(\Delta^s_z \omega - i W_L''(\phi)\lambda)\right\}
 \end{equation}
-where $\Delta^s$ is a symmetric lattice derivative and to remove doublers a Wilson term is added
+where $\Delta^s$ is a symmetric lattice derivative and to remove doublers\aidx{fermion doubling} a Wilson term\aidx{Wilson term} is added
 \begin{equation}
     W_L'(\phi) = W'(\phi) + \frac{1}{2}\Delta^+_z \Delta^-_{\bar{z}}\phi
 \end{equation}
@@ -382,7 +382,7 @@ where
 \section{\(N=2\) SYM in \(d=2\)}
 
 \begin{itemize}
-  \item Now consider a gauge theory that will be prototype for others. The theory contains a gauge field $A_\mu$, 2 real scalars $B^a$ $(a=1,2)$ and 2 Majorana fermions $\psi^a$. All fields transform under the adjoint of an $SU(N)$ gauge group.
+  \item Now consider a gauge theory that will be prototype for others. The theory contains a gauge field $A_\mu$, 2 real scalars $B^a$ $(a=1,2)$ and 2 Majorana fermions\aidx{Majorana fermion} $\psi^a$. All fields transform under the adjoint of an $SU(N)$ gauge group.
 \end{itemize}
 \begin{equation}
     S_{\text{SYM}} = S_B + S_F,
@@ -399,7 +399,7 @@ where $D_\mu f = \partial_\mu f + [A_\mu,f]$.
     &= L^{\alpha \beta}\psi_\beta^b R^{T ba}
 \end{align}
 \begin{itemize}
-    \item Choose $L=R$ transformations to define the ``twisted rotation group'' and define matrix
+    \item Choose $L=R$ transformations to define the ``twisted rotation group\aidx{twisting}'' and define matrix
 \end{itemize}
 \begin{equation}
     \bar{\Psi}_{b \beta} = \Psi^b_\beta,
@@ -421,7 +421,7 @@ which is called the Dirac-K\"ahler action. Note that
 \end{equation}
 so no $\eta^2$, $\psi D \psi$, or $\chi D \chi$ terms appear.
 \begin{itemize}
-    \item Under the same twisted rotations, the gauge fields (which don't see the R-symmetry) remain vectors $A_\mu$ with $\mu = 1,2$ under the twisted symmetry. The scalars do see the R-symmetry (doublet) but can be embedded in a vector $B_\mu$ under the twisted symmetry. Then a complex valued gauge field
+    \item Under the same twisted rotations, the gauge fields (which don't see the R-symmetry\aidx{R-symmetry}) remain vectors $A_\mu$ with $\mu = 1,2$ under the twisted symmetry. The scalars do see the R-symmetry (doublet) but can be embedded in a vector $B_\mu$ under the twisted symmetry. Then a complex valued gauge field\aidx{link variables!complexified}
 \end{itemize}
 \begin{equation}
     \mathcal{A}_\mu = A_\mu + i B_\mu, \quad \bar{\mathcal{A}}_\mu = A_\mu - i B_\mu,
@@ -440,7 +440,7 @@ where
 \begin{equation}
     Q_\alpha^a \to Q_0 I + Q_\mu \gamma_\mu + Q_{12}\gamma_1 \gamma_2, \, \mu \in \{1,2\},
 \end{equation}
-and a particular combination $Q = Q_0 - i Q_{12}$ is explicitly nilpotent with the action expressible as a $Q$ variation:
+and a particular combination $Q = Q_0 - i Q_{12}$ is explicitly nilpotent\aidx{Q-exact action@$Q$-exact action} with the action expressible as a $Q$ variation:
 \begin{equation}
 \label{eq:q_action}
     S = \beta Q \int \text{d}^2 x \operatorname{tr}\left[\chi_{\mu \nu}\mathcal{F}_{\mu \nu} + \eta [\bar{D}_\mu, D_\mu] - \frac{1}{2}\eta d\right]
@@ -478,8 +478,8 @@ Furthermore, performing the integral over the $d$ auxiliary field gives
 \end{equation}
 \begin{itemize}
     \item This is a complicated change of variables and reduces to the original action
-    \item The $Q-$exactness of $S$ makes transcription to a lattice geometry possible while maintaining the SUSY (the other $3$ SUSYs will be broken at $a \neq 0$)
-    \item To define the lattice theory, the relations between $p-$forms and $p-$cells that are discussed in the context of DK fermions can be utilised
+    \item The $Q-$exactness of $S$ makes transcription to a lattice geometry possible while maintaining the SUSY\aidx{supersymmetry} (the other $3$ SUSYs will be broken at $a \neq 0$)
+    \item To define the lattice theory, the relations between $p-$forms and $p-$cells that are discussed in the context of DK fermions\aidx{fermions!Dirac-K\"ahler} can be utilised
     \begin{itemize}
         \item $Q$ should commute with gauge transforms so objects related by $Q$ should have the same gauge transform (i.e. $\mathcal{A}_\mu \to \mathcal{U}_\mu$ and $\psi_\mu$)
         \item Terms in the action should be gauge invariant, so $\chi_{\mu \nu}$ transforms oppositely to $\mathcal{F}_{\mu \nu}$ under gauge transform
@@ -508,7 +508,7 @@ The gauge transform is thus
 \begin{itemize}
     \item Lattice covariant difference operators must be defined that lead to gauge invariant action (monomials are products around closed loops) and should be doubler free
     \begin{itemize}
-        \item This can be achieved by using forward differences for curl-like derivatives
+        \item This can be achieved by using forward difference\aidx{finite difference!forward}s for curl-like derivatives
     \end{itemize}
 \end{itemize}
 \begin{equation}
@@ -518,7 +518,7 @@ and scalars
 \begin{equation}
     D_\mu \eta \to \mathcal{D}_\mu^+ \eta = \mathcal{U}_\mu(x) \eta(x + \hat{\mu}) - \eta(x) \mathcal{U}_\mu(x),
 \end{equation}
-which gives the right continuum limit for adjoint fields, and backwards differences for divergence-like derivatives
+which gives the right continuum limit\aidx{continuum limit} for adjoint fields, and backwards differences for divergence-like derivatives
 \begin{equation}
     D_\mu \psi_\mu \to \mathcal{D}_\mu^- \psi_\mu = \psi_\mu (x) \bar{\mathcal{U}}_\mu(x) - \bar{\mathcal{U}}_\mu(x - \hat{\mu}) \psi_\mu(x - \hat{\mu}).
 \end{equation}
@@ -533,18 +533,18 @@ with
 \begin{equation}
     \mathcal{F}_{\mu \nu} = \mathcal{D}_\mu^+ \mathcal{U}_\nu = \mathcal{U}_\mu(x) \mathcal{U}_\nu(x + \hat{\mu}) - \mathcal{U}_\nu(x) \mathcal{U}_\mu(x + \hat{\nu})
 \end{equation}
-is invariant under $Q$, gauge invariant, and has no doubler modes.
+is invariant under $Q$, gauge invariant, and has no doubler modes\aidx{fermion doubling}.
 
 
 \section{Further theories and challenges}
 
 \begin{itemize}
-    \item There are various other SUSY theories that can be latticised successfully using the twisting technique (or the equivalent orbifolding)
+    \item There are various other SUSY\aidx{supersymmetry} theories that can be latticised successfully using the twisting technique\aidx{twisting} (or the equivalent orbifolding\aidx{orbifolding})
     \begin{itemize}
-        \item In $0+1d$, SYM QM can be studied with more supercharges and different $SU(N)$
+        \item In $0+1d$, SYM QM can be studied with more supercharges\aidx{supercharge} and different $SU(N)$
         \item In $1+1 \, \& \, 2+1d$, various different $\mathcal{N}$ theories are studied
         \item In $3 + 1d$, $\mathcal{N} = 1$ and $\mathcal{N} = 4$ (minimal and maximal) SYM are investigated numerically in large scale calculations - the geometrisation of the fields is really neat here!!
     \end{itemize}
-    \item One  outstanding challenge is to latticise SQCD - i.e. include quarks and squarks (or in general matter in arbitrary representations of the gauge group)
-    \item A second challenge is related to numerical simulations using Monte-Carlo. In various of the theories, because gluinos are Majorana fermions, on integrating them out, they produce a Pfaffian rather than a determinant. This can fluctuate in sign even when the determinant is positive. Numerical evidence in e.g.\ $\mathcal{N}=4$ in $d=4$ suggests this is a mild problem, but strictly it need to be solved.
+    \item One  outstanding challenge is to latticise SQCD\aidx{SQCD} - i.e. include quarks and squarks (or in general matter in arbitrary representations of the gauge group)
+    \item A second challenge is related to numerical simulations using Monte-Carlo. In various of the theories, because gluino\aidx{gluino}s are Majorana\aidx{Majorana fermion} fermions, on integrating them out, they produce a Pfaffian\aidx{Pfaffian} rather than a determinant. This can fluctuate in sign\aidx{sign problem} even when the determinant is positive. Numerical evidence in e.g.\ $\mathcal{N}=4$ in $d=4$ suggests this is a mild problem, but strictly it need to be solved.
 \end{itemize}
