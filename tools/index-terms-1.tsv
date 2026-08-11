@@ -1,0 +1,92 @@
+lattice quantum field theory (LQFT)	LQFT;lattice regulator	definitional entry, Ch. 1
+regulator!lattice	lattice regulator;spacetime lattice regulator
+regulator!dimensional	dimensional regularisation;DRQFT	contrast with lattice regularisation
+lattice QCD (LQCD)	LQCD
+Poincaré symmetry	Poincar\'e symmetries;Poincare symmetries	breaking and recovery under lattice regularisation
+path integral	path integral
+path integral!real-time	real-time path integral	formal object; oscillatory integrand
+path integral!Euclidean	imaginary-time (Euclidean)
+Wick rotation, \see{path integral, Euclidean}	imaginary-time (Euclidean)	term "Wick rotation" absent from text; see-only entry anchored at t→−iτ
+imaginary time	imaginary time
+Wiener measure	Wiener measure	rigorous definition of Euclidean path integral
+transfer matrix	transfer matrix;transfer matrix operator;positive operator	QM and scalar-field constructions
+Hamiltonian!lattice	lattice Hamiltonian	defined via transfer matrix, T=exp(−aH)
+Baker-Campbell-Hausdorff (BCH) relation	BCH relation	distinct from BCH lattice
+correlation function	correlation functions
+vacuum expectation value (vev)	vev;vacuum matrix elements	from τ→∞ limit of traces
+lattice!regular	regular lattice;Regular lattices
+lattice!root	root lattices;Cartan-Dynkin root diagram	classification table
+lattice!hypercubic	hypercubic lattices
+lattice!body-centered hypercubic (BCH)	BCH lattice;body-centered hypercubic
+lattice!anisotropic	anisotropic lattices;anisotropic discretisation
+lattice!random	random lattices;Random lattices
+simplex	simplices	random-geometry discretisations
+Voronoi tessellation	Voroni tessellation	source spelling "Voroni" (sic)
+Delaunay triangulation	Delauney triangulation	source spelling "Delauney" (sic)
+chiral symmetry, spontaneous breaking of	spontaneously break chiral symmetry	random-lattice pathology
+universality	universality
+continuum limit	continuum limit	main treatment in RGE section
+Connes embedding conjecture	Connes embedding conjecture
+lattice spacing	lattice spacing;temporal lattice spacing
+boundary conditions!periodic	periodic boundary conditions
+boundary conditions!Dirichlet	Dirichelet boundary conditions	source spelling "Dirichelet" (sic)
+finite difference!forward	forward finite difference;forward difference
+finite difference!central	central difference	central time difference breaks reflection positivity
+scalar field!lattice discretisation	Scalar fields on a lattice geometry	section anchor
+scalar field!propagator	Free lattice scalar propagator;free propagator
+action!Euclidean	Euclidean action
+statistical mechanics, relation to	Relation to statistical mechanics;quantum statistical mechanics
+temperature	non-zero temperature;physical temperature	T = 1/(k a_t N_t)
+partition function	partition function
+partition function!single-site	single site partition function	hopping expansion, z_0
+Klein-Gordon operator	Klein-Gordon operator	lattice discretisation D_kl
+Brillouin zone, first	first Brillouin zone	loop-momentum integration domain
+phat@$\hat p^2$ (lattice momentum squared)	\hat{p}^{2}	2Σ(1−cos p_μ)
+reflection positivity	reflection positivity;Euclidean time reflection
+reflection positivity!site reflection	Site-reflection;site reflection positive
+reflection positivity!link reflection	Link reflection;link reflection positive
+Osterwalder-Schrader axioms	Osterwalder-Schrader axioms
+Osterwalder-Schrader reconstruction theorem	OS reconstruction thm
+Wightman axioms	Wightman axioms
+Schwinger functions	Schwinger functions
+cluster property	Cluster property
+staggered fermions	staggered fermions	forward reference; site- but not link-reflection positive
+On model@$O(n)$ model	$O(n)$ models;$O(n)$ model;$O(n)$ symmetry
+Ising model	Ising model	λ→∞, n=1 limit
+Heisenberg model	Heisenberg model	λ→∞, n=3, d=2 limit
+quartic potential	quartic potential
+spontaneous symmetry breaking	spontaneously breaks;SSB
+Mermin-Wagner theorem	Mermin-Wagner	no SSB in d=0,1
+Coleman theorem	Coleman Theorems	shares anchor with Mermin-Wagner
+kappa@$\kappa$ (hopping parameter)	hopping parameter;$\kappa$ expansion
+mean field approximation	mean field arguments;mean field
+order parameter	order parameter
+phase transition, second-order	second order phase transition
+phase diagram	phase diagram	O(n) model, (κ,λ) plane
+critical line	critical line	κ_c(λ)
+expansion!weak-coupling	Weak coupling expansion;weak coupling expansion
+expansion!hopping	Hopping expansion;hopping parameter expansion
+high-temperature expansion, \see{expansion, hopping}	high temperature expansion
+perturbation theory!lattice	Perturbation theory with a lattice regulator;lattice regulated path integral
+perturbation theory!renormalised	renormalised perturbation theory;renormalized perturbation theory	both spellings occur in source
+Feynman rules	Feynman rules	lattice modifications
+effective action	effective action	generates vertex functions
+vertex function	vertex functions;two-point vertex function;4-point vertex
+one-particle irreducible functions, \see{vertex function}	one-particle irreducible
+Green functions!connected	connected green functions
+lattice-regulated integrals	Lattice regulated integrals	constants r_0, r_1
+renormalisation	Renormalisation
+field renormalisation	field renormalization	Z factor
+coupling!bare	bare coupling
+coupling!renormalised	renormalized coupling
+renormalisation group equations	Renormalisation group equations
+renormalisation group!Wilsonian (Wilson-Kadanoff)	Wilsonian approach to RG;Wilson (-Kadanoff)	β_WK
+Callan-Symanzik equation	Callan-Symanzik RGE;Callan-Symanzik	β_CS
+beta function@$\beta$-function	$\beta$-function;beta functions	only first two coefficients universal
+fixed point!infrared (IR)	IR fixed point
+fixed point!ultraviolet (UV)	UV fixed point
+scaling violations	scaling violations
+scaling region	scaling region;scaling regime
+cutoff effects	cutoff effects
+Lüscher-Weisz analysis	Lüscher-Weisz (LW);L\"uscher and	O(κ^14) hopping series; no new fixed points
+triviality	no continuum limit	term "triviality" absent; λ_R≠0 admits no continuum limit

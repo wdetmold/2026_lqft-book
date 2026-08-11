@@ -1,0 +1,91 @@
+adjoint fermions	adjoint fermion species
+axial current	axial current;A^a_{\mu 5}	renormalisation example in RI-SMOM discussion
+B to K@$B\to K$ decay	B \to K;flavour changing neutral current decay $B \to K$	see also flavour-changing neutral current
+background chromo-electric field	background chromo-electric field;chromo-electric field
+beta function@$\beta$ function	\beta(g);YM $\beta$ function	see also step scaling
+beyond the Standard Model (BSM)	BSM scenarios;beyond the SM
+bound states	Bound states and nuclei;Compact bound states;binding energy	finite-volume exponential dependence
+chiral condensate	chiral condensate
+composite Higgs	composite Higgs;Higgs boson as a composite bound state	see also technicolour
+correlation function!two-point	two point functions;two-point correlation functions
+correlation function!three-point	Three-point correlation functions;three-point functions;three point functions
+correlation function!four-point	Four- and higher-point correlation functions
+correlation function!hadron-to-vacuum	Two-point hadron-to-vacuum correlation functions;hadron-to-vacuum correlation function
+dark matter!self-interacting	self-interacting dark matter;models of dark matter
+decay constant	meson decay constants
+Delta baryon@$\Delta$ baryon	$\Delta$ baryon;$\Delta$ resonance
+distribution amplitude	meson and baryon distribution amplitudes;distribution amplitudes
+double-beta decay	p p \to n n e e \nu \nu;p p \to n n e e	second-order weak process, incl. neutrinoless mode
+effective field theory!finite-volume matching	finite volume EFT;match energy levels
+effective weak Hamiltonian	effective low energy Hamiltonian;H_\text{weak}	see also Wilson coefficients
+electroweak precision tests	precision electroweak sector tests	constraint on technicolour
+finite volume!energy levels	Finite volume energy levels;energies of non-interacting particles are quantised	see also Lüscher method
+finite volume!exponential corrections	exponentially suppressed volume effects;\exp(-m L)
+finite volume!quantisation condition	quantisation condition	see also Lüscher method
+FLAG	FLAG	Flavour Lattice Averaging Group
+flavour-changing neutral current	flavour changing neutral current
+form factor	form factors;F_\pi(q^2)
+four-quark operator	$4q$ operators;{\cal O}_{4q};$4$ quark effective interaction	appears ch. 14 and ch. 15
+g-2@$(g-2)_\mu$	(g-2)_\mu	muon anomalous magnetic moment; see also vacuum polarisation
+gA@$g_A$ (nucleon axial charge)	g_A
+graphene	graphene
+hadronic matrix element	hadronic matrix elements;hadronic matrix element
+hadronic tensor	hadronic tensor;DIS
+infrared fixed point	IR fixed point;fixed point	see also walking technicolour
+isospin breaking	Isospin breaking and QED effects	chapter currently a stub; see also QED corrections
+K star meson@$K^*$ meson	$K^*$ meson
+K to pi nu nu@$K\to\pi\nu\bar{\nu}$ decay	K \to \pi \nu \bar{\nu}
+K to pi pi@$K\to\pi\pi$ decay	K \to \pi \pi;\langle K | {\cal O}_{4q}| \pi \pi \rangle	see also Maiani-Testa theorem
+Landau gauge	Landau gauge
+Lüscher method	Lüscher method;L\"uscher	both "Lüscher" (UTF-8, heading) and "L\"uscher" (body) occur
+Maiani-Testa theorem	Maiani-Testa No Go Theorem;Maiani and Testa
+matrix element!vacuum	Vacuum matrix element
+matrix element!multiparticle	multiparticle matrix elements
+matrix element!nuclear	Nuclear matrix elements
+MS-bar scheme@$\overline{\text{MS}}$ scheme	\overline{\text{MS}};DR-$\overline{\text{MS}}$
+near-conformal gauge theories	near-conformal gauge theories;near-conformal behaviour
+nuclear lattice effective field theory (NLEFT)	nuclear lattice effective theory (NLEFT);NLEFT
+operator mixing	mixing of operators of different dimensions;power divergent operator mixing
+operator renormalisation	Operator renormalisation	sections in both ch. 14 and ch. 17
+overlap factor	overlap factors
+parton distribution functions	parton distribution functions;nonlocal bilinear operator
+phase shift	scattering phase shift;p \cot \delta(p)
+power divergent subtraction (PDS) scheme	power divergent subtraction scheme;PDS
+proton decay	proton decay matrix elements
+quark wavefunction renormalisation	Quark wavefunction renormalisation
+QED corrections	Isospin breaking and QED effects	chapter currently a stub; see also isospin breaking
+renormalisation!perturbative	Perturbatively using analytic/numerical calculation of Feynman diagrams;Lattice PT
+renormalisation!RI-MOM	RI-MOM;Rome-Southampton method;momentum subtraction scheme;MOM schemes
+renormalisation!RI-SMOM	RI-SMOM;symmetric momentum point
+renormalisation!Schrödinger functional	Schr\"odinger functional step-scaling method	see also step scaling
+renormalisation!pseudoscalar density ($Z_P$)	Z_{P};f_{P}
+resonance	Resonances;resonances in scattering	finite-volume spectrum signature
+rho meson@$\rho$ meson	$\rho$ meson
+Rome-Southampton method	Rome-Southampton method	see renormalisation!RI-MOM
+running coupling	non-perturbative coupling definition;scale dependence of the coupling	see also step scaling
+scattering amplitude	scattering amplitude;\mathcal{A}(L)
+scattering length	scattering length
+scattering!meson-meson	Meson-meson interactions
+scattering!meson-baryon	Meson-baryon scattering
+scattering!baryon-baryon	Baryon-baryon scattering
+Schrödinger functional	Schr\"odinger functional;Schr\"odinger representation
+Schrödinger functional!boundary conditions	boundary conditions;boundary fields
+Schrödinger functional!boundary sources	bilinear boundary sources;boundary values
+Schrödinger functional!coupling	Schr\"odinger-functional coupling;boundary plaquettes;effective action
+Schrödinger functional!renormalisability	multiplicativly renormalisable;boundary fields for renormalisability	"multiplicativly" is the literal (misspelt) source text
+second-order weak processes	second order electroweak processes;Second order weak processes
+step scaling	step-scaling;step scaling	see also Schrödinger functional
+step scaling!function $\sigma(u)$	step scaling function;\sigma(u);\Sigma(u, a / L)
+SU(N) gauge theories@$SU(N_c)$ gauge theories	SU(N_c=2);SU(N_c = 4)	both spacings occur in source
+technicolour	technicolour	see also walking technicolour
+three-particle quantisation condition	generalised to three particle systems;Three and more particle interactions
+toron configuration	toron configuration
+twisted Schrödinger functional scheme	twisted Schr\"odinger-functional scheme;twisted Schr\"odinger functional scheme;defines a twist	hyphenated in ch. 17, unhyphenated in ch. 18
+vacuum polarisation	vacuum polarisation	relevant for $(g-2)_\mu$
+vertex function	vertex function
+walking technicolour	walking technicolour;walking coupling
+wave functional	wave functional
+Wilson coefficients	Wilson coefficients
+Wilson line	Wilson line
+zero mode, removal of	remove the zero mode;boundary fields remove the zero mode
+zeta function, three-dimensional	$3D$ zeta function

@@ -1,0 +1,432 @@
+# Master index vocabulary. Edit freely: delete rows, rename keys,
+# add aliases (';'-separated). '!' = subentry, '@' = sort key,
+# 'SEE:<target>' in the alias column makes a cross-reference entry.
+# Then run: python3 tools/apply_index.py
+accidental symmetry	Accidental Symmetries;symmetry that emerges in the continuum limit	
+action!Euclidean	Euclidean action	
+action!fixed-point	fixed point action;S_\text{FP};FP action	see also perfect action
+additive mass renormalisation	additive mass shift;additive mass renormalisation	
+adjoint fermions	adjoint fermion species	
+Adler-Bell-Jackiw anomaly	SEE:axial anomaly	
+Aharonov-Bohm phase	Aharanov-Bohm	text misspells "Aharanov"; plaquette as magnetic flux
+algorithm!conjugate gradient	conjugate gradient algorithm (CG);CG Algorithm;using CG etc	ch08; also ch13 propagator solves
+algorithm!heatbath	Heatbath Algorithm;global heatbath;T_{\text{HB}}	ch08
+algorithm!hybrid Monte Carlo	Hybrid Monte-Carlo Algorithm;HMC introduces auxiliary canonical momenta;tailored variants of HMC	main anchor ch08; also ch12 State-of-the-art
+algorithm!Langevin	Langevin algorithm	ch08; section is a TODO stub
+algorithm!Metropolis	Metropolis Algorithm;Metropolis algorithm;accept-reject	ch08; accept-reject construction anchored here
+anisotropic lattice	anisotropic lattice geometry;anisotropy	ch12
+anomaly cancellation	anomaly-free fermion content;anomaly-cancelling fermionic representation	
+anomaly!covariant gauge	covariant gauge anomaly;{\cal A}^{a}(x)	
+anomaly!Witten	Witten anomaly;Witten' anomaly	global obstruction, SU(2)
+area law	area law	
+autocorrelation	autocorrelation;autocorrelation function;exponential autocorrelation time	ch08
+autocorrelation!integrated time	integrated autocorrelation time;\tau_{\text {int}, A}	ch08
+auxiliary field	auxiliary field $B$;Introducing an auxiliary field	off-shell nilpotency
+axial anomaly	Adler-Bell-Jackiw anomaly;ABJ anomaly;anomalous	arises from measure under lattice chiral rotation
+axial current	axial current;A^a_{\mu 5}	renormalisation example in RI-SMOM discussion
+B to K@$B\to K$ decay	B \to K;flavour changing neutral current decay $B \to K$	see also flavour-changing neutral current
+background chromo-electric field	background chromo-electric field;chromo-electric field	
+Baker-Campbell-Hausdorff (BCH) relation	BCH relation	distinct from BCH lattice
+beta@$\beta$ (inverse coupling)	\beta=\frac{2 N}{g^{2}}	"inverse coupling" not literal in text; anchor at definition
+beta function@$\beta$-function	$\beta$-function;beta functions;\beta(g);YM $\beta$ function	only first two coefficients universal
+betaCS@$\beta_{CS}$ (beta function)	\beta_{CS}	universal coefficients $\beta_0$, $\beta_1$
+beyond the Standard Model (BSM)	BSM scenarios;beyond the SM	
+blocking kernel	T(\vec{R}, \vec{s});T_G[V,U];T_F(\bar{\chi}, \chi;specifies the blocking	kernels for spins, gauge fields, fermions
+bound states	Bound states and nuclei;Compact bound states;binding energy	finite-volume exponential dependence
+boundary conditions!Dirichlet	Dirichelet boundary conditions	source spelling "Dirichelet" (sic)
+boundary conditions!periodic	periodic boundary conditions	
+Brillouin zone	Brillouin zone	
+Brillouin zone, first	first Brillouin zone	loop-momentum integration domain
+Callan-Symanzik equation	Callan-Symanzik RGE;Callan-Symanzik	β_CS
+center symmetry	center symmetry;Z_{N_c}	ch12; spontaneous breaking at deconfinement
+CG	SEE:algorithm!conjugate gradient	cross-reference
+chains and cochains	$p-$chain;cochains;boundary $(\Delta)$ and coboundary $(\nabla)$ operators;cubical complex	lattice complex for Dirac-Kähler fermions
+characters (group)	group characters;character;Weyl character formula	includes $SU(2)$/$SU(3)$ examples
+chemical potential	chemical potential;chemical potentials;fermion chemical potential	ch12; also ch08 pseudofermion caveat
+chemical potential!imaginary	imaginary chemical potential	ch12, critical end point methods
+chemical potential!isospin	isospin chemical potential	ch12
+chiral anomaly	Chiral anomaly implies no exact chiral invariance	see also anomaly
+chiral condensate	chiral condensate;\langle\bar{\psi}\psi\rangle	ch12; order parameter for chiral symmetry breaking
+chiral condensate!susceptibility	susceptibility of the chiral condensate;\chi_l(T)	ch12
+chiral gauge theory	chiral gauge theory;Chiral gauge theories;$\chi$GT	main entry; chapter-level
+chiral gauge theory!boundary formulation	Chiral gauge theory as boundary theory;boundary theory;D-dimensional boundary	see also domain-wall fermions
+chiral gauge theory!gauge-invariant formulation	Gauge-invariant formulation;gauges the exact lattice chiral symmetry	Luscher construction
+chiral gauge theory!non-gauge-invariant formulation	Non-gauge invariant formulation;Non-gauge-invariant formulation;break gauge invariance but in a way such that it is restored	covers gauge-fixing and two-lattice approaches
+chiral symmetry	chiral symmetry	
+chiral symmetry restoration	chiral symmetry restoration;spontaneous breaking of chiral symmetry	ch12
+chiral symmetry!exact lattice	L\"uscher's exact lattice chiral symmetry;exact lattice chiral symmetry;\hat{\gamma}_{5}=\gamma_{s}(1-a D)	see also Ginsparg-Wilson relation
+chiral symmetry!lattice (L\"uscher)	L\"uscher;modified chiral projectors	symmetry transformation compatible with GW relation
+chiral symmetry!remnant, staggered	remnant	remnant $U_A(1)$ prevents additive mass renormalisation
+chiral symmetry!spontaneous breaking	spontaneously breaks;Spontaneous symmetry breaking	
+chiral symmetry, spontaneous breaking of	spontaneously break chiral symmetry	random-lattice pathology
+class functions	class functions;class function	
+Clifford product	Clifford product;inner derivative	inner derivative (contraction) defined just before
+clover term	clover term	
+cluster property	Cluster property	
+coderivative	Coderivative;coderivative	
+Coleman theorem	Coleman Theorems	shares anchor with Mermin-Wagner
+Coleman-Mandula theorem	Coleman-Mandula theorem	
+composite Higgs	composite Higgs;Higgs boson as a composite bound state	see also technicolour
+condition number	condition number	ch08
+confinement	linear confinement;confining phase;confinement	strong-coupling area law; not a proof in continuum
+Connes embedding conjecture	Connes embedding conjecture	
+continuum limit	continuum limit;classical continuum limit	main treatment in RGE section
+correlation function	correlation functions	
+correlation function!four-point	Four- and higher-point correlation functions	
+correlation function!hadron-to-vacuum	Two-point hadron-to-vacuum correlation functions;hadron-to-vacuum correlation function	
+correlation function!matrix of	Matrices of correlation functions;matrix of correlation functions	ch13; matrix-Prony and generalised-pencil-of-functions anchored here
+correlation function!statistical behaviour	Statistical behaviour of correlation functions;sample variance	ch13
+correlation function!three-point	Three-point correlation functions;three-point functions;three point functions	
+correlation function!two-point	two-point correlation function;Two point correlation functions;two-point function;two point functions;two-point correlation functions	ch13
+Coulomb phase	Coulomb phase	$U(1)$ theory beyond strong coupling
+counterterms	counter-terms;counterterms;fine-tuned;counterterm	tuning in both chiral-gauge and SUSY contexts
+coupling!bare	bare coupling	
+coupling!renormalised	renormalized coupling	
+critical end point	Critical end point;critical point;CEP	ch12
+critical line	critical line	κ_c(λ)
+critical surface	critical surface	$\xi = \infty$ locus
+cutoff effects	cutoff effects	
+dark matter!self-interacting	self-interacting dark matter;models of dark matter	
+de Rham's theorem	de Rham's theorem	dictionary between forms and cochains
+decay constant	meson decay constants	
+deconfinement	deconfines;deconfinement;deconfining transition	ch12
+deflation	deflated;low eigenvalues of the matrix	ch08
+Delaunay triangulation	Delauney triangulation	source spelling "Delauney" (sic)
+Delta baryon@$\Delta$ baryon	$\Delta$ baryon;$\Delta$ resonance	
+detailed balance	detailed balance;detailed balance condition;balance condition	ch08; balance condition anchored with same entry
+differential forms	differential $k-$form;wedge product	
+Dirac matrices, Euclidean	Dirac matrices	anticommutator and Minkowski relation
+Dirac operator	Dirac operator	ch08
+Dirac operator!fixed-point	D_\text{FP};matching of Dirac operators;spectrum of the Dirac operator	
+disconnected contributions	quark propagator from every point to itself;trace of the inverse	ch13; word "disconnected" never appears in text
+distribution amplitude	meson and baryon distribution amplitudes;distribution amplitudes	
+double-beta decay	p p \to n n e e \nu \nu;p p \to n n e e	second-order weak process, incl. neutrinoless mode
+doublers	SEE:fermion doubling	
+effective action	effective action	generates vertex functions
+effective field theory!finite-volume matching	finite volume EFT;match energy levels	
+effective weak Hamiltonian	effective low energy Hamiltonian;H_\text{weak}	see also Wilson coefficients
+Eichten-Preskill model	Eichten \& Preskill	also Smit-Swift mention
+electrical conductivity	electrical conductivity	ch12
+electroweak precision tests	precision electroweak sector tests	constraint on technicolour
+Elitzur's theorem	Elitzur's theorem	vanishing of gauge-variant expectation values
+equation of state	equation of state;Pressure;energy density;entropy density;speed of sound	ch12; observables defined in Thermodynamic Quantities section
+excited states	excited states;excited state energies	ch13
+expansion!character	character expansion	
+expansion!cluster	cluster expansion	
+expansion!hopping	Hopping expansion;hopping parameter expansion	
+expansion!strong-coupling	strong coupling expansion;Strong coupling expansion;strong coupling limit	
+expansion!weak-coupling	Weak coupling expansion;weak coupling expansion	
+exterior derivative	Exterior derivatives;exterior derivative	
+fermion determinant	fermion determinant;\operatorname{det}[M];\operatorname{det}[D[\phi]]	cf. rooting (staggered fermions)
+fermion determinant!complex	Complex determinant;fermion determinant is necessarily complex	
+fermion doubling	fermion doubling;doubling problem;fermion doublers;doubler modes;doublers;m_{\text { doubler}}	16 doublers at Brillouin-zone corners
+fermion measure!phase ambiguity	phase ambiguity;D \psi_{\text {left }};\operatorname{det} M[U]	Luscher phase definition
+fermion propagator	fermion propagator	
+fermions!chirally improved	Chirally improved fermions	
+fermions!Dirac-K\"ahler	Dirac-K\"ahler Fermions;Dirac-Kähler fermions;DK fermions;Dirac-K\"ahler action	text mixes escaped and unicode umlaut spellings
+fermions!domain-wall	Domain Wall Fermions;domain-wall fermions;DWF;Kaplan;Domain-wall fermions;localising light modes near a defect	Shamir/Furman-Shamir lattice formulation
+fermions!fixed-point (perfect)	Perfect / fixed-point fermions	
+fermions!minimally doubled	Minimally doubled fermions;Borici-Creutz	Karsten-Wilczek named in same line
+fermions!naive	Naive lattice fermions;naive fermion action;S_{\text {naive }}	
+fermions!overlap	overlap Dirac operator;overlap operator;D_{O};Neuberger;sign function;Overlap fermions;overlap fermions	ch08; also ch12
+fermions!SLAC	SLAC fermion	
+fermions!staggered	staggered fermions;Staggered (Kogut-Susskind) fermions;S_{KS}	forward reference; site- but not link-reflection positive
+fermions!twisted-mass	twisted-mass fermions;Osterwalder \& Seiler	Osterwalder-Seiler variant mentioned alongside
+fermions!Weyl	Weyl fermion;Weyl fermions	
+fermions!Wilson	Wilson fermions;Wilson Dirac operator	
+Feynman rules	Feynman rules	lattice modifications
+field renormalisation	field renormalization	Z factor
+finite difference!central	central difference	central time difference breaks reflection positivity
+finite difference!forward	forward finite difference;forward difference	
+finite volume!energy levels	Finite volume energy levels;energies of non-interacting particles are quantised	see also Lüscher method
+finite volume!exponential corrections	exponentially suppressed volume effects;\exp(-m L)	
+finite volume!quantisation condition	quantisation condition	see also Lüscher method
+fixed point	fixed points in this flow;\kappa_\alpha^*;fixed point at $\beta = \infty$	of RG flow
+fixed point!infrared (IR)	IR fixed point	
+fixed point!ultraviolet (UV)	UV fixed point	
+FLAG	FLAG	Flavour Lattice Averaging Group
+flavour singlet states	Flavour singlet states;flavour singlet	ch13
+flavour-changing neutral current	flavour changing neutral current	
+form factor	form factors;F_\pi(q^2)	
+four-quark operator	$4q$ operators;{\cal O}_{4q};$4$ quark effective interaction	appears ch. 14 and ch. 15
+Fujikawa's method	Fujikawa's method	
+g-2@$(g-2)_\mu$	(g-2)_\mu	muon anomalous magnetic moment; see also vacuum polarisation
+gA@$g_A$ (nucleon axial charge)	g_A	
+gamma5@$\gamma_5$	\gamma_{5}=\gamma_{1}	
+gamma5Hermiticity@$\gamma_5$-Hermiticity	$\gamma_5$-Hermitian;\gamma_{5}\)-Hermitian;hermiticity	appears for $D_W$, GW operators, overlap kernel
+gauge field!interpolation	interpolation of the gauge field;smooth covariant interpolation	two-lattice ($f$, $b$) formulation
+gauge field!longitudinal modes	longitudinal mode of gauge field;longitudinal modes decouple;longitudinal modes coupling to fermions	
+gauge fixing	fix a gauge;gauge can be fixed	parent for subentries below
+gauge fixing!Coulomb	Coulomb gauge	
+gauge fixing!Landau	Landau gauge	
+gauge fixing!lattice	Gauge fixing allows the possibility;gauge-fixing term;standard complete gauge fixings	see also Neuberger's theorem
+gauge fixing!maximal tree	maximal tree gauge;maximal tree	
+gauge fixing!temporal	Temporal gauge;temporal gauge	
+Gauss's law	Gauss's Law	discrete version on physical states
+generalised eigenvalue problem	generalised eigenvalue problem;Generalised Eigenvalue Problem (GEVP)	ch13
+GEVP	SEE:generalised eigenvalue problem	cross-reference
+Ginsparg-Wilson relation	Ginsparg-Wilson relation;GW relation;GWR;Ginsparg and Wilson;GW fermion;GW-relation fermion;satisfies GW relation	anchors in ch19 and ch21 (blocked propagator)
+Ginsparg-Wilson relation!eigenvalue circle	GW circle;Spectrum of $D$	real eigenvalues only at $0$ and $2/a$
+glueballs	glueballs;glueball masses	via Wilson-loop correlators and strong coupling
+gluino	gluino;m_\text{gluino}	
+Goldstone bosons	Goldstone bosons;pseudoscalar meson octet	
+Golterman-Shamir construction	Golterman \& Shamir	non-Abelian gauge-fixed formulation
+gradient flow	SEE:Wilson flow	cross-reference; term appears only in chapter directory name
+grand canonical partition function	grand canonical partition function;Z\left[T, V, \mu_{i}\right]	ch12
+graphene	graphene	
+Grassmann variables	Grassmann-valued;Grassmann sources	
+Green functions!connected	connected green functions	
+Gribov copies	Gribov copies;Gribov-Singer	
+H(4)@$H(4)$ hypercubic symmetry	$H(4)$ transformations;H(4)	accidental-symmetry example
+Haar measure	Haar measure;group integration;group integral;invariance of the measure	
+hadron resonance gas model	hadron resonance gas model	ch12
+hadron spectrum	spectrum of stable particles;hadron spectrum	ch13
+hadronic matrix element	hadronic matrix elements;hadronic matrix element	
+hadronic tensor	hadronic tensor;DIS	
+Hamiltonian Monte Carlo	SEE:algorithm!hybrid Monte Carlo	cross-reference; name used in statistics
+Hamiltonian!lattice	lattice Hamiltonian	defined via transfer matrix, T=exp(−aH)
+Heisenberg model	Heisenberg model	λ→∞, n=3, d=2 limit
+high-temperature expansion	SEE:expansion!strong-coupling	
+HMC	SEE:algorithm!hybrid Monte Carlo	cross-reference
+Hodge star	Hodge star	
+holonomy	SEE:parallel transporter	
+imaginary time	imaginary time	
+importance sampling	Importance Sampling;importance sampling fails;importance sampling is inapplicable	ch08 section; also ch12 sign-problem discussion
+improvement, $\mathcal{O}(a)$	discretisation artifacts;dim-$5$ operator	
+independent samples, effective number of	effective number of independent samples;N_\text{indep}	ch08
+index of the Dirac operator ($n_- - n_+$)	n_- - n_+;\operatorname{tr}[\gamma_5 P_0]	$Q=\frac{a}{2}\operatorname{tr}[\gamma_5 D]$ integer-valued
+infrared fixed point	IR fixed point;fixed point	see also walking technicolour
+integrability condition	integrability condition;integrability is the requirement	for measure current / effective action
+interaction measure	interaction measure;I = \varepsilon - 3 P	ch12
+interpolating operator	interpolating operators;Interpolating operators	ch13
+interpolating operator!deuteron	the deuteron;d_i(n)	ch13
+interpolating operator!glueball	Glueballs;glueball spectroscopy	ch13; also flavour-singlet mixing
+interpolating operator!pion	charged pion;\pi^-(n) = \bar{u}(n)\gamma_5 d(n)	ch13
+interpolating operator!proton	Now we consider the proton;p_\gamma(x)	ch13
+Ising model	Ising model	λ→∞, n=1 limit
+isospin breaking	Isospin breaking and QED effects	chapter currently a stub; see also QED corrections
+K star meson@$K^*$ meson	$K^*$ meson	
+K to pi nu nu@$K\to\pi\nu\bar{\nu}$ decay	K \to \pi \nu \bar{\nu}	
+K to pi pi@$K\to\pi\pi$ decay	K \to \pi \pi;\langle K | {\cal O}_{4q}| \pi \pi \rangle	see also Maiani-Testa theorem
+K\"ahler-Dirac equation	K\"ahler-Dirac equation;KDE;K\"ahler-Dirac operator;Kähler-Dirac action	note reversed name order vs fermion family
+kappa@$\kappa$ (hopping parameter)	hopping parameter;$\kappa$ expansion	
+Kawamoto-Smit transformation	Kawamoto-Smit;diagonalise the Dirac matrices	
+Kitaev-Fidkowski model	Kitaev-Fidkowski model	condensed-matter SMG example
+Klein-Gordon operator	Klein-Gordon operator	lattice discretisation D_kl
+Kogut-Susskind fermions	SEE:fermions!staggered	
+Kogut-Susskind Hamiltonian	Kogut-Susskind Hamiltonian;\hat{H}_{KS}	
+LambdaL@$\Lambda_L$ (lattice scale parameter)	\Lambda_L	
+lattice artifacts	lattice artifacts;cutoff effects	absent on renormalised trajectory
+lattice QCD (LQCD)	LQCD	
+lattice QCD calculation, anatomy of	Anatomy of a LQCD calculation	ch12
+lattice quantum field theory (LQFT)	LQFT;lattice regulator	definitional entry, Ch. 1
+lattice spacing	lattice spacing;temporal lattice spacing	
+lattice!anisotropic	anisotropic lattices;anisotropic discretisation	
+lattice!body-centered hypercubic (BCH)	BCH lattice;body-centered hypercubic	
+lattice!hypercubic	hypercubic lattices	
+lattice!random	random lattices;Random lattices	
+lattice!regular	regular lattice;Regular lattices	
+lattice!root	root lattices;Cartan-Dynkin root diagram	classification table
+lattice-regulated integrals	Lattice regulated integrals	constants r_0, r_1
+leapfrog integrator	leapfrog integrator;leapfrog integration	ch08
+Leibniz rule	Leibniz rule	no local lattice difference operator satisfies it (Bergner)
+linear solver	Linear System Solvers;Iterative methods;direct solvers	ch08
+linear solver!BiCGstab	BiCG-stab	ch08
+linear solver!Krylov	Krylov solvers;Krylov space;Kryloy space	ch08; ch13 Rayleigh-Ritz has typo "Kryloy"
+link variables	link variables;link fields	also anchor at boxed $U_\nu(n)=\exp\{iaA^\nu(n)\}$
+link variables!complexified	gl(N, \mathbb{C});complex valued gauge field;\mathcal{U}_\mu(x)	non-unitary links in twisted SYM
+locality (of lattice Dirac operators)	exponentially localised;non-local;nonlocal	overlap exponential bound; SLAC and rooting failures
+Lüscher method	Lüscher method;L\"uscher	both "Lüscher" (UTF-8, heading) and "L\"uscher" (body) occur
+Lüscher-Weisz analysis	Lüscher-Weisz (LW);L\"uscher and	O(κ^14) hopping series; no new fixed points
+Maiani-Testa theorem	Maiani-Testa No Go Theorem;Maiani and Testa	
+Majorana fermion	Majorana fermion;Majorana fermions;gluinos are Majorana	see also Pfaffian
+Markov chain	Markov chain;Markov Chains;Markov process	ch08
+Markov chain!ergodicity	ergodic;ergodicity	ch08
+Markov chain!thermalisation	thermalise;thermalised;thermalisation	ch08
+Markov chain!transition probability	transition probability	ch08
+master field	master field	ch13
+matrix element!multiparticle	multiparticle matrix elements	
+matrix element!nuclear	Nuclear matrix elements	
+matrix element!vacuum	Vacuum matrix element	
+matrix sign function	matrix sign function;Zolotarev rational functions	ch08; overlap fermions context
+mean field approximation	mean field arguments;mean field	
+Mermin-Wagner theorem	Mermin-Wagner	no SSB in d=0,1
+mirror fermions	mirror fermions;\mathcal{L}_{\text {mirror }};mirror sector	see also symmetric mass generation
+molecular dynamics	molecular dynamics;Hamilton's equations	ch08, HMC section
+MS-bar scheme@$\overline{\text{MS}}$ scheme	\overline{\text{MS}};DR-$\overline{\text{MS}}$	
+N=1@$\mathcal{N}=1$ super Yang-Mills	\mathcal{N} = 1$ SYM;\mathcal{N} = 1$ SYM theory contains no scalar particles	
+N=2@$\mathcal{N}=2$ super Yang-Mills	N=2\) SYM in \(d=2;S_{\text{SYM}}	prototype twisted lattice gauge theory
+N=4@$\mathcal{N}=4$ super Yang-Mills	\mathcal{N} = 4$ (minimal and maximal) SYM;\mathcal{N}=4$ in $d=4$	
+near-conformal gauge theories	near-conformal gauge theories;near-conformal behaviour	
+Neuberger's theorem	Neuberger's theorem	partition functions of complete gauge fixings vanish
+Nicolai map	Nicolai map	anchors in SQM and Wess-Zumino sections
+Nielsen-Ninomiya theorem	Nielsen-Ninomiya theorem;NN theorem;NN no-go theorem;second homotopy group	includes winding-number (Tong) proof
+nuclear lattice effective field theory (NLEFT)	nuclear lattice effective theory (NLEFT);NLEFT	
+O(N)@$O(N)$ model	O(N)$ model in;O(N)$ field	$d=2$ blocking example
+On model@$O(n)$ model	$O(n)$ models;$O(n)$ model;$O(n)$ symmetry	
+one-particle irreducible functions	SEE:vertex function	
+operator mixing	mixing of operators of different dimensions;power divergent operator mixing	
+operator renormalisation	Operator renormalisation	sections in both ch. 14 and ch. 17
+orbifolding	orbifolding	equivalent to twisting
+order parameter	order parameter	
+Osterwalder-Schrader axioms	Osterwalder-Schrader axioms	
+Osterwalder-Schrader reconstruction theorem	OS reconstruction thm	
+overlap factor	overlap factors;Z_{H, n}(\vec{p})	ch13; distinct from overlap fermions
+parallel transporter	parallel transporters;Parallel transporters (Holonomies);path-ordered exponential	
+partition function	partition function	
+partition function!single-site	single site partition function	hopping expansion, z_0
+parton distribution functions	parton distribution functions;nonlocal bilinear operator	
+path integral	path integral	
+path integral!Euclidean	imaginary-time (Euclidean)	
+path integral!real-time	real-time path integral	formal object; oscillatory integrand
+Pauli-Villars fields	Pauli-Villars	cancel bulk modes in DWF partition function
+perfect action	Perfect Actions;classically perfect;Results with perfect actions	see also action!fixed-point
+perturbation theory!lattice	Perturbation theory with a lattice regulator;lattice regulated path integral	
+perturbation theory!renormalised	renormalised perturbation theory;renormalized perturbation theory	both spellings occur in source
+Peter-Weyl theorem	Peter-Weyl theorem	
+Pfaffian	Pfaffian	see also sign problem
+phase diagram	phase diagram	O(n) model, (κ,λ) plane
+phase diagram!QCD	phase diagram;Conjectured QCD phase diagram	ch12
+phase shift	scattering phase shift;p \cot \delta(p)	
+phase transition, second-order	second order phase transition	
+phat@$\hat p^2$ (lattice momentum squared)	\hat{p}^{2}	2Σ(1−cos p_μ)
+plaquette	plaquette	first defined in "Wilson gauge action" section
+Poincare-Hopf index theorem	Poincare-Hopf index theorem;Euler characteristic	used in NN proof; text omits accents
+Poincaré symmetry	Poincar\'e symmetries;Poincare symmetries	breaking and recovery under lattice regularisation
+Poincaré symmetry!emergence in continuum limit	Poincare symmetry arises in the continuum limit;subgroup of Poincare symmetry	see also accidental symmetry
+Polyakov loop	Polyakov loops;Polyakov loop	ch12
+Polyakov loop!susceptibility	\chi_P;susceptibility corresponding to the Polyakov loop	ch12
+power divergent subtraction (PDS) scheme	power divergent subtraction scheme;PDS	
+preconditioning	preconditioned;even-odd, ILU, SSGR, Schwartz, Multigrid	ch08
+preconditioning!multigrid	Multigrid;multigrid fermion inverters	ch08; also ch12 State-of-the-art
+proton decay	proton decay matrix elements	
+pseudofermions	Pseudofermions;pseudofermion	ch08
+Q-exact action@$Q$-exact action	Q-$exact form;Q-$exactness;Q^2 = 0;nilpotent	see also supercharge
+QCD!fixed-point action	Solving the FP action for QCD;Combine the two blockings	parameterisation and minimisation
+QED corrections	Isospin breaking and QED effects	chapter currently a stub; see also isospin breaking
+QGP	SEE:quark-gluon plasma	cross-reference
+quark number susceptibilities	susceptibilities;\chi_{ijk}(T)	ch12; Taylor coefficients in mu/T
+quark propagator	quark propagators;quark propagator	ch13 two-point computation; also ch12 reuse of propagators
+quark wavefunction renormalisation	Quark wavefunction renormalisation	
+quark-gluon plasma	quark-gluon plasma;quark gluon plasma phase;QGP	ch12
+quartic potential	quartic potential	
+R-symmetry	R-symmetries;R-symmetry	
+R-symmetry!U(1)R@$U(1)_R$	U(1)_R \to \mathbb{Z}_{2N};U(1)$ R-symmetry	anomalous breaking protects gluino mass
+Rayleigh-Ritz method	Rayleigh-Ritz methods;Cholesky decomposition	ch13; Cholesky step anchored here
+reflection positivity	reflection positivity;Euclidean time reflection;reflection positive	Wilson gauge action and $r=1$ Wilson fermions
+reflection positivity!link reflection	Link reflection;link reflection positive	
+reflection positivity!site reflection	Site-reflection;site reflection positive	
+regulator!dimensional	dimensional regularisation;DRQFT	contrast with lattice regularisation
+regulator!lattice	lattice regulator;spacetime lattice regulator	
+renormalisation	Renormalisation	
+renormalisation group equations	Renormalisation group equations;RGE;cutoff independence	
+renormalisation group!blocking	blocked fields;Blocking and fixed points;blocking transform	see also blocking kernel
+renormalisation group!transformation	RG transformation;RGT;RG flow	
+renormalisation group!Wilsonian (Wilson-Kadanoff)	Wilsonian approach to RG;Wilson (-Kadanoff)	β_WK
+renormalisation!perturbative	Perturbatively using analytic/numerical calculation of Feynman diagrams;Lattice PT	
+renormalisation!pseudoscalar density ($Z_P$)	Z_{P};f_{P}	
+renormalisation!RI-MOM	RI-MOM;Rome-Southampton method;momentum subtraction scheme;MOM schemes	see renormalisation!RI-MOM
+renormalisation!RI-SMOM	RI-SMOM;symmetric momentum point	
+renormalisation!Schrödinger functional	Schr\"odinger functional step-scaling method	see also step scaling
+renormalised trajectory	renormalised trajectory;RT	no lattice artifacts on the RT
+residual mass	residual mass	vanishes exponentially in $N_5$
+resonance	Resonances;resonances in scattering	finite-volume spectrum signature
+reweighting	reweighting	ch12, critical end point methods
+rho meson@$\rho$ meson	$\rho$ meson	
+rooting (staggered fermions)	fourth root;Rooted staggered fermions	locality concerns noted in text
+roughening transition	roughening transition	
+running coupling	non-perturbative coupling definition;scale dependence of the coupling	see also step scaling
+saddle-point approximation	Saddle point approximation;saddle point approx	FP action at $\beta \to \infty$
+scalar field!lattice discretisation	Scalar fields on a lattice geometry	section anchor
+scalar field!propagator	Free lattice scalar propagator;free propagator	
+scale setting	Scale setting;determine the lattice spacing in physical units	ch09 stub;ch12 anatomy step 3
+scaling region	scaling region;scaling regime	
+scaling violations	scaling violations	
+scattering amplitude	scattering amplitude;\mathcal{A}(L)	
+scattering length	scattering length	
+scattering!baryon-baryon	Baryon-baryon scattering	
+scattering!meson-baryon	Meson-baryon scattering	
+scattering!meson-meson	Meson-meson interactions	
+Schrödinger functional	Schr\"odinger functional;Schr\"odinger representation	
+Schrödinger functional!boundary conditions	boundary conditions;boundary fields	
+Schrödinger functional!boundary sources	bilinear boundary sources;boundary values	
+Schrödinger functional!coupling	Schr\"odinger-functional coupling;boundary plaquettes;effective action	
+Schrödinger functional!renormalisability	multiplicativly renormalisable;boundary fields for renormalisability	"multiplicativly" is the literal (misspelt) source text
+Schwinger functions	Schwinger functions	
+screening (of adjoint sources)	screened by gluons;screening;perimeter law	perimeter-law scaling of adjoint Wilson loops
+second-order weak processes	second order electroweak processes;Second order weak processes	
+Sheikholeslami-Wohlert coefficient	Sheikholeslami-Wohlert parameter;c_{SW}	
+sigma@$\sigma$ (string tension)	string tension	
+sign problem	sign/phase problem;sign problem at finite density;sign problem;fluctuate in sign	ch12; also ch13 signal-to-noise connection
+signal-to-noise ratio	signal to noise;signal-to-noise problem;Parisi and Lepage	ch13; Parisi-Lepage argument anchored here
+simplex	simplices	random-geometry discretisations
+smearing	smeared quark fields;smearing type;gauge covariant smearing	ch13
+smearing!Jacobi	Jacobi smearing	ch13
+smearing!wall	wall smearing;Coulomb gauge	ch13; requires Coulomb gauge fixing
+spectral function	spectral function;\rho_{VV}	ch12
+spontaneous symmetry breaking	spontaneously breaks;SSB	
+SQCD	SQCD	open lattice challenge; squarks
+Standard Model!non-perturbative definition	define the SM outside of perturbation theory;what we mean by the SM	
+static quark potential	static quark potential;F_{\bar{Q}Q}	ch12; extracted from Polyakov loop correlator
+statistical mechanics, relation to	Relation to statistical mechanics;quantum statistical mechanics	
+step scaling	step-scaling;step scaling	see also Schrödinger functional
+step scaling!function $\sigma(u)$	step scaling function;\sigma(u);\Sigma(u, a / L)	
+SU(5)@$SU(5)$ grand unified theory	SU(S) GUT;SU(5) fundamental	"SU(S) GUT" is a source typo for SU(5)
+SU(N) gauge theories@$SU(N_c)$ gauge theories	SU(N_c=2);SU(N_c = 4)	both spacings occur in source
+supercharge	supercharges;scalar supercharge;Q_\alpha	see also supercharge!nilpotent under Q-exact action
+superpotential	superpotential;P(\phi)	
+supersymmetry	Supersymmetry;SUSY	main entry
+supersymmetry!breaking	SUSY breaking typically does not occur in perturbation theory;SUSY-breaking operators;SUSY-violating interactions	
+supersymmetry!extended	extended supersymmetry;multiple supercharges;allowed values of $\mathcal{N}$	
+supersymmetry!lattice	Lattice Supersymmetry;SUSY theories using a lattice regulator;SUSY cannot be an exact symmetry of a LFT	
+supersymmetry!quantum mechanics	SUSY quantum mechanics;SQM;Lattice QM with exact SUSY	
+Susskind flavour symmetry	Susskind flavour symmetry	
+symmetric mass generation	symmetric mass generation;Symmetric mass generation	see also mirror fermions
+symplectic integrator	symplectic, reversible integrator;A symplectic integrator such as leapfrog	ch08; covers reversibility/area preservation
+taste (staggered fermions)	``taste'';flavour/taste	
+Taylor expansion, in chemical potential	Taylor expand about $\mu = 0$;expand thermodynamic quantities about zero $\mu_i$	ch12
+Tc@$T_c$ (critical temperature)	T_c = 155(10);chiral crossover temperature;T_C	ch12; sort key Tc
+technicolour	technicolour	see also walking technicolour
+temperature	non-zero temperature;physical temperature	T = 1/(k a_t N_t)
+three-particle quantisation condition	generalised to three particle systems;Three and more particle interactions	
+topological susceptibility	topological susceptibility;\chi_\infty	ch13
+topology!lattice U(1) gauge fields	classification of all topologies of lattice U(1) gauge fields	
+toron configuration	toron configuration	
+trace estimation!dilution	dilution	ch13
+trace estimation!hierarchical probing	hierarchical probing	ch13
+trace estimation!Hutchinson	Hutchinson trace estimation	ch13
+transfer matrix	transfer matrix;transfer matrix operator;positive operator	QM and scalar-field constructions
+transfer operator	transfer operator;transfer matrix	ch13; spectral decomposition of correlators
+transport properties	transport properties;Transport Properties	ch12
+triviality	no continuum limit	term "triviality" absent; λ_R≠0 admits no continuum limit
+twisted Schrödinger functional scheme	twisted Schr\"odinger-functional scheme;twisted Schr\"odinger functional scheme;defines a twist	hyphenated in ch. 17, unhyphenated in ch. 18
+twisting	twisting of the variables;twisted rotation group;twisting technique	see also orbifolding
+UA1@$U_A(1)$ symmetry	U_{A}(1);Global axial rotations	
+UA1@$U_A(1)$ restoration	U_A(1);Axial symmetry restoration	ch12; sort key UA1; pion-$a_1$ degeneracy
+universality	universality	
+vacuum expectation value (vev)	vev;vacuum matrix elements	from τ→∞ limit of traces
+vacuum polarisation	vacuum polarisation	relevant for $(g-2)_\mu$
+variational method	variational approach;variational methods	ch13
+vertex function	vertex functions;two-point vertex function;4-point vertex;vertex function	
+viscosity!bulk	sheer and bulk viscosities;bulk	ch12; same anchor as shear
+viscosity!shear	sheer and bulk viscosities	ch12; text misspells "shear" as "sheer"
+volume averaging	volume averaging	ch13
+Voronoi tessellation	Voroni tessellation	source spelling "Voroni" (sic)
+walking technicolour	walking technicolour;walking coupling	
+wave functional	wave functional	
+Wess-Zumino model	Wess-Zumino Model;WZ model;S_\text{WZ}	
+Wick contractions	Wick contractions	ch13; proton example, factorial growth
+Wick rotation	SEE:path integral!Euclidean	term "Wick rotation" absent from text; see-only entry anchored at t→−iτ
+Wiener measure	Wiener measure	rigorous definition of Euclidean path integral
+Wightman axioms	Wightman axioms	
+Wilson coefficients	Wilson coefficients	
+Wilson flow	Wilson flow;``Wilson flow''	ch09 (stub chapter);ch12 scale-setting mention
+Wilson gauge action	Wilson gauge action;Wilson action;Wilson's original formulation	
+Wilson line	Wilson line	
+Wilson loop	Wilson loops;Wilson loop	subentries could split observables vs strong-coupling uses
+Wilson term	Wilson term;The Wilson term breaks gauge invariance;regular Wilson term removing doublers	momentum-dependent mass for doublers
+Witten-Veneziano formula	Witten-Veneziano formula;$\eta'$ mass	ch13
+Yang-Mills action	Yang Mills;\mathcal{L}_{YM}	text spells "Yang Mills" unhyphenated; anchor at ch04 section opening
+zero mode, removal of	remove the zero mode;boundary fields remove the zero mode	
+zero modes (of Dirac operator)	zero modes;zero mode	chirality eigenstates
+zeta function, three-dimensional	$3D$ zeta function	

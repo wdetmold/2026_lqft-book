@@ -1,0 +1,100 @@
+Yang-Mills action	Yang Mills;\mathcal{L}_{YM}	text spells "Yang Mills" unhyphenated; anchor at ch04 section opening
+parallel transporter	parallel transporters;Parallel transporters (Holonomies);path-ordered exponential
+holonomy, \see{parallel transporter}	Holonomies
+link variables	link variables;link fields	also anchor at boxed $U_\nu(n)=\exp\{iaA^\nu(n)\}$
+plaquette	plaquette	first defined in "Wilson gauge action" section
+Wilson gauge action	Wilson gauge action;Wilson action;Wilson's original formulation
+beta@$\beta$ (inverse coupling)	\beta=\frac{2 N}{g^{2}}	"inverse coupling" not literal in text; anchor at definition
+Wilson loop	Wilson loops;Wilson loop	subentries could split observables vs strong-coupling uses
+Polyakov loop	Polyakov loops
+Haar measure	Haar measure;group integration;group integral;invariance of the measure
+Elitzur's theorem	Elitzur's theorem	vanishing of gauge-variant expectation values
+gauge fixing	fix a gauge;gauge can be fixed	parent for subentries below
+gauge fixing!Landau	Landau gauge
+gauge fixing!Coulomb	Coulomb gauge
+gauge fixing!temporal	Temporal gauge;temporal gauge
+gauge fixing!maximal tree	maximal tree gauge;maximal tree
+Gribov copies	Gribov copies;Gribov-Singer
+glueballs	glueballs;glueball masses	via Wilson-loop correlators and strong coupling
+static quark potential	static quark potential
+sigma@$\sigma$ (string tension)	string tension
+confinement	linear confinement;confining phase	strong-coupling area law; not a proof in continuum
+area law	area law
+screening (of adjoint sources)	screened by gluons;screening;perimeter law	perimeter-law scaling of adjoint Wilson loops
+Coulomb phase	Coulomb phase	$U(1)$ theory beyond strong coupling
+roughening transition	roughening transition
+expansion!strong-coupling	strong coupling expansion;Strong coupling expansion;strong coupling limit
+high-temperature expansion, \see{expansion!strong-coupling}	high temperature expansion
+expansion!character	character expansion
+expansion!cluster	cluster expansion
+characters (group)	group characters;character;Weyl character formula	includes $SU(2)$/$SU(3)$ examples
+class functions	class functions;class function
+Peter-Weyl theorem	Peter-Weyl theorem
+renormalisation group equation (RGE)	RGE;cutoff independence
+betaCS@$\beta_{CS}$ (beta function)	\beta_{CS}	universal coefficients $\beta_0$, $\beta_1$
+LambdaL@$\Lambda_L$ (lattice scale parameter)	\Lambda_L
+continuum limit	continuum limit;classical continuum limit
+transfer matrix	transfer matrix	gauge-theory construction, ch04
+Kogut-Susskind Hamiltonian	Kogut-Susskind Hamiltonian;\hat{H}_{KS}
+reflection positivity	reflection positivity;reflection positive	Wilson gauge action and $r=1$ Wilson fermions
+Gauss's law	Gauss's Law	discrete version on physical states
+Aharonov-Bohm phase	Aharanov-Bohm	text misspells "Aharanov"; plaquette as magnetic flux
+Grassmann variables	Grassmann-valued;Grassmann sources
+Dirac matrices, Euclidean	Dirac matrices	anticommutator and Minkowski relation
+gamma5@$\gamma_5$	\gamma_{5}=\gamma_{1}
+gamma5Hermiticity@$\gamma_5$-Hermiticity	$\gamma_5$-Hermitian;\gamma_{5}\)-Hermitian;hermiticity	appears for $D_W$, GW operators, overlap kernel
+fermion propagator	fermion propagator
+fermion determinant	fermion determinant;\operatorname{det}[M]	cf. rooting (staggered fermions)
+chiral symmetry	chiral symmetry
+chiral symmetry!spontaneous breaking	spontaneously breaks;Spontaneous symmetry breaking
+chiral symmetry!lattice (L\"uscher)	L\"uscher;modified chiral projectors	symmetry transformation compatible with GW relation
+chiral symmetry!remnant, staggered	remnant	remnant $U_A(1)$ prevents additive mass renormalisation
+chiral condensate	chiral condensate
+Goldstone bosons	Goldstone bosons;pseudoscalar meson octet
+UA1@$U_A(1)$ symmetry	U_{A}(1);Global axial rotations
+axial anomaly	Adler-Bell-Jackiw anomaly;ABJ anomaly;anomalous	arises from measure under lattice chiral rotation
+Adler-Bell-Jackiw anomaly, \see{axial anomaly}	Adler-Bell-Jackiw anomaly
+Fujikawa's method	Fujikawa's method
+fermions!naive	Naive lattice fermions;naive fermion action;S_{\text {naive }}
+fermion doubling	fermion doubling;doubling problem;fermion doublers	16 doublers at Brillouin-zone corners
+doublers, \see{fermion doubling}	doublers;doubler modes
+Brillouin zone	Brillouin zone
+Nielsen-Ninomiya theorem	Nielsen-Ninomiya theorem;NN theorem;NN no-go theorem;second homotopy group	includes winding-number (Tong) proof
+Poincare-Hopf index theorem	Poincare-Hopf index theorem;Euler characteristic	used in NN proof; text omits accents
+fermions!Weyl	Weyl fermion;Weyl fermions
+fermions!Wilson	Wilson fermions;Wilson Dirac operator
+Wilson term	Wilson term	momentum-dependent mass for doublers
+kappa@$\kappa$ (hopping parameter)	hopping parameter
+additive mass renormalisation	additive mass shift;additive mass renormalisation
+clover term	clover term
+Sheikholeslami-Wohlert coefficient	Sheikholeslami-Wohlert parameter;c_{SW}
+improvement, $\mathcal{O}(a)$	discretisation artifacts;dim-$5$ operator
+fermions!twisted-mass	twisted-mass fermions;Osterwalder \& Seiler	Osterwalder-Seiler variant mentioned alongside
+fermions!staggered	Staggered (Kogut-Susskind) fermions;staggered fermions;S_{KS}
+Kogut-Susskind fermions, \see{fermions!staggered}	Kogut-Susskind
+Kawamoto-Smit transformation	Kawamoto-Smit;diagonalise the Dirac matrices
+taste (staggered fermions)	``taste'';flavour/taste
+rooting (staggered fermions)	fourth root;Rooted staggered fermions	locality concerns noted in text
+Susskind flavour symmetry	Susskind flavour symmetry
+fermions!Dirac-K\"ahler	Dirac-K\"ahler Fermions;Dirac-Kähler fermions;DK fermions	text mixes escaped and unicode umlaut spellings
+K\"ahler-Dirac equation	K\"ahler-Dirac equation;KDE;K\"ahler-Dirac operator;Kähler-Dirac action	note reversed name order vs fermion family
+differential forms	differential $k-$form;wedge product
+exterior derivative	Exterior derivatives;exterior derivative
+coderivative	Coderivative;coderivative
+Hodge star	Hodge star
+Clifford product	Clifford product;inner derivative	inner derivative (contraction) defined just before
+de Rham's theorem	de Rham's theorem	dictionary between forms and cochains
+chains and cochains	$p-$chain;cochains;boundary $(\Delta)$ and coboundary $(\nabla)$ operators;cubical complex	lattice complex for Dirac-Kähler fermions
+fermions!SLAC	SLAC fermion
+fermions!minimally doubled	Minimally doubled fermions;Borici-Creutz	Karsten-Wilczek named in same line
+Ginsparg-Wilson relation	Ginsparg-Wilson relation;GW relation;GWR;Ginsparg and Wilson
+Ginsparg-Wilson relation!eigenvalue circle	GW circle;Spectrum of $D$	real eigenvalues only at $0$ and $2/a$
+zero modes (of Dirac operator)	zero modes;zero mode	chirality eigenstates
+index of the Dirac operator ($n_- - n_+$)	n_- - n_+;\operatorname{tr}[\gamma_5 P_0]	$Q=\frac{a}{2}\operatorname{tr}[\gamma_5 D]$ integer-valued
+fermions!overlap	overlap Dirac operator;overlap operator;D_{O};Neuberger;sign function
+locality (of lattice Dirac operators)	exponentially localised;non-local;nonlocal	overlap exponential bound; SLAC and rooting failures
+fermions!domain-wall	Domain Wall Fermions;domain-wall fermions;DWF;Kaplan	Shamir/Furman-Shamir lattice formulation
+residual mass	residual mass	vanishes exponentially in $N_5$
+Pauli-Villars fields	Pauli-Villars	cancel bulk modes in DWF partition function
+fermions!fixed-point (perfect)	Perfect / fixed-point fermions
+fermions!chirally improved	Chirally improved fermions

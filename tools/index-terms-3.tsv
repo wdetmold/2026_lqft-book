@@ -1,0 +1,99 @@
+algorithm!heatbath	Heatbath Algorithm;global heatbath;T_{\text{HB}}	ch08
+algorithm!Metropolis	Metropolis Algorithm;Metropolis algorithm;accept-reject	ch08; accept-reject construction anchored here
+algorithm!Langevin	Langevin algorithm	ch08; section is a TODO stub
+algorithm!hybrid Monte Carlo	Hybrid Monte-Carlo Algorithm;HMC introduces auxiliary canonical momenta;tailored variants of HMC	main anchor ch08; also ch12 State-of-the-art
+algorithm!conjugate gradient	conjugate gradient algorithm (CG);CG Algorithm;using CG etc	ch08; also ch13 propagator solves
+HMC, \see{algorithm, hybrid Monte Carlo}	HMC	cross-reference
+CG, \see{algorithm, conjugate gradient}	CG	cross-reference
+Hamiltonian Monte Carlo, \see{algorithm, hybrid Monte Carlo}	Hamiltonian Monte Carlo	cross-reference; name used in statistics
+importance sampling	Importance Sampling;importance sampling fails;importance sampling is inapplicable	ch08 section; also ch12 sign-problem discussion
+Markov chain	Markov chain;Markov Chains;Markov process	ch08
+Markov chain!transition probability	transition probability	ch08
+Markov chain!ergodicity	ergodic;ergodicity	ch08
+Markov chain!thermalisation	thermalise;thermalised;thermalisation	ch08
+detailed balance	detailed balance;detailed balance condition;balance condition	ch08; balance condition anchored with same entry
+autocorrelation	autocorrelation;autocorrelation function;exponential autocorrelation time	ch08
+autocorrelation!integrated time	integrated autocorrelation time;\tau_{\text {int}, A}	ch08
+independent samples, effective number of	effective number of independent samples;N_\text{indep}	ch08
+molecular dynamics	molecular dynamics;Hamilton's equations	ch08, HMC section
+leapfrog integrator	leapfrog integrator;leapfrog integration	ch08
+symplectic integrator	symplectic, reversible integrator;A symplectic integrator such as leapfrog	ch08; covers reversibility/area preservation
+pseudofermions	Pseudofermions;pseudofermion	ch08
+fermion determinant	fermion determinant;\operatorname{det}[D[\phi]]	ch08; positivity discussion (Wilson, staggered, GW relation) anchored here
+Dirac operator	Dirac operator	ch08
+linear solver	Linear System Solvers;Iterative methods;direct solvers	ch08
+linear solver!Krylov	Krylov solvers;Krylov space;Kryloy space	ch08; ch13 Rayleigh-Ritz has typo "Kryloy"
+linear solver!BiCGstab	BiCG-stab	ch08
+condition number	condition number	ch08
+preconditioning	preconditioned;even-odd, ILU, SSGR, Schwartz, Multigrid	ch08
+preconditioning!multigrid	Multigrid;multigrid fermion inverters	ch08; also ch12 State-of-the-art
+deflation	deflated;low eigenvalues of the matrix	ch08
+matrix sign function	matrix sign function;Zolotarev rational functions	ch08; overlap fermions context
+overlap fermions	Overlap fermions;overlap fermions	ch08; also ch12
+Wilson flow	Wilson flow;``Wilson flow''	ch09 (stub chapter);ch12 scale-setting mention
+gradient flow, \see{Wilson flow}	Wilson flow	cross-reference; term appears only in chapter directory name
+scale setting	Scale setting;determine the lattice spacing in physical units	ch09 stub;ch12 anatomy step 3
+lattice QCD calculation, anatomy of	Anatomy of a LQCD calculation	ch12
+grand canonical partition function	grand canonical partition function;Z\left[T, V, \mu_{i}\right]	ch12
+chemical potential	chemical potential;chemical potentials;fermion chemical potential	ch12; also ch08 pseudofermion caveat
+chemical potential!imaginary	imaginary chemical potential	ch12, critical end point methods
+chemical potential!isospin	isospin chemical potential	ch12
+equation of state	equation of state;Pressure;energy density;entropy density;speed of sound	ch12; observables defined in Thermodynamic Quantities section
+interaction measure	interaction measure;I = \varepsilon - 3 P	ch12
+quark number susceptibilities	susceptibilities;\chi_{ijk}(T)	ch12; Taylor coefficients in mu/T
+hadron resonance gas model	hadron resonance gas model	ch12
+anisotropic lattice	anisotropic lattice geometry;anisotropy	ch12
+QCD phase diagram	phase diagram;Conjectured QCD phase diagram	ch12
+Polyakov loop	Polyakov loop;Polyakov loops	ch12
+Polyakov loop!susceptibility	\chi_P;susceptibility corresponding to the Polyakov loop	ch12
+confinement	confinement;linear confinement	ch12
+deconfinement	deconfines;deconfinement;deconfining transition	ch12
+center symmetry	center symmetry;Z_{N_c}	ch12; spontaneous breaking at deconfinement
+static quark potential	static quark potential;F_{\bar{Q}Q}	ch12; extracted from Polyakov loop correlator
+quark-gluon plasma	quark-gluon plasma;quark gluon plasma phase;QGP	ch12
+QGP, \see{quark-gluon plasma}	QGP	cross-reference
+chiral condensate	chiral condensate;\langle\bar{\psi}\psi\rangle	ch12; order parameter for chiral symmetry breaking
+chiral condensate!susceptibility	susceptibility of the chiral condensate;\chi_l(T)	ch12
+chiral symmetry restoration	chiral symmetry restoration;spontaneous breaking of chiral symmetry	ch12
+Tc@$T_c$ (critical temperature)	T_c = 155(10);chiral crossover temperature;T_C	ch12; sort key Tc
+UA1@$U_A(1)$ restoration	U_A(1);Axial symmetry restoration	ch12; sort key UA1; pion-$a_1$ degeneracy
+sign problem	sign/phase problem;sign problem at finite density	ch12; also ch13 signal-to-noise connection
+reweighting	reweighting	ch12, critical end point methods
+Taylor expansion, in chemical potential	Taylor expand about $\mu = 0$;expand thermodynamic quantities about zero $\mu_i$	ch12
+critical end point	Critical end point;critical point;CEP	ch12
+transport properties	transport properties;Transport Properties	ch12
+spectral function	spectral function;\rho_{VV}	ch12
+electrical conductivity	electrical conductivity	ch12
+viscosity!shear	sheer and bulk viscosities	ch12; text misspells "shear" as "sheer"
+viscosity!bulk	sheer and bulk viscosities;bulk	ch12; same anchor as shear
+hadron spectrum	spectrum of stable particles;hadron spectrum	ch13
+interpolating operator	interpolating operators;Interpolating operators	ch13
+interpolating operator!pion	charged pion;\pi^-(n) = \bar{u}(n)\gamma_5 d(n)	ch13
+interpolating operator!proton	Now we consider the proton;p_\gamma(x)	ch13
+interpolating operator!deuteron	the deuteron;d_i(n)	ch13
+interpolating operator!glueball	Glueballs;glueball spectroscopy	ch13; also flavour-singlet mixing
+overlap factor	overlap factors;Z_{H, n}(\vec{p})	ch13; distinct from overlap fermions
+smearing	smeared quark fields;smearing type;gauge covariant smearing	ch13
+smearing!Jacobi	Jacobi smearing	ch13
+smearing!wall	wall smearing;Coulomb gauge	ch13; requires Coulomb gauge fixing
+quark propagator	quark propagators;quark propagator	ch13 two-point computation; also ch12 reuse of propagators
+Wick contractions	Wick contractions	ch13; proton example, factorial growth
+correlation function!two-point	two-point correlation function;Two point correlation functions;two-point function	ch13
+correlation function!matrix of	Matrices of correlation functions;matrix of correlation functions	ch13; matrix-Prony and generalised-pencil-of-functions anchored here
+correlation function!statistical behaviour	Statistical behaviour of correlation functions;sample variance	ch13
+flavour singlet states	Flavour singlet states;flavour singlet	ch13
+disconnected contributions	quark propagator from every point to itself;trace of the inverse	ch13; word "disconnected" never appears in text
+trace estimation!Hutchinson	Hutchinson trace estimation	ch13
+trace estimation!dilution	dilution	ch13
+trace estimation!hierarchical probing	hierarchical probing	ch13
+transfer operator	transfer operator;transfer matrix	ch13; spectral decomposition of correlators
+excited states	excited states;excited state energies	ch13
+variational method	variational approach;variational methods	ch13
+generalised eigenvalue problem	generalised eigenvalue problem;Generalised Eigenvalue Problem (GEVP)	ch13
+GEVP, \see{generalised eigenvalue problem}	GEVP	cross-reference
+Rayleigh-Ritz method	Rayleigh-Ritz methods;Cholesky decomposition	ch13; Cholesky step anchored here
+signal-to-noise ratio	signal to noise;signal-to-noise problem;Parisi and Lepage	ch13; Parisi-Lepage argument anchored here
+volume averaging	volume averaging	ch13
+master field	master field	ch13
+topological susceptibility	topological susceptibility;\chi_\infty	ch13
+Witten-Veneziano formula	Witten-Veneziano formula;$\eta'$ mass	ch13

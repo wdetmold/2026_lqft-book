@@ -1,0 +1,72 @@
+chiral gauge theory	chiral gauge theory;Chiral gauge theories;$\chi$GT	main entry; chapter-level
+chiral gauge theory!non-gauge-invariant formulation	Non-gauge invariant formulation;Non-gauge-invariant formulation;break gauge invariance but in a way such that it is restored	covers gauge-fixing and two-lattice approaches
+chiral gauge theory!gauge-invariant formulation	Gauge-invariant formulation;gauges the exact lattice chiral symmetry	Luscher construction
+chiral gauge theory!boundary formulation	Chiral gauge theory as boundary theory;boundary theory;D-dimensional boundary	see also domain-wall fermions
+Standard Model!non-perturbative definition	define the SM outside of perturbation theory;what we mean by the SM
+chiral anomaly	Chiral anomaly implies no exact chiral invariance	see also anomaly
+anomaly!covariant gauge	covariant gauge anomaly;{\cal A}^{a}(x)
+anomaly!Witten	Witten anomaly;Witten' anomaly	global obstruction, SU(2)
+anomaly cancellation	anomaly-free fermion content;anomaly-cancelling fermionic representation
+Wilson term	The Wilson term breaks gauge invariance;regular Wilson term removing doublers;Wilson term	breaks chiral and (chiral-gauge) gauge symmetry
+fermion doubling	doubler modes;doublers;m_{\text { doubler}}	see also Wilson term
+Ginsparg-Wilson relation	GW relation;GW fermion;GW-relation fermion;satisfies GW relation	anchors in ch19 and ch21 (blocked propagator)
+chiral symmetry!exact lattice	L\"uscher's exact lattice chiral symmetry;exact lattice chiral symmetry;\hat{\gamma}_{5}=\gamma_{s}(1-a D)	see also Ginsparg-Wilson relation
+gauge fixing!lattice	Gauge fixing allows the possibility;gauge-fixing term;standard complete gauge fixings	see also Neuberger's theorem
+counterterms	counter-terms;counterterms;fine-tuned;counterterm	tuning in both chiral-gauge and SUSY contexts
+gauge field!longitudinal modes	longitudinal mode of gauge field;longitudinal modes decouple;longitudinal modes coupling to fermions
+Neuberger's theorem	Neuberger's theorem	partition functions of complete gauge fixings vanish
+Golterman-Shamir construction	Golterman \& Shamir	non-Abelian gauge-fixed formulation
+gauge field!interpolation	interpolation of the gauge field;smooth covariant interpolation	two-lattice ($f$, $b$) formulation
+fermion measure!phase ambiguity	phase ambiguity;D \psi_{\text {left }};\operatorname{det} M[U]	Luscher phase definition
+integrability condition	integrability condition;integrability is the requirement	for measure current / effective action
+topology!lattice U(1) gauge fields	classification of all topologies of lattice U(1) gauge fields
+symmetric mass generation	symmetric mass generation;Symmetric mass generation	see also mirror fermions
+mirror fermions	mirror fermions;\mathcal{L}_{\text {mirror }};mirror sector	see also symmetric mass generation
+Eichten-Preskill model	Eichten \& Preskill	also Smit-Swift mention
+SU(5)@$SU(5)$ grand unified theory	SU(S) GUT;SU(5) fundamental	"SU(S) GUT" is a source typo for SU(5)
+Kitaev-Fidkowski model	Kitaev-Fidkowski model	condensed-matter SMG example
+domain-wall fermions	Domain-wall fermions;localising light modes near a defect	see also chiral gauge theory!boundary formulation
+sign problem	sign problem;fluctuate in sign	see also Pfaffian; fermion determinant!complex
+fermion determinant!complex	Complex determinant;fermion determinant is necessarily complex
+supersymmetry	Supersymmetry;SUSY	main entry
+supersymmetry!lattice	Lattice Supersymmetry;SUSY theories using a lattice regulator;SUSY cannot be an exact symmetry of a LFT
+supersymmetry!extended	extended supersymmetry;multiple supercharges;allowed values of $\mathcal{N}$
+supersymmetry!breaking	SUSY breaking typically does not occur in perturbation theory;SUSY-breaking operators;SUSY-violating interactions
+supersymmetry!quantum mechanics	SUSY quantum mechanics;SQM;Lattice QM with exact SUSY
+Coleman-Mandula theorem	Coleman-Mandula theorem
+Poincaré symmetry!emergence in continuum limit	Poincare symmetry arises in the continuum limit;subgroup of Poincare symmetry	see also accidental symmetry
+supercharge	supercharges;scalar supercharge;Q_\alpha	see also supercharge!nilpotent under Q-exact action
+R-symmetry	R-symmetries;R-symmetry
+R-symmetry!U(1)R@$U(1)_R$	U(1)_R \to \mathbb{Z}_{2N};U(1)$ R-symmetry	anomalous breaking protects gluino mass
+accidental symmetry	Accidental Symmetries;symmetry that emerges in the continuum limit
+H(4)@$H(4)$ hypercubic symmetry	$H(4)$ transformations;H(4)	accidental-symmetry example
+N=1@$\mathcal{N}=1$ super Yang-Mills	\mathcal{N} = 1$ SYM;\mathcal{N} = 1$ SYM theory contains no scalar particles
+gluino	gluino;m_\text{gluino}
+Majorana fermion	Majorana fermion;Majorana fermions;gluinos are Majorana	see also Pfaffian
+superpotential	superpotential;P(\phi)
+Leibniz rule	Leibniz rule	no local lattice difference operator satisfies it (Bergner)
+Nicolai map	Nicolai map	anchors in SQM and Wess-Zumino sections
+auxiliary field	auxiliary field $B$;Introducing an auxiliary field	off-shell nilpotency
+Q-exact action@$Q$-exact action	Q-$exact form;Q-$exactness;Q^2 = 0;nilpotent	see also supercharge
+twisting	twisting of the variables;twisted rotation group;twisting technique	see also orbifolding
+orbifolding	orbifolding	equivalent to twisting
+Wess-Zumino model	Wess-Zumino Model;WZ model;S_\text{WZ}
+N=2@$\mathcal{N}=2$ super Yang-Mills	N=2\) SYM in \(d=2;S_{\text{SYM}}	prototype twisted lattice gauge theory
+Dirac-Kähler fermions	Dirac-K\"ahler action;DK fermions	twisted fermions as $p$-forms
+link variables!complexified	gl(N, \mathbb{C});complex valued gauge field;\mathcal{U}_\mu(x)	non-unitary links in twisted SYM
+SQCD	SQCD	open lattice challenge; squarks
+Pfaffian	Pfaffian	see also sign problem
+N=4@$\mathcal{N}=4$ super Yang-Mills	\mathcal{N} = 4$ (minimal and maximal) SYM;\mathcal{N}=4$ in $d=4$
+perfect action	Perfect Actions;classically perfect;Results with perfect actions	see also action!fixed-point
+action!fixed-point	fixed point action;S_\text{FP};FP action	see also perfect action
+fixed point	fixed points in this flow;\kappa_\alpha^*;fixed point at $\beta = \infty$	of RG flow
+renormalisation group!blocking	blocked fields;Blocking and fixed points;blocking transform	see also blocking kernel
+renormalisation group!transformation	RG transformation;RGT;RG flow
+renormalised trajectory	renormalised trajectory;RT	no lattice artifacts on the RT
+critical surface	critical surface	$\xi = \infty$ locus
+blocking kernel	T(\vec{R}, \vec{s});T_G[V,U];T_F(\bar{\chi}, \chi;specifies the blocking	kernels for spins, gauge fields, fermions
+O(N)@$O(N)$ model	O(N)$ model in;O(N)$ field	$d=2$ blocking example
+saddle-point approximation	Saddle point approximation;saddle point approx	FP action at $\beta \to \infty$
+lattice artifacts	lattice artifacts;cutoff effects	absent on renormalised trajectory
+Dirac operator!fixed-point	D_\text{FP};matching of Dirac operators;spectrum of the Dirac operator
+QCD!fixed-point action	Solving the FP action for QCD;Combine the two blockings	parameterisation and minimisation
