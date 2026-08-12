@@ -20,6 +20,7 @@ figures:
 
 lint:
 	python3 tools/lint_notation.py
+	python3 tools/list_draft_flags.py --count
 	-chktex -q main.tex chapters/*/*.tex
 
 clean:

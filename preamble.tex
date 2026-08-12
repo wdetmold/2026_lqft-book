@@ -60,3 +60,25 @@
 % Automatic index entries (inserted by tools/apply_index.py from
 % refs/index-vocabulary.tsv). Hand-written entries use \index directly.
 \newcommand{\aidx}[1]{\index{#1}}
+
+% ---------------------------------------------------------------------------
+% Draft flags: material drafted mechanically and awaiting the author's check.
+%   \problemdraft[note]{statement}{solution}
+%       an exercise not yet verified. To ACCEPT it, delete "draft" from the
+%       command name and drop any [note] -- a one-word edit.
+%   \unverified{...}
+%       inline marker for one specific claim inside otherwise checked material.
+% \draftflagsfalse typesets a clean copy; tools/list_draft_flags.py reports
+% everything still outstanding, and `make lint` counts them.
+\newif\ifdraftflags \draftflagstrue
+\definecolor{draftflagcolour}{RGB}{176,72,0}
+\newcommand{\draftflagtag}[1]{%
+  \ifdraftflags
+    {\footnotesize\sffamily\color{draftflagcolour}%
+      [\,unverified draft --- author check pending%
+       \if\relax\detokenize{#1}\relax\else: #1\fi\,]}%
+    \par\nobreak
+  \fi}
+\newcommand{\problemdraft}[3][]{\problem{\draftflagtag{#1}#2}{#3}}
+\newcommand{\unverified}[1]{%
+  \ifdraftflags{\color{draftflagcolour}#1\,{\footnotesize\sffamily[check]}}\else#1\fi}

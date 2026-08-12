@@ -42,6 +42,10 @@ CI compiles the book and uploads the PDF artifact on every push and PR.
   after adding arXiv IDs.
 - Index entries (`\index{...}`) are added during prose conversion, not at the end.
 - `\todo{...}` marks open work; it renders red in draft builds and is linted.
+- Machine-drafted exercises use `\problemdraft[note]{}{}` and print an
+  "unverified draft" tag; accept one by deleting `draft` from the command name.
+  `\unverified{...}` flags a single claim. `python3 tools/list_draft_flags.py`
+  prints the outstanding checklist; `\draftflagsfalse` typesets a clean copy.
 
 ## Getting started after unpacking
 
