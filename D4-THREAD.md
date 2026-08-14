@@ -16,8 +16,9 @@ minimally doubled fermion with an unusually good free spectrum.
 
 | Chapter | Instalment | Status |
 |---|---|---|
+| 2 Path integrals | geometry of $D_d$; the dual and isoduality; the 24-cell and $W(F_4)$ | **drafted** (3 exercises, figures live here) |
 | 3 Scalar fields | geometry; free propagator; $F_4$ invariants; triality degeneracy; numerics; transfer matrix & RP; Symanzik improvement; hopping expansion | **drafted** (8 exercises, `exercises-d4.tex`) |
-| 4 Gauge fields | Wilson action on $D_4$; triangle and rectangle plaquettes; improvement parameter counting from $F_4$ orbits | planned |
+| 4 Gauge fields | triangular plaquette action; no checkerboard but a three-octant decomposition; rectangle improvement | **drafted** (2 exercises) |
 | 5 Hamiltonian LGT | Kogut–Susskind limit with no straight temporal bond | planned |
 | 6 Lattice fermions | minimally doubled fermions (Borići–Creutz $=$ Karsten–Wilczek on $D_4$); free $\slashed{D}$ spectrum; doubler count | planned |
 | 7 Improvement | $\mathcal{O}(a)$ improvement, continuing Ch. 3's counting | planned |
@@ -45,6 +46,58 @@ minimally doubled fermion with an unusually good free spectrum.
    $c_1 = 1/6$, $c_2 = -1/24$.
 8. **Hopping expansion.** $\kappa_c = 1/48$; closed-walk counts with odd terms
    present; $1/q$ suppression of mean-field error.
+
+## Gauge-theory figures (Chapter 4)
+
+`fig-d4-links` and `fig-d4-plaquettes` are drafted and placed in
+`chapters/ch04-gauge-fields/exercises-d4.tex`, with a `\todo` marking the
+exercises still to be written. Verified counts behind them:
+
+| | $D_4$ | $\mathbb{Z}^4$ |
+|---|---|---|
+| independent link directions per site | 12 | 4 |
+| 3-link loops through a site | 96 (32 per site) | 0 (bipartite) |
+| 4-link loops through a site | 936 | 24 |
+| of which planar rhombi | 264 (72 right-angled) | 24 |
+
+The reading that makes the figures work: a chord between two neighbours of a
+site exists exactly when those neighbours are themselves linked, so the 96
+edges of the 24-cell *are* the 96 elementary triangles through that site. The
+same construction on $\mathbb{Z}^4$ yields no chords at all.
+
+## New results established while drafting
+
+- **Three-octant decomposition.** The 24 link directions split into three
+  classes of eight, by the three pairings of the coordinate axes:
+  A = (12),(34); B = (13),(24); C = (14),(23). Two vectors of one class never
+  sum to a minimal vector, so each of the 96 triangles carries exactly one link
+  per class. Hence a three-sweep parallel update that, unlike the hypercubic
+  checkerboard, needs no site parity. $\mathrm{Aut}(D_4)$ permutes the classes
+  as $S_3 = \mathrm{Aut}(D_4)/W(D_4)$ — precisely triality.
+- **Gamma matrices on links.** $\gamma_e = (\gamma_\mu \pm \gamma_\nu)/\sqrt2$
+  satisfies $\gamma_e^2 = 1$, so half-spinor projectors survive with rank 2.
+  But $\{\gamma_e,\gamma_f\} = (e\cdot f)\mathbb{1}$, and triangle-sharing
+  links have $e\cdot f = 1$: they neither commute nor anticommute, so the
+  hypercubic sign-flip implementation of spin projection does not carry over.
+- **Naive doubling.** 72 nondegenerate zeros in the Brillouin zone, of which
+  only 16 are the familiar half-period points; the other 56 sit at generic
+  momenta such as $(\pi/3,\pi/3,\pi/3,\pi)$ (verified by hand as well as
+  numerically). Against $\mathbb{Z}^4$'s 16.
+- **Minimal doubling: KW = BC on $D_4$** (author's result). The
+  Karsten--Wilczek direction $(2,0,0,0)$ and the Borici--Creutz direction
+  $(1,1,1,1)$ are inequivalent under the hypercubic group but lie in a *single*
+  $\mathrm{Aut}(D_4)$ orbit — the second shell — so on $D_4$ the two
+  constructions are related by a lattice symmetry. Numerically both leave
+  exactly **2** nondegenerate zeros, for every coupling tested
+  (`tools/d4_minimal_doubling.py`). One term removes 70 of 72 zeros, because
+  the extra naive zeros come in orbits and are lifted wholesale.
+  *This is the same triality degeneracy that gives $G(2,0,0,0)=G(1,1,1,1)$
+  exactly in Ch.3 and the three octants in Ch.4.*
+- **Antiperiodic boundary conditions.** All temporal links have
+  $|\Delta t| = 1$, so one uniform phase suffices; triangles come only in
+  $\Delta t$ patterns $(0,0,0)$ and $(+1,-1,0)$, both flat. The root
+  convention is *simpler* than the body-centred one here, where the axial link
+  spans two time levels.
 
 ## Verified inputs
 

@@ -82,3 +82,14 @@
 \newcommand{\problemdraft}[3][]{\problem{\draftflagtag{#1}#2}{#3}}
 \newcommand{\unverified}[1]{%
   \ifdraftflags{\color{draftflagcolour}#1\,{\footnotesize\sffamily[check]}}\else#1\fi}
+
+% ---------------------------------------------------------------------------
+% Identity matrix.  NOTE: \mathbb{1} is NOT valid with amssymb -- the msbm font
+% has no digits, so \mathbb{1} silently typesets as the logic symbol U+22AE.
+% Use a proper blackboard-bold one where the font is available, and fall back to
+% an upright bold 1 otherwise, so the manuscript is portable.
+\IfFileExists{bbm.sty}{%
+  \usepackage{bbm}\newcommand{\Id}{\mathbbm{1}}}{%
+  \IfFileExists{dsfont.sty}{%
+    \usepackage{dsfont}\newcommand{\Id}{\mathds{1}}}{%
+    \newcommand{\Id}{\mathbf{1}}}}

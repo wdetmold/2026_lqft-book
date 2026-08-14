@@ -15,7 +15,9 @@ vectors $(\pm1,\pm1,0,0)$ and their permutations. The payoff, established in
 Exercises~\ref{ex:d4-prop}--\ref{ex:d4-triality}, is that $D_4$ has a much
 larger point symmetry than the hypercubic lattice, and that this postpones
 rotational-symmetry violation from $\mathcal{O}(a^2)$ to $\mathcal{O}(a^4)$.
-Companion code is in \texttt{code/d4/}.
+Companion code is in \texttt{code/d4/}. The geometry, and the two conventions
+in play, are set up in the exercises of Chapter~\ref{ch:path-integrals}
+(Figs.~\ref{fig:d4-constructions} and~\ref{fig:d4-conventions}).
 
 % ---------------------------------------------------------------------------
 \problemdraft[convention: root-lattice $D_4$ throughout; switch to the BCH/$D_4^*$ normalisation if preferred]{\label{ex:d4-geom}\textbf{Geometry of $D_4$.}
@@ -25,10 +27,12 @@ Companion code is in \texttt{code/d4/}.
   (again $24$ vectors, of two apparent types) and $|x|^2=6$ ($96$ vectors).
 \item[(b)] The \emph{body-centred hypercubic} lattice in $d$ dimensions is
   $\mathrm{BCH}_d = \mathbb{Z}^d \cup \bigl(\mathbb{Z}^d + (\tfrac12,\dots,\tfrac12)\bigr)$,
-  which is the dual lattice $D_d^*$. Show that $D_d^*$ is similar to $D_d$
-  \emph{only} for $d=4$, by comparing the lengths of its two candidate shortest
-  vectors. (This is why $d=4$ is the natural home for this whole sequence;
-  compare your earlier general-$d$ BCH calculation.)
+  which is the dual lattice $D_d^*$. By comparing the lengths of its two
+  candidate shortest vectors, and then their multiplicities, show that $D_d$
+  and $D_d^*$ have the same kissing number only for $d=2$ and $d=4$
+  (Fig.~\ref{fig:d4-constructions}d), and that these are indeed the cases in
+  which the two lattices are similar. Why is $d=4$ nevertheless the only
+  interesting case? (Compare your earlier general-$d$ BCH calculation.)
 \item[(c)] Show that $D_4$ is \emph{not} bipartite by exhibiting three mutually
   adjacent sites. How many triangles contain a given site?
 \item[(d)] Fix $x_4=t$. Show that the sites of $D_4$ in that hyperplane form
@@ -49,15 +53,30 @@ $=96$. (Exercise~\ref{ex:d4-triality} shows the two ``types'' in the second
 shell are in fact a single symmetry orbit.)
 
 (b) $D_d^*$ contains $\mathbb{Z}^d$, whose shortest vectors have $|x|^2=1$, and
-the glue vectors $(\pm\tfrac12,\dots,\pm\tfrac12)$, with
-$|x|^2 = d/4$. The lattice is similar to $D_d$ --- which has a single
-shortest-vector orbit --- only if these two lengths coincide, i.e. $d/4=1$,
-$d=4$. For $d<4$ the glue vectors are strictly shorter, for $d>4$ strictly
-longer, and in either case $D_d^*$ has two inequivalent short shells while
-$D_d$ has one. For $d=4$, $\sqrt{2}\,D_4^*$ has minimum norm $2$, covolume
-$(\sqrt2)^4\cdot\tfrac12 = 2$ and kissing number $8+16=24$, matching $D_4$; the
-explicit similarity is the orthogonal map $H$ of
-Exercise~\ref{ex:d4-triality}. So $\mathrm{BCH}_4 \cong D_4$.
+the glue vectors $(\pm\tfrac12,\dots,\pm\tfrac12)$, with $|x|^2=d/4$. So the
+minimal vectors of $D_d^*$ are the $2^d$ body diagonals for $d<4$, the $2d$
+axial vectors for $d>4$, and \emph{both}, $2d+2^d=24$, at $d=4$. Comparing with
+the $2d(d-1)$ minimal vectors of $D_d$:
+\begin{center}
+\begin{tabular}{lrrrrrr}
+ $d$        & 2 & 3 & 4 & 5 & 6 & 7\\ \hline
+ $D_d$      & 4 & 12 & 24 & 40 & 60 & 84\\
+ $D_d^*$    & 4 &  8 & 24 & 10 & 12 & 14
+\end{tabular}
+\end{center}
+they agree only at $d=2$ and $d=4$, and in both of those cases the lattices are
+in fact similar: $\sqrt{2}\,D_4^*$ has minimum norm $2$, covolume
+$(\sqrt2)^4\cdot\tfrac12=2$ and kissing number $24$, matching $D_4$, with the
+explicit similarity given by the orthogonal map $H$ of
+Exercise~\ref{ex:d4-triality}. So $\mathrm{BCH}_4\cong D_4$.
+
+The $d=2$ coincidence is degenerate: $D_2$ is just $\sqrt2\,\mathbb{Z}^2$
+rotated by $45^\circ$, so its isoduality is inherited from the self-duality of
+$\mathbb{Z}^2$ and tells us nothing new. What makes $d=4$ interesting is that
+$D_4$ is \emph{not} similar to $\mathbb{Z}^4$ --- kissing numbers $24$ against
+$8$ --- so it is a genuinely new isodual lattice, with a point group three
+times larger than the hypercubic one. That is the entire reason this sequence
+lives in four dimensions.
 
 (c) Take $0$, $e=(1,1,0,0)$ and $f=(1,0,1,0)$: then $e-f=(0,1,-1,0)$ also has
 $|x|^2=2$, so all three are mutually adjacent. Counting pairs $\{e,f\}$ from
@@ -168,8 +187,8 @@ Exercise~\ref{ex:d4-invariants} explains why this had to happen.}
   source of rotational-symmetry breaking on $D_4$.
 \end{enumerate}}
 {(a) The rows of $H$ are orthonormal ($4\times\tfrac14=1$; distinct rows share
-two $+\tfrac14$ and two $-\tfrac14$ products), so $H^\mathsf{T}H=\mathbb{1}$ and
-$H^2=\mathbb{1}$. On shell vectors, e.g.
+two $+\tfrac14$ and two $-\tfrac14$ products), so $H^\mathsf{T}H=\Id$ and
+$H^2=\Id$. On shell vectors, e.g.
 $H(1,1,0,0)^\mathsf{T}=(1,1,0,0)^\mathsf{T}$,
 $H(1,-1,0,0)^\mathsf{T}=(0,0,1,1)^\mathsf{T}$,
 $H(0,1,1,0)^\mathsf{T}=(1,0,0,-1)^\mathsf{T}$; checking a generating set
@@ -191,7 +210,7 @@ the degrees are $2,4,6,8$, so the quartic invariants are two-dimensional,
 spanned by $(p^2)^2$ and $\sum_\mu p_\mu^4$, and there is no reason for the
 anisotropic one to be absent --- and it is not. (One may confirm the degrees by
 computing the Molien series
-$|G|^{-1}\sum_{g}\det(\mathbb{1}-tg)^{-1}$, which for $\mathrm{Aut}(D_4)$
+$|G|^{-1}\sum_{g}\det(\Id-tg)^{-1}$, which for $\mathrm{Aut}(D_4)$
 equals $\prod_{d\in\{2,6,8,12\}}(1-t^{d})^{-1}$.)
 
 (c) The $\mathcal{O}(a^2)$ term of any such action is a linear combination of

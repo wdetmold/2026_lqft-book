@@ -1,0 +1,149 @@
+% ---------------------------------------------------------------------------
+% The D_4 thread, part 0: geometry.  Continued in Ch.3 (scalars), Ch.4 (gauge),
+% Ch.6 (fermions).
+% ---------------------------------------------------------------------------
+\section*{Exercises: the \texorpdfstring{$D_d$}{Dd} lattices}
+
+A thread of exercises running through the book explores field theory on the
+four-dimensional checkerboard lattice
+\begin{equation}
+  D_d \;=\; \bigl\{x\in\mathbb{Z}^d \;:\; \textstyle\sum_\mu x_\mu\ \text{even}\bigr\},
+\end{equation}
+whose $d=4$ member has a point symmetry three times larger than the hypercubic
+group and correspondingly better rotational behaviour. This first instalment is
+pure geometry: it sets up the two normalisations in use
+(Fig.~\ref{fig:d4-constructions}), the polytope that organises everything
+(Fig.~\ref{fig:d4-conventions}), and the counting that later chapters lean on.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig-d4-constructions.pdf}
+  \caption{The two constructions and how the dual behaves with dimension.
+    (a) the checkerboard (root-lattice) convention and (b) the body-centred
+    convention, drawn in $d=2$. (c) in $d=3$ they are genuinely different
+    lattices, fcc and bcc. (d) the minimal vectors of $D_d^{*}$ are the $2^d$
+    body diagonals for $d<4$ and the $2d$ axial vectors for $d>4$; only at
+    $d=4$ do both occur together, and the kissing numbers of $D_d$ and
+    $D_d^{*}$ agree.\label{fig:d4-constructions}}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig-d4-conventions.pdf}
+  \caption{The $d=4$ case, projected onto the Coxeter plane of
+    $\mathrm{Aut}(D_4)=W(F_4)$ (Coxeter number $12$, hence the $12$-fold
+    symmetry). (a) and (b) are the \emph{same} polytope, the $24$-cell: the
+    apparent $8+16$ split of the body-centred convention is a property of the
+    coordinates, not of the lattice, and triality mixes the two types.
+    (c) shells $1$ and $2$ of $D_4$ are two interlocking $24$-cells in dual
+    orientation --- the geometric content of $D_4^{*}\simeq D_4$.%
+    \label{fig:d4-conventions}}
+\end{figure}
+
+\problemdraft[the whole $D_4$ thread is drafted in the root-lattice convention; switch to BCH/$D_4^*$ if preferred]{\label{ex:dd-basic}\textbf{The $D_d$ family.}
+\begin{enumerate}
+\item[(a)] Show that the shortest nonzero vectors of $D_d$ have $|x|^2=2$, that
+  there are $2d(d-1)$ of them, and that they generate the lattice. What is the
+  covolume?
+\item[(b)] Identify $D_2$ and $D_3$ with lattices you already know.
+\item[(c)] Show that $D_d$ is bipartite for no $d\ge3$ by exhibiting a triangle,
+  and count the triangles through a site as a function of $d$. Contrast
+  $\mathbb{Z}^d$.
+\item[(d)] For $d=4$ list the first three shells and their multiplicities.
+\end{enumerate}}
+{(a) A vector with even coordinate sum cannot have $|x|^2=1$, so the minimum is
+$|x|^2=2$, attained by $\pm\hat\mu\pm\hat\nu$ with $\mu<\nu$: $\binom{d}{2}$
+pairs $\times\,4$ signs $=2d(d-1)$. Differences of these give all of $D_d$, so
+they generate. The index of $D_d$ in $\mathbb{Z}^d$ is $2$, so the covolume
+is $2$.
+
+(b) $D_2=\sqrt2\,\mathbb{Z}^2$ rotated by $45^\circ$; $D_3$ is the
+face-centred cubic lattice, with kissing number $12$.
+
+(c) $0$, $\hat1+\hat2$ and $\hat1+\hat3$ are mutually adjacent whenever $d\ge3$,
+since their differences again have $|x|^2=2$; for $d=2$ there is no third
+direction and $D_2$ is bipartite. Counting pairs $e,f$ from the shell with
+$e-f$ again in the shell gives $4d(d-1)(d-2)$ triangles through each site:
+$24$ for $d=3$ and $96$ for $d=4$. Every $\mathbb{Z}^d$ is bipartite (colour by
+$\sum_\mu x_\mu \bmod 2$) and has none. This single fact drives the odd-order
+terms in the hopping expansion (Ch.~\ref{ch:scalar-fields}) and the triangular
+plaquette action (Ch.~\ref{ch:gauge-fields}).
+
+(d) $|x|^2=2$: $24$ vectors $(\pm1,\pm1,0,0)$; $|x|^2=4$: $24$, namely $8$ of
+type $(\pm2,0,0,0)$ and $16$ of type $(\pm1,\pm1,\pm1,\pm1)$; $|x|^2=6$: $96$,
+of type $(\pm2,\pm1,\pm1,0)$.}
+
+\problemdraft{\label{ex:dd-dual}\textbf{The dual, and why $d=4$ is special.}
+The body-centred hypercubic lattice is
+$\mathrm{BCH}_d=\mathbb{Z}^d\cup(\mathbb{Z}^d+(\tfrac12,\dots,\tfrac12))$,
+which is the dual lattice $D_d^{*}$.
+\begin{enumerate}
+\item[(a)] Show that the minimal vectors of $D_d^{*}$ are the $2^d$ body
+  diagonals for $d<4$ and the $2d$ axial vectors for $d>4$, and that at $d=4$
+  both occur, giving $2d+2^d=24$.
+\item[(b)] Deduce from Fig.~\ref{fig:d4-constructions}(d) that $D_d$ and
+  $D_d^{*}$ have equal kissing numbers only for $d=2$ and $d=4$, and that these
+  are exactly the isodual cases. Why is $d=4$ nevertheless the only interesting
+  one?
+\item[(c)] Exhibit the similarity explicitly for $d=4$: find an orthogonal $R$
+  with $\sqrt2\,R\,D_4^{*}=D_4$.
+\end{enumerate}}
+{(a) $\mathbb{Z}^d\subset D_d^{*}$ contributes vectors of $|x|^2=1$; the glue
+vectors $(\pm\tfrac12,\dots)$ have $|x|^2=d/4$. These coincide iff $d=4$.
+
+(b) $D_d$ has $2d(d-1)$ minimal vectors, so
+\begin{center}
+\begin{tabular}{lrrrrrr}
+ $d$ & 2 & 3 & 4 & 5 & 6 & 7\\ \hline
+ $D_d$ & 4 & 12 & 24 & 40 & 60 & 84\\
+ $D_d^{*}$ & 4 & 8 & 24 & 10 & 12 & 14
+\end{tabular}
+\end{center}
+which agree only at $d=2,4$, and in both cases the lattices are similar. The
+$d=2$ case is degenerate: $D_2$ is a rotated, rescaled $\mathbb{Z}^2$, so its
+isoduality is inherited from the self-duality of $\mathbb{Z}^2$. At $d=4$,
+$D_4$ is \emph{not} similar to $\mathbb{Z}^4$ --- kissing numbers $24$ against
+$8$ --- so it is a genuinely new isodual lattice.
+
+(c) $R=\tfrac{1}{\sqrt2}\left(\begin{smallmatrix}1&1&0&0\\1&-1&0&0\\
+0&0&1&1\\0&0&1&-1\end{smallmatrix}\right)$ works:
+$\sqrt2 R(1,0,0,0)^{\mathsf T}=(1,1,0,0)^{\mathsf T}$ and
+$\sqrt2 R(\tfrac12,\tfrac12,\tfrac12,\tfrac12)^{\mathsf T}=(1,0,1,0)^{\mathsf T}$,
+and one checks the whole minimal shell maps over.}
+
+\problemdraft{\label{ex:dd-symmetry}\textbf{The $24$-cell and $W(F_4)$.}
+\begin{enumerate}
+\item[(a)] Show that the convex hull of the $24$ minimal vectors of $D_4$ is a
+  self-dual regular polytope with $24$ vertices and $96$ edges, two vertices
+  being joined when their inner product is $1$. Relate its edges to the
+  triangles of Exercise~\ref{ex:dd-basic}(c).
+\item[(b)] Show that $\mathrm{Aut}(D_4)$ contains the half-integer orthogonal
+  matrix $H=\tfrac12\left(\begin{smallmatrix}1&1&1&1\\1&1&-1&-1\\
+  1&-1&1&-1\\1&-1&-1&1\end{smallmatrix}\right)$, which is not an automorphism
+  of $\mathbb{Z}^4$. Granted $|\mathrm{Aut}(D_4)|=1152=|W(F_4)|$, identify the
+  index-$3$ subgroup and the triality quotient.
+\item[(c)] The invariant degrees of $W(F_4)$ are $2,6,8,12$ and those of the
+  hypercubic group are $2,4,6,8$. State the consequence for lattice artifacts
+  that Ch.~\ref{ch:scalar-fields} then verifies by explicit computation.
+\end{enumerate}}
+{(a) All $24$ vectors have $|x|^2=2$ and the automorphism group is transitive on
+them, so the hull is regular. Two minimal vectors with $e\cdot f=1$ satisfy
+$|e-f|^2=2$, so $e-f$ is again a minimal vector: each of the $96$ edges of the
+polytope corresponds to a triangle $\{0,e,f\}$ of the lattice. Counting
+$24\times8/2=96$. The polytope is the $24$-cell; its self-duality is the
+statement $D_4^{*}\simeq D_4$ of Exercise~\ref{ex:dd-dual}, visible as the two
+interlocking copies in Fig.~\ref{fig:d4-conventions}(c).
+
+(b) $H^{\mathsf T}H=\Id$ and $H$ maps the minimal shell to itself (check
+a generating subset), so $H\in\mathrm{Aut}(D_4)$; it has half-integer entries
+and therefore does not preserve $\mathbb{Z}^4$. The signed permutations form
+$W(B_4)$ of order $384$, of index $3$; the quotient
+$\mathrm{Aut}(D_4)/W(D_4)\cong S_3$ is triality, and $H$ supplies the elements
+outside $W(B_4)$.
+
+(c) A degree-$4$ invariant of $W(F_4)$ must be a multiple of $(p^2)^2$, because
+the only degree-$4$ combination of generators of degrees $2,6,8,12$ is
+$(I_2)^2$. Hence any $D_4$-invariant action has a rotationally invariant
+$\mathcal{O}(a^2)$ artifact, and rotational-symmetry breaking is postponed to
+$\mathcal{O}(a^4)$. On the hypercubic lattice the extra degree-$4$ invariant
+$\sum_\mu p_\mu^4$ exists and breaks rotations already at $\mathcal{O}(a^2)$.}

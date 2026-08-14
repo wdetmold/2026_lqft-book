@@ -1,0 +1,201 @@
+% ---------------------------------------------------------------------------
+% The D_4 thread, part III: fermions.
+% ---------------------------------------------------------------------------
+\section*{Exercises: the \texorpdfstring{$D_4$}{D4} lattice, III}
+
+Putting fermions on $D_4$ raises questions with no hypercubic counterpart. The
+$24$ links do not point along the coordinate axes, so there is no ready-made
+$\gamma_\mu$ for a hop; the lattice has no purely temporal link, so
+antiperiodicity has to be imposed on cycles rather than on a preferred set of
+links; and the doubling structure is far richer than the familiar sixteen
+corners.
+
+\problemdraft{\label{ex:d4-gammae}\textbf{Gamma matrices along non-Cartesian links.}
+A hop along a minimal vector $e$ is naturally accompanied by
+$\gamma_e \equiv (e\!\cdot\!\gamma)/|e| = (\gamma_\mu\pm\gamma_\nu)/\sqrt2$.
+\begin{enumerate}
+\item[(a)] Show that $\gamma_e^2=\Id$, so that
+  $P_e^{\pm}=\tfrac12(\Id\pm\gamma_e)$ is a projector, and compute its
+  rank. What does this mean for the half-spinor trick?
+\item[(b)] Compute $\{\gamma_e,\gamma_f\}$ for two minimal vectors and list the
+  values that occur. In particular, what is it when $e$ and $f$ share a
+  triangle?
+\item[(c)] On $\mathbb{Z}^4$ distinct $\gamma_\mu$ anticommute, which is what
+  lets an implementation store two spinor components per hop and reconstruct the
+  rest by sign flips. Explain carefully which part of that argument survives on
+  $D_4$ and which does not, and estimate the arithmetic cost per hop relative to
+  the hypercubic case.
+\item[(d)] Can a basis be chosen in which all twelve $\gamma_e$ take the simple
+  hypercubic form simultaneously? Justify your answer.
+\end{enumerate}}
+{(a) With $|e|^2=2$ and $\{\gamma_\mu,\gamma_\nu\}=2\delta_{\mu\nu}$,
+$\gamma_e^2=\tfrac12(\gamma_\mu\pm\gamma_\nu)^2
+=\tfrac12(\Id+\Id)=\Id$. Hence $P_e^\pm$ is a projector,
+and $\mathrm{tr}\,P_e^\pm=\tfrac12\mathrm{tr}\,\Id=2$: rank two, exactly
+as on $\mathbb{Z}^4$. So the half-spinor trick survives \emph{in principle} ---
+only two of the four components need be carried along each hop.
+
+(b) $\{\gamma_e,\gamma_f\}=(e\!\cdot\!f)\,\Id$, and for minimal vectors
+$e\cdot f\in\{-2,-1,0,1,2\}$, so the anticommutator takes the values
+$-2,-1,0,1,2$ times the identity. The case $e\cdot f=\pm2$ is $f=\pm e$; the
+case $0$ is the pair of orthogonal links. Crucially, two links sharing a
+triangle have $e\cdot f=1$, so $\{\gamma_e,\gamma_f\}=\Id$: they neither
+commute nor anticommute.
+
+(c) What survives is the projector property, hence the factor-of-two saving in
+data movement. What fails is the cheapness of the projection. On $\mathbb{Z}^4$
+one may choose a basis in which each $(\Id\pm\gamma_\mu)/2$ acts by
+adding or subtracting components, so spin projection costs only additions; that
+rests on the four $\gamma_\mu$ pairwise anticommuting, so that they can be
+brought simultaneously to a canonical form. Here $\gamma_e$ is a genuine linear
+combination with a $1/\sqrt2$, and by (b) the relevant pairs fail to
+anticommute, so the projection is a general $2\times4$ contraction rather than a
+pattern of sign flips. Expect a small constant-factor penalty per hop, against
+which one must weigh $12$ directions instead of $4$.
+
+(d) No. A simultaneous canonical form would require the $\gamma_e$ to generate a
+Clifford algebra with $\{\gamma_e,\gamma_f\}\propto\delta_{ef}$, whereas (b)
+gives $\{\gamma_e,\gamma_f\}=\Id$ for triangle-sharing pairs. At most
+four mutually orthogonal directions can be simultaneously canonicalised --- and
+the twelve link directions of $D_4$ contain many non-orthogonal pairs.}
+
+\problemdraft[the doubler count in (b) is from numerical root counting; an analytic derivation would be better before this reaches a solutions manual]{\label{ex:d4-doubling}\textbf{Naive fermions and the doubling structure.}
+Take the naive Dirac operator $D(p)\propto \sum_{e}\gamma_e\sin(p\!\cdot\!e)$,
+the sum running over the twelve independent link directions.
+\begin{enumerate}
+\item[(a)] Show that $D(p)=0$ requires the four conditions
+  $V_\mu(p)\equiv\sum_e e_\mu \sin(p\!\cdot\!e)=0$, and that the momentum torus
+  is $\mathbb{R}^4/2\pi D_4^{*}$.
+\item[(b)] The points $p\in\pi D_4^{*}$ make every $\sin(p\!\cdot\!e)$ vanish
+  separately. How many are there modulo $2\pi D_4^{*}$? Show by explicit
+  substitution that $p=(\pi/3,\pi/3,\pi/3,\pi)$ is also a zero, and comment on
+  what this does to the naive counting.
+\item[(c)] Numerical root counting gives $72$ nondegenerate zeros in the
+  Brillouin zone. Contrast $\mathbb{Z}^4$, and discuss what this implies for a
+  minimally doubled formulation on $D_4$.
+\end{enumerate}}
+{(a) $D(p)\propto\gamma_\mu V_\mu(p)$ and the $\gamma_\mu$ are linearly
+independent, so $D(p)=0$ iff every $V_\mu$ vanishes. Fields live on $D_4$, so
+momenta are identified modulo the dual lattice scaled by $2\pi$.
+
+(b) $p\cdot e\in\pi\mathbb{Z}$ for all $e\in D_4$ exactly when $p\in\pi D_4^{*}$,
+and $\pi D_4^{*}/2\pi D_4^{*}\cong D_4^{*}/2D_4^{*}$ has $2^4=16$ elements ---
+the familiar count. For $p=(\pi/3,\pi/3,\pi/3,\pi)$ the individual sines are
+$\pm\sqrt3/2$ and $0$, and they cancel in fours in each component; carrying out
+the sum gives $V=0$. So there are zeros at which no individual sine vanishes,
+which the hypercubic argument never encounters.
+
+(c) $\mathbb{Z}^4$ has exactly $16$; $D_4$ has $72$, of which only $16$ are of
+the familiar half-period type and $56$ sit at generic momenta such as the one
+above. Naive fermions on $D_4$ therefore describe many more species, and the
+Nielsen--Ninomiya obstruction must be evaded against a much richer zero
+structure. Remarkably, a single symmetry-breaking term still reduces this to the
+minimal two --- see Exercise~\ref{ex:d4-minimal}.}
+
+\problemdraft{\label{ex:d4-antiperiodic}\textbf{Antiperiodic fermions without temporal links.}
+Bosons are periodic around the temporal cycle; fermions are antiperiodic. On
+$\mathbb{Z}^4$ one implements this by multiplying the temporal links crossing a
+fixed time slice by $-1$. On $D_4$ no link is purely temporal.
+\begin{enumerate}
+\item[(a)] Argue that what is required is a flat $U(1)$ connection with holonomy
+  $-1$ around the temporal cycle and $+1$ around every contractible loop, so
+  that the absence of purely temporal links cannot obstruct anything.
+\item[(b)] Every link of $D_4$ has $\Delta t\in\{0,\pm1\}$, with $12$ of each
+  nonzero value. Show that $\eta_e=\exp(i\pi\Delta t_e/N_t)$ does the job, and
+  that a single uniform phase suffices.
+\item[(c)] Verify flatness on the triangles: show that the only $\Delta t$
+  patterns are $(0,0,0)$ and $(+1,-1,0)$, occurring $24$ and $72$ times through
+  each site, and that both give trivial phase.
+\item[(d)] Repeat in the body-centred convention, where the axial link has
+  $\Delta t=\pm1$ and the sixteen body diagonals have $\Delta t=\pm\tfrac12$.
+  Which frame is simpler, and what does the axial link do to a nearest-slice
+  transfer matrix? Show also that $N_t$ must be even in the root convention.
+\end{enumerate}}
+{(a) Antiperiodicity is a statement about the temporal cycle, not about
+individual links: $\psi(x+N_t\hat4)=-\psi(x)$ is implemented by any flat
+connection whose holonomy around that cycle is $-1$. Where the phase sits is
+pure gauge; only the holonomy is physical. Hence a lattice with no purely
+temporal link is no obstruction whatever.
+
+(b) Each link carries $\Delta t_e\in\{0,\pm1\}$, so $\eta_e$ is $1$ on the $12$
+spatial links and $e^{\pm i\pi/N_t}$ on the $12$ temporal ones. Around the
+temporal cycle the $\Delta t$ accumulate to $N_t$, giving $e^{i\pi}=-1$; around
+any contractible loop they sum to zero, giving $+1$. Because $|\Delta t|=1$
+uniformly, one phase covers every temporal link. Equivalently, put $-1$ on every
+link crossing one seam.
+
+(c) A closed loop has $\sum\Delta t=0$; with $\Delta t\in\{0,\pm1\}$ the only
+possibilities for a triangle are $(0,0,0)$ --- three links inside one time slice
+--- and $(+1,-1,0)$. Enumeration gives $24$ and $72$ respectively, totalling the
+$96$ triangles through a site. In the first case no phase appears; in the second
+the two temporal links contribute $e^{i\pi/N_t}e^{-i\pi/N_t}=1$. Flat.
+
+(d) In the body-centred frame the time levels are spaced by $\tfrac12$, the
+diagonals step one level and the axial temporal link steps \emph{two}, so two
+different phases are needed and the axial link couples next-to-nearest time
+slices --- awkward for the standard nearest-slice transfer-matrix construction.
+The root convention, despite having no purely temporal link at all, has a
+uniform temporal structure and is the simpler of the two. Finally, periodicity
+in time requires $N_t\hat4\in D_4$, and since $\hat4\notin D_4$ while
+$2\hat4\in D_4$, $N_t$ must be even --- as must every spatial extent.}
+
+\problemdraft[result due to the author; add a citation, and replace the numerical zero count in (c) with an analytic argument if one can be found]{\label{ex:d4-minimal}\textbf{Minimal doubling: Karsten--Wilczek $=$ Borici--Creutz.}
+Both minimally doubled actions add to the naive operator a term that singles out
+one direction: Karsten--Wilczek an \emph{axial} direction $\hat4$, Borici--Creutz
+a \emph{body diagonal} $(1,1,1,1)/2$.
+\begin{enumerate}
+\item[(a)] Show that on $\mathbb{Z}^4$ these two directions lie in different
+  orbits of the hypercubic group, so that the two constructions are genuinely
+  distinct there.
+\item[(b)] Show that on $D_4$ both are directions of \emph{second-shell} lattice
+  vectors, $(2,0,0,0)$ and $(1,1,1,1)$, and recall from
+  Exercise~\ref{ex:d4-triality} that the second shell is a single
+  $\mathrm{Aut}(D_4)$ orbit. Conclude that the two constructions are related by
+  a lattice symmetry, and are therefore the same construction on $D_4$.
+\item[(c)] Take
+  \begin{equation}
+    D(p) \;=\; i\sum_{e}\gamma_e \sin(p\!\cdot\!e)
+      \;+\; i\lambda\,(\hat n\!\cdot\!\gamma)\sum_{e}\bigl(1-\cos(p\!\cdot\!e)\bigr),
+  \end{equation}
+  and show that $D(p)=0$ requires
+  $V_\mu(p) + c\,\hat n_\mu S(p)=0$ with $S(p)=\sum_e(1-\cos p\!\cdot\!e)\ge0$.
+  Show that $S$ vanishes only at $p=0$, so one zero sits at the origin and any
+  other must have $V(p)$ antiparallel to $\hat n$. Count the surviving zeros.
+\item[(d)] Compare the bookkeeping with the hypercubic case and comment.
+\end{enumerate}}
+{(a) The hypercubic group is the signed permutations, which preserve the
+multiset of $|x_\mu|$. For $|x|^2=4$ this splits the shell into
+$\{2,0,0,0\}$ and $\{1,1,1,1\}$: two orbits. So on $\mathbb{Z}^4$ ``axial'' and
+``body diagonal'' are inequivalent choices, and Karsten--Wilczek and
+Borici--Creutz are different actions with different symmetry-breaking patterns
+and different counterterms.
+
+(b) On $D_4$ the second shell consists of the $8$ vectors $(\pm2,0,0,0)$
+together with the $16$ vectors $(\pm1,\pm1,\pm1,\pm1)$, and
+Exercise~\ref{ex:d4-triality} shows these $24$ form one orbit, with $H$ mapping
+$(2,0,0,0)\mapsto(1,1,1,1)$. So the Karsten--Wilczek and Borici--Creutz
+directions are carried into one another by an automorphism of the lattice: the
+two prescriptions differ only by a change of frame. The distinction between them
+is an artifact of the hypercubic point group, and triality erases it.
+
+(c) With $\gamma_e=(e\!\cdot\!\gamma)/\sqrt2$ the operator is
+$D(p)=i\gamma_\mu[V_\mu/\sqrt2 + \lambda \hat n_\mu S]$, and the $\gamma_\mu$
+are linearly independent, giving the stated condition with $c=\sqrt2\lambda$.
+Each term of $S$ is non-negative and vanishes only when $\cos(p\!\cdot\!e)=1$
+for every $e$, i.e.\ $p\in2\pi D_4^{*}$: the origin. Numerical root counting
+gives exactly \emph{two} nondegenerate zeros for either choice of $\hat n$ and
+for every coupling tested, one at $p=0$ and a second along $\hat n$ whose
+position moves with $c$. This is minimal doubling.
+
+(d) On $\mathbb{Z}^4$ one term removes $14$ of $16$ zeros; here it removes $70$
+of $72$. That the same simple term does so much more work is a consequence of
+the richer symmetry: the $56$ ``extra'' naive zeros of
+Exercise~\ref{ex:d4-doubling} are not isolated accidents but lie in
+$\mathrm{Aut}(D_4)$ orbits, and a single orbit-breaking term lifts each orbit
+wholesale. The price is the same as in the hypercubic case --- the surviving
+symmetry is reduced, and the relevant counterterms must be identified before the
+action is usable.}
+
+\todo{Still to draft: the counterterm structure of the minimally doubled action
+on $D_4$; Wilson-like terms and the shape of the resulting spectrum;
+staggered/Dirac--K\"ahler fermions on a lattice whose time slices are fcc.}
