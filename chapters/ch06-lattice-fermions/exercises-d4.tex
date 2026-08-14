@@ -20,13 +20,16 @@ $\gamma_e \equiv (e\!\cdot\!\gamma)/|e| = (\gamma_\mu\pm\gamma_\nu)/\sqrt2$.
 \item[(b)] Compute $\{\gamma_e,\gamma_f\}$ for two minimal vectors and list the
   values that occur. In particular, what is it when $e$ and $f$ share a
   triangle?
-\item[(c)] On $\mathbb{Z}^4$ distinct $\gamma_\mu$ anticommute, which is what
-  lets an implementation store two spinor components per hop and reconstruct the
-  rest by sign flips. Explain carefully which part of that argument survives on
-  $D_4$ and which does not, and estimate the arithmetic cost per hop relative to
-  the hypercubic case.
-\item[(d)] Can a basis be chosen in which all twelve $\gamma_e$ take the simple
-  hypercubic form simultaneously? Justify your answer.
+\item[(c)] On $\mathbb{Z}^4$ each $\gamma_\mu$ is a \emph{monomial} matrix ---
+  one nonzero entry per row --- so spin projection is a permutation with sign
+  flips and costs almost nothing. Show that $\gamma_e$ is a sum of exactly two
+  monomial matrices, so the same trick applies twice per direction, and estimate
+  the arithmetic cost per hop relative to the hypercubic case.
+\item[(d)] For special pairs the two monomials share their support and collapse
+  to a \emph{single} monomial, so those hops cost exactly what a hypercubic hop
+  costs. Determine which link directions are privileged in this way, and show
+  that at most one of the three octant classes of
+  Exercise~\ref{ex:d4-checkerboard} can be so privileged at a time.
 \end{enumerate}}
 {(a) With $|e|^2=2$ and $\{\gamma_\mu,\gamma_\nu\}=2\delta_{\mu\nu}$,
 $\gamma_e^2=\tfrac12(\gamma_\mu\pm\gamma_\nu)^2
@@ -42,22 +45,39 @@ case $0$ is the pair of orthogonal links. Crucially, two links sharing a
 triangle have $e\cdot f=1$, so $\{\gamma_e,\gamma_f\}=\Id$: they neither
 commute nor anticommute.
 
-(c) What survives is the projector property, hence the factor-of-two saving in
-data movement. What fails is the cheapness of the projection. On $\mathbb{Z}^4$
-one may choose a basis in which each $(\Id\pm\gamma_\mu)/2$ acts by
-adding or subtracting components, so spin projection costs only additions; that
-rests on the four $\gamma_\mu$ pairwise anticommuting, so that they can be
-brought simultaneously to a canonical form. Here $\gamma_e$ is a genuine linear
-combination with a $1/\sqrt2$, and by (b) the relevant pairs fail to
-anticommute, so the projection is a general $2\times4$ contraction rather than a
-pattern of sign flips. Expect a small constant-factor penalty per hop, against
-which one must weigh $12$ directions instead of $4$.
+(c) The projector property survives, hence the factor-of-two saving in data
+movement. The projection itself also stays cheap, though not quite as cheap as
+on $\mathbb{Z}^4$. In a standard basis each $\gamma_\mu$ is monomial, so
+$\gamma_e=(\gamma_\mu\pm\gamma_\nu)/\sqrt2$ is the sum of \emph{two} monomial
+matrices: applying it is two permute-and-sign-flip passes, one addition and one
+scaling by $1/\sqrt2$, rather than the dense $2\times4$ contraction one might
+fear. The penalty is a factor of about two per hop, not an order of magnitude.
+Counting monomial applications per site, and using (d), $\mathbb{Z}^4$ needs
+$4$ while $D_4$ needs $4\times1+8\times2=20$ for its $12$ directions --- five
+times the projection arithmetic for three times the hops. Since the gauge
+multiply usually dominates, this overhead is subleading.
 
-(d) No. A simultaneous canonical form would require the $\gamma_e$ to generate a
-Clifford algebra with $\{\gamma_e,\gamma_f\}\propto\delta_{ef}$, whereas (b)
-gives $\{\gamma_e,\gamma_f\}=\Id$ for triangle-sharing pairs. At most
-four mutually orthogonal directions can be simultaneously canonicalised --- and
-the twelve link directions of $D_4$ contain many non-orthogonal pairs.}
+(d) A sum of two monomial matrices is again monomial precisely when the two
+share a sparsity pattern. In the basis
+$\gamma_{1,2,3}=\sigma_1\!\otimes\!\sigma_{1,2,3}$,
+$\gamma_4=\sigma_2\!\otimes\!\Id_2$ one finds that $\gamma_1,\gamma_2$ share a
+support and $\gamma_3,\gamma_4$ share a support, so exactly the directions in
+the planes $(12)$ and $(34)$ --- one octant class, four of the twelve
+directions --- have monomial $\gamma_e$, and those hops cost precisely what a
+hypercubic hop costs. The other eight need the two-monomial form of (c).
+
+Only one class can be privileged at a time: a basis partitions the four
+$\gamma_\mu$ into support-sharing pairs, and a pairing of $\{1,2,3,4\}$ is
+exactly a choice of one of the three octant classes of
+Exercise~\ref{ex:d4-checkerboard}. Relabelling the gamma matrices moves the
+privilege between classes but never buys two. So the triality triple that
+organises the gauge update also organises the fermion kernel: choosing a gamma
+basis \emph{is} choosing which octant gets the cheap hops.
+
+This refines rather than contradicts the absence of a simultaneous canonical
+form. No basis makes all twelve $\gamma_e$ look like hypercubic $\gamma_\mu$,
+since $\{\gamma_e,\gamma_f\}=\Id$ for triangle-sharing pairs; but sparsity,
+which is what an implementation actually needs, is largely retained.}
 
 \problemdraft[the doubler count in (b) is from numerical root counting; an analytic derivation would be better before this reaches a solutions manual]{\label{ex:d4-doubling}\textbf{Naive fermions and the doubling structure.}
 Take the naive Dirac operator $D(p)\propto \sum_{e}\gamma_e\sin(p\!\cdot\!e)$,
