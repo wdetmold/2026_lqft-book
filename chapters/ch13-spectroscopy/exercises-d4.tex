@@ -97,3 +97,93 @@ the $6$ of a cubic lattice: a Jacobi- or Gaussian-type smearing iterates
 $S = S_0 + \kappa\,\Delta_{\text{fcc}}$ with $\Delta_{\text{fcc}}$ the covariant
 Laplacian built from those links. Since the slice is fcc, the smearing operator
 inherits the better rotational behaviour of that geometry.}
+
+\problemdraft[the finite-volume comparison in (e) is numerical; the crossover statement deserves an analytic check, and the whole exercise should be reconciled with the literature on asymmetric and twisted volumes]{\label{ex:d4-spatialbc}\textbf{Choosing the spatial torus.}
+A spatial torus is a rank-$3$ sublattice $\Lambda\subset\mathbb{Z}^3$ with three
+generators $\lambda_{1,2,3}$ spanning $\mathbb{R}^3$; fields obey
+$\phi(x+\lambda_i)=\phi(x)$, and likewise the links. Nothing forces the
+$\lambda_i$ to point along the coordinate axes.
+\begin{enumerate}
+\item[(a)] Show that on $D_4$ every generator must have \emph{even} coordinate
+  sum, i.e.\ $\Lambda\subseteq D_3$, and explain what goes wrong otherwise.
+\item[(b)] For the Cartesian torus $\lambda_i=L\hat{e}_i$, deduce the
+  familiar constraint on $L$ and count the sites per time slice.
+\item[(c)] Now take the generators along the \emph{root vectors of the slice}
+  itself,
+  \begin{equation}
+    \lambda_1=N(1,1,0),\qquad \lambda_2=N(1,0,1),\qquad \lambda_3=N(0,1,1).
+  \end{equation}
+  Verify that these span $\mathbb{R}^3$, that the constraint of (a) is satisfied
+  for \emph{every} integer $N$, and that there are $N^3$ sites per slice. What
+  is the shortest closed geodesic?
+\item[(d)] Repeat for a body-centred torus,
+  $\lambda_i=\tfrac{a}{2}(-1,1,1)$ and cyclic permutations. Show that the
+  constraint of (a) now requires $a\equiv0\pmod 4$, and compare the available
+  volumes with (b) and (c).
+\item[(e)] Finite-volume corrections are controlled by the shortest closed
+  geodesic. Normalising to unit covolume --- equal site count, equal cost ---
+  compute $\lambda_1/V^{1/3}$ for the three tori. Then evaluate the leading
+  finite-volume sum
+  $F(x)=\sum_{\lambda\in\Lambda\setminus\{0\}} e^{-x|\lambda|}/(x|\lambda|)$
+  with $x=mV^{1/3}$ and decide which torus is best in the range
+  $x\sim3\text{--}10$. Why is the naive argument from the shortest vector alone
+  --- which competes against a larger kissing number --- not decisive?
+\item[(f)] Show that all three quotients are invariant under the full cubic
+  group $O_h$, so no spectroscopic machinery is lost. What \emph{does} change?
+\item[(g)] Does any of this relieve the requirement that $N_t$ be even?
+\end{enumerate}}
+{(a) A translation by $\lambda$ must map the slice to itself. Sites of $D_4$ at
+time $t$ satisfy $\sum_i x_i\equiv t \pmod 2$, so $\lambda$ must have even
+coordinate sum; otherwise the identification glues the even-sum slice onto the
+odd-sum one and the two sublattices --- and with them the transfer matrix
+structure of Exercise~\ref{ex:d4-transfer} --- are scrambled.
+
+(b) $\sum_i(L\hat{e}_1)_i=L$, so $L$ must be even. Covolume $L^3$, and since
+the slice has covolume $2$ there are $L^3/2$ sites, i.e.\ $4,32,108,256,\dots$
+for $L=2,4,6,8$.
+
+(c) The determinant of the three generators is $2N^3\neq0$, so they span.
+Each has coordinate sum $2N$, even for every integer $N$ --- the parity
+constraint simply disappears. The index of $N D_3$ in $D_3$ is $N^3$, so there
+are $N^3$ sites per slice: $1,8,27,64,125,216,\dots$, every cube. The shortest
+geodesic is $|N(1,1,0)|=N\sqrt2$.
+
+(d) Coordinate sum $a/2$, so $a\equiv0\pmod4$; $a=2$ fails. Covolume $a^3/2$
+and $a^3/4$ sites, i.e.\ $16,128,432,\dots$ --- much coarser than either (b) or
+(c). Direct enumeration confirms that the $a=2$ body-centred lattice is not a
+sublattice of the slice while $a=4$ is.
+
+(e) At unit covolume,
+\begin{center}
+\begin{tabular}{lcc}
+ torus & $\lambda_1/V^{1/3}$ & kissing number\\ \hline
+ Cartesian & $1$ & $6$\\
+ body-centred & $\sqrt3\,2^{1/3}/2\simeq1.0911$ & $8$\\
+ root-vector (fcc) & $2^{1/6}\simeq1.1225$ & $12$
+\end{tabular}
+\end{center}
+Evaluating $F(x)$ numerically, the Cartesian torus is the worst everywhere
+above $x\simeq3$: at $x=4$ one finds $3.68\times10^{-2}$ against
+$3.33\times10^{-2}$ for either of the others, a $10\%$ reduction; at $x=6$ the
+gain is $\sim22\%$, and by $x=10$ it is a factor of two. The body-centred and
+root-vector tori are nearly degenerate, the latter marginally ahead. The naive
+argument fails because a longer shortest vector is bought at the price of more
+of them --- $12$ against $6$ --- and at the leading shell the two effects very
+nearly cancel; only when the higher shells are included does the denser lattice
+win. This is a case where the one-line estimate and the honest sum disagree.
+
+(f) $\mathrm{Aut}(D_3)=\mathrm{Aut}(D_3^{*})=O_h$ of order $48$, and $N\Lambda$
+inherits the symmetry of $\Lambda$, so every quotient here is $O_h$-invariant:
+irrep tables, little groups and subduction rules are untouched. What changes is
+the momentum set. The allowed momenta are $2\pi\Lambda^{*}$ modulo the slice's
+reciprocal lattice, so the Cartesian torus gives $(2\pi/L)\mathbb{Z}^3$ while
+the root-vector torus gives $(2\pi/N)\times$(body-centred), a different list of
+$|\mathbf{p}|^2$ shells at the same volume --- a useful extra handle for
+finite-volume spectroscopy rather than a nuisance.
+
+(g) No. The temporal identification is $x\sim x+N_t\hat{e}_4$, and
+$\hat{e}_4\notin D_4$ while $2\hat{e}_4\in D_4$, so $N_t$ must still be even.
+No choice of \emph{spatial} torus can relieve a constraint that comes from the
+time direction; only choosing the temporal direction along a lattice vector
+would, and that is the body-centred frame of
+Exercise~\ref{ex:d4-antiperiodic}(d), with the drawbacks noted there.}
