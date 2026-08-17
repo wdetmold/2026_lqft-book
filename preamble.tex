@@ -80,8 +80,12 @@
     \par\nobreak
   \fi}
 \newcommand{\problemdraft}[3][]{\problem{\draftflagtag{#1}#2}{#3}}
+% The [check] tag has to survive being used inside an equation, so route it
+% through \text{} in math mode.
+\newcommand{\checktag}{%
+  \ifmmode\text{\footnotesize\sffamily[check]}\else{\footnotesize\sffamily[check]}\fi}
 \newcommand{\unverified}[1]{%
-  \ifdraftflags{\color{draftflagcolour}#1\,{\footnotesize\sffamily[check]}}\else#1\fi}
+  \ifdraftflags{\color{draftflagcolour}#1\,\checktag}\else#1\fi}
 
 %   \remark{title}{text} / \remarkdraft[note]{title}{text}
 %       a set-off aside in the main text.  The "draft" form carries the same

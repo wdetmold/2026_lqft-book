@@ -874,8 +874,274 @@ This leads to very demanding calculations but in the end the results are similar
 L-CNNs
 
 
+% ===========================================================================
+% Gradient flow.  Absorbed from the former Ch.9 (gradient flow and scale
+% setting); it sits here because everything in the topology section that
+% follows depends on having a smoother.
+% ===========================================================================
+\section{Gradient flow}
+\label{sec:gradient-flow}
+
+\todo{Section outline drafted mechanically --- prose, conventions and
+citations still to be written. Delete this note once the section is yours.}
+
+\subsection{The flow equation}
+
+The gradient (or Wilson) flow\aidx{Wilson flow}\aidx{gradient flow|see{Wilson flow}}
+evolves the gauge field in a fictitious fifth ``time'' $t$ of dimension
+length$^2$, along the gradient of the action,
+\begin{equation}
+\label{eq:gradient-flow}
+  \partial_t V_t(x,\mu) = -g_0^2\,\big[\partial_{x,\mu} S_W[V_t]\big]\,V_t(x,\mu),
+  \qquad V_0(x,\mu) = U_\mu(x),
+\end{equation}
+where $\partial_{x,\mu}$ is the Lie-algebra derivative with respect to the link
+$V_t(x,\mu)$. In the continuum this is $\partial_t B_\mu = D_\nu G_{\nu\mu}$, a
+heat equation for the gauge potential up to a gauge term.
+
+\todo{Write: why this is not a field redefinition but a genuine smoothing;
+the diffusion radius $\sqrt{8t}$ and the resulting sense in which the flow is
+an RG-like coarse-graining; the choice of $S_W$ (Wilson vs Symanzik/Zeuthen)
+in Eq.~\eqref{eq:gradient-flow} and the size of the difference; integrators
+(Runge--Kutta, adaptive step size) and the cost.}
+
+\subsection{Flowed observables and renormalisation}
+
+\todo{Write: the L\"uscher--Weisz result that correlation functions of fields
+at positive flow time are finite once the coupling and the boundary fields are
+renormalised --- no further renormalisation is needed. This is the reason the
+flow is useful rather than merely convenient, and it is what licenses the
+scale-setting and topology applications below. Mention the small-flow-time
+expansion and its use for renormalising $T_{\mu\nu}$ and the chiral
+condensate\aidx{chiral condensate}.}
+
+\subsection{Scale setting}
+
+The energy density $E(t) = \tfrac12\,\mathrm{tr}\,G_{\mu\nu}G_{\mu\nu}$ measured
+at flow time $t$ gives dimensionless observables that fix the lattice
+spacing\aidx{lattice spacing}\aidx{scale setting}:
+\begin{equation}
+  t^2\langle E(t)\rangle\Big|_{t=t_0} = 0.3,
+  \qquad
+  t\,\frac{d}{dt}\Big\{t^2\langle E(t)\rangle\Big\}\Bigg|_{t=w_0^2} = 0.3 .
+\end{equation}
+
+\todo{Write: why $t_0$ and $w_0$ are so precise (tiny statistical errors,
+mild $a$-dependence) but not physical --- they must themselves be calibrated
+against an experimental quantity, which connects to the discussion of scale
+setting in Ch.~\ref{ch:data-analysis}. Compare with the static
+potential\aidx{static quark potential} scales $r_0$, $r_1$. The two clover and
+plaquette definitions of $E$ and their different discretisation errors.}
+
+\subsection{Fermion flow}
+
+\todo{Write: L\"uscher's flow for the quark fields, the extra wave-function
+renormalisation $Z_\chi$ that the fermion field does require, and the
+applications (renormalisation of the condensate, of $Z_A$, of the energy
+momentum tensor). Cross-reference Ch.~\ref{ch:lattice-fermions}.}
+
+\subsection{Relation to smearing}
+
+\todo{Write: stout smearing\aidx{smearing!stout} is the integration of
+Eq.~\eqref{eq:gradient-flow} with a finite step, so smearing and flow are the
+same operation at different resolutions; APE and HYP smearing are close
+cousins. This matters below, where all of them are used interchangeably as
+smoothers for the topological charge.}
+
+
+% ===========================================================================
 \section{Topological properties of gauge fields}
+\label{sec:topology}
 
-\section{Wilson flow}
+\todo{Section outline drafted mechanically --- prose, conventions and
+citations still to be written. Delete this note once the section is yours.
+The ordering is: continuum definition $\to$ lattice definitions of $Q$ $\to$
+measuring it $\to$ $\chi_{\rm top}$ and $\theta$ $\to$ sampling it $\to$
+topological objects and confinement $\to$ the one-form-symmetry view.}
 
-TODO
+\subsection{Topological charge in the continuum}
+
+The $\theta$ term set aside at the start of the chapter is a total derivative,
+so it does not affect the equations of motion, but its integral is a
+topological invariant\aidx{topological charge}:
+\begin{equation}
+\label{eq:Qcont}
+  Q = \int\! d^4x\; q(x), \qquad
+  q(x) = \unverified{\frac{1}{16\pi^2}}\,
+         \epsilon_{\mu\nu\rho\sigma}\,
+         \mathrm{tr}\big[F_{\mu\nu}(x)F_{\rho\sigma}(x)\big] \in \mathbb{Z}.
+\end{equation}
+
+\todo{Write: $Q$ as the second Chern number\aidx{Chern number}, the
+classification $\pi_3(SU(N)) = \mathbb{Z}$ of gauge transformations at
+infinity, and the Bogomolny bound $S \geq 8\pi^2|Q|/g^2$ with equality for
+(anti-)self-dual fields. Check the normalisation in Eq.~\eqref{eq:Qcont}
+against the conventions fixed in \S1 --- the factor differs between the
+$F^a_{\mu\nu}F^a_{\rho\sigma}$ and $\mathrm{tr}\,F F$ forms.}
+
+\todo{Write, briefly: why anyone cares. The $\theta$ term violates $P$ and
+$CP$; the measured neutron electric dipole moment bounds $|\theta| \lesssim
+10^{-10}$; that this is small is the strong $CP$ problem, and the lattice input
+is the matrix element that converts $\theta$ into an EDM. Also the axial
+anomaly\aidx{axial anomaly} and the $\eta'$, taken up in
+Ch.~\ref{ch:spectroscopy}.}
+
+\subsection{Defining $Q$ on the lattice}
+
+There is no unique answer, and the differences are instructive. Three
+constructions are in use.
+
+\todo{Write (i), the \emph{gluonic} or field-theoretic definition: replace
+$F_{\mu\nu}$ in Eq.~\eqref{eq:Qcont} by the clover\aidx{clover term} term
+built from the four plaquettes in the $\mu\nu$ plane at $x$. Cheap, but not
+integer-valued at finite $a$, and it renormalises multiplicatively,
+$Q_{\rm gluonic} = Z(g_0)\,Q + \mathcal{O}(a^2)$, so it is useless without the
+smoothing of \S\ref{sec:topology-measuring}.}
+
+\todo{Write (ii), the \emph{geometric} definition (L\"uscher): interpolate the
+link field to a continuum field on each hypercube and integrate
+Eq.~\eqref{eq:Qcont}. This gives an \emph{exact} integer, but only for fields
+satisfying the admissibility condition below --- which is precisely why
+admissibility is worth introducing. Note that the classification of lattice
+gauge-field topology is complete for $U(1)$ but not for $SU(N)$; see
+Ch.~\ref{ch:chiral-gauge}, where this gap is the obstruction to a
+non-perturbative construction of chiral gauge theories.}
+
+\todo{Write (iii), the \emph{fermionic} definition: for a Ginsparg--Wilson
+operator\aidx{Ginsparg-Wilson relation} the index is exactly integer at finite
+lattice spacing,
+\[
+  Q \;=\; \mathrm{index}\,D \;=\; n_- - n_+
+    \;=\; \unverified{\mathrm{Tr}\Big[\gamma_5\big(1 - \tfrac{a}{2}D\big)\Big]} ,
+\]
+the lattice Atiyah--Singer index theorem\aidx{index theorem} of
+Hasenfratz--Laliena--Niedermayer. This is the cleanest definition and needs no
+smoothing; it is also by far the most expensive. Cross-reference the
+overlap operator\aidx{fermions!overlap} in Ch.~\ref{ch:lattice-fermions}, and
+the zero-mode counting there. Check the sign convention.}
+
+\subsection{Admissibility}
+\label{sec:admissibility}
+
+A gauge field is \emph{admissible}\aidx{admissibility condition} if every
+plaquette is close to the identity,
+\begin{equation}
+\label{eq:admissibility}
+  \big\|\,\Id - U_{\mu\nu}(x)\,\big\| < \epsilon
+  \qquad \text{for all } x,\ \mu,\ \nu .
+\end{equation}
+
+\todo{Write: what Eq.~\eqref{eq:admissibility} buys. (a) The space of
+admissible fields separates into disconnected sectors, so the geometric $Q$ is
+well defined and integer. (b) With $\epsilon < 1/30$ it is the hypothesis of
+the Hern\'andez--Jansen--L\"uscher proof that the overlap operator is local
+--- this is the real reason the condition belongs in a book rather than a
+paper, and it should be stated as such. (c) L\"uscher's admissible action, which
+diverges as the bound is approached and so enforces the condition dynamically,
+at the cost of freezing $Q$ completely (\S\ref{sec:topology-freezing}) and of a
+non-standard continuum limit. Verify the value of $\epsilon$.}
+
+\subsection{Measuring $Q$: smoothing}
+\label{sec:topology-measuring}
+
+\todo{Write: a thermalised configuration is rough at the scale of the cutoff,
+so the gluonic $q(x)$ is dominated by ultraviolet noise; the topological
+content only becomes visible after the short-distance fluctuations are removed.
+Gradient flow (\S\ref{sec:gradient-flow}) is the modern choice because its
+smoothing radius $\sqrt{8t}$ is a controlled, renormalised quantity; cooling
+and APE/HYP/stout smearing do the same job. Emphasise the empirical result
+that all of these agree once matched by smoothing radius, so the definition of
+$Q$ is not a matter of taste. Show the plateau of $Q(t)$ in flow time and the
+approach of the measured values to integers.}
+
+\todo{Figure: histogram of $Q$ over an ensemble at several flow times, showing
+the peaks sharpening onto integers. Good candidate for a generated figure.}
+
+\subsection{Topological susceptibility and $\theta$-dependence}
+
+\begin{equation}
+  \chi_{\rm top}\aidx{topological susceptibility} = \frac{\langle Q^2\rangle}{V}
+  = \int\! d^4x\;\langle q(x)\,q(0)\rangle ,
+\end{equation}
+where the second form needs care: the correlator is a distribution and the
+contact term at $x=0$ must be subtracted.
+
+\todo{Write: the contact-term subtlety, and that the fermionic definition
+avoids it. The expansion of the vacuum energy density,
+\[
+  \frac{E(\theta)-E(0)}{V} = \tfrac12\,\chi_{\rm top}\,\theta^2
+      \big(1 + b_2\theta^2 + \dots\big),
+  \qquad
+  b_2 = \unverified{-\frac{\langle Q^4\rangle - 3\langle Q^2\rangle^2}
+                          {12\,\langle Q^2\rangle}} ,
+\]
+so that $\chi_{\rm top}$ and $b_2$ are the second and fourth cumulants of the
+$Q$ distribution. Large-$N$ counting: $\chi_{\rm top} = \mathcal{O}(N^0)$,
+$b_2 = \mathcal{O}(N^{-2})$. The sign problem\aidx{sign problem} at real
+$\theta$ and analytic continuation from imaginary $\theta$. Quote the pure-gauge
+$SU(3)$ value of $\chi^{1/4}_{\rm top}$ and its quark-mass suppression in QCD,
+$\chi_{\rm top} \to \Sigma\,\bar{m}$ at small quark mass. Cross-reference
+Witten--Veneziano in Ch.~\ref{ch:spectroscopy}, which currently uses
+$\chi_\infty$ without a definition upstream.}
+
+\todo{Write: $\chi_{\rm top}(T)$ at high temperature, where the dilute
+instanton gas predicts a power law, and its role in fixing the axion mass ---
+a live application worth a paragraph. Cross-reference
+Ch.~\ref{ch:thermodynamics}.}
+
+\subsection{Sampling topology}
+\label{sec:topology-freezing}
+
+\todo{Write: this is the practical issue a student will actually hit. In the
+continuum limit the sectors decouple, so the Monte Carlo
+autocorrelation\aidx{autocorrelation} time of $Q$ grows roughly like $a^{-5}$
+and $Q$ freezes on fine lattices --- an ergodicity failure that biases every
+observable, not just topological ones. Remedies: open boundary
+conditions\aidx{boundary conditions!open} in time (L\"uscher--Schaefer), which
+remove the barriers at the price of translation invariance and a boundary
+region that must be discarded; parallel tempering in the boundary condition;
+metadynamics; instanton-insertion updates. Connect to the remark in
+Ch.~\ref{ch:scalar-fields} that Dirichlet boundary conditions allow topology to
+change, and to the algorithm discussion in Ch.~\ref{ch:monte-carlo}.}
+
+\todo{Write: fixed-topology methods. If $Q$ is frozen one can still work at
+fixed $Q$ and reconstruct $\theta$-vacuum quantities, with $1/V$ corrections
+controlled by $\chi_{\rm top}$ (Brower--Chandrasekharan--Negele--Wiese;
+Aoki--Fukaya--Hashimoto--Onogi). Give the leading correction formula.}
+
+\subsection{Topological objects and confinement}
+
+\todo{Write: instantons\aidx{instantons}. The BPST solution, its size modulus
+$\rho$ and the semiclassical measure $d\rho/\rho^5\,\rho^{b_0}$ whose infrared
+divergence is why semiclassics fails in four dimensions; the instanton liquid
+picture; what smoothing actually reveals on the lattice and the honest caveat
+that ``counting instantons'' depends on the smoothing radius. Calorons and the
+KvBLL constituent-monopole picture at finite temperature belong with
+Ch.~\ref{ch:thermodynamics}.}
+
+\todo{Write: centre vortices\aidx{centre vortices}. Definition by centre
+projection after maximal centre gauge fixing; the vortex density and its
+scaling; the striking removal experiments --- deleting the vortices
+simultaneously destroys the string tension\aidx{string tension}, the chiral
+condensate and the topological charge, which is the strongest single piece of
+evidence for the picture. Set this against abelian
+monopoles\aidx{monopoles} in maximal abelian gauge and the dual-superconductor
+scenario, and note the gauge-dependence of both constructions. Casimir versus
+centre scaling of the $k$-string tensions as the observable that discriminates
+between them.}
+
+\subsection{Centre symmetry as a one-form symmetry}
+
+\todo{Write: the modern framing, which unifies most of the above. Pure
+$SU(N)$ gauge theory has an exact $\mathbb{Z}_N$ one-form
+symmetry\aidx{centre symmetry} acting on Wilson loops; the Polyakov
+loop\aidx{Polyakov loop} is its order parameter and confinement is its
+unbroken phase (cross-reference Ch.~\ref{ch:thermodynamics}). 't~Hooft twisted
+boundary conditions\aidx{boundary conditions!twisted} realise the sectors of
+this symmetry on the lattice and carry fractional topological charge $Q \in
+\mathbb{Z}/N$; the mixed 't~Hooft anomaly between centre symmetry and the
+$2\pi$ periodicity of $\theta$ then constrains the phase diagram. This is the
+language the current literature uses, and it makes centre vortices and the
+$\theta$ term two aspects of one structure rather than two topics. Forward
+reference to Ch.~\ref{ch:lattice-bsm} for adiabatic continuity and semiclassics
+on $\mathbb{R}^3 \times S^1$.}

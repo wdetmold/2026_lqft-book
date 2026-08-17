@@ -16,8 +16,8 @@ CH = {
  "ch07-improvement-continuum": ("Improvement and the continuum limit", [],
    "Consolidate Symanzik improvement, clover, RG/continuum-limit material scattered through Chs.~3, 4, 6; add scale setting."),
  "ch08-monte-carlo":         ("Monte Carlo algorithms for lattice QFT", ["algorithms.tex"], None),
- "ch09-gradient-flow":       ("Gradient flow and scale setting", ["wilson-flow-notes.tex"],
-   "New chapter: flow equations for gauge and fermion fields, $t_0$/$w_0$ scale setting, flowed observables and renormalisation."),
+ # ch09-gradient-flow retired: the material is now Ch.4 \S"Gradient flow",
+ # placed immediately before the topology section that depends on it.
  "ch10-data-analysis":       ("Data analysis for lattice QFT", [],
    "New chapter: jackknife/bootstrap, correlated fits, model averaging, systematic error budgets, chiral-continuum-volume extrapolation."),
  "ch11-ml-methods":          ("Machine learning methods", [],
