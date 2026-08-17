@@ -20,7 +20,8 @@ minimally doubled fermion with an unusually good free spectrum.
 | 3 Scalar fields | geometry; free propagator; $F_4$ invariants; triality degeneracy; numerics; transfer matrix & RP; Symanzik improvement; hopping expansion | **drafted** (8 exercises, `exercises-d4.tex`) |
 | 4 Gauge fields | triangular plaquette action; no checkerboard but a three-octant decomposition; rectangle improvement | **drafted** (2 exercises) |
 | 5 Hamiltonian LGT | Kogut–Susskind limit with no straight temporal bond | planned |
-| 6 Lattice fermions | minimally doubled fermions (Borići–Creutz $=$ Karsten–Wilczek on $D_4$); free $\slashed{D}$ spectrum; doubler count | planned |
+| 6 Lattice fermions | minimally doubled fermions (Borići–Creutz $=$ Karsten–Wilczek on $D_4$); free $\slashed{D}$ spectrum; doubler count | **drafted** (4 exercises) |
+| 6 Lattice fermions | why staggered/Dirac–Kähler is $\mathbb{Z}^4$-specific, and what the Kähler–Dirac spectrum on $D_4$ actually is | **drafted** (in-text remark, `staggered.tex`) |
 | 7 Improvement | $\mathcal{O}(a)$ improvement, continuing Ch. 3's counting | planned |
 | 8 Monte Carlo | pure-gauge transfer matrix; bulk phase transition | planned |
 
@@ -98,6 +99,61 @@ same construction on $\mathbb{Z}^4$ yields no chords at all.
   $\Delta t$ patterns $(0,0,0)$ and $(+1,-1,0)$, both flat. The root
   convention is *simpler* than the body-centred one here, where the axial link
   spans two time levels.
+
+## Kähler–Dirac fermions on $D_4$
+
+Written up as a flagged remark at the end of the DK section of
+`chapters/ch06-lattice-fermions/staggered.tex`; code in `tools/kd_d4/`,
+figure `figures/fig-d4-kahler-dirac.pdf`.
+
+**The textbook construction is hypercubic in two independent places.**
+
+- *Kawamoto–Smit.* A site-dependent $\Gamma^n$ with
+  $\Gamma^{n\dagger}\gamma_\mu\Gamma^{n+\hat\mu}\propto\mathbb{1}$ exists iff the
+  ordered product of $\gamma$'s around every closed loop is a multiple of the
+  identity. $\mathbb{Z}^4$: 12 of 12 plaquettes pass. $D_4$: **0 of 96**
+  triangles. What one gets instead is
+  $\Gamma^{x\dagger}\gamma_e\Gamma^{x+e} = \pm i^k \gamma_{e'}$ with $e'$ in the
+  same coordinate 2-plane — verified over 4800 $(e,x)$ pairs, never scalar.
+  So there is no staggered fermion on $D_4$.
+- *The de Rham dictionary.* Needs $\binom{4}{p} = 1,4,6,4,1$ cells per site,
+  summing to $2^4 = \dim\mathrm{Cl}_4$ — that is exactly the statement that the
+  vertex figure is a hypercube. The Delaunay complex of $D_4$ is the **16-cell
+  honeycomb**, $[1,12,32,24,3] = 72$ per site (Euler 0), and $72/16 = 9/2$.
+
+**But the equation itself is fine, and so is its spectrum.** $\partial^2 = 0$ is
+all that $(d-\delta)^2 = -\Delta$ needs. Diagonalising $d - \delta$ on the
+72-dimensional cochain space with the circumcentric Hodge star
+$w_p = |\ast\sigma|/|\sigma| = (2, \tfrac13, \tfrac12, 3, \tfrac32)$:
+
+| | $D_4$ | $\mathbb{Z}^4$ |
+|---|---|---|
+| cochains per site | 72 | 16 |
+| harmonic cochains by degree at $k=0$ | 1,4,6,4,1 | 1,4,6,4,1 |
+| light branches / velocity | 16 / exactly 1, isotropic | 16 / 1 |
+| extra zeros in the BZ (doublers) | none | none |
+| gap of the remaining branches | $2\sqrt2$ | — |
+| $\lvert\lambda\rvert/\lvert k\rvert - 1$ | $-\lvert k\rvert^2/64$, **direction-independent** | $-\sum_\mu k_\mu^4/24\lvert k\rvert^2$, varies $\times 4$ |
+| $U(1)$ chiral symmetry $\Gamma = (-1)^p$ | exact | exact |
+
+Two things are worth flagging. First, the Hodge star is *not* optional: with the
+naive orthonormal inner product the 16 light modes split into four velocities
+$\sqrt6,\ 2/\sqrt6,\ 1/\sqrt6,\ \sqrt2$, one per adjacent pair of form degrees
+(multiplicities 2, 6, 6, 2). The weights $w_p$ restore the degeneracy exactly.
+Second, this is the free theory only; whether the four sectors stay degenerate at
+nonzero coupling is the same kind of question as the counterterm tuning for
+minimally doubled fermions, and is open here.
+
+*This is the fourth appearance of the no-quartic-invariant story: isotropic
+$\mathcal{O}(a^2)$ in the scalar propagator (Ch. 3), no independent quartic
+Symanzik coefficient (Ch. 7), the $(2,0,0,0)\sim(1,1,1,1)$ degeneracy, and now
+the fermion dispersion.*
+
+**Where a taste index could still come from.** $|D_4/2D_4| = 16$, exactly as for
+$\mathbb{Z}^4$, and its classes split as $1$ (origin) $+\ 12$ (antipodal link
+pairs) $+\ 3$ (second shell, permuted by triality) — matching the 0-, 1- and
+4-cell counts per site. It is the 32 triangles and 24 tetrahedra that have no
+counterpart.
 
 ## Verified inputs
 

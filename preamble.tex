@@ -83,6 +83,19 @@
 \newcommand{\unverified}[1]{%
   \ifdraftflags{\color{draftflagcolour}#1\,{\footnotesize\sffamily[check]}}\else#1\fi}
 
+%   \remark{title}{text} / \remarkdraft[note]{title}{text}
+%       a set-off aside in the main text.  The "draft" form carries the same
+%       author-check tag as \problemdraft; accept it by deleting "draft" from
+%       the command name (and any [note]).
+\newenvironment{remarkblock}{%
+  \begin{list}{}{\setlength{\leftmargin}{1.4em}\setlength{\rightmargin}{1.4em}%
+                 \setlength{\listparindent}{\parindent}%
+                 \setlength{\itemindent}{0pt}\setlength{\topsep}{\medskipamount}}%
+  \item[]\small}{\end{list}}
+\newcommand{\remark}[2]{%
+  \begin{remarkblock}\textbf{#1}\enspace #2\end{remarkblock}}
+\newcommand{\remarkdraft}[3][]{\remark{#2}{\draftflagtag{#1}#3}}
+
 % ---------------------------------------------------------------------------
 % Identity matrix.  NOTE: \mathbb{1} is NOT valid with amssymb -- the msbm font
 % has no digits, so \mathbb{1} silently typesets as the logic symbol U+22AE.

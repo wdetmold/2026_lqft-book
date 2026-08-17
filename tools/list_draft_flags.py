@@ -32,12 +32,18 @@ for f in FILES:
         line = text[:m.start()].count("\n") + 1
         note = (m.group(1) or "")[1:-1]
         problems.append((f, line, note, first_words(text[m.end():m.end()+220])))
+    for m in re.finditer(r"\\remarkdraft(\[[^\]]*\])?\{", text):
+        line = text[:m.start()].count("\n") + 1
+        note = " ".join((m.group(1) or "")[1:-1].split())
+        problems.append((f, line, note,
+                         "REMARK: " + first_words(text[m.end():m.end()+220])))
     for m in re.finditer(r"\\unverified\{", text):
         line = text[:m.start()].count("\n") + 1
         claims.append((f, line, first_words(text[m.end():m.end()+200], 14)))
 
 if "--count" in sys.argv:
-    print(f"{len(problems)} unverified exercise(s), {len(claims)} unverified claim(s)")
+    print(f"{len(problems)} unverified exercise(s)/remark(s), "
+          f"{len(claims)} unverified claim(s)")
     sys.exit(0)
 
 print("Draft material awaiting author verification")

@@ -28,6 +28,9 @@ But
     \Gamma^{n \dagger} \gamma_\mu \Gamma^{n \pm \hat{\mu}} = (-1)^{\sum_{\nu = 1}^{\mu - 1}n_\nu} \mathbb{I} = (-1)^{\delta(n)}\mathbb{I}
 \end{equation}
 is diagonal in spinor indices, where we've used that $\Gamma^{n \pm \hat{\mu}}$ is identical for both signs.
+That this comes out proportional to the identity --- rather than as some other
+Dirac matrix --- is a property of the hypercubic lattice and not a general fact;
+see the remark on p.~\pageref{rmk:kd-cubic}.
 
 Try for example $n = (1 1 1 1), \mu = 3$, then we have $\gamma_4 \gamma_3 \gamma_2 \gamma _ 1 (\gamma_3)\gamma_1 \gamma_2 \gamma_3^2 \gamma_4 = 1$, or $n = (0,1,2,3), \mu = 3$, then we have $\gamma_4 \gamma_2 (\gamma_3)\gamma_2 \gamma_3 \gamma_4 = -1$.
 
@@ -441,6 +444,88 @@ with the translation operator $T_\mu d^{x,H} = d^{{x - \hat{\mu}},H}$, and where
     \caption{The assignment of the $\mu \nu$ plaquette to the half lattice.
     \label{fig:plaq_half_lat}}
 \end{figure}
+
+\label{rmk:kd-cubic}%
+\remarkdraft[cell counts, the triangle obstruction and the $D_4$ spectrum are
+all verified numerically (\texttt{tools/kd\_d4/}); the prose is
+drafted]{This construction is specific to $\mathbb{Z}^4$.}{%
+It is easy to come away from the above with the impression that staggered and
+Dirac--K\"ahler fermions are a general geometrical statement about lattices.
+They are not: \emph{both} steps that converted a form into spinors used the
+hypercubic structure, and both fail on any other lattice.
+%
+\begin{itemize}
+  \item \emph{The Kawamoto--Smit rotation.} A site-dependent $\Gamma^{n}$
+    satisfying $\Gamma^{n\dagger}\gamma_\mu\Gamma^{n+\hat\mu}\propto\Id$ exists
+    if and only if the ordered product of Dirac matrices around \emph{every}
+    closed lattice loop is a multiple of the identity --- a criterion that does
+    not refer to $\Gamma$ at all. On $\mathbb{Z}^4$ the elementary loop is the
+    plaquette and $\gamma_\mu\gamma_\nu\gamma_\mu^\dagger\gamma_\nu^\dagger
+    =-\Id$ for $\mu\neq\nu$, so it holds. The moment the links are not along the
+    coordinate axes it fails. On the checkerboard lattice $D_4$ of
+    Exercise~\ref{ex:d4-gammae}, where a link $e$ carries
+    $\gamma_e=(\gamma_\mu\pm\gamma_\nu)/\sqrt2$ and the elementary loop is a
+    triangle, not one of the $96$ triangles through a site passes the test.
+    What one gets instead is
+    $\Gamma^{x\dagger}\gamma_e\Gamma^{x+e}=\pm i^{k}\gamma_{e'}$, with $e'$
+    another link direction in the same coordinate $2$-plane: a rotation, never
+    a phase. There is no staggered fermion on $D_4$.
+  \item \emph{The de Rham dictionary.} Reading the cochain $\breve\Phi$ as a
+    $4\times4$ matrix, and hence as four Dirac spinors, needs the $p$-cells at
+    a site to be a basis of $\Lambda^{p}(\mathbb{R}^4)$ --- that is, it needs
+    the cell counts to be $\binom{4}{p}=1,4,6,4,1$, whose sum $2^4=16$ is
+    exactly $\dim\mathrm{Cl}_4$. That coincidence is the statement that the
+    vertex figure of the complex is a hypercube, and nothing more. For $D_4$
+    the Delaunay complex is the $16$-cell honeycomb, with per site
+    \[
+      1 \text{ vertex},\quad 12 \text{ edges},\quad 32 \text{ triangles},\quad
+      24 \text{ tetrahedra},\quad 3 \text{ } 16\text{-cells}
+      \;=\; 72 ,
+    \]
+    (alternating sum zero, as it must be). Twelve edge directions cannot be a
+    basis of the $1$-forms, so cochains $\to$ forms is a surjection with an
+    eight-dimensional kernel per site; and $72/16$ is not an integer, so
+    $\breve\Phi$ cannot be read as a whole number of Dirac fields at all.
+\end{itemize}
+%
+What \emph{does} survive is everything homological. The nilpotency
+$\breve\Delta^2=\breve\nabla^2=0$ and the square-root property
+$(\breve\Delta-\breve\nabla)^2 = \text{Laplacian}$ follow from $\partial^2=0$
+alone and hold on any cell complex, so Eq.~\eqref{eq:dke} is perfectly well
+posed on $D_4$; Hodge theory even fixes the number of its exact zero modes on a
+torus at $\sum_p b_p(T^4)=16$, whatever the complex.
+
+And on $D_4$ that turns out not to be an empty consolation. Diagonalising
+$\breve\Delta-\breve\nabla$ on the $72$-dimensional cochain space, with the
+circumcentric Hodge star $w_p = |{\ast\sigma}|/|\sigma| =
+(2,\tfrac13,\tfrac12,3,\tfrac32)$ supplying the inner product, gives
+\begin{itemize}
+  \item $16$ branches vanishing at $k=0$, distributed over form degree as
+    $1,4,6,4,1$ --- the exterior algebra recovered exactly, out of $1,12,32,24,3$;
+  \item one common, isotropic velocity $|\lambda|=|k|$ for all sixteen, and no
+    other zero anywhere in the Brillouin zone: no doublers;
+  \item $56$ branches gapped by $2\sqrt2$ in lattice units, i.e.\ at the cutoff;
+  \item a leading discretisation error
+    $|\lambda|/|k| = 1 - |k|^2/64 + \mathcal{O}(k^4)$ that is
+    \emph{direction-inde\-pendent}, where the hypercubic complex gives
+    $-\sum_\mu k_\mu^4/24|k|^2$ and so varies by a factor of four between the
+    axis and the body diagonal.
+\end{itemize}
+The $U(1)$ chiral symmetry generated by $\Gamma=(-1)^p$ anticommutes with
+$\breve\Delta-\breve\nabla$ on any complex and is untouched.
+
+So the Delaunay complex of $D_4$ does carry four tastes' worth of massless Dirac
+fermions, with better rotational properties than the hypercubic one; what it does
+not carry is a \emph{site-by-site} identification of $\breve\Phi$ with an element
+of the Clifford algebra. It is that identification, not the K\"ahler--Dirac
+equation, that is cubic --- and the price of doing without it is the $72$ cochain
+components per site of which only $16$ are light. If a taste index is to be
+attached locally on $D_4$ it will have to come from somewhere else --- the
+natural candidate being the quotient $D_4/2D_4$, which still has order $16$, and
+whose classes split as $1$ (the origin) $+\,12$ (the antipodal link pairs)
+$+\,3$ (the second shell, permuted by triality).
+}
+
 \section{More fermions (that we won't discuss)}
   \begin{itemize}
   \item Other types of fermions that have been introduced include
