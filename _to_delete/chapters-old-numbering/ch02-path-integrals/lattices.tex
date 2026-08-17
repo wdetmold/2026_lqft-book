@@ -1,0 +1,79 @@
+\section{Lattices and Simplices}
+
+\begin{itemize}
+
+\item In the QM case, the discretisation of time was regularly spaced: length $t$ divided into $N$ segments for length $\epsilon=t/N$ and the forward finite difference\aidx{finite difference!forward} $\dot x=\frac{1}{\epsilon}(x_{j+1}-x_j)$ arose naturally.
+\begin{itemize}
+    \item For $t$ independent $V(\hat{x})$, there is no reason to do otherwise, but perhaps for a time-varying potential one would discretise differently.
+\end{itemize}
+
+\item We now want to turn to QFT in $D=d+1$ dimensions and discretise space-time. There are many ways to do this.
+
+\item Regular lattices\aidx{lattice!regular}: consider a linearly independent set of vectors $\{B_i, i\in\{1,\ldots,D\}\}\in \mathbb{R}^m$. A $D$-dimensional regular lattice can be defined as
+\begin{equation}
+\Lambda_D=\{x=\sum_{j=1}^Dz_i B_i |z_i\in \mathbb{Z}\}
+\end{equation}
+
+\item A subset of regular lattices are the root lattices for which every pair of basis vectors satisfies
+\begin{equation}
+\frac{B_i\cdot B_j}{|B_i||B_j|}\in\{0,-\frac{1}{2},1\}.
+\end{equation}
+
+These are particularly symmetric lattices (e.g. clean discretisation of Laplacian) and are completely classified using the same nomenclature as the root diagrams of Lie algebras
+
+\begin{table}
+    \centering
+    \begin{tabular}{lccc}\
+        Cartan-Dynkin root diagram\aidx{lattice!root} &  $D=2$& $D=3$ & $D=4$ \\ \hline
+        $Z_D=\{(x_1,\ldots,x_D)\in a \mathbb{Z}^D\}$ (also $B_D$ in Dynkin class.) & square  &  cubic & hypercubic\\ 
+        $A_D=\{(x_1,\ldots,x_{D+1})\in a \mathbb{Z}^{D+1} | \sum_k x_k=0$ \}
+        &  hexagonal& face-centered cubic & 4D simplicial\\
+        $D_D=\{(x_1,\ldots,x_{D})\in a \mathbb{Z}^{D} | \sum_k x_k=2a\mathbb{Z}$ \}
+        &  square ($D_2\simeq Z_2$)& face-centered cubic ($D_3\simeq A_3$) & body-centered hypercubic\aidx{lattice!body-centered hypercubic (BCH)} \\
+        $E_D$ for $D\in\{6,7,8\}$ &  &  & \\
+        Any outer products of the above &  &  & \\
+\hline
+    \end{tabular}
+    \caption{Allowed root lattices (see Chow 9810051). NB: $C_D\simeq D_D$, $G_2\simeq A_2$, and $F_4\simeq D_4$}
+    \label{tab:root_lattice}
+\end{table}
+
+\begin{itemize}
+
+\item Non-root lattices typically break more symmetries so will not be useful in relativistic QFT context 
+
+\item Root lattices retain subsets of Poincare symmetries\aidx{Poincaré symmetry}
+
+\item in $D=4$, the BCH lattice is the most symmetric
+
+\item Easy to consider anisotropic lattices\aidx{lattice!anisotropic} (eg $Z_1\times Z_3$ with the constant $a$ different)
+
+\end{itemize}
+
+\item Irregular discrete geometries: there is no reason discrete geometry has to be regular. Can consider random lattices\aidx{lattice!random} (not actually lattices by the above definition)
+
+\begin{itemize}
+    \item Consider a randomly distributed set of points in a volume $V$. 
+    \item Build simplices\aidx{simplex} by joining points as vertices with edges (a $D$-simplex has $D+1$ vertices; triangle in $D=2$, tetrahedron in $D=3$ etc)
+    \item Partition $V$ into non-overlapping $D$-simplices
+    \item Physically, locality suggests clustering nearby vertices into these simplices
+    \item Algorithms exist for this (eg Voroni tessellation\aidx{Voronoi tessellation}, Delauney triangulation\aidx{Delaunay triangulation} and Random Geometric Graphs)
+
+\end{itemize}
+
+\item Random lattices have no preferred directions to them so Poincare symmetries are expected to remain once a sufficient density of vertices is used.
+
+\item For this case, the underlying continuous geometry does not have to be a hyper-parallelogram as with root lattice. E.g., can tessellate a sphere.
+
+\item Random lattices appear to spontaneously break chiral symmetry\aidx{chiral symmetry}\aidx{chiral symmetry, spontaneous breaking of} (not good)
+
+\item Simplex structure has interesting connections to finite-element methods used in other scientific computing settings
+
+\item In contrast to CM physics, low-energy physical results should be seen to be independent of the exact lattice geometry prescription -- any choice is allowed but some (such as hypercubic lattices\aidx{lattice!hypercubic}) are more practical. Using multiple discrete geometries is a way to test universality\aidx{universality} of LQFT\aidx{lattice quantum field theory (LQFT)} prescriptions
+
+\item A LQFT is defined by the sequence of lattices as the continuum limit\aidx{continuum limit} is taken
+
+\item Does a limit of lattices recover continuous space-time? This is mathematically unclear and is related to the failure of the Connes embedding conjecture\aidx{Connes embedding conjecture}
+
+
+\end{itemize}

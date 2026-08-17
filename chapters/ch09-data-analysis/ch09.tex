@@ -4,8 +4,6 @@
 
 \todo{New chapter: jackknife/bootstrap, correlated fits, model averaging, systematic error budgets, chiral-continuum-volume extrapolation.}
 
-\todo{Inverse problems}
-
 \section{Anatomy of a LQCD calculation}
 \begin{itemize}
 \item We now have all the tools to undertake many different LQFT\aidx{lattice quantum field theory (LQFT)} calculations. Here we will walk through the steps required to perform a lattice QCD calculation of a physical quantity $\mathcal{P}$
@@ -78,3 +76,83 @@ These calculations use many millions of CPU/GPU hours
 
 
 \section{Variance reduction and control variates}
+
+\section{Everything is an inverse problem}
+\label{sec:inverse-problems}
+
+\todo{Section outline drafted mechanically --- prose and citations still to be
+written. Delete this note once the section is yours.}
+
+The Euclidean correlation functions a lattice calculation produces are Laplace
+transforms of the spectral density they came from,
+\begin{equation}
+\label{eq:laplace}
+  C(t) = \int_0^\infty\! dE\; \rho(E)\, e^{-E t},
+\end{equation}
+sampled at finitely many $t$ with correlated statistical noise. Recovering
+$\rho$ from $C$ is an ill-posed inverse problem: the kernel $e^{-Et}$ maps very
+different $\rho$ onto data that differ by less than the errors, so no amount of
+statistics determines $\rho$ pointwise. Every extraction in this book is a case
+of Eq.~\eqref{eq:laplace}; they differ only in how much of $\rho$ one needs and
+therefore in how hard the problem is.
+
+\todo{Write: this is the section's organising claim, so make it early and
+concretely --- spectroscopy is not a different activity from spectral-function
+reconstruction, it is the same inverse problem with a strong prior. Give the
+singular-value picture of the kernel: the number of resolvable structures grows
+only logarithmically with the precision of the data, which is why sub-percent
+correlators still support only a handful of states.}
+
+\subsection{Spectroscopy as the easy case}
+
+\todo{Write: when $\rho$ is a sum of well-separated delta functions the problem
+is well posed \emph{given} the prior that it is, and a multi-exponential fit is
+the reconstruction. The practical machinery --- effective masses, plateau
+identification, excited-state contamination, the variational method and the
+GEVP --- is all inverse-problem technology under a different name. This is the
+place to be honest that the prior is doing the work: the same data admit a
+continuum with no isolated states, and nothing in the fit rules that out.
+Cross-reference Ch.~\ref{ch:spectroscopy}, where the machinery is used, and the
+finite-volume spectrum of Ch.~\ref{ch:finite-volume}, where the delta functions
+are an artefact of the box.}
+
+\subsection{Smeared spectral densities}
+
+\todo{Write: the modern resolution --- do not ask for $\rho(E)$, ask for
+$\int dE\, K_\sigma(E,\omega)\rho(E)$ with a resolution kernel $K_\sigma$ of
+finite width $\sigma$, which \emph{is} determined by the data with controlled
+errors, and let $\sigma \to 0$ only as the statistics allow. Backus--Gilbert
+and its Hansen--Lupo--Tantalo variant, and Chebyshev approximations of the
+kernel; what each assumes and what it delivers. Contrast the Bayesian route
+(maximum entropy, and its successors) where the prior is explicit but the
+result depends on it.}
+
+\subsection{Where the hard cases arise}
+
+\todo{Write: a short catalogue, each one a pointer rather than a treatment.
+\begin{itemize}
+  \item \emph{Transport coefficients} --- shear and bulk viscosity from the
+    small-$\omega$ limit of $\rho$, the hardest case of all
+    (Ch.~\ref{ch:thermodynamics}).
+  \item \emph{Inclusive decay rates} --- a phase-space integral of $\rho$
+    against a smooth kernel, so a smeared density suffices; this is why
+    inclusive semileptonic decays became tractable
+    (Ch.~\ref{ch:tests-of-sm}).
+  \item \emph{Hadronic vacuum polarisation} --- an integral of the correlator
+    against a known weight, which is the \emph{easy} direction of the same
+    transform, and the reason window observables work.
+  \item \emph{Finite-volume scattering} --- L\"uscher's method inverts a
+    different map, from the finite-volume spectrum to the phase shift, but the
+    conditioning question is the same (Ch.~\ref{ch:finite-volume}).
+\end{itemize}
+The point to land: the difficulty is set by how smooth a functional of $\rho$
+is wanted, not by the quantity's physical importance.}
+
+\subsection{Diagnostics}
+
+\todo{Write: how to tell whether an answer is data-driven or prior-driven.
+Vary the kernel width and watch the error grow; check stability against the fit
+range and the number of states; use synthetic data with a known $\rho$ and the
+covariance of the real ensemble. Connect to model averaging earlier in this
+chapter --- an information criterion over fit ranges is a way of admitting that
+the prior is uncertain, not a way of removing it.}

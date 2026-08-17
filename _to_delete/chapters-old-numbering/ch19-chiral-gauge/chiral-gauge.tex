@@ -1,0 +1,380 @@
+%% [migrated] heading absorbed into chapter wrapper: Chiral gauge theories
+\begin{itemize}
+  \item The Standard Model is a chiral gauge theory\aidx{chiral gauge theory}, but so for we have only considered theories with Dirac fermion (or alternatively with Weyl fermions\aidx{fermions!Weyl} \(\Psi_{L}\) and \(\& \Psi_{R}\) that couple in the same way to gauge fields
+  \begin{itemize}
+  \item Can we define the SM outside of perturbation theory\aidx{Standard Model!non-perturbative definition}?
+  \item Different schemes for \(\gamma_{5}\) in PT ('t Hooft---Veltman vs naive dimension regularisation) some of which are ambiguous beyond 2-loops
+  \item It would be good to know what we mean by the SM!
+  \end{itemize}
+\item Chiral anomaly implies no exact chiral invariance\aidx{chiral anomaly} of quantum theory with lattice regularisation, either the action breaks chiral symmetry\aidx{chiral symmetry} (Wilson) or the measure does (GW fermion)
+  \item Gauging the usual chiral symmetry therefore typically results in broken gauge invariance. Eg, consider a theory with a LH Weyl fermion coupling to a gauge field. The Wilson term breaks gauge invariance\aidx{Wilson term}
+
+\begin{equation}
+ -\frac{r}{2} \bar{\psi}_{R}{ }^{(n)} \square \psi_{L}(x) \rightarrow-\frac{r}{2} \bar{\psi}_{d}(x) \square\left(\Omega(x) \psi_{L}(x)\right) 
+\end{equation}
+Now, think of \(\Omega(x)\)  as a radius field. Then $\Rightarrow m_{\text { doubler}} \sim r\langle\Omega(x)\rangle$
+
+which would vanish as \(\langle\Omega\rangle=0\) for a random field.
+However if \(\Omega\) has dynamics such that \(\langle\Omega\rangle=v \neq 0\) then 
+$m_{\text { doubler}}\sim r v \sim m_{\text gauge}$
+This lifts doubler modes\aidx{fermion doubling}, but not to the cutoff so it does not really provide a chiral theory
+
+  \item Are there ways to avoid this?
+Attempts at solutions (not necessarily complete)
+\begin{enumerate}
+    \item Non-gauge-invariant formulation: break gauge invariance but in a way such that it is restored\aidx{chiral gauge theory!non-gauge-invariant formulation} in the continuum limit\aidx{continuum limit}
+ \item Instead of the continuum chiral symmetry, gauge L\"uscher's exact lattice chiral symmetry\aidx{chiral symmetry!exact lattice} (the symmetry of the GW relation\aidx{Ginsparg-Wilson relation} \(\left\{\gamma_{5}, D\right\}=a D \gamma_{5}, D\) )
+
+\begin{equation}
+\psi \rightarrow \psi+\gamma_{5}(1-a D) \psi,
+\qquad \bar{\psi} \rightarrow \bar{\psi}+\bar{\psi} \gamma_{5}
+\end{equation}
+
+
+\item Have a vector-like gauge theory but decouple one chirality of fermion through additional (eg, 4-fermion) interaction: symmetric mass generation\aidx{symmetric mass generation}/ mirror fermions\aidx{mirror fermions}
+\item Produce a chiral theory on a D-dimensional boundary\aidx{chiral gauge theory!boundary formulation} of a D+1 (or D+2) manifold
+\end{enumerate}
+
+\end{itemize}
+
+
+\section{Non-gauge invariant formulation I}
+(See [0010027])
+\begin{itemize}
+  \item Gauge fixing allows the possibility\aidx{gauge fixing!lattice} to control traverse and longitudinal modes of gauge field separately
+  \item Continuum limit is a fixed point\aidx{infrared fixed point} in a more complicated coupling space about which we will be able to apply perturbation theory
+  \item Consider Wilson fermions\aidx{fermions!Wilson} - gauge symmetry broker by the Wilson term (and if we allow a bare mass term) so there is no BRST invariance to forbid \(d<4\) counter-terms\aidx{counterterms}. Relevant terms in Lagragian are
+
+  \begin{equation}
+      {\cal L} \supset \frac{1}{g^2} F_{\mu\nu} F_{\mu\nu} -\frac{r}{2}\left(\overline\psi_R \Box \psi_L +h.c.\right) + 
+      \tilde\kappa\left[(\partial_\mu A_\mu)^ +(A_\mu A_\mu)^3\right] + \rho A_\mu A_\mu +
+      \text{other counter-terms} + \text{ghosts}
+      \label{eq:gflag}
+  \end{equation}
+  where $\tilde\kappa=\frac{1}{2\xi g^2}$ and where ghosts are needed in the non-Abelian case.
+  
+%\includegraphics[max width=\textwidth, center]{fig-notes-052.jpg}
+  \item We consider the Abelian case for simplicity
+  \item \(\frac{1}{s^{2}} \partial_{\mu} A_{v} \partial_{\mu} A_{v}\) terms suppress fluctuations of traverse modes of gauge field
+  \item \(\tilde{\kappa}(\partial_\mu A_\mu)^2\) term suppresses fluctuations of longitudinal mode of gauge field
+  \item Counterterms like $A_\mu^2$ are relevant operators, making the usual $\beta\to\infty$ ($g\to0$) continuum limit\aidx{continuum limit} more subtle.
+%\includegraphics[max width=\textwidth, center]{fig-notes-050.jpg}\\
+%\includegraphics[max width=\textwidth, center]{fig-notes-049.jpg}
+  \item The second part of the gauge-fixing term \(\left(A^{6}\right)\) stabilises the perturbative vacuum \(\cap A=0\)
+  \item The anticipated phase diagram\aidx{phase diagram}\aidx{phase diagram!QCD} is shown below
+  
+\includegraphics[max width=0.5\textwidth, center]{fig-notes-051.jpg}
+
+NB: As usual \(\beta \rightarrow \infty\) to get continuum (but also \(\tilde{\kappa} \propto \beta\) )
+
+  \item With the \(A^{6}\) term in gauge-fixing the transition at \(\rho_{C}(\tilde{\kappa})\) is continuous so a continuum limit with infinite correlation-length exist these. At large \(\tilde{\kappa} \sim \frac{1}{g^{2}}\) this is also where we have perturbative control. This will result in massless gauge bosons in the \(I R\)
+  \item Coulomb phase\aidx{Coulomb phase} is less controlled (not the region we want to consider)
+  \item Focusing on longitudinal modes coupling to fermions\aidx{gauge field!longitudinal modes} (they are the ones that flip chirality), consider pure gauge \(A_{\mu}=\partial_{\mu} \lambda\) (and \(U=e^{i\int A}\) ), Eq.\eqref{eq:gflag} becomes
+
+\begin{equation}
+-\frac{r}{2}\left(\overline\psi_{R} \square e^{i \lambda} \psi_{L}+h.c.\right)+\tilde{k}\left[(\nabla \lambda)^{2}+(\partial \lambda)^{r}\right]+\rho\left(\partial_{\mu} \lambda\right)^{2}+\ldots
+\end{equation}
+
+and subsequently set \(\lambda=\theta / \sqrt{2 \tilde{\kappa}}\)
+
+  \item Near \(\rho=\rho_{c}(\tilde{\kappa})\) can show
+\begin{itemize}  
+\item $\theta$ propagator \(\sim \frac{1}{p^{4}}\) since \(\theta\) is a dimensionless field (higher derivative scalar)
+
+\item $\left\langle e^{i \lambda}\right\rangle \sim\left(\rho-\rho_{c}\right)^{\eta}$ where $\eta=\frac{1}{32 \pi^{2} \tilde{k}}$
+
+
+
+  \item Wilson term con be expanded
+  \begin{equation}
+    -\frac{r}{2}\overline\psi_{R} \square  \psi_{L} 
+    -\frac{ir}{2\sqrt{2 \tilde{\kappa}}}\overline\psi_{R} \square  \left(\theta \psi_{L}\right)+h.c.
+  \end{equation}
+Here the first term is the regular Wilson term removing doublers\aidx{Wilson term}\aidx{fermion doubling} and the second term, which describes the coupling of the fermions to the pure-gauge degrees of freedom, is dimension-5 and so irrelevant\\
+\(\Rightarrow\) longitudinal modes decouple in the continuum limit
+\end{itemize}
+
+  \item We can see how the left and right fermions behave differently by introducing a composite "charged" RH fermion
+
+\begin{equation}
+    \psi_{R}^{c}=e^{c \theta / \sqrt{2 \pi}} \psi_{R}
+\end{equation}
+
+
+which describes multiparticle states of the fernier and all number of higher derivative scalars. Now under a gauge transform
+
+\begin{equation}
+\psi^c(x)=P_{R} \psi_{R}^{c}(x)+P_{L} \psi_{L}(x) \rightarrow \Omega(x) \psi^{c}(x)
+\end{equation}
+
+
+The propagation for this field \(S^{c}(p)=\sum_{x} e^{i p x}\langle\bar{\psi}^c(x) \psi^c(0)\rangle\) behaves near \(p=0\) as
+
+\begin{equation}
+    \begin{aligned}
+& P_{L} S^{c}(p) P_{R} \sim P_{L} \frac{1}{\pslash} \\
+& P_{R} S^{c}(p) P_{L} \sim P_{R} \frac{1}{\pslash} p^{4 \eta}
+\end{aligned}
+\end{equation}
+
+
+with \(\eta=\left(32 \pi^{2} \tilde{\kappa}\right)^{-1}\) as above so the second quantity \(\rightarrow 0\) as \(p \rightarrow 0\) and thus the RH field does not have a pole corresponding to a massless mode but instead has a brach point from the multiparticle states
+
+  \item The result is thus that by tuning to this new critical point\aidx{critical end point} of the gauge field theory, a continuo chiral gauge theory\aidx{chiral gauge theory} is recovered in which all of the gauge variant contribution decouple and there are no massless doublers
+  \item The situation for non-Abelian chiral gauge theories is much more complicated. In PRD 7O, 094506 (2004) Golterman \& Shamir powerfully showed that the same conceptual approach can be made to work for anomaly-free fermion content\aidx{anomaly cancellation} but there are many subtleties 
+related to the necessary ghost fields and the types of gauge fixing that are allowed won-perturbatively (standard complete gauge fixings are ill-defined non-perturbatively as through Neuberger\aidx{fermions!overlap}'s theorem\aidx{Neuberger's theorem} it is easy to see their partition function\aidx{partition function}s vanish)\\
+Unfortunately in $d=4$, three are 3 counterterms of dimension $d<4$ and 75 counterterms of dimension $d=4$ that need to be tuned to the critical pint (hopefully the $d=4$ turning can be performed perturbatively)
+\end{itemize}
+
+\section{Non-gauge-invariant formulation II}
+\begin{itemize}
+  \item Another approach that has been pursued is to regularise the theory with different lattice regulator\aidx{lattice quantum field theory (LQFT)}\aidx{regulator!lattice}s for the gauge and forming field
+  \item Consider fermion on a hypercubic lattice with lattice spacing\aidx{lattice spacing} \(f\) and gauge held on a hypercubic lattice with spacing \(b\) with \(f \ll b\)
+  \item To do so requires an interpolation of the gauge field\aidx{gauge field!interpolation} from the \(b\) lattice to the \(f\) lattice defining
+
+\begin{equation}
+u_{\mu}\left(x_{f}\right) \equiv u_{\mu}\left(x_{f} ;\left\{U_{\nu}\left(x_{b}\right)\right\}\right)
+\end{equation}
+
+However such a smooth covariant interpolation is non-local\aidx{locality (of lattice Dirac operators)}
+
+  \item Perturbatively it can be shown that the violation of gauge invariance are suppressed as \(O\left(f^{2} / b^{2}\right)\) for anomaly-free fermion content (although some terms ore nonlocal). Consequently, the continuum limit\aidx{continuum limit} define as $\lim _{b \rightarrow 0}\left(\lim _{f / b \rightarrow 0} X\right)$  is gauge-invariant
+
+  \item In this formulation the longitudinal component of the gauge field seems to acquire a mass \(m_{\phi} \sim 1 / b\) and become irrelevant  as \(b \rightarrow 0\) (note the difference to the previous approach)
+  \item This approach would likely require prohibitively large number of sites on the $f$-lattice and is less developed than the first formulation above
+  \item In both gauge non-invariant approaches, there are perturbative aspects of the approach that may be invalid non-perturbatively
+  \item eg: Witten anomaly\aidx{anomaly!Witten} for SU(2) $\chi$GT is a global obstruction
+  \item For theories without anomaly-cancelling fermionic representation\aidx{anomaly cancellation}, the way in which the lattice construction fails is complicated (e.g. in the first approach it is through there not being a fixed point\aidx{infrared fixed point} to tune to).
+  \item The proponents of I state this clearly: for a $\chi$GT  that exists non-perturbatively, their approach provides a lattice formulation and  hence a non-perturbative definition.
+\end{itemize}
+
+\section{Gauge-invariant formulation [0102028]}
+\begin{itemize}
+  \item This approach gauges the exact lattice chiral symmetry\aidx{chiral gauge theory!gauge-invariant formulation}\aidx{chiral symmetry}\aidx{chiral symmetry!exact lattice} for a GW-relation fermion\aidx{Ginsparg-Wilson relation}
+
+\begin{equation}
+    \begin{array}{lll}
+\psi \rightarrow \psi+\delta \psi, & \delta \psi=\varepsilon \gamma_{5}(1-a D) \psi=\varepsilon \hat{\gamma}_{5} \psi, &\quad \hat{\gamma}_{5}=\gamma_{s}(1-a D) \\
+\bar{\psi} \rightarrow \bar{\psi}+\delta \bar{\psi}, & \delta \bar{\psi}=\varepsilon \bar{\psi} \gamma_{5} & \\
+{[\hat{\gamma}_{5}^{2}=1,\quad \hat{\gamma}_{5}^{\dagger}=\hat{\gamma}_{s},} & \hat{P}_{ \pm}=\left(1 \pm \hat{\gamma}_{s}\right) / 2, & P_{ \pm}=\left(1 \pm \gamma_{5}\right) / 2]
+\end{array}
+\label{eq:chrialtransf}
+\end{equation}
+
+
+  \item The lattice action
+
+\begin{equation}
+S_{F}[u, \bar{\psi}, \psi]=a^{i} \sum_{x} \bar{\psi}(x) D \psi(x)
+\end{equation}
+
+is invariant under local transformations (Eq.~\eqref{eq:chrialtransf}) and their non-Abelian generalisations since
+
+\begin{equation}
+    D \hat{\gamma}_{5}=-\gamma_{5} D
+\end{equation}
+
+
+  \item Imposing the constraints
+\begin{equation}
+    \hat{P}_{-} \psi=\psi \quad \bar{\psi} P_{+}=\bar{\psi}
+\end{equation}
+removes the RH fermion entirely and gives completely consistent chiral gauge theory\aidx{chiral gauge theory}.
+
+  \item However since \(\hat{P}_{-}=\hat{P}_{-}[U]\) for a gauge covariant \(D\), the subspace of left-handed fields changes according to background gauge field.
+Consequently
+\begin{equation}
+\quad e^{-S_{\text {eff }}[U]}=\int D \psi_{\text {left}} D \bar{\psi}_{\text {left}} e^{-S_{F}[U,\bar{\psi}, \psi ]}
+\end{equation}
+is ambiguous.
+
+Writing
+\begin{equation} 
+\begin{array}{llrl}
+& \psi(x)=\sum_{j} v_{j}(x) c_{j} & \text { with } & \hat{\gamma}_{5} v_{j}=-v_{j} \\
+& \bar{\psi}(x)=\sum_{k} \bar{v}_{k}(x) \bar{c}_{k}& \text { with } & \bar{v}_{k} \gamma_{5}=\bar{v}_{k} \\
+\end{array}
+\end{equation}
+where $v_j$ is an orthonormal set of basis functions since $\hat\gamma_5$ is Hermitian
+and 
+$c_{j}, \bar{c}_{k}$ are Grassman. Thus the measure can be written as
+\begin{equation}
+     D \psi_{\text {loft }}=\prod_{j} d c_{j}, \quad D \bar{\psi}_{\text {left }}=\prod_{k} d \bar{c}_{k}
+\end{equation}
+
+  \item Doing the fermionic integration
+\begin{equation}
+    e^{-S_{\text{eff}]}[U]}=\operatorname{det} M[U]
+\end{equation}
+
+with
+
+\begin{equation}
+M[U]_{k j}=\bar{v}_{k} D v_{j}
+\end{equation}
+
+
+  \item Now changing to a differ basis
+  \(\tilde{v}_{i}(x)=\sum_{j} v_j(x)\left(Q^{-1}\right)_{ji}\), we see that
+\begin{equation}
+    \operatorname{det} M[U] \rightarrow \operatorname{det}(M[U] Q)=\operatorname{det} M[U] \operatorname{det} Q
+\end{equation}
+
+and since \(Q \) is unitary, there is a phase ambiguity\aidx{fermion measure!phase ambiguity}.
+This phase ambiguity reals to be resolved before proceeding further
+
+\ \item L\"uscher's phase definition proceeds by looking at variation of $S_{\text{eff}} [U]$ under changes to the link fields\aidx{link variables}
+
+\begin{equation}
+\delta_{\eta} U_{\mu}(x)=a \eta_{\mu}(x) U_{\mu}(x) \quad \text{where} \quad\eta_{\mu}(x)=\eta_{\mu}^{a}(x) T^{a}
+\end{equation}
+which implies
+\begin{equation}
+ \delta_{\eta} S_{\text{eff}}[U]=-\operatorname{tr}\left[\delta_{\eta} D \hat{P}_{-} D^{-1} P_{+}\right]+i \mathcal{L}_{\eta}
+\end{equation}
+
+
+when the second tern comes from the implicit dependence of the measure \(D \psi_{\text {left }}\) on \(U\) and is of the form (by linearity in the variation)
+
+\begin{equation}
+\mathcal{L}_{\eta}=a^{4} \sum_{x} \eta_{\mu}^{a}(x) j_{\mu}^{a}(x ; U)
+\end{equation}
+
+where \(j_\mu^a(x;U)\) is an unknown current depending on the gauge field
+
+  \item Consider variations along pure gauge direction
+
+\begin{equation}
+\eta_{\mu}(x)=-\nabla_{\mu} \omega^{a}(x) T^{a}
+\end{equation}
+where backward and forward finite difference\aidx{finite difference!forward} operators are 
+\begin{equation}
+    \begin{aligned}
+& \nabla_{\mu}^{\ast} \omega(x)=\frac{1}{a}\left[\omega(x)-U_{\mu}^{-1}(x-\hat{\mu}) \omega(x-\hat{\mu}) U_{\mu}(x-\hat{\mu})\right] \\
+& \nabla_\mu \omega(x)=\frac{1}{a}\left[U_{\mu}(x) \omega(x+\hat{\mu}) U_{\mu}^{-1}(x)-\omega(x)\right] 
+\end{aligned}
+\end{equation}
+
+
+\item Can show (see below)
+
+\begin{equation}
+    \delta_{\eta} S_{\text {eff }}=i a^{4} \sum_{x} \omega^{a}(x)\left\{\left[\nabla_{\mu}^{\ast} j_{\mu}\right]^{a}(x)-{\cal A}^{a}(x)\right\}
+\end{equation}
+
+where
+
+\begin{equation}
+    {\cal A}^{a}(x)=\frac{i}{2} a \operatorname{tr}\{R(T^a) \gamma_5 D(x, x)\} \underset{a \rightarrow 0}{\longrightarrow}-\frac{1}{128 \pi^{2}} d_{R}^{a b c} F_{\mu \nu}^{b} \tilde{F}_{\mu \nu}^{c}
+\end{equation}
+where the limit reproduces the covariant gauge anomaly\aidx{anomaly!covariant gauge} (see 9904009)
+
+To see this, use $D \hat{\gamma}_{5}=-\gamma_{5} D$, $D \hat{P}_{-}=-P_{+} D$, $P_{+} D=-D \hat{P}_-$, $P_{+}^{2}=P_{+}$, 
+$\hat{P}_{-}^{2}=\left(1-\hat{\gamma}_{5}\right)^{2} / 4 =\frac{1}{4}-\frac{1}{2} \hat \gamma_{5}+\frac{\hat\gamma_{5}^{2}}{4} =\hat{P}^-$
+first noting that
+\begin{equation}
+ \eta_{\mu}=-\nabla_{\mu} \omega \quad \Rightarrow \delta_{\eta} D=[R(\omega), D]   
+\end{equation}
+so
+\begin{equation}
+    \begin{aligned}
+ \delta S&=-\operatorname{tr}\left[\delta_{\eta} D \hat{P}_{-} D^{-1} P_{+}\right]+i \sum_{x} \eta_{a}^{\mu}(x) \hat{J}_{a}^{\mu}(x) \\
+& =-\text{tr}\left[[R(\omega), D] \hat{P}_{-} D^{-1} P_{+}\right]-i \sum\left(\nabla_{\mu} \omega\right)^a {j} _\mu^{a} \\
+& =-\operatorname{tr}\left[R(\omega) D \hat{P}_{-} D^{-1} P_{+}-R(\omega) \hat{P}_{-} D^{-1} P_{+} D\right]-i \sum_{x}\left[U_{\mu}(x) \omega(x+\mu) U_{\mu}^{-1}(x)-\omega(x)\right\}^a j_{\mu}^{a}(x) \\
+& =+\operatorname{tr}\left[R(\omega)\left(P_{+}^{2}+\hat{P}_{-}^{2}\right)\right]-i \sum_{x}\left[U_{\mu}(x-\hat{\mu}) \omega(x) U_{\mu}^{-1}(x-\mu)\right]^{a} j_\mu^a(x-\mu)-\omega^{a}(x)j_{\mu}^{a}(x) \\
+& =\operatorname{tr}\left[R(\omega)\left(1-\frac{a}{2} D \gamma_5\right)\right]-i \sum_{x} \omega^{a}(x) (\nabla^{\ast}_{\mu} j_\mu)^{a}(x) \\
+& =i a^{4} \sum_{x} \omega^{a}(x)\left({\cal A}^{a}(x)-\left(\nabla_{\mu}^{*} j_{\mu}(x)\right)^{a}\right)
+\end{aligned}
+\end{equation}
+
+
+
+\item For gauge invariance of \(S_{\text{eff}}[U]\), this implies
+
+\begin{equation}
+    \left[\nabla_{\mu}^{\ast} j_{\mu}\right]^{a}(x)={\cal A}^{a}(x)
+\end{equation}
+
+and in turn that \(j_{\mu}^{a}(x)\) is local and gauge covariant because \({\cal A}^{a}(x)\) is local
+
+\item If there is a well defied measure, it produces a current that satisfies the above. Conversely, if one can find a current satisfying the above then that will define a measure uniquely over fields of fixed topology provided the variation \(\delta_{\eta} S_{\text {eff }}\) is integrable
+
+
+  \item Consider a family of gauge fields \(U_{\mu}(x ; t)\) with \( 0 \leq t \leq 1\) interpolation between two gauge fields. Then
+
+\begin{equation}
+\begin{aligned}
+S_{\text{eff}}\left[U_{\mu}(x ; t=1)\right]-S_{\text{eff}}\left[U_{\mu}(x, t=0)\right]&=\ln \frac{\operatorname{det} M[U(t=1)]}{\operatorname{det} M[U(t=0)]} \\
+&=\int_{0}^{1} d t \partial_{t} \ln \operatorname{det} M[U(t)]
+\end{aligned}
+\end{equation}
+
+and integrability is the requirement\aidx{integrability condition} that this does not depart on the path This clearly constrains the current $j_\mu$ in constructing \(\mathcal{L}_{\eta}\) for \(\eta=\partial_{t} U_{\mu} U_{\mu}^{-1}\)
+
+  \item The integrability condition can be phrased as
+
+\begin{equation}
+\delta_{\eta} {\cal L}_{\zeta}-\delta_{\zeta} {\cal L}_{\eta}+a {\cal L}_{[\eta, \zeta]}=ci \operatorname{Tr}\left[\hat{P}_{-}\left[\delta_{\eta} \hat{P}_{-}, \delta_{\zeta} \hat{P}_{-}\right]\right]
+\end{equation}
+
+(deriving this is beyond this lecture)
+
+  \item L\"uscher found a way to construct such a current to all order in perturbation theory for arbitrary gauge group
+  \item However there are how global obstructions to $\chi$GT's (eg Witten' anomaly\aidx{anomaly!Witten} again!) that are not visible perturbatively so this is insufficient to claim the problem is solved
+  \item For U(1), L\"uscher was able to provide a nom-perturbative definition as the classification of all topologies of lattice U(1) gauge fields\aidx{topology!lattice U(1) gauge fields} is known. Generation to other gauge groups is a open problem!
+\end{itemize}
+
+  
+\section{Symmetric mass generation / Mirror fermions}
+
+  \begin{itemize}
+  \item Basic idea: consider a chiral vector gauge theory with massless \(L\) \& \(R\) fermions, and add additional gauge invariant interactions that give large mass to the RH fermions only
+  \item originally studied by Eichten \& Preskill (1986) (also Smit and Swift slightly before) in the context of SU(S) GUT
+
+\begin{equation}
+    \begin{aligned}
+& \text { light: } \psi_{\alpha}^{i} \in \overline{\bf 5}, \quad x_{i j \alpha}\in  {\bf 10},\quad \zeta_{\alpha}\in {\bf 1} \\
+& \text { mirror: } \eta_{ {i \alpha }} \in {\bf5}, \quad \rho_{\alpha}^{i j} \in \overline{\bf 10}, \quad \xi_{\alpha} \in {\bf 1}
+\end{aligned}
+\end{equation}
+
+where lower(upper) Roman indices are SU(5) fundamental\aidx{SU(5)@$SU(5)$ grand unified theory}(anti-fundamental) indices and Greek indices are SL(2,$\mathbb{C}$) spinor indices
+
+  \item Could have bilinear mass terms such as  \(m \psi_{\alpha}^{i} \eta_{\alpha i}+h c\), but we will use chiral fermions and choose \(m=0\)
+  \item Add instead dimension $d=6$ terms to the action that are gauge invariant and built just from mirror fermions\aidx{mirror fermions}
+
+\begin{equation}
+\mathcal{L}_{\text {mirror }}=  \lambda_{1} \eta_{c}^{\alpha} \rho_{\alpha}^{i j} \rho_{\rho}^{m n} \rho^{p k l}  \epsilon^{k l m n}+\lambda_{2} \xi^{\alpha} \eta_{\alpha i} \eta_{\nu}^{\rho} \rho_{\beta}^{i j}+\lambda_{3}\left(\xi^{\alpha} \xi_{\alpha}\right)^{2}+h c 
+\end{equation}
+where the first term combines ${\bf 5}\otimes\overline{\bf 10}\otimes\overline{\bf 10}\otimes\overline{\bf 10}\supset{\bf 1}$, the second combines ${\bf 1}\otimes{\bf 5}\otimes{\bf 5}\otimes\overline{\bf 10}\supset{\bf 1}$ and the third combines${\bf 1}\otimes{\bf 1}\otimes{\bf 1}\otimes{\bf 1}={\bf 1}$.
+
+  \item For large values of \(\lambda_{i}\)'s the spectrum of the mirror sector can be very different than the original field content
+
+Eg: the $\eta\eta\rho$ may from a composite Weyl fermion\aidx{fermions!Weyl} and then combing with the \(\xi\) through \(\lambda_{2}\) would generate a mass term which quantum correction would generically push to the UV cutoff and remove these states from the low every spectrum
+
+\item The original approaches used Wilson-like fermions and were not successful, but GW fermion\aidx{Ginsparg-Wilson relation}s make it more interesting.
+  \item This is of course very speculative until the right mirror couplings are found for a given target theory. Nevertheless, such setups do exist is simpler systems than the SM
+  \begin{itemize} 
+  \item Kitaev-Fidkowski model\aidx{Kitaev-Fidkowski model} in CMT
+  \item recent work in more particle physics context -eg Catterall \& Hasenfratz
+  \end{itemize}
+\end{itemize}
+
+\section{Chiral gauge theory as boundary theory}
+\begin{itemize}
+  \item Domain-wall fermions provide chiral Dirac fermion in by localising light modes near a defect\aidx{fermions!domain-wall} or boundary in a \(D+1\)-dimensional manifold\\
+The light Weyl fermions\aidx{fermions!Weyl} appear as L+R pairs because for each fermion at one boundary there is a opposite chirality fermion at the other
+  \item Are there ways to modify the setup such that one of the fermions becomes massive and decouples?
+  \item Quite a few attempts
+  \begin{itemize}
+  \item add gauge dynamic in the \(D+1^{\text {th }}\) dimension (Grabowska-Kaplan)
+  \item add explicit 4 -fermion interactions on ore boundary
+  \item go to D+2-dim manifold and have defect of co-dimension-1 (ie have a single boundary (Kaplan, Sen)
+  \end{itemize}
+  \item Promising (and quite fascinating) direction, but there are possible failure modes in all approaches that are hard to know the effects of
+\end{itemize}
+
+\section{Complex determinant}
+\begin{itemize}
+  \item In all cases, the fermion determinant\aidx{fermion determinant} is necessarily complex\aidx{fermion determinant!complex} and so there is a sign problem\aidx{sign problem} fer Monte-Carlo calculators. It is unclear how bad this problem is any any given approach and only actual numerical implementation will tell!
+\end{itemize}

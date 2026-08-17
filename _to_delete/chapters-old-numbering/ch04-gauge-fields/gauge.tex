@@ -1,0 +1,1147 @@
+%% [migrated] heading absorbed into chapter wrapper: Gauge Fields
+
+\section{Yang Mills \& Gauge Invariance}
+
+\begin{itemize}
+\item Classical Yang Mills\aidx{Yang-Mills action} Lagrangian in continuum, Euclidean space
+\end{itemize}
+\begin{align}
+    \mathcal{L}_{YM} &= \frac{1}{4}\sum_a(F_{\mu \nu}^a)^2 \color{green} + \theta \epsilon_{\mu \nu \rho \sigma} F^{\mu \nu}_a F^{\rho \sigma}_a \nonumber \\
+    &= \frac{1}{2} \text{tr}(F_{\mu \nu} F_{\mu \nu}) \color{green} + \theta \epsilon_{\mu \nu \rho \sigma} F^{\mu \nu}_a F^{\rho \sigma}_a, 
+\end{align}
+where we will for now ignore the $\theta$ term in green and where\footnote{Note that we are using  conventions where
+\begin{equation}
+\begin{aligned}
+& \text{tr}\left[T_{a} T_{b}\right]=\frac{1}{2} \delta_{a b} \\
+& {\left[T_{a}, T_{b}\right]=i f_{a b c} T_{c}}.
+\end{aligned}
+\end{equation}}
+\begin{align}
+F^{\mu \nu} &= \frac{i}{g}[D^\mu, D^\nu] = F^{\mu \nu}_a T_a = \partial^\mu A^\nu - \partial^\nu A^\mu - i g [A^\mu, A^\nu],\quad  D^\mu = \partial^\mu - i g A^\mu \nonumber \\
+F^{\mu \nu}_a &= \partial^\mu A^\nu_a - \partial^\nu A^\mu_a + g f_{abc}A^\mu_b A^\nu_c.
+\end{align}
+for the gluon degree of freedom
+\begin{equation}
+A_{\mu}(x)=A_{\mu}^{a}(x) T_{a}
+\end{equation}
+
+where \(T_{a}\) are the generators of the Lie algebra \(G\)
+
+\begin{itemize}
+  \item Under a local transformation
+\end{itemize}
+
+\begin{equation}
+A_{\mu}(x) \rightarrow A_{\mu}^{\prime}(x)=\Omega(\theta) A_{\mu}(x) \Omega^{-1}(\theta)-\frac{2 i}{g}\left(\partial_{\mu} \Omega(\theta)\right) \Omega^{-1}(\theta)
+\end{equation}
+
+with
+
+\begin{equation}
+\Omega(\theta)=\exp \left[-\frac{i}{2} \theta^{a}\left(x\right) T_{a}\right] \in \text { Lie group } G
+\end{equation}
+
+the Lagrangian above is invariant and
+
+\begin{equation}
+D^{\mu} \rightarrow \Omega D^{\mu} \Omega^{-1}, \qquad F^{\mu \nu} \rightarrow \Omega F^{\mu \nu} \Omega^{-1}
+\end{equation}
+
+\section{Parallel transporters (Holonomies)}
+\begin{itemize}
+\item It will be useful to consider \underline{parallel transporters} that translate the coordinates in the internal symmetry space from one spacetime point to another.
+
+\item The general form of a parallel transporter for a path $\Gamma$ between $x$ and $y$ is
+\begin{equation}
+    E_\Gamma(x,y) = \mathcal{P}\exp\left[i \int_\Gamma A \cdot \text{d}s\right],
+\end{equation}
+where $\mathcal{P} \exp$ implies the ``path-ordered exponential\aidx{parallel transporter}''.
+
+\item Note that $E_\Gamma(x,y)$ solves the equation
+\begin{equation}
+\label{eq:par_transp_eq}
+    D_sE_\Gamma(x,y) = 0,
+\end{equation}
+where the path-covariant derivative along the path $z^\mu(s)$ is
+\begin{equation}
+    D_s = \frac{\text{d}z^\mu(s)}{\text{d}s} D_\mu = \frac{\text{d}z^\mu}{\text{d}s}\partial_\mu + i \frac{\text{d}z^\mu}{\text{d}s}A_\mu = \frac{\text{d}}{\text{d}s} + i \frac{\text{d}z^\mu}{\text{d}s}A_\mu(z). 
+\end{equation}
+\item Now the above implies
+\begin{equation}
+\frac{\text{d} E_{\Gamma}(x, y)}{\text{d} s}=-i \frac{\text{d} z^\mu}{\text{d} s} A_{\mu}(z) E_{\Gamma}(x, y) \equiv-M(s) E_{\Gamma}(x, y),
+\end{equation}
+which is solved by ($M$ is a matrix)
+\begin{align}
+    E_\Gamma(x = z_\mu(0), y = z_\mu(t)) &= \sum_{m=0}^\infty (-i)^m \int_0^t \text{d}s_m \int_0^{s_m}\text{d}s_{m-1}\ldots\int_0^{s_2}\text{d}s_1 M(s_m)M(s_{m-1})\ldots M(s_1) \nonumber\\
+    &\equiv \mathcal{P}\exp \left\{i \int_0^t \text{d}s \frac{\text{d}z_\mu}{\text{d}s} A_\mu(z) \right\} \nonumber \\
+    &= \mathcal{P}\exp\left\{ i \int_\Gamma \text{d}z_\mu A^\mu(z) \right\}.
+\end{align}
+One can (and should)  check that this satisfies Eq.~\eqref{eq:par_transp_eq}.
+\end{itemize}
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-009.jpg}{fig-redraw-009.pdf}
+    \caption{An illustration of one possible path $z_\mu$.}
+    \label{fig:parallel_transporter}
+\end{figure}
+\begin{itemize}
+\item Parallel transporters are elements of the gauge group
+\item Under a gauge transformation, parallel transporters transform nicely
+\begin{equation}
+   \boxed{E_\Gamma(x,y) \underset{\text{gauge transform}}{\longrightarrow} \underset{\in G}{\underbrace{\Omega(x)}} E_\Gamma(x,y) \Omega^{-1}(y)}
+\end{equation}
+\item On a lattice geometry, parallel transporters between neighboring sites assume particular importance and are called link variables\aidx{link variables}:
+\begin{align}
+    U_\nu(n) &= E_\Gamma(n_\mu, n_\mu + \hat{\nu}) \quad \text{with} \, \Gamma \, \text{a straight link path} \, z_\mu(t) = n_\mu + t\hat{\nu} \nonumber \\
+    &= \mathcal{P} \exp \left\{ i \int_n^{n + \hat{\nu}} \text{d}z_\mu A^\mu(z) \right\}.
+\end{align}
+Note that
+\begin{equation}
+    \int_n ^{n+\hat{\nu}} \text{d}z_\mu = a \delta_{\mu \nu},
+\end{equation}
+so that assuming $a \rightarrow 0$, $\Gamma$ is very short and we can assume $A^\mu(z) = A^\mu(n)$, we find
+\begin{equation}
+    \boxed{U_\nu(n) = \exp \{i a A^\nu(n) \} }
+\end{equation}
+ \begin{align}
+   U_\nu(n) \rightarrow 1 + i a A_\nu(n) + \mathcal{O}(a^2)
+\end{align}
+\item Parallel transporters satisfy:
+\begin{itemize}
+    \item $E_{\cancel{\Gamma}}(x,x) = 1$ where $\cancel{\Gamma}$ is the empty path
+    \item $E_{\Gamma_2 \circ \Gamma_1}(x,z) = E_{\Gamma_2}(x,y)E_{\Gamma_1}(y,z)$, where $\Gamma_2 \circ \Gamma_1$ denotes composition of paths
+    \item $E_{-\Gamma}(y,x) = \left[E_\Gamma(x,y) \right]^{-1}$, where $-\Gamma$ is the path $\Gamma$ traversed in the reverse sense
+\end{itemize}
+\item An extended path $\Gamma$ can be constructed from link variables
+\begin{equation}
+E_\Gamma(x, y)=\includegraphics[width=0.1\textwidth]{fig-notes-061.png}=U_{\mu}(x) U_{\nu}(x+\hat{\mu}) \cdots U_{\mu}(y-\hat{\mu})
+\end{equation}
+\item Parallel transporters around closed paths are called Wilson loops\aidx{Wilson loop}
+\begin{equation}
+L_{\Gamma}[U]=\operatorname{tr}\left[\prod_{n, \mu \in \Gamma} U_{\mu}(n)\right]
+\end{equation}
+which are gauge invariant
+\item The entirety of YM theory can be built from these objects
+\end{itemize}
+
+\section{Gauge Invariance on a lattice}
+
+\begin{itemize}
+\item Consider a set of complex scalar fields $\varphi = (\varphi_1, \ldots \varphi_n)^T$
+    \begin{itemize}
+    \item The corresponding Lagrangian contains
+    \begin{equation}
+        \mathcal{L} = \partial_\mu \varphi^\dagger \partial_\mu \varphi = \sum_{i=1}^n \partial_\mu \varphi_i^* \partial_\mu \varphi_i,
+    \end{equation}
+    \item This theory is invariant under global transformations of $\varphi$ under a continuous Lie group $G$
+    \begin{equation}
+        \varphi(x) \rightarrow \Omega(\theta) \varphi(x).
+    \end{equation}
+    \item To make this theory invariant under local $G$ transformations in the continuum,
+    \begin{equation}
+        \varphi(x) \rightarrow \varphi^\prime(x) = \Omega(\theta(x)) \varphi(x),
+    \end{equation}
+    with
+    \begin{equation}
+        \Omega(\theta(x)) = \exp \left[ \frac{i}{2}T_a \theta^a(x) \right],
+    \end{equation}
+    we promote $\partial_\mu$ to a gauge covariant derivative $D_\mu=\partial_\mu+A_\mu$, introducing a new gauge field.
+    \end{itemize}
+\item The corresponding lattice theory has a kinetic term
+\begin{align}
+    \mathcal{L}_\text{latt} &\sim \sum_{\nu = 1}^{d+1}\text{Tr}[(\varphi^\dagger(n + \hat{\nu}) - \varphi^\dagger(n))(\varphi(n + \hat{\nu}) - \varphi(n)) ] \nonumber \\
+    &\sim \sum_{\nu = 1}^{d+1}\text{Tr}\left[\varphi^\dagger(n + \hat{\nu})\varphi(n + \hat{\nu}) - \varphi^\dagger(n + \hat{\nu}) \varphi(n) - \varphi^\dagger(n)\varphi(n + \hat{\nu}) + \varphi^\dagger(n)\varphi(n) \right].
+\end{align}
+If we let $\varphi(n) \rightarrow \varphi^\prime(n) = \Omega(\theta(n))\varphi(n)$, we see $\mathcal{L}$ is clearly not invariant and clearly no local modifications can make $\varphi^\dagger(n + \hat{\nu})\varphi(n)$ be invariant.
+\item To solve this problem, we can use the link fields $U_\mu(n)$ associated with the links between every pair of neighboring sites in the lattice. In particular $U_\mu(n)$ is associated with the link $(n, n+\hat \mu)$
+    \begin{itemize}
+        \item Demanding 
+        \begin{equation}
+            \quad \boxed{U_{\mu}(n) \rightarrow U_{\mu}^{\prime}(n)=\Omega(\theta(n)) U_{\mu}(n) \Omega^\dagger(\theta(n+\hat{\mu}))},
+        \end{equation} 
+        we can write a gauge invariant Lagrangian
+        \begin{equation}
+        \mathcal{L}_{\text {latt}} \sim \sum_{\nu = 1}^{d+1}\text{Tr}\left[\varphi^\dagger(n + \hat{\nu})\varphi(n + \hat{\nu}) - \varphi^\dagger(n + \hat{\nu}) U_{-\nu}(n + \hat{\nu})\varphi(n) - \varphi^\dagger(n)U_\nu(n)\varphi(n + \hat{\nu}) + \varphi^\dagger(n)\varphi(n) \right],
+        \end{equation}
+        where we use $U_{-\nu}(n) = U_\nu(n - \hat{\nu})^\dagger$ for $\nu\in\{1,\ldots,d+1\}$ to denote a link traversed in the opposite direction, so the introduction of the link variables\aidx{link variables} has made the hopping terms gauge invariant. We can check the consistency of this relation with the transformation:
+        \begin{equation}
+            U_{-\nu}(n) \rightarrow U^\prime_{-\nu}(n) = [ \Omega(n - \hat{\nu}) U_\nu(n - \hat{\nu}) \Omega^\dagger(n)]^\dagger = \Omega(n) U_{-\nu} \Omega^\dagger(n - \hat{\nu}).
+        \end{equation}
+        \item The transformation property of the link variables imply that they are elements of the group $G^{DV}$
+        \item Just as in the continuum formulation, demanding gauge invariance has required the introduction of new fields
+    \end{itemize}
+  
+\end{itemize}
+
+
+\section{Wilson gauge action}
+\begin{itemize}
+  \item Wilson's original formulation\aidx{Wilson gauge action} of LGT is based on the smallest gauge invariant quantity, the $1 \times 1$ plaquette\aidx{plaquette}
+\end{itemize}
+\begin{equation}
+\begin{aligned}
+U_{\mu v}(n) & =U_{\mu}(n) U_{\nu}(n+\hat{\mu}) U_{\mu}^{\dagger}(n+\hat{\nu}) U_{\nu}^{\dagger}(n) \\
+& =U_{\mu}(n) U_{\nu}(n+\hat{\mu}) U_{-\mu}(n+\hat{\mu}+\hat{\nu}) U_{-\nu}(n+\hat{v})
+\end{aligned}
+\end{equation}
+
+\begin{figure}
+\redrawcompare{fig-notes-010.jpg}{fig-redraw-010.pdf}
+\caption{A depiction of the plaquette $U_{\mu \nu}(n)$.}
+\end{figure}
+
+\begin{itemize}
+  \item Using this, the Wilson action for a \(S U(N)\) gauge symmetry is
+\end{itemize}
+
+\begin{equation}
+S_{G}[U]=\frac{\beta}{N} \sum_{n \in \Lambda} \sum_{\mu < \nu} \operatorname{Re} \operatorname{tr}\left(1-U_{\mu \nu}(n)\right)
+\end{equation}
+
+where
+
+\begin{equation}
+\beta=\frac{2 N}{g^{2}}
+\end{equation}
+
+\begin{itemize}
+  \item In the classical continuum limit\aidx{continuum limit} (just $a \rightarrow 0$ geomerically) this gives the continuum action 
+  \begin{itemize}
+      \item To see this, one needs to use BCH to combine the products in $U_{\mu \nu}(n)$
+      \begin{equation}
+          U_{\mu \nu}(n) = \exp \left\{ i a A_\mu + i a A_\nu(n + \hat{\mu}) - \frac{a^2}{2}[A_\mu(n), A_\nu(n + \hat{\mu})] + \ldots\right\}
+      \end{equation}
+      \item Now Taylor expand the fields around $n$
+      \begin{align}
+          A_\mu(n + \hat{\nu}) &= A_\mu(n) + a \partial_\nu A_\mu(n) + \mathcal{O}(a^2) 
+      \end{align}
+     \begin{align}
+          \Rightarrow U_{\mu \nu}(n) &= \exp\left\{i a^2 [\partial_\mu A_\nu(n) - \partial_\nu A_\mu(n)] + i [A_\mu(n), A_\nu(n)] \right\} + \mathcal{O}(a^2) \nonumber \\
+          &= \exp\{i a^2 F_{\mu \nu}(n)\} + \ldots\nonumber \\
+          &= 1 + i a^2 F_{\mu \nu}(n) - a^4 (F_{\mu \nu}(n))^2 + \ldots \label{eq:Umunu}
+      \end{align}
+      and thus
+      \begin{equation}
+          S_G[U] \underset{a\rightarrow0}{\longrightarrow}\frac{a^4 \beta}{N} \sum_{n \in \Lambda}\sum_{\mu, \nu} \operatorname{tr}[F_{\mu \nu}(n)^2] + \mathcal{O}(a^2)
+      \end{equation}
+      as ${\rm tr}(F_{\mu\nu})=0$.
+  \end{itemize}
+  \item It is also interesting to interpret Eq.~\eqref{eq:Umunu} as
+  \begin{equation}
+      U_{\mu \nu}(n) = \exp\{i a^2 F_{\mu \nu}(n)\} =\exp\{i \int_\Box F_{\mu \nu}(n)ds_{\mu\nu}\}
+  \end{equation}
+  where $ds_{\mu\nu}$ is the integral over the area of the plaquette. In the Abelian case, this would simply arise from the definition of the plaquette as a line integral around the four links forming the boundary and Stokes' theorem. This suggests the interpretation of the plaquette as the exponential of the (chromo-)magnetic flux through the plaquette, ie the non-Abelian analogue of the Aharanov-Bohm\aidx{Aharonov-Bohm phase} phase factor.
+\end{itemize}
+
+
+
+\section{YM partition function and correlation function}
+
+\begin{itemize}
+  \item The path integral\aidx{path integral} formalism is similar to scalar fields
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+& Z=\int \mathcal{D} U \exp \left[-S_{G}[U]\right] \\
+& \langle\Omega| \mathcal{O}_{a} \mathcal{O}_{b}|\Omega\rangle=\frac{1}{Z} \int \mathcal{D} U \mathcal{O}_{a}[U] \mathcal{O}_{b}[U] e^{-S_{G}[U]}
+\end{aligned}
+\end{equation}
+
+where the integration measure is
+
+\begin{equation}
+\mathcal{D} U=\prod_{n \in \Lambda} \prod_{\mu=1}^{D} \text{d} U_{\mu}(n)
+\end{equation}
+
+\begin{itemize}
+  \item Since \(U_{\mu}(n)=e^{ia A_{\mu}(n)}\) is a group valued object, the measure \(\text{d} U_{\mu}(n)\) involves integration over all elements of the continuous compact Lie group \(G\)
+  \begin{itemize}
+        \item Since \(Z\) and \(S_{G}[U]\) are gauge invariant, then the measure must be invariant under gauge transformations: the Haar measure which is defined by requiring that for \(U, V \in G\)
+        \begin{equation}
+            \underset{\text{L, R invariance}}{\text{d}U = \text{d}(V U) = \text{d}(UV)}, \underset{\text{linearity}}{\quad \int \text{d}U(\alpha f(U) + \beta g(U)) = \alpha \int \text{d}U f(U) + \beta \int \text{d}U g(U)}, \quad \text{and} \underset{\text{normalization}}{\int \text{d}U = 1}
+        \end{equation}
+        \item Concretely for $U = U(\omega) = \exp(i \omega_a T_a)$, the metric in $G$ is $\text{d}s^2 = g(\omega)_{mn} \text{d}\omega_n \text{d}\omega_m$, where
+        \begin{equation}
+            g(w)_{mn} = \operatorname{tr}\left[ \frac{\partial U(\omega)}{\partial \omega_n}\frac{\partial U(\omega)^\dagger}{\partial \omega_m}\right],
+        \end{equation}
+        and the measure is
+        \begin{equation}
+            \text{d} U = c \sqrt{\operatorname{det}g(\omega)}\prod_a \text{d}\omega_a \quad \text{with constant $c$ such that $\int \text{d}U = 1$}.
+        \end{equation}
+        For the case of $SU(N)$, see J Broznan Phys Rev D 38 (1988)1994 for explicit constructions. 
+  \end{itemize}
+  \item The group integration\aidx{Haar measure} forces the expectation of gauge variant quantities to vanish (Elitzur's theorem\aidx{Elitzur's theorem}, see Elitzur 1975); that is
+  \begin{equation}
+      \langle \mathcal{O} \rangle = 0 \quad \forall\mathcal{O} \underset{G}{\rightarrow} \mathcal{O}^\prime \neq \mathcal{O}.
+  \end{equation}
+  \begin{itemize}
+      \item To see this, consider a single group integration over a group element $U \in G$:
+      \begin{equation}
+          \int \text{d} U  U= \int \text{D}(UV) U = \int \text{d}U U V^\dagger = \int \text{d}(W^\dagger U^\prime) U^\prime V^\dagger = \int \text{d}U^{\prime \prime} W U^{\prime \prime}V^\dagger = W \left[ \int \text{d} U U\right] V^\dagger
+      \end{equation}
+      which holds for all $W$ and $V^\dagger$, implying $\int \text{d}U U = 0$.
+      \item Note that any group integral $\int dg f(g)=0$ unless $f(g)$ has a singlet component
+      \item Now consider a gauge variant quantity such as a single gauge link (or a product of gauge links)
+      \begin{equation}
+        \begin{aligned}
+        & \left\langle U_{\mu}(n)\right\rangle=\frac{1}{Z} \int \mathcal{D} U e^{-S_{G}[U]} U_{\mu}(n) \\
+        & =\frac{1}{Z} \int D \hat{U} e^{-\hat{S}[\hat{U}]} \prod_{\nu= \pm1}^{ \pm d} \text{d} U_{\nu}(n) e^{-\tilde{S}\left[\hat{U},\left\{U_{\nu}(n)\right\}\right]} U_{\mu}(n),
+        \end{aligned}
+        \end{equation}
+        where $\mathcal{D}\hat{U}$ is the measure for all links not connected to site $n$ and $$S_G[U] = \hat S[\hat{U}] +  \underset{\text{all terms involving links at site $n$}}{\underbrace{\tilde{S}[\hat{U}, \{ U_\nu(n)\}]}}$$
+
+        There are $2(D-1)$ plaquette\aidx{plaquette}s directly involving $U_\mu(n)$:
+        \begin{equation}
+            P_{\mu \nu}(n), P_{\mu \nu}(n - \hat{\nu}) \quad \forall \nu \neq \mu
+        \end{equation}
+        For
+        \begin{equation}
+        \begin{gathered}
+        P_{\mu \nu}(n)=U_{\mu}(n) U_{\nu}(n+\hat{\mu}) U_{\mu}^{\dagger}(n+\hat{v}) U_{\nu}^{\dagger}(n)
+        \end{gathered}
+        \end{equation}
+\begin{figure}
+\redrawcompare{fig-notes-011.jpg}{fig-redraw-011.pdf}
+\caption{An illustration of the links that we will use in our various changes of variables, as well as their associated plaquettes.}
+\end{figure}
+We can now use the invariance of the Haar measure to change variables for the particular link:
+\begin{equation}
+U_{\nu}(n) \rightarrow U_{\mu}(n) U_{\nu}(n) \color{green} \quad \circled{1} 
+\end{equation}
+\begin{equation}
+\begin{aligned}
+ \Rightarrow \operatorname{tr}\left(P_{\mu \nu}(n)\right) &\rightarrow \operatorname{tr}\left(U_{\mu}(n) U_{\nu}(n+\hat{\mu}) U_{\mu}^{\dagger}(n+\hat{\nu}) U_{\nu}^{\dagger}(n) U_{\mu}^{\dagger}(n)\right) \\
+&=\operatorname{tr}\left[U_{\nu}(n+\hat{\mu}) U_{\mu}^{\dagger}(n+\hat{\nu}) U_{\nu}^{\dagger}(n)\right] \quad \text { independent of } U_{\mu}(n)
+\end{aligned}
+\end{equation}
+which is independent of  $U_{\mu}(n)$.
+However, this change also affects
+
+\begin{equation}
+\begin{aligned}
+\quad P_{\mu v}(n-\hat{\mu})&=U_{\mu}(n-\hat{\mu}) U_{\nu}(n) U_{\mu}^{\dagger}(n-\hat{\mu}+\hat{\nu}) U_{\nu}^{\dagger}(n-\hat{\mu}) \\
+&  \stackrel{{\tiny{\color{green} \circled{1}}}}{\rightarrow} U_{\mu}(n-\hat{\mu}) U_{\mu}(n) U_{\nu}(n) U_{\mu}^{\dagger}(n-\hat{\mu}+\hat{\nu}) U_{\nu}^{\dagger}(n-\hat{\mu})
+\end{aligned}
+\end{equation}
+
+So now change variables for the link
+\begin{equation}
+  U_{\mu}(n-\hat{\mu}) \rightarrow U_{\mu}(n-\hat{\mu}) U_{\mu}^{\dagger}(n) \quad {\color{green}\circled{2}}  
+\end{equation}
+So
+
+\begin{equation}
+P_{\mu v}(n-\hat{\mu})\stackrel{{\tiny{\color{green} \circled{2}}}}{=} U_{\mu}(n-\hat{\mu}) U_{\nu}(n) U_{\mu}^{\dagger}(n-\hat{\mu}+\hat{\nu}) U_{v}^{\dagger}(n-\hat{\mu})
+\end{equation}
+independent of \(U_{\mu}(n)\)
+
+Also,
+\begin{equation}
+P_{\mu\nu}(n-\hat{\nu})=U_{\mu}(n-\hat{\nu}) U_{\nu}(n-\hat{\nu}+\hat{\mu}) U_{\mu}^{\dagger}(n) U_{\nu}^{\dagger}(n-\hat{\nu})
+\end{equation}
+
+under \(\left(U_{\nu}^{\dagger}(n-\hat{\nu})\left(=U_{-\nu}(n)\right) \rightarrow U_{\mu}(n) U_{\nu}^{\dagger}(n-\hat{\nu})\right)\) \color{green} \circled{3} \color{black} \(\left[U_{\nu}(n-\hat{\nu}) \rightarrow U_{\nu}(n-\hat{\nu}) U_{\mu}^{\dagger}(n)\right]\)
+
+\begin{equation}
+P_{\mu \nu}(n-\hat{\nu}) \rightarrow U_{\mu}(n-\hat{\nu}) U_{\nu}(n-\hat{\nu}+\hat{\mu}) U_{\nu}^{\dagger}(n-\hat{\nu}) 
+\end{equation}
+indep of $U_{\mu}(n)$, and at the same time
+\begin{equation}
+\begin{aligned}
+ P_{\mu \nu}(n-\hat{\nu}-\hat{\mu})&=U_{\mu}(n-\hat{\nu}-\hat{\mu}) U_{\nu}(n-\hat{\nu}) U_{\mu}^{\dagger}(n-\hat{\mu}) U_{\nu}^{\dagger}(n-\hat{\nu}-\hat{\mu}) \\
+& \rightarrow U_{\mu}(n-\hat{\nu}-\hat{\mu}) U_{\nu}(n-\hat{\nu}) U_{\mu}^{\dagger}(n) U_{\mu}(n) U_{\mu}^{\dagger}(n-\hat{\mu}) U_{\nu}^{+}(n-\hat{\nu}-\hat{\mu}) \\
+& =U_{\mu}(n-\hat{\nu}-\hat{\mu}) U_{\nu}(n-\hat{\nu}) U_{\mu}^{\dagger}(n-\hat{\mu}) U_{\nu}^{\dagger}(n-\hat{\nu}-\hat{\mu}) \quad \text { indep of } U_{\mu}(n)
+\end{aligned}
+\end{equation}
+
+The same procedure proceeds in the other \(D-2\quad(\mu, \nu)\) planes and by changing variables on the \(2D-1\) links from site \(n\) other than \(U_{\mu}(n)\) the action has been made independent of \(U_{\mu}(n)\) !! Consequently
+
+\begin{align}
+    \langle U_\mu(n)\rangle &= \frac{1}{Z}\int \mathcal{D} \hat{U} e^{- \hat{S}[\hat{U}]} \Pi_{\nu = \pm 1, \nu \neq \mu}^{\pm d} \text{d} U_\nu (n) e^{-\tilde{S}[\hat{U}, \{U_\nu(n)\}_{\nu \neq \mu}]} \int \text{d}U_\mu(n) U_\mu(n) \nonumber \\
+    &= 0.
+\end{align}
+  \end{itemize}
+
+
+  \item Note that the demonstrated independence of the action on any one link is simply a manifestation of the redundancy of the gauge link degrees of freedom
+  \item For a compact Lie group, the integration for each link is over a compact region and so is finite for nonsingular integrands. Therefore using link variables\aidx{link variables} removes the need to fix a gauge. Nevertheless the gauge can be fixed\aidx{gauge fixing} in numerous ways and is necessary if doing lattice regulated perturbation theory from a lattice gauge theory action.
+  \begin{itemize}
+      \item Landau gauge\aidx{gauge fixing!Landau} $(\partial_\mu A_\mu^a = 0)$: for smooth fields this is equivalent to minimizing $\int \text{d}x \operatorname{tr}[A_\mu(x)^2]$ which is achieved on link fields by minimizing the functional (for $SU(N)$)
+      \begin{equation}
+          L_U[\Omega] = \frac{1}{N D V}\sum_{\mu, n} \operatorname{Re}\operatorname{tr} [\Omega(n) U_\mu(n) \Omega^\dagger(n + \hat{\mu})],
+      \end{equation}
+      and for Coulomb gauge\aidx{gauge fixing!Coulomb}\aidx{smearing!wall} the sum is just over spatial $\mu$. To see this, let $\{U_\mu\}$ be the configuration that maximizes $L_U[\Omega]$ on a given gauge orbit. Then for $\Omega = 1 + i \omega(n)$ near the identity,
+      \begin{equation}
+          L_U[1 + i \omega(n)] \simeq L_U[1] + \frac{1}{2 N D V} \sum_{\mu, n} i w^a(n) \operatorname{Tr}[T^a(U_\mu(n) - U_\mu^\dagger(n)) - (U_\mu(n - \hat{\mu}) - U_\mu^\dagger(n - \hat{\mu}))T^a] 
+      \end{equation}
+      By definition \(U_{\mu}\) is a stationary point so
+        \begin{equation}
+            0 = \frac{\partial L}{\partial w^a(n)} = \frac{i}{2NDV} \sum_\mu \operatorname{Tr}[T^a(U_\mu(n) - U_\mu^\dagger(n)) - (U_\mu(n - \hat{\mu}) - U_\mu^\dagger(n - \hat{\mu}))T_a] 
+        \end{equation}
+      and noting that $U_\mu(n) - U_\mu^\dagger(n) \approx 2 i a A_\mu\left(n + \frac{\hat{\mu}}{2}\right) + \mathcal{O}(a^3)$
+      \begin{align}
+          \Rightarrow 0 &= \sum_\mu \operatorname{Tr}\left[\left(A_\mu\left(n + \frac{\hat{\mu}}{2}\right) - A_\mu\left(n - \frac{\hat{\mu}}{2}\right)\right)T^a\right] \nonumber \\
+          &= \sum_\mu \partial_\mu A_\mu^a + \mathcal{O}(a)
+      \end{align}
+      Note that finding $\text{max}_\Omega L_U[\Omega]$ is a challenging optimization task over $(N^2 - 1)V$ degrees of freedom
+      \item even finding a local maximum is computationally demanding - see Olivera \& Silva, Comp Phys Com 158 (2004)73 for discussion.
+      \item since $\partial_\mu A^\mu = 0$ intersects the gauge orbit of a given gauge field multiple times (Gribov copies\aidx{Gribov copies}), there are multiple maxima of $L_U[\Omega]$.
+      \item For gauge invariant quantities, the presence of Gribov copies (Gribov-Singer, Singer proved you cannot define a gauge fixing that avoids the ambiguity on $S^4$) does not matter as they are included in the integral defining expectation values and in $Z$. For gauge variant quantities, it is possible to define a subsidiary condition to choose a global maximum (e.g. minimizing $\int \text{d}x \operatorname{tr} [A_\mu(x)^2]$) but it isn't clear if this means the same as in the continuum.
+      
+  \end{itemize}
+  \item Temporal gauge\aidx{gauge fixing!temporal} $(A_4(x) = 0)$ is useful, for example in showing reflection positivity\aidx{reflection positivity} of Wilson gauge action\aidx{Wilson gauge action}. In terms of link variables temporal gauge corresponds to $U_4(n) = 1$.
+
+  This is a specific case of a maximal tree gauge\aidx{gauge fixing!maximal tree}, in which any set of links $\{ U_\mu(n)\}_{\text{tree}}$ that contains no closed loops can be set to unity (or to any fixed group elements).
+
+  As we saw in calculating $\langle U_\mu(n) \rangle = 0$, the action depends on plaquettes rather than links and gauge freedom can be used to remove dependence on given links.
+
+  The simplest (?) gauge transformation acts only on a single site and modifies all $2D$ links that touch it and in general can be chosen to set any one of those links to unity (see Fig.~\ref{fig:simplest_gauge_transformation}.
+\end{itemize}
+\begin{figure}
+\redrawcompare{fig-notes-012.jpg}{fig-redraw-012.pdf}
+\caption{A demonstration of the gauge transformation on one site which could be used to set one of the gauge links to zero.
+\label{fig:simplest_gauge_transformation}
+}
+\end{figure}
+It is clear that a gauge transform at a given site can set at most one link to unity, but by implementing particular transformations at each site a given gauge field $\{ U_\mu(n)\}$ can be transformed to $\{ U_\mu (n)\}_\text{tree}$ where all links in a tree (a graph on $\Lambda$ with no closed loops) are unity; it is easy to see that one cannot gauge fix away closed loops, as the trace of a plaquette is gauge invariant and so cannot be set to unity by a gauge transformation. An example of a maximal tree gauge is shown in Fig.~\ref{fig:maximal_tree_gauge}.
+
+\begin{figure}
+\redrawcompare{fig-notes-014.jpg}{fig-redraw-014.pdf}
+\caption{A maximal tree gauge; note that any any additional red link would create a cycle.
+\label{fig:maximal_tree_gauge}
+}
+\end{figure}
+
+Temporal gauge fixing sets all temporal links to unity,
+\begin{figure}
+\redrawcompare{fig-notes-013.jpg}{fig-redraw-013.pdf}
+\caption{An illustration of temporal gauge in $D=2$.}
+\end{figure}
+Note that temporal gauge fixing is not a maximal tree gauge.
+
+The above has assumed a lattice of infinite extent in each dimension.
+\begin{figure}
+\redrawcompare{fig-notes-015.jpg}{fig-redraw-015.pdf}
+\caption{Temporal gauge with periodic boundary conditions\aidx{Schrödinger functional!boundary conditions}\aidx{boundary conditions!periodic}, $U_{-4}^{\dagger}\left(n_{t}=0\right)=U_{4}\left(n_{t}=N_{t}-1\right)$.
+}
+\end{figure}
+
+
+On a finite lattice, fixing all temporal lints to unity would form a closed loop and cannot be done because 
+\begin{equation}
+P(\vec{n})=\prod_{t} U_{4}(\vec{n}, t)
+\end{equation}
+is gauge invariant 
+
+But one can set
+
+\begin{equation}
+\begin{aligned}
+& U_{4}(\vec{n}, t)=1 \mid 0 \leqslant t<N_{t}-1 \\
+& U_{4}\left(\vec{n}, N_{t}-1\right)=P(\vec{n}).
+\end{aligned}
+\end{equation}
+
+An interesting fact: $N_{max tree}\sim e^{zV}$, where for $D=4$ it is known that $z \sim 2.00$ (see Shrock and Wu, cond-mat/0004341 ).
+
+\section{Observables in Y M theory}
+
+\begin{itemize}
+  \item Gauge invariant quantities whose values can be determined in YM theory include
+  \begin{itemize}
+      \item Wilson loops\aidx{Wilson loop}: closed paths of gauge links
+      \begin{equation}
+          \langle W (n; \underset{\mu_i \in \{ \pm1, \ldots, \pm D\}}{\underbrace{\mu_1, \mu_2, \ldots, \mu_n}})\rangle = \langle \operatorname{Tr}[U_{\mu_1}(n)U_{\mu_2}(n+\hat{\mu}_1)\ldots U_{\mu_n}(n - \hat{\mu}_n)] \rangle
+      \end{equation}
+      \item Polyakov loops\aidx{Polyakov loop}: straight paths in the $\hat{\mu}$ direction that close around boundary
+      \begin{equation}
+          \mathcal{P}_\mu(\vec{n}_\perp) = \left\langle \operatorname{Tr} \left[ \prod_{i=0}^{N_\mu - 1} U_\mu(\vec{n}_\perp, n_\mu = i)\right] \right\rangle \qquad \text{where $\vec{n}_\perp$are coords transverse to $\hat{\mu}$},
+      \end{equation}
+      \begin{equation}
+          \mathcal{P}_\mu = \sum_{\vec{n}_\perp} \mathcal{P}_\mu(\vec{n}_\perp)
+      \end{equation}
+      \item Correlations between Wilson loops or Polyakov loops, e.g.
+      \begin{equation}
+    \sum_{\vec{n}, \vec{m}}\left\langle W\left(\vec{n}, 0 ; \mu_{1}, \ldots, \mu_{n}\right) W\left(\vec{m}, \hat{t}; \nu_{1}, \ldots, \nu_{p}\right)\right\rangle
+    \end{equation}
+    which can be used to determine the masses of excitations in pure YM: glueballs\aidx{glueballs}
+    \item In $SU(n > 2)$ can also use Levi-Civita to make observables, as shown in Fig.~\ref{fig:lc_observables}
+    \begin{equation}
+    \varepsilon_{a b c} \varepsilon_{a^\prime b^\prime c^\prime}\left[W\left(x, \mu_{1}, \ldots, \mu_{j}\right)\right]_{a a^{\prime}}\left[\tilde{W}\left(x, \nu_{1}, \ldots, \nu_{k}\right)\right]_{b b^{\prime}}\left[\tilde{\tilde{W}}\left(x, \rho_{1}, \ldots ,\rho_{l}\right)\right]_{c c^{\prime}}
+    \end{equation}
+    \begin{figure}
+        \centering
+        \redrawcompare{fig-notes-060.png}{fig-redraw-060.pdf}
+        \caption{A schematic depiction of an observable created using the Levi-Civita symbol}
+        \label{fig:lc_observables}
+    \end{figure}
+  \end{itemize}
+\end{itemize}
+\begin{figure}
+\redrawcompare{fig-notes-062.png}{fig-redraw-062.pdf}
+\caption{An illustration of the correlation function between two Wilson loops at different times.}
+\end{figure}
+
+
+
+\section{RGE and the continuum limit}
+
+\begin{itemize}
+  \item Consider any physical quantity with the dimensions of mass \(H=H(g(a), a)\) written as a function of the coupling and cutoff [Here we consider pure YM]
+  \begin{itemize}
+  \item We demand cutoff independence\aidx{renormalisation group equations}
+  \begin{equation}
+  \label{eq:cutoff_ind}
+  0=a \frac{d}{d a} H(g(a), a)=a \frac{\partial H}{\partial a}+a \frac{\partial g}{\partial a} \frac{\partial H}{\partial g}
+  \end{equation}
+  \item Since $[H] = 1$, $H = a^{-1}f(g(a))$ for dimensionless $f$
+  \begin{equation}
+      \Rightarrow a \frac{\partial H}{\partial a} = a(- a^{-2}f) = - H.
+  \end{equation}
+  \item Substituting in Eq.~\eqref{eq:cutoff_ind},
+  \begin{equation}
+      \beta_{CS} \equiv a \frac{\partial g}{\partial a} = \frac{\partial g}{\partial \log a} = \frac{H(g(a),a)}{\partial H/\partial g}
+  \end{equation}
+  \item We know from continuum PT that
+  \begin{equation}
+      \beta_{CS}(g) = - \beta_0 g^3 - \beta_1 g^5
+  \end{equation}
+  with (here we specify to $SU(N_c)$ and allow for $N_f$ flavours of quarks)
+
+  \begin{equation}
+      \beta_0 = \frac{1}{16 \pi^2}\left[ \frac{11 N_c}{3} - \frac{2 N_f}{3}\right], \quad \beta_1 = \left(\frac{1}{16 \pi^2}\right)^2 \left[\frac{34}{3}N_c^2 - \frac{10}{3}N_c N_f - \frac{N_f}{N_c}(N_c^2 - 1) \right]
+  \end{equation}
+  which are universal (valid with a lattice regulator\aidx{lattice quantum field theory (LQFT)}\aidx{regulator!lattice}) - higher orders are not and depend on the choice of $H$ and the regulator
+  \end{itemize}
+  \item The RGE can be solved
+  \begin{align}
+      &\frac{\partial \log a}{\partial g} = \frac{1}{-\beta_{CS}(g)} \Rightarrow \int_{g_0}^{g(a)} \frac{\text{d}\log a}{\text{g}^\prime}\text{d}g^\prime = \int_{g_0}^{g(a)}\frac{1}{-\beta_{CS}(g^\prime)}\text{d}g^\prime \nonumber \\
+      &\Rightarrow \log a + \log \tilde{\Lambda}_L = \int_{g_0}^{g(a)}\frac{\text{d}g^\prime}{\beta_0 g^{\prime 3}} = \frac{1}{2 \beta_0}\left(\frac{1}{g^2(a)}-\frac{1}{g_0^2}\right) \nonumber \\
+      &\Rightarrow a(g) = \frac{1}{\Lambda_L}\exp(-\frac{1}{2 \beta_0 g^2})\qquad \text{where $\Lambda_L$, $\tilde{\Lambda}_L=a(g_0)$ are integration constants.}
+  \end{align}
+  Keeping the $g^5$ term yields $a(g) = \frac{1}{\Lambda_L}\exp\left(-\frac{1}{2 \beta_0 g^2}\right) (\beta_0 g^2)^{-\beta_1/2\beta_0^2}$.
+  \item Inverting the RGE gives
+  \begin{equation}
+      \frac{1}{g(a)^2} = - 2 \log(a\Lambda_L) + \frac{\beta_1}{\beta_0}\log(\log(a^{-2}\Lambda_L^{-2}))+\ldots
+  \end{equation}
+  so $a \rightarrow 0$ requires $g(a) \rightarrow 0$ (and $\beta \rightarrow \infty$) so the continuum limit\aidx{continuum limit} is the limit of vanishing bare coupling\aidx{coupling!bare} with physical quantity $H$ held fixed
+\end{itemize}
+
+
+
+\section{Strong coupling expansion}
+
+\begin{itemize}
+  \item An interesting tool in analysing lattice discretisations of QFTs is the strong coupling expansion\aidx{expansion!strong-coupling} in which observables are expanded in powers of $\beta = \frac{2N}{g_0^2}$
+  \item This is also called a high temperature expansion and used a lot in statistical systems
+  \item Consider the rectangular Wilson loop \includegraphics[width=0.2\linewidth]{fig-notes-064.png}
+\begin{equation}
+    W_{\cal C} = W(\vec{n}, \vec{r}, t) = \operatorname{tr}\left[S(\vec{n}, \vec{r}, 0) T(\vec{n} + \vec{r}, t) S^\dagger(\vec{n}, \vec{r}, t)T^\dagger(\vec{n}, t) \right]
+\end{equation}
+with
+\begin{equation}
+    S(\vec{n}, r \hat{j}, t) = \prod_{\vec{m} = \vec{n}}^{\vec{n} + r \hat{j}} U_j(\vec{m}, t), \quad T(\vec{n}, t) = \prod_{j=0}^t U_4(\vec{n}, j)
+\end{equation}
+for simplicity.
+    \item Expectation value
+\begin{align}
+    \langle W_\mathcal{C} \rangle &= \frac{1}{Z}\int \mathcal{D} U \exp \left[- \frac{\beta}{N} \sum_{P} \operatorname{Re}\operatorname{Tr}(1-P) \right] \operatorname{tr}\left[ \prod_{l \in \mathcal{C}} U_l\right]\nonumber \\
+    &= \frac{1}{Z^\prime} \int \mathcal{D}U \exp \left[- \frac{\beta}{2N} \sum_{P} (\operatorname{tr}(P) + \operatorname{tr}(P^\dagger)) \right] \operatorname{tr}\left[ \prod_{l \in \mathcal{C}} U_l\right],
+\end{align}
+where $\mathcal{C}$ is the contour constituting the rectangular Wilson loop and we dropped the constant 1 term in the trace in the integral and simultaneously rescaled $Z$ to $Z^\prime$.
+
+    \item If $\beta = 0$ then $\langle W_\mathcal{C} \rangle_{\beta = 0} = \frac{1}{Z^\prime} \int \mathcal{D} U \operatorname{tr}[\prod_{l \in \mathcal{G}}U_l] = 0$ since many links have $\int dU U =0$.
+
+    $\Rightarrow$ In the strong coupling limit, Wilson loops\aidx{Wilson loop} generically vanish which is just a statement that in this limit, sites decouple from each other and behave independently
+    \item Expanding the exponential
+\begin{equation}
+\exp [\ldots]=\sum_{i, j=0}^{\infty} \frac{1}{i!j!}\left(\frac{\beta}{2 N}\right)^{i+j}\left(\sum_{P}\operatorname{tr} P\right)^{i}\left(\sum_{P}\operatorname{tr} P^{\dagger}\right)^{j}.
+\end{equation}
+
+Note that for $SU(2)$ there is a factor of $1/2$ since plaquette\aidx{plaquette}s are not oriented and $\int dU U_{ab} U_{cd} \neq 0$.
+
+    \item Now in $Z^\prime$, the leading term is from $i=j=0$ and the next from $i=j=1$ (not $i=1, j=0$ as $\int \text{d}U U = 0$).
+\begin{equation}
+    Z^\prime = 1 + \mathcal{O}(\beta^2)
+\end{equation}
+
+    \item For nonzero $\langle W_C \rangle$ we must have $U$ and $U^\dagger$ associated with any link in order $\int dU \ldots \neq 0$, so we need to tile the loop with plaquettes
+
+\includegraphics[max width=\textwidth, center]{fig-notes-016.jpg}
+
+\begin{equation}
+    \langle W_C \rangle = \frac{1}{Z^\prime}\int \mathcal{D}U \frac{1}{N_A !} \left( \frac{\beta}{2 N}\right)^{N_A} \left ( \sum_{P \in A_\mathcal{C}} \operatorname{tr} [ P^\dagger]\right)^{N_A}\operatorname{tr}\left[\prod_{l \in \mathcal{C}}U_l\right]
+\end{equation}
+where $P \in A_\mathcal{C}$ are all plaquettes inside contour $\mathcal{C}$ (i.e. all plaquettes in the loop) and there are $N_A!$ possible arrangements of the $\operatorname{tr}[P^\dagger]$s
+\begin{equation}
+    \Rightarrow \langle W_\mathcal{C} \rangle = \frac{1}{Z'}\int \mathcal{D} U \left( \frac{\beta}{2 N} \right)^{N_A} \prod_{P \in A_\mathcal{C}}\operatorname{tr}[P^\dagger]\operatorname{tr}\left[\prod_{l \in \mathcal{C}} U_l\right]
+\end{equation}
+
+Now we need to integrate each link. We do it in the following order using
+\begin{equation}
+    \int \text{d}U_m(\hat{n}, t)(U_m(\hat{n}, t))_{ab}(U_m^\dagger(\hat{n},t))_{cd} = \frac{1}{N}\delta_{ad}\delta_{bc}
+\end{equation}
+\includegraphics[max width=\textwidth, center]{fig-notes-058.png}\\
+\begin{align}
+\langle W_\mathcal{C} \rangle &= \operatorname{tr}[1] \left( \frac{\beta}{2N}\right)^{N_A}\left(\frac{1}{N}\right)^{N_A}\nonumber \\
+&= N \exp \left[ N_A \log \frac{\beta}{2 N^2} \right]
+\end{align}
+
+    \item For a loop of size $R \times T$
+\begin{align}
+    \langle W_{R \times T} \rangle &\sim \exp\left[ R T \log \frac{\beta}{2 N^2}\right] + \mathcal{O}(\beta^2) \nonumber \\
+    &\sim \exp[-\sigma A]
+\end{align}
+where $A = R T a^2$ is the loop area and $\sigma = - \frac{1}{a^2} \log \frac{\beta}{2 N^2}$ is a positive quantity
+
+That is, Wilson loops decrease with an area law\aidx{area law}!
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-065.png}{fig-redraw-065.pdf}
+    \caption{A large Wilson loop defining the static quark potential.}
+    \label{fig:sqp}
+\end{figure}
+\item Large Wilson loops give a definition of the static quark potential\aidx{static quark potential}, as depicted in Fig.~\ref{fig:sqp}
+
+    The loop corresponds to the gauge invariant creation of a static source in the anti-fundamental rep at $(\vec x=0, t=0)$ and a fundamental rep at $(\vec R,0)$ and their propagation in time a distance $T$
+
+    The energy of that system as a function of separation $R=|\vec{R}|$ is the static quark potential
+    
+\begin{equation}
+    V(R) = - \lim_{T\to \infty} \frac{1}{T}\log \langle W_{R \times T} \rangle
+\end{equation}
+so for $SU(N)$ we have that $V(R) \underset{\beta \to 0}{\rightarrow} \sigma R$, where $\sigma$ is the string tension\aidx{sigma@$\sigma$ (string tension)}.
+
+Thus $V(R)$ is the energy cost of separating a quark and antiquark a distance $R$ is linear in the distance, which is linear confinement\aidx{confinement}.
+
+
+\item We can compute higher orders in the strong coupling expansion, but this is made more efficient through the consideration of group characters\aidx{characters (group)} which let us deal  with the case of Wilson line\aidx{Wilson line}s in more complicated representations of the gauge group (and Wilson loops that wind multiply though a given link).
+
+\end{itemize}
+
+
+
+\section{An interlude on group characters}
+
+\begin{itemize}
+\item As a prelude, some aspects of representation theory are needed.
+\item Given a compact Lie group $G$, the representations of group elements $\Omega \in G$ are matrices $D_r(\Omega)$ where $r$ labels the representation
+\item The \emph{character} of representation $r$ is the function $\chi_r(\Omega) \equiv \operatorname{Tr}[D_r(\Omega)]$ and its value on the group identity $d_r = \chi_r(1)$ is the dimension of the representation
+\item Characters are \emph{class functions\aidx{class functions}} of the group (i.e. they take the same value for all group transformations of a given element)
+\end{itemize}
+
+\begin{equation}
+\chi_{r}\left(\bar{\Omega} \Omega \bar{\Omega}^{-1}\right)=\chi_{r}(\Omega) \quad \forall \Omega, \bar{\Omega} \in G
+\end{equation}
+
+\begin{itemize}
+  \item If $\mathcal{D}_G$ is the set of all inequivalent unitary irreducible representations of $G$, then for $D_r, D_s \in \mathcal{D}_G$
+\begin{equation}
+    \int \text{d}\Omega \chi^*_r(\Omega) \chi_s(\Omega) = \delta_{rs},
+\end{equation}
+i.e. the characters are orthonormal.
+
+    \item Characters are also complete in the sense that
+\begin{equation}
+    \sum_{D_r \in \mathcal{D}_G} \chi^*_r(\Omega) \chi_r(\Omega^\prime) = \delta(\Omega^\prime \Omega^{-1})
+\end{equation}
+where the delta function satisfies $\int \text{d} \Omega^\prime f(\Omega^\prime) \delta(\Omega^\prime \Omega^{-1}) = f(\Omega)$ and $\delta(\Omega^{-1}) = \delta(\Omega)$.
+ 
+    \item \emph{Peter-Weyl theorem\aidx{Peter-Weyl theorem}}: the $\chi_r$ form an orthonormal basis for all square-integrable class functions on $G$, therefore one can decompose a class function as
+\begin{equation}
+f(\Omega)=\sum_{D_{r} \in \mathcal{D}_G} f_{r} \chi_{r}(\Omega)
+\end{equation}
+with
+\begin{equation}
+f_{r}=\int \text{d} \Omega \chi_{r}^{*}(\Omega) f(\Omega)
+\end{equation}
+as coefficients; i.e. we can do Fourier analysis on a group manifold.
+
+\item Characters for representations of semi-simple Lie groups are tabulated.
+    \item For $G = SU(2)$, we know the irreps can be labeled by $j = 0, 1/2, 1, 3/2, \ldots$ with $d_j = 2j + 1$
+\begin{itemize}
+    \item We can parameterise $SU(2)$ group elements in terms of generators as 
+
+\begin{equation}
+\Omega=\exp (i \varphi \vec{n} \cdot \vec{T})=\cos \varphi+i \vec{n} \cdot \vec{T} \sin \varphi, \qquad 0 \leqslant \varphi \leqslant 2 \pi, \qquad|\vec{n}|=1
+\end{equation}
+
+where \(\vec{T}\) are the generators of the corresponding Lie algebra
+
+    \item The corresponding measure
+\begin{equation}
+\text{d} \Omega=\frac{1}{4 \pi^{2}} \text{d} \varphi \sin ^{2} \frac{\varphi}{2} \text{d}S(\vec{n}),
+\end{equation}
+where $\text{d}S(\vec{n})$ is the uniform measure on $S^2$ and $\int d S(\vec{n})=4 \pi$.
+
+  \item By explicit calculation of
+\begin{equation}
+\begin{aligned}
+\Omega^{\prime} \Omega \Omega^{\prime-1} & =(\cos \rho+i \vec{m} \cdot T \sin \rho)(\cos \varphi+i \vec{n} \cdot \vec{T} \sin \varphi)(\cos \rho-i \vec{m} \cdot T \sin \rho) \\
+& =\cos \varphi-i \vec{n} \cdot T \sin \varphi-2 i \cos \rho \sin \rho \sin \varphi(\vec{m} \times \vec{n}) \cdot \vec{T}
+\end{aligned}
+\end{equation}
+it is clear that class functions must be \(f(\Omega)=f(\varphi)\) ( ie only a function of $\varphi$ with no \(\vec{n}\) dependence in this parameterisation).
+
+  \item Without proof the characters are 
+\begin{equation}
+    \chi_r(\Omega) = \sin((j + 1/2) \varphi) / \sin(\varphi/2),
+\end{equation}
+which is the Weyl character formula\aidx{characters (group)}, and for a class function $f(\Omega)$, the coefficients $f_r$ are given by
+\begin{align}
+    f_r &= \int \frac{1}{4\pi^2}\text{d}\varphi \sin^2\frac{\varphi}{2}\text{d}S(\vec{n}) \frac{\sin((j+1/2)\varphi)}{\sin(\varphi/2)}f(\varphi) \nonumber \\
+    &= \frac{1}{\pi} \int_{0}^{2 \pi} \text{d} \varphi \sin \frac{\varphi}{2}\sin((j+1/2)\varphi)f(\varphi)
+\end{align}
+\end{itemize}
+
+\end{itemize}
+
+
+\section{Back to strong coupling}
+
+\begin{itemize}
+  \item Beyond this leading order, \(\beta \rightarrow 0\) calculations get more involved. Some corrections to consider are
+\begin{enumerate}
+    \item Shift one tiled plaquette\aidx{plaquette} out of the plane and add four plaquettes from action $(\sim \beta^4)$
+    \\ \includegraphics[width=0.3\linewidth]{fig-notes-066.png}
+    \item Add two additional plaquettes to the tilings either where there are existing plaquettes or elsewhere $(\sim \beta^2)$ (since $\int dU U_{ab} U_{cd} U^\dagger_{ef} U^\dagger_{gh}=\#(\delta\delta\ldots)\ne0$)
+    \\ \includegraphics[width=0.3\linewidth]{fig-notes-067.png}
+    
+    \item Reverse orientation of one plaquette and add $N-2$ additional plaquettes with same orientations $(\sim \beta^N)$
+    (since $\int dU U_{a_1b_1} U_{a_2b_2}\ldots U_{a_Nb_N}=\frac{1}{N!}\varepsilon_{a_1\ldots a_N}\varepsilon_{b_1\ldots b_N}\ne0$)
+    \\ \includegraphics[width=0.3\linewidth]{fig-notes-068.png}
+    \item Terms coming from expansion of $\frac{1}{Z} = 1 - \mathcal{O}(\beta^2)$ \\ \includegraphics[width=0.3\linewidth]{fig-notes-069.png}
+\end{enumerate}
+    \item One aspect of tracking all of these is the issue of multiple plaquettes at the same point can be handled with the character\aidx{characters (group)} expansion\aidx{expansion!character}
+
+\begin{equation}
+\exp [-S[U]]=\exp \left[-\frac{\beta}{2 N} \sum_{\square} \operatorname{Re} \operatorname{Tr}[\square]\right]=\prod_{\square} e^{-\frac{\beta}{2 N} \operatorname{Re} \operatorname{Tr}[\square]}
+\end{equation}
+
+Focusing on a single plaquette, \(e^{\left(-\frac{\beta}{2 N}(\square + \square^\dagger)\right)}\) is a class function, so
+
+\begin{equation}
+\begin{aligned}
+ e^{-S(\square)}&=\exp \left(-\frac{\beta}{2 N} \operatorname{Re} \operatorname{Tr} \square\right)=\sum_{r} f_{r} X_{r}(\square) \\
+& =N(\beta)\left(1+\sum_{r \neq 0} \tilde{f}_{r} \chi_{r}(\square) \right) \equiv N(\beta)\left(1+f(\square) \right) \\
+\end{aligned}
+\end{equation}
+(note that $\square$ without trace is in the adjoint+singlet representation) where
+\begin{align}
+    N(\beta) &= \int \text{d}U e^{-\frac{\beta}{2 N}  \operatorname{Re}\operatorname{Tr}(U)} \nonumber\\
+    \tilde{f}_r &= \frac{1}{N(\beta)} \int \text{d}U e^{-\frac{\beta}{2N}\operatorname{Re}\operatorname{Tr}(U)} \chi^*_r(U),
+\end{align}
+and where $r \neq 0$ means that we do not sum over the singlet representation.
+
+  \item In terms of this
+\begin{equation}
+\begin{aligned}
+\exp \left(\frac{-\beta}{2 N} \sum_{\square} \operatorname{Re}\operatorname{Tr}\square\right) & =\prod_{\square} e^{-S(\square)}=\prod_{\square}(1+f(\square)) \quad \text { dropping } N(\beta) \text { which will cancel in  } \frac{1}{Z} \\
+& =\sum_{\mathcal{S}} \prod_{\square \in \mathcal{S}} f(\square),
+\end{aligned}
+\end{equation}
+where $\mathcal{S}$ is a set of plaquettes and the sum is over all such sets (including the empty set).
+
+Each set can be decomposed into connected components (plaquettes are connected if they share a link (but not if they only share a corner), $\mathcal{S} = \bigcup_i X_i$ where $X_i$ and $X_j$ are disconnected if $i \neq j$.
+
+Considering integrals over $e^{-S}$ such as
+\begin{equation}
+Z=\int \mathcal{D}U e^{-S[U]}=\sum_{\mathcal{S}} \int \mathcal{D}U\prod_{\square \in \mathcal{S}} f(\square),
+\end{equation}
+the integrations over the $X_i \in \mathcal{S}$ factorize and 
+\begin{equation}
+    Z = \sum_{\mathcal{S} = \sum_i X_i}\prod_i \Phi(X_i), \qquad \Phi(X_i) = \int \mathcal{D}U \prod_{\square \in X_i} f (\square),
+\end{equation}
+where only the active links in $X_i$ contribute to $\Phi(X_i)$ (see M{\"u}nster Nucl Phys B 180(1981) 23).
+
+  \item Since each $\square$ comes with a $\beta/2N$, the larger a set $\mathcal{S}$ is, the more suppressed it will be: $\beta^{|\mathcal{S}|}$ but there are a rapidly growing $\#$ of large sets so the series is likely asymptotic
+  \item Exploring the cluster expansion\aidx{expansion!cluster} is an exercise! Note that apart from the values of $f(\square)$, the expansion is independent of the gauge group.
+  
+  \item In $SU(2)$, $r = 0,1/2, 1, 3/2, \ldots$ and $\chi_r$ is given before
+
+\begin{equation}
+\begin{aligned}
+\tilde{f}_{r} & =\frac{1}{2 \pi} \int_{0}^{2 \pi} d \varphi \sin ^{2} \frac{\varphi}{2} 2 \exp \left(\beta \cos \frac{\varphi}{2}\right) \frac{\sin \left(\left(r+\frac{1}{2}\right) \varphi\right)}{\sin \varphi / 2} \\
+& =2\left(2{r+1}\right) I_{2 r+1}(\beta) / \beta
+\end{aligned}
+\end{equation}
+where the  modified Bessel function  $I_{n}(z) \sim \frac{1}{\Gamma(n+1)}\left(\frac{z}{2}\right)^{n}\left(1+\theta\left(z^{2}\right)\right)$
+\begin{equation}
+\Rightarrow f(\square)  =\sum_{r \neq 0} \frac{2}{\beta}(2 r+1) I_{2 r+1}(\beta) \frac{\sin \left(\left(r+\frac{1}{2}\right) \varphi\right)}{\sin \varphi / 2}
+\end{equation}
+
+However we want to expand in $\beta$ so don't keep all representations.
+
+In $SU(2)$ the leading cluster correction is the type $1$ above which adds four plaquettes relative to the tiled loop and so is $\mathcal{O}(\beta^4)$ so adding this contribution
+\begin{equation}
+    \langle W_{R\times T} \rangle = 2 \exp(-\sigma_0 A) \{ 1 + 4 A \left(\frac{\beta}{4}\right)^4 + \ldots\},
+\end{equation}
+where $4A$ is the number of bumps which contribute.
+
+Graphs that count with higher powers of $A$ come in but it has been shown that they exponentiate:
+
+\begin{equation}
+\left\langle W_{R \times T}\right\rangle=2 \exp (-\sigma A+\mu(R+T))
+\end{equation}
+
+Correction have been computed up to \(\beta^{14}\) [Münster] with many types of decoration of diagrams needed
+
+\begin{equation}
+\sigma=\ln \frac{\beta}{4}+4\left(\frac{\beta}{4}\right)^{4}+\frac{176}{3}\left(\frac{\beta}{4}\right)^{8}+\cdots
+\end{equation}
+
+  \item In \(SU(3)\) the representations are \(r=1,3, \overline{3}, 6, \overline{6}, 8,10, \overline{10}, \ldots\)
+  or alternatively labeled by Dynkin coefficients $(p,q) = (1,1), (2,1), (1,2), (3,1), (1,3), (2,2), (4,1), (1,4), \ldots$ with dimensions 
+\begin{equation}
+    d_r = \frac{1}{2}p q(p+q)
+\end{equation}
+
+and for
+
+\begin{equation}
+\begin{aligned}
+& U=R\left(e^{i A}, e^{i B}, e^{-i(A+B)}\right) R^{\dagger} \in D_{(2,1)}(G)
+\end{aligned}
+\end{equation}
+(note class functions\aidx{class functions} only depend on $A$ and $B$, so we can do a rotation to $U$ to diagonalize it and dont care what the rotation matrix $R$ is)
+\begin{equation}
+    \chi_{p,q}(U) = -\frac{i(e^{i p A - i q B} - e^{- i q A + i p B} + e^{-ip(A+B)}(e^{-iqA} - e^{-iqB}) + e^{i q (A+B)}(e^{i p B} - e^{i p A}))}{\underset{s(A,B)}{\underbrace{8 \sin \frac{A-B}{2} \sin \frac{A+2B}{2} \sin \frac{2A+B}{2}}}}
+\end{equation}
+
+e.g.
+\begin{equation}
+    \chi_{2,1} = e^{iA} + e^{iB} + e^{-i(A+B)}
+\end{equation}
+And the measure is
+
+\begin{equation}
+d U=s(A, B) d A d B \quad-\pi \leqslant A, B \leqslant \pi \quad \text { for } U \in SU(3)
+\end{equation}
+
+So the orthonormality condition on characters is
+
+\begin{equation}
+\int \frac{d A d B}{(2 \pi)^{2}} s^{2}(A, B) \chi_{p, q}^{*}(A, B) \chi_{p^\prime, q^{\prime}}(A, B)=\delta_{p p^{\prime}} \delta_{q q^\prime}
+\end{equation}
+
+This leads to very demanding calculations but in the end the results are similar
+
+\begin{equation}
+\sigma=\ln \frac{\beta}{18}+4\left(\frac{\beta}{18}\right)^{4}+12\left(\frac{\beta}{18}\right)^{5}+\ldots
+\end{equation}
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-070.png}{fig-redraw-070.pdf}
+    \caption{A depiction of screening, showing a tube of fundamental plaquettes along the perimeter of the large loop.}
+    \label{fig:screen}
+\end{figure}
+\item Some general notes are in order
+\begin{enumerate}
+    \item The same analysis works for $\mathcal{G} = U(1), Z_2, \ldots$ and in particular linear confinement\aidx{confinement} is seen in the strong coupling limit of these theories
+    \item If we construct a Wilson loop\aidx{Wilson loop} using links in the adjoint representation of $SU(N)$ with components $\mathfrak{U}_{ab} = 2 \operatorname{tr}(U^\dagger T_a U T_b)$, this has perimeter law scaling since tiling the perimeter with a tube of fundamental plaquettes yields $\int \text{d} U U_{ab}U^\dagger_{cd}\mathfrak{U}_{kl} = \frac{2}{N^2 - 1}(T_k)_{ac}(T_l)_{bd} \neq 0$, which means that the potential between adjoint sources is asympotically constant at $R \to \infty$; such sources are screened by gluons\aidx{screening (of adjoint sources)}. Specifically, it is irreps where $p - q \cong 0$ mod $N$ that can be screened, as depicted in Fig.~\ref{fig:screen}
+    
+    \item Similar expressions can be (and have been) performed for other quantities such as 
+    \begin{equation}
+    \langle W(r \times s, t=0) W^*(r \times s, t = \tau)\rangle \underset{\tau \to \infty}{\to} \# \exp(-E_{\text{glueball}} \tau)
+    \end{equation}
+    which allows strong coupling calculation of glueball masses\aidx{glueballs}
+    
+    \item The strong coupling expansion\aidx{expansion!strong-coupling} breaks down at some point so the above is not a proof of confinement in QFT! How it breaks down depends on the gauge group
+    \begin{itemize}
+        \item $U(1)$: at $\beta \sim 1$ there is a phase transition ($1^{st}$ order, see phase diagram\aidx{phase diagram}\aidx{phase diagram!QCD} in Fig.~\Ref{fig:strong_coupling_u1}) from a confining phase to a Coulomb phase\aidx{Coulomb phase} where $V(r) \sim \frac{1}{r} + \text{const}$. Alan Guth proved this has to happen (using a different action) but calculations show where it happens.
+        \item For $SU(2)$ and $SU(3)$ numerical evidence shows no Coulomb phase at any $\beta$, but the strong coupling expansion breaks down at some $\beta_r$ (see phase diagram Fig.~\Ref{fig:strong_coupling_su23}). The transition at $\beta_r$ is infinite order and known as the roughening transition\aidx{roughening transition} and is indicative of discretisation being a dominant effect.
+        \item For $SU(N>3)$ there is a phase transition
+        \item All of this depends on the particular lattice action!
+    \end{itemize}
+\end{enumerate}
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-059.png}{fig-redraw-059.pdf}
+    \caption{The phase diagram for the $U(1)$ theory showing where the strong coupling expansion breaks down due to a first order phase transition.
+    \label{fig:strong_coupling_u1}}
+\end{figure}
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-095.pdf}{fig-redraw-095.pdf}
+    \caption{The phase diagram for the $SU(2)$ and $SU(3)$ theories showing where the strong coupling expansion breaks down due to the roughening transition.
+    \label{fig:strong_coupling_su23}}
+\end{figure}
+\end{itemize}
+
+\section{Gauge equivariant quantities}
+
+L-CNNs
+
+
+% ===========================================================================
+% Gradient flow.  Absorbed from the former Ch.9 (gradient flow and scale
+% setting); it sits here because everything in the topology section that
+% follows depends on having a smoother.
+% ===========================================================================
+\section{Gradient flow}
+\label{sec:gradient-flow}
+
+\todo{Section outline drafted mechanically --- prose, conventions and
+citations still to be written. Delete this note once the section is yours.}
+
+\subsection{The flow equation}
+
+The gradient (or Wilson) flow\aidx{Wilson flow}\aidx{gradient flow|see{Wilson flow}}
+evolves the gauge field in a fictitious fifth ``time'' $t$ of dimension
+length$^2$, along the gradient of the action,
+\begin{equation}
+\label{eq:gradient-flow}
+  \partial_t V_t(x,\mu) = -g_0^2\,\big[\partial_{x,\mu} S_W[V_t]\big]\,V_t(x,\mu),
+  \qquad V_0(x,\mu) = U_\mu(x),
+\end{equation}
+where $\partial_{x,\mu}$ is the Lie-algebra derivative with respect to the link
+$V_t(x,\mu)$. In the continuum this is $\partial_t B_\mu = D_\nu G_{\nu\mu}$, a
+heat equation for the gauge potential up to a gauge term.
+
+\todo{Write: why this is not a field redefinition but a genuine smoothing;
+the diffusion radius $\sqrt{8t}$ and the resulting sense in which the flow is
+an RG-like coarse-graining; the choice of $S_W$ (Wilson vs Symanzik/Zeuthen)
+in Eq.~\eqref{eq:gradient-flow} and the size of the difference; integrators
+(Runge--Kutta, adaptive step size) and the cost.}
+
+\subsection{Flowed observables and renormalisation}
+
+\todo{Write: the L\"uscher--Weisz result that correlation functions of fields
+at positive flow time are finite once the coupling and the boundary fields are
+renormalised --- no further renormalisation is needed. This is the reason the
+flow is useful rather than merely convenient, and it is what licenses the
+scale-setting and topology applications below. Mention the small-flow-time
+expansion and its use for renormalising $T_{\mu\nu}$ and the chiral
+condensate\aidx{chiral condensate}.}
+
+\subsection{Scale setting}
+
+The energy density $E(t) = \tfrac12\,\mathrm{tr}\,G_{\mu\nu}G_{\mu\nu}$ measured
+at flow time $t$ gives dimensionless observables that fix the lattice
+spacing\aidx{lattice spacing}\aidx{scale setting}:
+\begin{equation}
+  t^2\langle E(t)\rangle\Big|_{t=t_0} = 0.3,
+  \qquad
+  t\,\frac{d}{dt}\Big\{t^2\langle E(t)\rangle\Big\}\Bigg|_{t=w_0^2} = 0.3 .
+\end{equation}
+
+\todo{Write: why $t_0$ and $w_0$ are so precise (tiny statistical errors,
+mild $a$-dependence) but not physical --- they must themselves be calibrated
+against an experimental quantity, which connects to the discussion of scale
+setting in Ch.~\ref{ch:data-analysis}. Compare with the static
+potential\aidx{static quark potential} scales $r_0$, $r_1$. The two clover and
+plaquette definitions of $E$ and their different discretisation errors.}
+
+\subsection{Fermion flow}
+
+\todo{Write: L\"uscher's flow for the quark fields, the extra wave-function
+renormalisation $Z_\chi$ that the fermion field does require, and the
+applications (renormalisation of the condensate, of $Z_A$, of the energy
+momentum tensor). Cross-reference Ch.~\ref{ch:lattice-fermions}.}
+
+\subsection{Relation to smearing}
+
+\todo{Write: stout smearing\aidx{smearing!stout} is the integration of
+Eq.~\eqref{eq:gradient-flow} with a finite step, so smearing and flow are the
+same operation at different resolutions; APE and HYP smearing are close
+cousins. This matters below, where all of them are used interchangeably as
+smoothers for the topological charge.}
+
+
+% ===========================================================================
+\section{Topological properties of gauge fields}
+\label{sec:topology}
+
+\todo{Section outline drafted mechanically --- prose, conventions and
+citations still to be written. Delete this note once the section is yours.
+The ordering is: continuum definition $\to$ lattice definitions of $Q$ $\to$
+measuring it $\to$ $\chi_{\rm top}$ and $\theta$ $\to$ sampling it $\to$
+topological objects and confinement $\to$ the one-form-symmetry view.}
+
+\subsection{Topological charge in the continuum}
+
+The $\theta$ term set aside at the start of the chapter is a total derivative,
+so it does not affect the equations of motion, but its integral is a
+topological invariant\aidx{topological charge}:
+\begin{equation}
+\label{eq:Qcont}
+  Q = \int\! d^4x\; q(x), \qquad
+  q(x) = \unverified{\frac{1}{16\pi^2}}\,
+         \epsilon_{\mu\nu\rho\sigma}\,
+         \mathrm{tr}\big[F_{\mu\nu}(x)F_{\rho\sigma}(x)\big] \in \mathbb{Z}.
+\end{equation}
+
+\todo{Write: $Q$ as the second Chern number\aidx{Chern number}, the
+classification $\pi_3(SU(N)) = \mathbb{Z}$ of gauge transformations at
+infinity, and the Bogomolny bound $S \geq 8\pi^2|Q|/g^2$ with equality for
+(anti-)self-dual fields. Check the normalisation in Eq.~\eqref{eq:Qcont}
+against the conventions fixed in \S1 --- the factor differs between the
+$F^a_{\mu\nu}F^a_{\rho\sigma}$ and $\mathrm{tr}\,F F$ forms.}
+
+\todo{Write, briefly: why anyone cares. The $\theta$ term violates $P$ and
+$CP$; the measured neutron electric dipole moment bounds $|\theta| \lesssim
+10^{-10}$; that this is small is the strong $CP$ problem, and the lattice input
+is the matrix element that converts $\theta$ into an EDM. Also the axial
+anomaly\aidx{axial anomaly} and the $\eta'$, taken up in
+Ch.~\ref{ch:spectroscopy}.}
+
+\subsection{Defining $Q$ on the lattice}
+
+There is no unique answer, and the differences are instructive. Three
+constructions are in use.
+
+\todo{Write (i), the \emph{gluonic} or field-theoretic definition: replace
+$F_{\mu\nu}$ in Eq.~\eqref{eq:Qcont} by the clover\aidx{clover term} term
+built from the four plaquettes in the $\mu\nu$ plane at $x$. Cheap, but not
+integer-valued at finite $a$, and it renormalises multiplicatively,
+$Q_{\rm gluonic} = Z(g_0)\,Q + \mathcal{O}(a^2)$, so it is useless without the
+smoothing of \S\ref{sec:topology-measuring}.}
+
+\todo{Write (ii), the \emph{geometric} definition (L\"uscher): interpolate the
+link field to a continuum field on each hypercube and integrate
+Eq.~\eqref{eq:Qcont}. This gives an \emph{exact} integer, but only for fields
+satisfying the admissibility condition below --- which is precisely why
+admissibility is worth introducing. Note that the classification of lattice
+gauge-field topology is complete for $U(1)$ but not for $SU(N)$; see
+Ch.~\ref{ch:chiral-gauge}, where this gap is the obstruction to a
+non-perturbative construction of chiral gauge theories.}
+
+\todo{Write (iii), the \emph{fermionic} definition: for a Ginsparg--Wilson
+operator\aidx{Ginsparg-Wilson relation} the index is exactly integer at finite
+lattice spacing,
+\[
+  Q \;=\; \mathrm{index}\,D \;=\; n_- - n_+
+    \;=\; \unverified{\mathrm{Tr}\Big[\gamma_5\big(1 - \tfrac{a}{2}D\big)\Big]} ,
+\]
+the lattice Atiyah--Singer index theorem\aidx{index theorem} of
+Hasenfratz--Laliena--Niedermayer. This is the cleanest definition and needs no
+smoothing; it is also by far the most expensive. Cross-reference the
+overlap operator\aidx{fermions!overlap} in Ch.~\ref{ch:lattice-fermions}, and
+the zero-mode counting there. Check the sign convention.}
+
+\subsection{Admissibility}
+\label{sec:admissibility}
+
+A gauge field is \emph{admissible}\aidx{admissibility condition} if every
+plaquette is close to the identity,
+\begin{equation}
+\label{eq:admissibility}
+  \big\|\,\Id - U_{\mu\nu}(x)\,\big\| < \epsilon
+  \qquad \text{for all } x,\ \mu,\ \nu .
+\end{equation}
+
+\todo{Write: what Eq.~\eqref{eq:admissibility} buys. (a) The space of
+admissible fields separates into disconnected sectors, so the geometric $Q$ is
+well defined and integer. (b) With $\epsilon < 1/30$ it is the hypothesis of
+the Hern\'andez--Jansen--L\"uscher proof that the overlap operator is local
+--- this is the real reason the condition belongs in a book rather than a
+paper, and it should be stated as such. (c) L\"uscher's admissible action, which
+diverges as the bound is approached and so enforces the condition dynamically,
+at the cost of freezing $Q$ completely (\S\ref{sec:topology-freezing}) and of a
+non-standard continuum limit. Verify the value of $\epsilon$.}
+
+\subsection{Measuring $Q$: smoothing}
+\label{sec:topology-measuring}
+
+\todo{Write: a thermalised configuration is rough at the scale of the cutoff,
+so the gluonic $q(x)$ is dominated by ultraviolet noise; the topological
+content only becomes visible after the short-distance fluctuations are removed.
+Gradient flow (\S\ref{sec:gradient-flow}) is the modern choice because its
+smoothing radius $\sqrt{8t}$ is a controlled, renormalised quantity; cooling
+and APE/HYP/stout smearing do the same job. Emphasise the empirical result
+that all of these agree once matched by smoothing radius, so the definition of
+$Q$ is not a matter of taste. Show the plateau of $Q(t)$ in flow time and the
+approach of the measured values to integers.}
+
+\todo{Figure: histogram of $Q$ over an ensemble at several flow times, showing
+the peaks sharpening onto integers. Good candidate for a generated figure.}
+
+\subsection{Topological susceptibility and $\theta$-dependence}
+
+\begin{equation}
+  \chi_{\rm top}\aidx{topological susceptibility} = \frac{\langle Q^2\rangle}{V}
+  = \int\! d^4x\;\langle q(x)\,q(0)\rangle ,
+\end{equation}
+where the second form needs care: the correlator is a distribution and the
+contact term at $x=0$ must be subtracted.
+
+\todo{Write: the contact-term subtlety, and that the fermionic definition
+avoids it. The expansion of the vacuum energy density,
+\[
+  \frac{E(\theta)-E(0)}{V} = \tfrac12\,\chi_{\rm top}\,\theta^2
+      \big(1 + b_2\theta^2 + \dots\big),
+  \qquad
+  b_2 = \unverified{-\frac{\langle Q^4\rangle - 3\langle Q^2\rangle^2}
+                          {12\,\langle Q^2\rangle}} ,
+\]
+so that $\chi_{\rm top}$ and $b_2$ are the second and fourth cumulants of the
+$Q$ distribution. Large-$N$ counting: $\chi_{\rm top} = \mathcal{O}(N^0)$,
+$b_2 = \mathcal{O}(N^{-2})$. The sign problem\aidx{sign problem} at real
+$\theta$ and analytic continuation from imaginary $\theta$. Quote the pure-gauge
+$SU(3)$ value of $\chi^{1/4}_{\rm top}$ and its quark-mass suppression in QCD,
+$\chi_{\rm top} \to \Sigma\,\bar{m}$ at small quark mass. Cross-reference
+Witten--Veneziano in Ch.~\ref{ch:spectroscopy}, which currently uses
+$\chi_\infty$ without a definition upstream.}
+
+\todo{Write: $\chi_{\rm top}(T)$ at high temperature, where the dilute
+instanton gas predicts a power law, and its role in fixing the axion mass ---
+a live application worth a paragraph. Cross-reference
+Ch.~\ref{ch:thermodynamics}.}
+
+\subsection{Sampling topology}
+\label{sec:topology-freezing}
+
+\todo{Write: this is the practical issue a student will actually hit. In the
+continuum limit the sectors decouple, so the Monte Carlo
+autocorrelation\aidx{autocorrelation} time of $Q$ grows roughly like $a^{-5}$
+and $Q$ freezes on fine lattices --- an ergodicity failure that biases every
+observable, not just topological ones. Remedies: open boundary
+conditions\aidx{boundary conditions!open} in time (L\"uscher--Schaefer), which
+remove the barriers at the price of translation invariance and a boundary
+region that must be discarded; parallel tempering in the boundary condition;
+metadynamics; instanton-insertion updates. Connect to the remark in
+Ch.~\ref{ch:scalar-fields} that Dirichlet boundary conditions allow topology to
+change, and to the algorithm discussion in Ch.~\ref{ch:monte-carlo}.}
+
+\todo{Write: fixed-topology methods. If $Q$ is frozen one can still work at
+fixed $Q$ and reconstruct $\theta$-vacuum quantities, with $1/V$ corrections
+controlled by $\chi_{\rm top}$ (Brower--Chandrasekharan--Negele--Wiese;
+Aoki--Fukaya--Hashimoto--Onogi). Give the leading correction formula.}
+
+\subsection{Topological objects and confinement}
+
+\todo{Write: instantons\aidx{instantons}. The BPST solution, its size modulus
+$\rho$ and the semiclassical measure $d\rho/\rho^5\,\rho^{b_0}$ whose infrared
+divergence is why semiclassics fails in four dimensions; the instanton liquid
+picture; what smoothing actually reveals on the lattice and the honest caveat
+that ``counting instantons'' depends on the smoothing radius. Calorons and the
+KvBLL constituent-monopole picture at finite temperature belong with
+Ch.~\ref{ch:thermodynamics}.}
+
+\todo{Write: centre vortices\aidx{centre vortices}. Definition by centre
+projection after maximal centre gauge fixing; the vortex density and its
+scaling; the striking removal experiments --- deleting the vortices
+simultaneously destroys the string tension\aidx{string tension}, the chiral
+condensate and the topological charge, which is the strongest single piece of
+evidence for the picture. Set this against abelian
+monopoles\aidx{monopoles} in maximal abelian gauge and the dual-superconductor
+scenario, and note the gauge-dependence of both constructions. Casimir versus
+centre scaling of the $k$-string tensions as the observable that discriminates
+between them.}
+
+\subsection{Centre symmetry as a one-form symmetry}
+
+\todo{Write: the modern framing, which unifies most of the above. Pure
+$SU(N)$ gauge theory has an exact $\mathbb{Z}_N$ one-form
+symmetry\aidx{centre symmetry} acting on Wilson loops; the Polyakov
+loop\aidx{Polyakov loop} is its order parameter and confinement is its
+unbroken phase (cross-reference Ch.~\ref{ch:thermodynamics}). 't~Hooft twisted
+boundary conditions\aidx{boundary conditions!twisted} realise the sectors of
+this symmetry on the lattice and carry fractional topological charge $Q \in
+\mathbb{Z}/N$; the mixed 't~Hooft anomaly between centre symmetry and the
+$2\pi$ periodicity of $\theta$ then constrains the phase diagram. This is the
+language the current literature uses, and it makes centre vortices and the
+$\theta$ term two aspects of one structure rather than two topics. Forward
+reference to Ch.~\ref{ch:lattice-bsm} for adiabatic continuity and semiclassics
+on $\mathbb{R}^3 \times S^1$.}

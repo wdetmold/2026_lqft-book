@@ -103,7 +103,7 @@ same construction on $\mathbb{Z}^4$ yields no chords at all.
 ## Kähler–Dirac fermions on $D_4$
 
 Written up as a flagged remark at the end of the DK section of
-`chapters/ch06-lattice-fermions/staggered.tex`; code in `tools/kd_d4/`,
+`chapters/ch05-lattice-fermions/staggered.tex`; code in `tools/kd_d4/`,
 figure `figures/fig-d4-kahler-dirac.pdf`.
 
 **The textbook construction is hypercubic in two independent places.**
@@ -154,6 +154,62 @@ $\mathbb{Z}^4$, and its classes split as $1$ (origin) $+\ 12$ (antipodal link
 pairs) $+\ 3$ (second shell, permuted by triality) — matching the 0-, 1- and
 4-cell counts per site. It is the 32 triangles and 24 tetrahedra that have no
 counterpart.
+
+## Topological charge: the Phillips–Stone construction on $D_4$
+
+*Research note. Deliberately **not** in the manuscript — obstruction theory and
+$\pi_3$ are past what the thread assumes, and the payoff is an observation
+rather than something a student derives. Only the combinatorial core became an
+exercise, `ex:dd-holes` in Ch. 2. Code: `tools/d4_phillips_stone.py`.*
+
+The integrality argument is **cellular, not simplicial**. For each 4-cell $c$
+one needs a trivialisation over the vertices, a lift of every 2-cell holonomy
+(this is what admissibility buys), an extension over the 3-cells (free, since
+$\pi_2(G)=0$), and then the class in $\pi_3(G)=\mathbb{Z}$ of the map
+$\partial c \simeq S^3 \to G$. Nothing requires the 4-cells to be simplices —
+which matters, because on $D_4$ they cannot be.
+
+| | $D_4$ (16-cell) | $\mathbb{Z}^4$ (tesseract) |
+|---|---|---|
+| 5-cliques in the cell (⇒ 4-simplices) | **0** | — |
+| boundary | 16 tetrahedra, **all edges are links** | 8 cubes; needs face + body diagonals |
+| subdivision edges | 65 edges, 33 diagonals (Kuhn) | — |
+| boundary tetrahedra per unit volume | **24** | 48 |
+| 2-cells bounding one 4-cell | 32 triangles | 24 squares |
+
+- **No triangulation exists.** Eight vertices in four antipodal classes, so any
+  five contain an antipodal pair (squared length 4, second shell): pigeonhole.
+  Coning from one vertex needs just one long diagonal and gives eight
+  4-simplices of volume $1/12$, filling $2/3$.
+- **But none is needed.** $\partial(\text{16-cell})$ is already a simplicial
+  $S^3$ whose every edge is a gauge link, and its 1-skeleton $K_{2,2,2,2}$ is
+  connected without antipodal edges, so even the spanning-tree gauge fixing
+  stays on real links. The whole construction lives on links one already has.
+- **Equivariance.** The affine stabiliser of a 16-cell is transitive on its 8
+  vertices (orbit 8 of 8), so any coning triangulation breaks $\mathrm{Aut}(D_4)$
+  — moot, since the boundary construction never picks a vertex and is manifestly
+  $W(F_4)$-covariant. The obstruction to the naive route is exactly what the
+  right route avoids.
+- **Admissibility, with a caveat worth remembering.** At equal covolume a $D_4$
+  triangle encloses area $0.612$ against the plaquette's $1.0$, so each
+  constraint is $1.63\times$ weaker; but there are 32 triangles per site against
+  6 plaquettes (16 vs 6 per unit volume, i.e. $1.63\times$ more 2-cell area —
+  the two factors coinciding is numerical, not a theorem), sampling far more
+  planes than the six coordinate ones. Measured on ten smooth random $U(1)$
+  fields, the amplitude at which the first cell reaches $\pi$ gives a net gain
+  of only **$1.27 \pm 0.21$**. The area argument alone overstates it by ~30%.
+
+### Not done
+
+- The end-to-end test: a BPST instanton on $D_4$, three local degrees per site
+  summing to 1. Needs the degree of a simplicial map $S^3 \to SU(2)$, i.e.
+  signed volumes of geodesic tetrahedra (Schläfli). Required before any of this
+  could be published.
+- Whether Lüscher's $\epsilon$ has the same *form* for triangles. The comparison
+  above is leading order in the enclosed area, not his actual bound.
+- Whether the field-theoretic density $q(x)$ — as opposed to the integer $Q$ —
+  inherits the isotropic $\mathcal{O}(a^2)$ of the rest of the thread. This is
+  the one worth computing, and the one I would bet on.
 
 ## Verified inputs
 

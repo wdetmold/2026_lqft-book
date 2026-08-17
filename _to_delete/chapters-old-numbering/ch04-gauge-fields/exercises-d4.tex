@@ -1,0 +1,155 @@
+% ---------------------------------------------------------------------------
+% The D_4 thread, part II: gauge fields.
+% Figures are ready; the exercises themselves are still to be drafted.
+% ---------------------------------------------------------------------------
+\section*{Exercises: the \texorpdfstring{$D_4$}{D4} lattice, II}
+
+Continuing the sequence begun in Chapter~\ref{ch:scalar-fields}, we put a gauge
+field on $D_4$. A link variable $U_e(x)\in SU(N)$ lives on each of the $24$
+nearest-neighbour bonds at a site, so there are $12$ independent link
+directions per site against the hypercubic lattice's $4$
+(Fig.~\ref{fig:d4-links}).
+
+The structural point that organises everything in this chapter is that $D_4$ is
+\emph{not} bipartite. Two neighbours $e$ and $f$ of a site are themselves
+joined by a link whenever $e-f$ is again a lattice vector, and on $D_4$ this
+happens $96$ times at every site: the elementary Wilson loop is a
+\emph{triangle} of three links, not the four-link plaquette familiar from
+$\mathbb{Z}^4$. Figure~\ref{fig:d4-plaquettes} makes this visible by drawing
+the neighbours of a site as the vertices of the $24$-cell: every chord of that
+polytope closes a triangular plaquette with the central site, whereas the same
+construction on $\mathbb{Z}^4$ produces no chords at all.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig-d4-links.pdf}
+  \caption{Link variables and elementary loops, drawn in dimensions one can
+    see. (a) a site of $D_3=$ fcc carries $12$ links; in $d=4$ there are $24$,
+    i.e.\ $12$ independent directions. (b) because the lattice is not
+    bipartite, the minimal gauge-invariant loop is a triangle of three links.
+    (c) the cubic lattice for contrast: bipartite, so the minimal loop is the
+    four-link plaquette. (d) loop inventory per site; all counts obtained by
+    direct enumeration.\label{fig:d4-links}}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig-d4-plaquettes.pdf}
+  \caption{The neighbours of a site, projected onto the Coxeter plane as in
+    Fig.~\ref{fig:d4-conventions}, read as the plaquette structure of the gauge
+    theory. Radial lines are the link variables $U_e(x)$; a chord joins two
+    neighbours exactly when they are themselves linked, so each chord closes a
+    triangular plaquette with the central site. (a) $D_4$: $24$ links and $96$
+    triangles, one highlighted. (b) the same picture in the body-centred
+    convention --- the $8+16$ split of link types is a property of the
+    coordinates, not of the gauge theory. (c) $\mathbb{Z}^4$: eight links and
+    no chords whatsoever.\label{fig:d4-plaquettes}}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\linewidth]{fig-d4-octants.pdf}
+  \caption{Why the hypercubic checkerboard has no analogue here, and what
+    replaces it. The $24$ link directions fall into three classes of eight,
+    indexed by the three ways of splitting $\{1,2,3,4\}$ into two complementary
+    coordinate planes. (a) every chord --- i.e.\ every triangle --- joins two
+    different classes. (b) each triangle therefore carries exactly one link of
+    each class, so a whole class may be updated at once.%
+    \label{fig:d4-octants}}
+\end{figure}
+
+\problemdraft{\label{ex:d4-wilson}\textbf{The triangular plaquette action.}
+\begin{enumerate}
+\item[(a)] Write down the analogue of the Wilson action built from the
+  elementary triangles of $D_4$,
+  $S=\beta\sum_{\triangle}\bigl(1-\tfrac1N\mathrm{Re}\,\mathrm{Tr}\,U_\triangle\bigr)$,
+  and show that it is gauge invariant.
+\item[(b)] Expand $U_\triangle$ for smooth fields and verify that the classical
+  continuum limit is $\tfrac14 F_{\mu\nu}F_{\mu\nu}$. Fix the relation between
+  $\beta$ and $g^2$, given $32$ triangles per site.
+\item[(c)] The strong-coupling expansion of the hypercubic theory contains only
+  even powers of $\beta$. What changes here, and why?
+\item[(d)] $D_4$ also carries $264$ planar four-link rhombi through each site,
+  of which $72$ are right-angled. Explain why ``rectangle improvement'' is not
+  simply the hypercubic programme with different coefficients, and use the
+  $F_4$ orbit counting of Exercise~\ref{ex:d4-improve} to say how many
+  independent couplings a given order of improvement needs.
+\end{enumerate}}
+{(a) Under $U_e(x)\to\Omega(x)U_e(x)\Omega^\dagger(x+e)$ the ordered product
+around any closed loop conjugates, $U_\triangle\to\Omega U_\triangle
+\Omega^\dagger$, so its trace is invariant. Nothing here uses the loop being a
+square.
+
+(b) With $U_e=\exp(iaA\!\cdot\!e)$ and the Baker--Campbell--Hausdorff formula,
+the leading nonvanishing term for a triangle spanned by $e$ and $f$ is
+$\mathrm{Re}\,\mathrm{Tr}\,U_\triangle \simeq N-\tfrac14 a^4
+\mathrm{Tr}\,(e_\mu f_\nu F_{\mu\nu})^2 + \dots$, and summing over the $32$
+triangles per site with the moment identities of
+Exercise~\ref{ex:d4-prop} produces $\tfrac14F_{\mu\nu}F_{\mu\nu}$ times a
+geometric factor. Carrying the factor through fixes $\beta$ in terms of
+$2N/g^2$; the exercise is to do the bookkeeping.
+
+(c) $D_4$ is not bipartite (Exercise~\ref{ex:dd-basic}c), so closed loops of odd
+length exist --- the triangles themselves are the shortest. The
+strong-coupling series therefore contains odd powers, and the leading term is
+$\mathcal{O}(\beta)$ rather than $\mathcal{O}(\beta^2)$. The same fact showed up
+in the hopping expansion for scalars.
+
+(d) The hypercubic $1\times2$ rectangle is not among the loop shapes natural to
+$D_4$: the four-link loops here are rhombi with $60^\circ$ or $90^\circ$
+angles, and only $72$ of the $264$ are right-angled. Because each shell of
+$D_4$ is a single $\mathrm{Aut}(D_4)$ orbit, a symmetric action assigns one
+coupling per shell rather than one per hypercubic orbit, so the counting is
+different --- fewer parameters, but a different basis of loops.}
+
+\problemdraft[part (c) asserts a three-sweep update; check the staple argument carefully before relying on it in production code]{\label{ex:d4-checkerboard}\textbf{No checkerboard, but three octants.}
+For a heat-bath or overrelaxation update one wants sets of links that never
+share a plaquette, so that a whole set can be refreshed at once.
+\begin{enumerate}
+\item[(a)] Show that on $\mathbb{Z}^4$ the links of a fixed direction $\mu$ at
+  sites of a fixed parity form such a set, giving the familiar even/odd
+  checkerboard. Why does colouring by direction alone fail there?
+\item[(b)] Show that no two-colouring of the $D_4$ links can work, whatever
+  rule you use.
+\item[(c)] Split the $24$ link directions into the three classes
+  \[
+    A=\{(12),(34)\},\qquad B=\{(13),(24)\},\qquad C=\{(14),(23)\},
+  \]
+  labelled by the plane in which the two nonzero components sit. Show that two
+  vectors of the same class never sum to a minimal vector, hence that every
+  triangle carries exactly one link of each class
+  (Fig.~\ref{fig:d4-octants}). Deduce a three-sweep update, and note what it
+  does \emph{not} need.
+\item[(d)] Show that $\mathrm{Aut}(D_4)$ permutes the three classes as $S_3$,
+  and identify that $S_3$.
+\end{enumerate}}
+{(a) A $\mu\nu$ plaquette contains $U_\mu(n)$ and $U_\mu(n+\hat\nu)$, whose
+sites have opposite parity, so same-direction same-parity links never meet in a
+plaquette. Direction alone fails precisely because a plaquette contains
+\emph{two} links of each of its two directions.
+
+(b) A triangle consists of three links that pairwise share a plaquette, so the
+conflict graph contains $3$-cliques and its chromatic number is at least three.
+No two-colouring exists --- this is the graph-theoretic shadow of
+non-bipartiteness.
+
+(c) Two vectors in the same class either lie in the same plane, in which case
+their sum is $(\pm2,0,\dots)$ or $0$, or in complementary planes, in which case
+their sum has four nonzero entries and $|x|^2=4$. Neither is a minimal vector,
+so no triangle contains two links of one class. Since a triangle's three edge
+vectors are $e$, $f-e$, $f$ with all three minimal, each triangle takes one from
+each class. Hence all links of a class are pairwise non-conflicting and may be
+refreshed simultaneously: three sweeps per update. Note what is absent --- the
+colouring depends only on the link \emph{direction}, not on the site, so unlike
+the hypercubic checkerboard no site parity enters. (Enumeration confirms: of
+the $96$ triangles through a site, none has two links of one class.)
+
+(d) The three classes are the three ways of pairing the four axes, on which
+coordinate permutations act as $S_4\to S_3$. Enumerating $\mathrm{Aut}(D_4)$
+shows the subgroup fixing all three classes has order $192=|W(D_4)|$, so the
+induced group is $\mathrm{Aut}(D_4)/W(D_4)\cong S_3$: the three classes are
+precisely the triality triple.}
+
+\todo{Still to draft for this chapter: the pure-gauge transfer matrix given
+that no straight temporal bond exists; the bulk phase transition and its order;
+gauge fixing and Gribov copies on a non-bipartite lattice.}

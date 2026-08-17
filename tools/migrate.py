@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""One-time migration: Overleaf lecture-notes subfiles -> book chapter layout.
+"""[HISTORICAL] One-shot migration, already run. The chapter directory names
+below are the PRE-RENUMBERING ones and no longer exist; do not re-run this.
+
+One-time migration: Overleaf lecture-notes subfiles -> book chapter layout.
 
 Rules
 -----

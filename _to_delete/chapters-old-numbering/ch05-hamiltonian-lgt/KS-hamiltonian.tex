@@ -1,0 +1,177 @@
+\section{Transfer matrix and Kogut-Susskind Hamiltonian}
+
+\begin{itemize}
+  \item The QM interpretation of LGT is provided by defining the Hilbert space and the transfer matrix / Hamiltonian.
+  \begin{itemize}
+      \item Note that $S_G[U]$ is reflection positive\aidx{reflection positivity} so a Hermitian Hamiltonian and Hilbert space exist
+      \item A basis for the Hilbert space can be constructed from eigenstates of operators corresponding to spatial link variables\aidx{link variables}
+      \begin{equation}
+          \hat{U}_m(\vec{n})|U\rangle = U_m(\vec{n})|U\rangle \qquad m = 1,\ldots, d, \quad \vec{n}\in\Lambda_d
+      \end{equation}
+      Note that this is a matrix equation in the group $G$. If links are coordinatised by a set of real parameters $\alpha_k(\vec{n})$ the above is equivalent to labeling the bases states $|\alpha\rangle$ such that $\hat{\alpha}_k(\vec{n})|\alpha\rangle = \alpha_k(\vec{n}) |\alpha\rangle$.
+      \item These states are orthonormal and complete
+      \begin{align}
+          \langle U^\prime|U\rangle = \delta(U - U^\prime) &= \prod_{\vec{n}, m}\delta(U_m(\vec{n}),U^\prime_m(\vec{n})) \nonumber \\
+          1 &= \int\mathcal{D}U |U\rangle \langle U |.
+      \end{align}
+      \item Our goal is to express the partition function\aidx{partition function} as
+      \begin{equation}
+      Z = \int \mathcal{D}U e^{S_G[U]} = \operatorname{Tr}(\hat{T}^{N_t})
+      \end{equation}
+      Now
+      \begin{equation}
+          \operatorname{Tr}(\hat{T}^{N_t}) = \prod_{t=0}^{N_t - 1}\left[\int \prod_{\vec{n}, m}\text{d}U_m(\vec{n},t)\right]\langle U_{t+1}| \hat{T} | U_t \rangle,
+      \end{equation}
+      where the states are states in the timeslice denoted by the respective subscript.
+      \item To find $\hat{T}$ , we need to break the action up into various pieces involving or not temporal links. Note that
+      \begin{align}
+          S_G[U] &= \# \sum_n \sum_{\mu<\nu} \operatorname{Re}\operatorname{Tr}P_{\mu \nu}(n)\nonumber \\
+          &= \frac{2}{g^2}\left( \frac{a}{a_t}\sum_n \sum_{m=1}^d \operatorname{Re}\operatorname{Tr} P_{m4}(n) + \frac{a_t}{a}\sum_n \sum_{m=1}^d\sum_{l < m}\operatorname{Re}\operatorname{Tr}P_{lm}(n)\right)
+      \end{align}
+      where the first term comes from time-space plane plaquette\aidx{plaquette}s, the second term comes from plaquettes in spatial planes, and we make the lattice spacing\aidx{lattice spacing} in the $t$ direction different. We could also write
+      \begin{equation}
+          = \frac{\beta}{N}\{\xi\sum_{P_t}\operatorname{Re}\operatorname{Tr}(P_t) + \frac{1}{\xi} \sum_{P_s}\operatorname{Re}\operatorname{Tr}(P_s) \}
+      \end{equation}
+      where $\xi=a/a_t$ is the anisotropy\aidx{anisotropic lattice} and the sums are over the space-time plaquettes and teh space-space plaquettes, respectively..
+      \item Comparison with the above shows
+      \begin{equation}
+          \hat{T} = \exp\left(-\frac{a_t}{2}\hat{W}\right) \hat{T}_K^\prime \exp\left(-\frac{a_t}{2}\hat{W}\right),
+      \end{equation}
+      where
+      \begin{equation}
+          \hat{W} = \frac{-2}{g^2 a}\sum_{P_s}\operatorname{Re}\operatorname{Tr}(P_s),
+      \end{equation}
+      and
+      \begin{equation}
+      % [migrated] duplicate label eq:99 removed (eq:transf_gauge kept)
+          \langle U_{t+1} | \hat{T}_K^\prime | U_t \rangle = \prod_{\vec{n}} \prod_{m=1}^d \int \text{d} U_4(\vec{n},t) \exp{\left[\frac{2a}{g^2 a_t}\operatorname{Re}\operatorname{Tr} \{ U_m(\vec{n},t)\underset{\widetilde{U}^\dagger_m(\vec{n},t+1)}{\underbrace{U_4(\vec{n}+\hat{m},t) U^\dagger_m(\vec{n},t+1) U^\dagger_4(\vec{n},t)}}\} \right]}
+          \label{eq:transf_gauge}
+      \end{equation}
+      \begin{figure}
+          \centering
+          \redrawcompare{fig-notes-063.png}{fig-redraw-063.pdf}
+          \caption{An illustration corresponding to the exponent in Eq.~\eqref{eq:transf_gauge}.}
+          \label{fig:enter-label}
+      \end{figure}
+      Now, the term $U_4(\vec{n}+\hat{m}, t)U_m^\dagger(\vec{n},t+1)U_4^\dagger(\vec{n},t)$ can be viewed as a gauge transformation of all the spatial links on timeslice $t+1$ by $\Omega(\vec{n}) = U_4(\vec{n}, t)$ and all such time-independent gauge transforms are integrated over by $\int\prod_{\vec{n}}\text{d}U_4(\vec{n},t)$ in Eq.~\eqref{eq:transf_gauge}.
+
+      Thus if $|U_{t+1}\rangle$ corresponded to a state that was gauge variant at site $\vec{n}$ or $\vec{n} + \hat{m}$ then the integral over the gauge group will vanish
+      \begin{equation}
+          \Rightarrow \text{only gauge invariant states exist in the Hilbert space}\nonumber
+      \end{equation}
+      Projection to the gauge invariant space of physical states can be expressed as 
+      \begin{equation}
+          \hat{P}_0 = \int \prod_{\vec{n}}\text{d}\Omega(\vec{n}) \hat{D}(\Omega),
+      \end{equation}
+      where $\hat{D}(\Omega)|U\rangle = |U^{\Omega^\dagger}\rangle$ is the gauge transformed state (and $\hat{D}(\Omega)$ is the operator that applies the gauge transform $\Omega$). The operators $\hat{D}(\Omega)$ provide a unitary representation of the group of time independent gauge transforms on Hilbert space. Clearly $\hat{P}_0$ commutes with the potential $\hat{W}$ above as that involves purely spatial links. 
+
+      The kinetic operator can be written as $\hat{T}_K^\prime = \hat{T}_K \hat{P}_0 (=\hat{P}_0 \hat{T}_K)$ with
+      \begin{equation}
+          \langle U_{t+1}| \hat{T}_K | U_t \rangle = \prod_{\vec{n}} \prod_{m=1}^d \exp \left[\frac{2a}{g^2 a_t} \operatorname{Re}\operatorname{Tr}\{ U_m(\vec{n}, t)U^\dagger_m(\vec{n}, t+1)\} \right].
+          \label{eq:TkME}
+      \end{equation}
+      Note that this is the form you would immediately get in temporal gauge\aidx{gauge fixing!temporal}. $\hat{T}_K$ is a positive operator\aidx{transfer matrix} and defines a Hermitian kinetic operator $\hat{T}_K = \exp\{-a_t \hat{K}\}$ and so the full transfer operator\aidx{transfer operator} can be written as
+      \begin{equation}
+          \hat{T} = \hat{P}_0 e^{- a_t \hat{H}} = e^{-a_t \hat{H}}\hat{P}_0.
+      \end{equation}
+  \end{itemize}
+  \item To construct the Hamiltonian we consider the unitary operators that implement changes to a particular link $(\vec{n},j)$ on a timeslice
+  \begin{equation}
+      R_{\vec{n} j}(\Omega)|U\rangle=\mid U^{\prime} \rangle_{\vec{n} {j}}
+  \end{equation}
+  such that
+  \begin{equation}
+      \hat{U}_k(\vec{m})|U^\prime\rangle_{\vec{n} \jmath} = \begin{cases}U_{k}(\vec{m})\left|U^{\prime}\right\rangle_{\vec{n}, \jmath} & \text { elsewhere } \\ \left.\Omega U_{k}(\vec{m}) | U^{\prime}\right\rangle_{\vec{n} \jmath} & \text { for } k=\jmath \text { \& } \vec{m}=\vec{n}\end{cases}
+  \end{equation}
+  i.e. a transformation on the link $U_\jmath(\vec{n})$ only, where $|U\rangle$ is a field eigenstate on a timeslice.
+    Note the above equation is written in terms of the abstract group action $\Omega\circ U_k(\vec{m})$ but more concretely the link $U_m(\vec{n})\to D_\Omega(\vec n) U_m(\vec{n}) D_\Omega^\dagger(\vec n+ \hat m)$ where the $D_\Omega(\vec n)$ are matrices in the fundamental representations of $G$. Note also that $R_{\vec{n} \jmath}(\Omega)$ only alters the $(\vec n,j)$ link.
+
+  
+  \begin{itemize}
+      \item Clearly
+      \begin{equation}
+       R_{\vec{n} \jmath}(\Omega) R_{\vec{n} \jmath}\left(\Omega^{\prime}\right)=R_{\vec{n} \jmath}\left(\Omega \Omega^{\prime}\right)
+       \end{equation}
+       and so these operators furnish a representation of $G$ which is unitary because  the invariance of the measure\aidx{Haar measure} (See Creutz PRD 15(1977) 1128 for a reference) guarantees that the inner product is unchanged
+       \begin{align*}
+           \langle \phi | \psi \rangle &= \int \mathcal{D}U\langle \phi | U \rangle \langle U |\psi \rangle = \int \mathcal{D}U \phi^*(U) \psi(U)\\
+           &= \int \mathcal{D}(VU)\langle \phi | U \rangle \langle U | \psi \rangle \\
+           &= \int \mathcal{D} U \langle \phi | V^\dagger U \rangle \langle V^\dagger U | \psi \rangle = \int \mathcal{D}U \phi^*(V^\dagger U)\psi(V^\dagger U) \\
+           &= \int \mathcal{D} U \phi_V^*(U) \psi_V(U) \\
+           &= \langle \phi_V | \psi_V \rangle
+       \end{align*}
+       \item The $\hat{R}_{\vec{n}j}$ ``translate'' the variable $U_\jmath(\vec{n})$ in group space and is generated by the canonically conjugate momenta to the links which will be introduced below.
+       \item Now the full $\hat{T}$ can be written as
+       \begin{equation}
+           \hat{T} = \left[ \prod_{\vec{n} \jmath} \int \text{d}\Omega \hat{R}_{\vec{n}\jmath}(\Omega) \exp \left[\frac{2a}{g^2 a_t}\operatorname{Re}\operatorname{Tr}[\Omega] \right]\right] \exp \left[\frac{2 a_t}{g^2 a}\sum_{P_s}\operatorname{Re}\operatorname{Tr}(P_s) \right]\hat{P}_0
+       \end{equation}
+       To see this, take the matrix element of one of the terms in the first bracket
+       \begin{align*}
+           \langle U^\prime|\int\text{d}\Omega \hat{R}_{\vec{n}\jmath}(\Omega) \exp[\alpha \operatorname{Re}\operatorname{Tr}[\Omega]] |U\rangle
+           &= \int \text{d}\Omega \exp[\alpha \operatorname{Re}\operatorname{Tr}[\Omega]]\langle U^\prime | \hat{D}_{\vec{n} \jmath}(\Omega)|U\rangle \\
+           &= \int \text{d}\Omega \exp[\alpha \operatorname{Re}\operatorname{Tr}[\Omega]]\langle U^\prime | \Omega U \rangle \\
+           &= \exp[\alpha \operatorname{Re}\operatorname{Tr}[U U^{\dagger \prime}]]
+       \end{align*}
+       which is the form in Eq.~\eqref{eq:TkME} (note we used that $\langle U^\prime | \Omega U \rangle =\delta(\Omega-U^\prime U^\dagger)$).
+       \item We can parameterize the fundamental representation of group elements $\Omega$ in terms of $\Omega = \exp(i \omega_a T_a)$ and write the Haar measure in terms of the $\omega_a$
+       \begin{equation}
+           \text{d}\Omega = J(\omega) \prod_a \text{d}\omega_a
+       \end{equation}
+       where the Jacobian can be written down for a given group $G$; $J(\omega)$ must be regular near $\omega_a = 0$ and $J(\omega) = J(-\omega)$.
+       \item Since the $\hat{R}_{\vec{n}j}$ give a representation of $G$, they can be written in terms of generators for that representation
+       \begin{equation}
+           \hat{R}_{\vec{n}j}(\Omega) = \exp(i \omega_a \hat{l}_{\vec{n}j}^a)
+       \end{equation}
+       where since $\hat{R}_{\vec{n}j}$ are translations in the $U_{\vec{n}j}$ variables, $\hat l_{\vec{n}j}$ are canonical momentum operators.
+
+       They satisfy
+       \begin{align}
+           [\hat l_{\vec{n}j}^a, \hat l_{\vec{m}k}^b] &= i f^{abc}\hat l_{\vec{n}j}^c \delta_{\vec{n},\vec{m}}\delta_{j k} \\
+           [\hat l_{\vec{n}j}^a, \hat U_{\vec{m}k}] &= - T^a \hat U_{\vec{n}j} \delta_{\vec{n}, \vec{m}}\delta_{j k}\\
+           [\hat l_{\vec{n}j}^a, \hat U_{\vec{m}+\hat{k},-k}] &=\hat U_{\vec{m}+\hat{k},-k}T^a \delta_{\vec{n},\vec{m}} \delta_{j k}\\
+           [\hat l^2_{\vec{n}j}, \hat l^a_{\vec{m}k}] &= [\hat l^2_{\vec{n}j}, \hat R_{\vec{m}k}] = 0 
+       \end{align}
+       where $\hat l^2_{\vec{n}j} = \sum_a \hat l_{\vec{n} j}^a$ is quadratic Casimir
+       and  the Casimir doesn't depend on link direction, i.e.
+       \begin{equation}
+           \hat l^2_{\vec{n}j} = \hat l^2_{\vec{n}+\hat{j},-j}
+       \end{equation}
+       The operators for different links commute with each other, and the $\hat l_{\vec{n}j}^a$ are differential operators on the group parameters.
+       \item Now using this
+       \begin{equation}
+        \hat{T}=\left[\prod_{\vec{n}j} \int \prod_{a} d \omega^{a} J(\omega) e^{\left(\omega^{b} \hat l^b_{\vec{n} j}\right)}  \exp \left\{\frac{2 a}{g^2 a_{t}} \operatorname{Tr}\left(\cos \left(\omega^{b} T^{b}\right)\right)\right\}\right] \exp \left[\frac{2 a_{t}}{g^{2} a} \sum_{P_{s}} \operatorname{Re} \operatorname{Tr}\left(P_{s}\right)\right] \hat{P}_0
+        \end{equation}
+        and as $a_t \rightarrow 0$ this is dominated by $|\omega|$ near $0$ so as to maximize
+        \begin{equation}
+            \operatorname{Tr} \cos (\omega T) = N - \frac{1}{4}\omega^2 + \mathcal{O}(\omega^4),
+        \end{equation}
+        where this holds for any $SU(N)$.
+        \item The group integrals above are Gaussian in the $\omega \rightarrow 0$ region and easily integrated to give
+        \begin{equation}
+        \hat{T}=X \exp \left[-a_t\left\{\frac{g^{2}}{2 a} \sum_{\vec{n},j} \hat{l}_{\vec{n}j}^{2}+\frac{2}{g^{2} a} \sum_{P_{S}} \operatorname{Re} \operatorname{Tr}\left[\hat{P}_{S}\right]\right\}\right] \hat{P}_{0}
+        \end{equation}
+        where $X$ is an irrelevant constant and $\hat{H}_{KS}$, the contents of the $\{ \}$, is defined to be the Kogut-Susskind Hamiltonian\aidx{Kogut-Susskind Hamiltonian}.
+        \item The first term contains the canonical momenta and taking $a \rightarrow 0$
+        \begin{align*}
+            \hat{H}_{KS} &= \sum_{\vec{n}} \left( \frac{g^2}{2} \sum_j \hat{\Pi}_j^2 + \frac{1}{4 g^2} \sum_{l,m = 1}^d \hat{F}_{lm}^2\right)\\
+            &= \sum_m\left(\frac{1}{2}\hat{E}^2 + \frac{1}{2}\hat{B}^2\right)
+        \end{align*}
+        with $E_i = F_{0i} = g \frac{\partial}{\partial t}A_i$ and $B_i = \frac{1}{g} \epsilon_{ijk}F_{jk}$ since $\Pi_j = \frac{\delta L}{\delta \dot{A}_j} = \frac{1}{g^2} F_{0j}$.
+        \item The temporal links in $S$ gave us the condition that physical states are gauge invariant under time-independent gauge transformations but there is still redundancy to such gauge transformations in $\hat{H}_{KS}$; alternatively, temporal gauge is not a complete gauge fixing.
+
+        The operator to perform a time-indep gauge transformation  at site $\vec{n}$ is
+        \begin{equation}
+            \hat J_{\vec{n}}(\Omega) = \prod_j \hat{R}_{\vec{n}\jmath}(\Omega),
+        \end{equation}
+        where the product is over all $\pm$ directions around site $\vec{n}$.
+
+        All physical states should be invariant under this operation
+        \begin{align*}
+            \hat J_{\vec{n}}(\Omega)|\psi_{\text{phys}}\rangle &= |\psi_{\text{phys}}\rangle \quad \forall \vec{n}, \Omega\\
+            \Rightarrow \sum_j &\hat l_{\vec{n} j}^a |\psi_{\text{phys}}\rangle = 0
+        \end{align*}
+        which says that the sum of each color of electric fluxes into a site $\vec{n}$ vanishes. This is a discrete rendition of Gauss's Law\aidx{Gauss's law}.
+        \item Gauss's Law in temporal gauge removes one d.o.f. per group generator leaving $A_\mu^a$ with $D-2$ degrees of freedom, i.e. $2$ d.o.f. in $D=4$.
+  \end{itemize}
+\end{itemize}
+

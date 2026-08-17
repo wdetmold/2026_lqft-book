@@ -1,0 +1,189 @@
+\newpage
+%% [migrated] part header removed: Fundamentals
+
+%% [migrated] heading absorbed into chapter wrapper: Path Integrals In Quantum Mechanics 
+
+\section{Quantum mechanics}
+
+Consider a single particle moving in a potential \(V(x)\):
+
+\begin{equation}
+\hat{H}=\hat{H}_{0}+\hat{V}(x) \quad \text { with } \quad \hat{H}_{0}=\frac{1}{2 m} \hat{p}^{2}
+\end{equation}
+
+\begin{itemize}
+  \item time evolution: amplitude to move from \(y\) at \(t_{2}\) to \(x\) at \(t_{1}\) is
+\end{itemize}
+
+\begin{equation}
+\left\langle x, t_{1} \mid y, t_{2}\right\rangle=\langle x| \hat{U}\left(t_{1}, t_{2}\right)|y\rangle \quad (|x\rangle \, \text{is a position eigenstate,}\; \hat{x}|x\rangle=x|x\rangle)
+\end{equation}
+
+where
+\begin{equation}
+\begin{aligned}
+\hat{U}\left(t_{1}, t_{2}\right)&=\operatorname{Pexp}\left[-i \int_{t_{2}}^{t_{1}} d t \hat{H}\right]
+\\
+&= \operatorname { e x p } \left( - i \hat { H } ( t _ { 1 } - t _ { 2 } ) \right) \text { if } \left[H(t), H(t^\prime)\right]=0
+\end{aligned}
+\end{equation}
+and \(\hbar=1\).
+
+
+\begin{itemize}
+  \item If \(V=0\) (free particle), then can calculate
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+\langle x| \exp \left(-\frac{i t}{2 m} \hat{p}^{2}\right)|y\rangle & =\int d p\langle x \mid p\rangle\langle p| \exp \left(-\frac{i t}{2 m} \hat{p}^{2}\right)|y\rangle \\
+& =\int d p\langle x \mid p\rangle\langle p \mid y\rangle \exp \left(-\frac{i t}{2 m} p^{2}\right) \\
+& =\int \frac{d p}{2 \pi} e^{i p \cdot(x-y)} \exp \left(-\frac{i t}{2 \pi} p^{2}\right) \\
+& =\sqrt{\frac{m}{2 \pi i t}} \exp \left(\frac{i m}{2 t}\left(x-y\right)^{2}\right).
+\end{aligned}
+\end{equation}
+
+\begin{itemize}
+  \item In general can calculate for small enough time separations as
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+\hat U_{\varepsilon} & =\hat U(t+\varepsilon, t)=\exp [-i \varepsilon \hat{H}] \\
+& =\hat T_{M}(\varepsilon)+\theta\left(\varepsilon^{3}\right) \quad \text{(M denotes real-time)}
+\end{aligned}
+\end{equation}
+
+where
+
+\begin{equation}
+\hat T_{M}(\varepsilon)=\exp \left[-i \frac{\varepsilon}{2} V(\hat{x})\right] \exp \left[-i \varepsilon \hat H_{0}\right] \exp \left[-i\frac{ \varepsilon}{2} V(\hat{x})\right]
+\end{equation}
+
+\begin{itemize}
+  \item Exercise: Check this using the BCH relation\aidx{Baker-Campbell-Hausdorff (BCH) relation}
+\end{itemize}
+
+\begin{itemize}
+\item Now
+\end{itemize}
+
+\begin{equation}
+\left\langle x \mid T_{M}(\varepsilon) \mid y\right\rangle=\exp \left[-\frac{i \varepsilon}{2} V(x)\right] \exp \left[-\frac{i\varepsilon}{2} V(y)\right]\langle x| e^{-i \varepsilon \hat H_{0}}|y\rangle
+\end{equation}
+
+\begin{itemize}
+  \item For non-vanishing \(t_{1}-t_{2}=t\), we can break up into \(N=\frac{t}{\varepsilon}\) intervals
+\end{itemize}
+
+\begin{equation}
+\langle x| U\left(t_{1}, t_{2}\right)|y\rangle=\langle x| \lim _{N \rightarrow \infty}\left(T_{M}(\varepsilon)\right)^{N}|y\rangle
+\end{equation}
+
+as \(U\left(t_{1}, t_{2}\right)=U\left(t_{1}, t_{1}-\varepsilon\right) U\left(t_{1}-\varepsilon, t_{1}-2 \varepsilon\right) \ldots U\left(t_{2}+\varepsilon, t_{2}\right)\)\\
+
+\begin{itemize}
+\item Now inserting complete set of position states \(N-1\) times and setting \(x=x_{0},\  y=x_{N}\)
+\end{itemize}
+
+\begin{equation}
+\begin{aligned} &\langle x| U\left(t_{1}, t_{2}\right)|y\rangle=\lim _{N \rightarrow \infty} \int d x_{1} \ldots d x_{N-1}\langle x| T_{M}(\varepsilon)\left|x_{1}\right\rangle\left\langle x_{1}\right| T_{M}(\varepsilon)\left|x_{2}\right\rangle \ldots\left\langle x_{N-1}\right| T_{M}(\varepsilon)|y\rangle \\
+& =\lim _{N \rightarrow \infty}\left(\frac{m}{2 \pi i \varepsilon}\right)^\frac{N}{2} \int d x_{1} \ldots d x_{N-1} \exp \left[i \frac{m}{2 \varepsilon} \sum_{j=0}^{N-1}\left(x_{j}-x_{j+1}\right)^{2}-i \varepsilon \sum_{j=0}^{N-1} V\left(x_{j}\right)-\frac{i \varepsilon}{2}\left(V\left(x_{N}\right)-V\left(x_{0}\right)\right)\right] \\
+& =\int \mathcal{D} x e^{i S}+\mathcal{O}(\varepsilon)
+\end{aligned}
+\end{equation}
+
+where
+
+\begin{equation}
+\mathcal{D} x=\lim _{N \rightarrow \infty}\left(\frac{m}{2 \pi i \varepsilon}\right)^{N / 2} d x_{1} \ldots d x_{N-1}
+\end{equation}
+
+and  (using $x(j\varepsilon)=x_j$)
+
+\begin{equation}
+S=S[x]=\int_{t_2}^{t_1}dt\left[\frac{m}{2}\dot{x}(t)^2 -V(x(t))\right]
+\end{equation}
+after dropping the term $\frac{i \varepsilon}{2}\left(V\left(x_{N}\right)-V\left(x_{0}\right)\right)$ since it is $\mathcal{O}(\varepsilon)$ (or vanishes by choice of boundary conditions\aidx{Schrödinger functional!boundary conditions}).
+
+\includegraphics[max width=\textwidth, center]{fig-notes-093.pdf}
+
+That is, the transition amplitude is expressed as an integral over all paths between \(y\) and \(x\) weighted by the factor \(e^{iS}\)
+
+\begin{itemize}
+  \item \(\int {\cal D}{x} e^{i S}\) is difficult to define rigorously since the integrand oscillates infinitely fast, as \(\hat{p}^{2}\) is unbounded, so the real-time path integral\aidx{path integral}\aidx{path integral!real-time} is simply a formal object in its exact form but is the starting point for \textit{e.g.} semi classical approximation
+
+\item It is useful to consider the imaginary-time (Euclidean)\aidx{path integral!Euclidean} version of the path integral with
+\end{itemize}
+
+\begin{equation}
+t \rightarrow-i \tau \quad \tau>0
+\end{equation}
+
+for which the same manipulations lead to
+
+\begin{equation}
+\begin{aligned}
+& \langle x| e^{-H \tau}|y\rangle=\\
+& =\lim _{N \rightarrow \infty}\left(\frac{m}{2 \pi {\color{blue} \varepsilon}}\right)^{\frac{N}{2}} \int d x_{1} \ldots d x_{N-1} \exp \left[- \frac{m}{2 {\color{blue}\varepsilon}} \sum_{j=0}^{N-1}\left(x_{j}-x_{j+1}\right)^{2}{\color{blue}-\varepsilon} \sum_{j=0}^{N-1} V\left(x_{j}\right)-\frac{ {\color{blue}\varepsilon}}{2}\left(V\left(x_{N}\right)-V\left(x_{0}\right)\right)\right] \\
+& =\int \mathcal{D}{x_{E}} e^{-S_{E}} 
+\end{aligned}
+\end{equation}
+with $S=i S_{E}$,
+\begin{equation}
+S_{E}=\int_{\tau_{2}}^{\tau_1} d \tau\left[\frac{m}{2} \dot{x}{(\tau)}^{2}+V(x(\tau))\right]=\int d \tau L[x, \dot{x}] 
+\end{equation}
+and since \(e^{-S_{E}}\) is bounded, the path integral can be defined rigorously (Wiener measure\aidx{Wiener measure})\\
+For imaginary-time propagation, the classical path where
+
+\begin{equation}
+0=\delta S_{E}=\frac{\partial L}{\partial x}-\frac{\partial}{\partial \tau} \frac{\partial L}{\partial \dot{x}}=0
+\end{equation}
+dominates the integral and paths with \(|\dot{x}|^{2}\sim\varepsilon\) have nonnegligible contributions (these are continuous but not necessarily differentiable)
+
+\begin{itemize}
+  \item The transfer matrix\aidx{transfer operator} is the operator that evolves states in imaginary time\aidx{imaginary time} by a step \({\varepsilon}\):
+  \begin{equation}
+  \hat{T}=T(\varepsilon)=\exp \left(-\frac{\varepsilon}{2} V(\hat{x})\right) \exp \left(-\varepsilon \hat{H}_{0}\right) \exp \left(-\frac{\varepsilon}{2} V(\hat{x})\right)\end{equation}
+with
+\begin{equation}
+\hat{T}=\exp (-\varepsilon \hat{H})+\theta(\varepsilon) \end{equation}
+and more particularly, 
+\begin{equation}
+\hat T=\exp \left(-\varepsilon \hat H_{\varepsilon}\right) \quad {\rm where}\quad \hat H_{\varepsilon} \stackrel{\varepsilon \rightarrow 0}{\rightarrow} \hat H
+\end{equation}
+The transfer matrix is a positive operator\aidx{transfer matrix} (all eigenvalues \(>0\) ) since all its matrix elements are positive
+\end{itemize}
+
+
+\begin{itemize}
+  \item Note that imaginary time provides a clean way to access vacuum matrix elements\aidx{vacuum expectation value (vev)}. Let \(\left\{|n\rangle\ |\ \hat{H}| n\rangle=E_{n}|n\rangle\right\}\) be orthonormal eigenstates of \(H\) ordered such that \(E_{0} \leq E_{1} \leq \ldots\)\\
+Then
+\begin{equation}
+\operatorname{Tr}\left[e^{-\hat{H}{\tau}} \hat{A}\right]=\sum_{n}\langle n| e^{-\hat{H}{\tau}} \hat{A}|n\rangle=\sum_{n} e^{-E_{n} \tau}\langle n| \hat{A}|n\rangle
+\end{equation}
+and
+\begin{equation}
+ Z(\tau)=\operatorname{Tr}\left[e^{-\hat{H} \tau}\right]=\sum_{n} e^{-E_{n} \tau}\langle n \mid n\rangle=\sum_{n} e^{-E_{n} \tau} \end{equation}
+ and therefore 
+ \begin{equation}
+\langle\Omega| \hat{A}|\Omega\rangle=\langle n=0| \hat{A}|n=0\rangle=\lim _{\tau \rightarrow \infty} \frac{1}{Z(\tau)} \operatorname{Tr}\left(e^{-\hat{H} \tau} \hat{A}\right)
+\end{equation}
+\end{itemize}
+
+\begin{itemize}
+  \item For example, this allows access to correlation functions\aidx{correlation function}. Consider \(\hat{A}=\hat{\cal O}_{2}(t) \hat{\cal O}_{1}(0)\) where \(t\) is an imaginary time and, for example, $\hat {\cal O}_i=\hat x$,
+
+  \begin{equation} \operatorname{Tr}\left[e^{-\hat{H} \tau} \hat{\cal O}_{2}(t) \hat{\cal O}_{1}(0)\right]=\operatorname{Tr}\left[e^{-\hat{H}(\tau-t)} \hat{\cal O}_{2}(0) e^{-\hat{H} t} \hat{\cal O}_{1}(0)\right] \end{equation}
+and therefore
+  \begin{equation}
+  \begin{aligned}
+ \langle\Omega| \hat{\cal O}_{2}(t) \hat{\cal O}_{1}(0)|\Omega\rangle &=\lim _{\tau \rightarrow \infty} \frac{1}{Z(\tau)} \operatorname{Tr}\left[e^{-\hat{H}(\tau-t)} \hat{\cal O}_{2} e^{-\hat{H} t} \hat{\cal O}_{1}\right] \\
+& =\lim _{\tau \rightarrow \infty} \frac{1}{Z(\tau)} \sum_{n,m}\langle n| e^{-\hat{H}(\tau-t)} \hat{\cal O}_{2}|m\rangle\langle m| e^{-H t} \hat{\cal O}_{1}|n\rangle \\
+& =\lim _{\tau\to\infty} \frac{1}{Z(\tau)} \sum_{n, m} e^{-E_{n}(\tau-t)} e^{-E_{m} t}\langle n| \hat{\cal O}_{2}|m\rangle\langle m| \hat{\cal O}_1|n\rangle \\
+& =\sum_{m} e^{-\Delta E_{m} t}\langle n=0| \hat{\cal O}_{2}|m\rangle\langle m| \hat{\cal O}_1|n=0\rangle
+\end{aligned}
+\end{equation}
+where $\Delta E_{m}=E_{m}-E_{0}$.
+
+\end{itemize}

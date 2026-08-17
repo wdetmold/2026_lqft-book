@@ -1,0 +1,538 @@
+\section{Staggered \& Dirac-K\"ahler Fermions}
+
+\begin{itemize}
+  \item Staggered (Kogut-Susskind) fermions\aidx{fermions!staggered} were introduced very soon after Wilson's paper and ane have the feature of reducing the doubling problem\aidx{fermion doubling} from \(2^{D} \rightarrow 2^{D / 2}\) modes while maintaining a chiral symmetry\aidx{chiral symmetry}
+  \item Dirac-Kähler fermions\aidx{fermions!Dirac-K\"ahler} are related to staggered fermions but have a very nice geometrical interpretation
+  \item Consider the naive free fermion action with zero bare mass  (ref: Bodwin \& Kovacs PRD 38(1988) 1206)
+\end{itemize}
+
+\begin{equation}
+S_{\text{naive}}=\frac{a^{D}}{2 a} \sum_{n} \sum_{\mu} \bar{\psi}({n}) \gamma_{\mu}\{\psi(n+\hat{\mu})-\psi(n-\hat{\mu})\}
+\end{equation}
+
+and diagonalise the Dirac matrices\aidx{Dirac matrices, Euclidean}\aidx{Kawamoto-Smit transformation} via the transformation (Kawamoto-Smit)
+\begin{equation}
+\psi({n}) \rightarrow \Gamma^{n} \phi({n}),
+\qquad \bar{\psi}({n}) \rightarrow \bar{\phi}_({n}) \Gamma^{n \dagger} 
+\end{equation}
+where $\phi({n})$ is a $2^{D / 2}$ component spinor  and
+\begin{equation}
+    \Gamma^n = \gamma_1^{n_1}\ldots \gamma_D^{n_D}, \quad \gamma^2_\mu = 1 \text{ so really }n_\mu \text{ mod }2.
+\end{equation}
+So
+\begin{equation}
+S_{\text {naive }} =\frac{a^{D}}{2 a} \sum_{n,\mu} \bar{\phi}_{n}\left\{\Gamma^{n \dagger} \gamma_{\mu} \Gamma^{n+\hat{\mu}} \phi_{n+\hat{\mu}}-\Gamma^{n \dagger} \gamma_{\mu} \Gamma^{n-\hat{\mu}} \phi_{n-\hat{\mu}}\right\}
+\end{equation}
+But
+\begin{equation}
+    \Gamma^{n \dagger} \gamma_\mu \Gamma^{n \pm \hat{\mu}} = (-1)^{\sum_{\nu = 1}^{\mu - 1}n_\nu} \mathbb{I} = (-1)^{\delta(n)}\mathbb{I}
+\end{equation}
+is diagonal in spinor indices, where we've used that $\Gamma^{n \pm \hat{\mu}}$ is identical for both signs.
+That this comes out proportional to the identity --- rather than as some other
+Dirac matrix --- is a property of the hypercubic lattice and not a general fact;
+see the remark on p.~\pageref{rmk:kd-cubic}.
+
+Try for example $n = (1 1 1 1), \mu = 3$, then we have $\gamma_4 \gamma_3 \gamma_2 \gamma _ 1 (\gamma_3)\gamma_1 \gamma_2 \gamma_3^2 \gamma_4 = 1$, or $n = (0,1,2,3), \mu = 3$, then we have $\gamma_4 \gamma_2 (\gamma_3)\gamma_2 \gamma_3 \gamma_4 = -1$.
+
+Rewriting the action,
+
+\begin{equation}
+\label{eq:diag_action}
+S_{\text {naive }}=\frac{a^{D}}{2 a} \sum_{n,\mu} \sum_{\alpha} \bar{\phi}_{n, \alpha}(-1)^{\delta(n)}\left\{\phi_{n+\hat{\mu}, \alpha}-\phi_{n-\hat{\mu}, \alpha}\right\}
+\end{equation}
+
+We can now discard all but one spinor degree of freedom, reducing d.o.f. by a factor of \(2^{D / 2}\)
+
+\begin{itemize}
+  \item Now partition the lattice into blocks of size \((2 a)^{D}\) and coordinatise original lattice with respect to the block centres
+\end{itemize}
+
+\begin{equation}
+n_{\mu}=x_{\mu}+\eta_{\mu}^{i} \\
+\end{equation}
+
+where the blocked lattice is
+\(\Lambda_{\text{blocked}}=\left\{x \mid x_{\mu} / 2 \in \mathbb{Z}\right\}\subset \Lambda\)
+and
+
+\begin{equation}
+\eta_{\mu}^{i}=0 \text { or } 1 \text { for } i \in\left(0,2^{D}-1\right),
+\end{equation}
+ordered $i = \sum_\mu 2^\mu n_\mu^i$ for example.
+
+\begin{figure}
+\redrawcompare{fig-notes-072.png}{fig-redraw-072.pdf}
+\caption{Coordinatisation of the original lattice in terms of the block centres. {\color{red} Labels in the fig are not right: $n_\mu^{(1)}=(0,1),\ n_\mu^{(2)}=(1,0)$ and the point at $(1,1)$ is $n_\mu^{(3)}$}}
+\end{figure}
+
+\begin{itemize}
+  \item Introduce shifted fields for each \(\eta_{\mu}^{i}\) just for \(\alpha=1\) spinor cpt
+\end{itemize}
+
+\begin{equation}
+\chi_{x}^{i}=\frac{1}{2^{D / 2}} \phi_{x+\eta^i,1} \quad \bar{\chi}_{x}^{i}=\frac{1}{2^{D / 2}} \bar{\phi}_{x+\eta^i, 1}
+\end{equation}
+with other spinor components being just copies.
+So
+\begin{equation}
+    S_\text{naive} = \frac{(2a)^D}{2a}\sum_{x,\mu}\sum_{ij}\bar{\chi}^i_x \frac{1}{2^{D/2}}\operatorname{Tr}(\Gamma^{\eta_i \dagger}\gamma_\mu \Gamma^{\eta_j}) \left\{ \eta_\mu^i \chi_{x + 2 \hat{\mu}}^j - \eta_\mu^j \chi^j_{x - 2\hat{\mu}}+ (\eta^j_\mu - \eta^i_\mu)\chi_x^j \right\},
+\end{equation}
+where the contribution in curly braces is equivalent to the sum over $n$ in Eq.~\eqref{eq:diag_action} (checking this is a little nontrivial), the trace comes from the sum over $2^{D/2}$ flavors, the $2^{-D/2}$ removes the sum.
+
+Now we can rearrange the degrees of freedom via a unitary (can be seen by properties of $\gamma$ matrices) transformation:
+\begin{align}
+    q_{\alpha a}(x) &= \frac{1}{2^{D/4}}\sum_i (\Gamma^i)_{\alpha a}\chi^i(x) \nonumber \\
+    \bar{q}_{\alpha a}(x) &= \frac{1}{2^{D/4}}\sum_i \bar{\chi}^i(x)(\Gamma^{i \dagger})_{a \alpha},
+\end{align}
+where on the left hand side $\alpha$ is a Dirac index and $a$ is a so-called ``taste'' or ``flavour'' index; on the right hand side both indices are Dirac.
+
+Using $\eta_\mu^i = (1 - (-1)^{\eta^i_\mu})/2$, which is a trivial relation since $\eta_\mu^i \in \{ 0,1\}$, we can show
+\begin{equation}
+    \operatorname{Tr}[\Gamma^{\eta_i \dagger} \gamma_\mu \Gamma^{\eta_j}] \left\{ \begin{array}{cc}
+         (-1)^{\eta^j_\mu}  \\
+         (-1)^{\eta^i_\mu}
+    \end{array}\right\} = \operatorname{Tr}[\Gamma^{\eta_i \dagger} \gamma_5  \Gamma^{\eta_j}\gamma_5\gamma_\mu]\left\{ \begin{array}{cc}
+         1 \\
+         -1
+    \end{array}\right\}
+\end{equation}
+Thus in $S_\text{naive}$ all of the traces and $\eta_\mu^i$ factors can be written in the form
+
+\begin{equation}
+\sum_{i j} {\rm Tr}\left[\Gamma^{\eta_{i}\dagger} M \Gamma^{\eta_{j}} N\right] \bar{\chi}^{i} \chi^{j}
+\end{equation}
+
+for \(M \in\left\{\gamma_{\mu}, \gamma_{5}\right\}, N \in\left\{1, \gamma_{5} \gamma_{\mu}\right\}\)\\
+Writing the indices explicitly
+
+\begin{equation}
+\begin{aligned}
+& =\sum_{i j} \sum_{\alpha a} \sum_{\beta b}\left(\Gamma^{\eta_{i} \dagger}\right)_{\alpha a} M_{\alpha \beta}\left(\Gamma^{\eta_{j}}\right)_{\beta b} N_{b a} \bar{\chi}^{i} \chi^{j} \\
+& =\sum_{\alpha a} \sum_{\beta b} \bar{q}_{\alpha a} M_{\alpha \beta} N^{T}_{a b} q_{\beta b} \\
+& =\bar{q}\left(M \otimes N^{T}\right) q
+\end{aligned}
+\end{equation}
+
+where the tensor product is of a matrix acting on spinor indices with one acting on flavour/taste\aidx{taste (staggered fermions)}.
+
+Writing \(t_{\mu}=\gamma_{\mu}^{T}, t_{5}=\gamma_{5}^{T}\) as flavour/taste matrices and defining
+
+\begin{equation}
+A_{\mu}=\gamma_{\mu} \otimes 1 \quad B_{\mu}=\gamma_{5} \otimes t_{\mu} t_{5}
+\end{equation}
+
+gives
+
+\begin{equation}
+S_{\text {naive }}=\frac{(2 a)^{D}}{4 a} \sum_{x, \mu} \bar{q}(x)\left\{A_{\mu}(q(x+2 \hat{\mu})-q(x-2 \hat{\mu}))+B_{\mu}(q(x+2 \hat{\mu})+q(x-2 \hat{\mu}))-2 q(x)\right\}
+\end{equation}
+
+\begin{itemize}
+  \item If this is now made gauge covariant using straight links, it defines the Kähler-Dirac action\aidx{K\"ahler-Dirac equation}
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+S_{KD}=\frac{(2 a)^{D}}{4 a} \sum_{x \mu} \bar{q}(x)\left\{\begin{array}{l}
+A_{\mu}\left[U_{\mu}(x) U_{\mu}(x+\hat{\mu}) q(x+2 \hat{\mu})-U_{\mu}^{\dagger}(x-\hat{\mu}) U_{\mu}^{\dagger}(x-2 \hat{\mu}) q(x-2 \hat{\mu})\right] \\
++B_{\mu}\left[U_{\mu}(x) U_{\mu}(x+\hat{\mu}) q(x+2 \hat{\mu})+U_{\mu}^{\dagger}(x-\hat{\mu}) U_{\mu}^{\dagger}(x-2 \hat{\mu}) q(x-2 \hat{\mu})\right] - 2q(x)
+\end{array}\right\}
+\end{aligned}
+\end{equation}
+
+\begin{itemize}
+  \item The inverse free fermion propagator\aidx{fermion propagator} for a single "flavour" in momentum space is
+\end{itemize}
+
+\begin{equation}
+\widetilde{D}_{KD}(k)=\frac{i}{2 a} \sum_{\mu}\left[A_{\mu} \sin \left(2 k_{\mu} a\right)+2 i B_{\mu} \sin ^{2}\left(k_{\mu} a\right)\right] \longrightarrow \slashed{k}+{\cal O}\left(a^{2}\right)
+\end{equation}
+
+which has zeros only where \(k_{\mu}=(0,0,0,0)\) for each of the four flavours while at \(k_{\mu}\in\{(0,0,0, \pi / 2 a),\ldots\}\) , i.e., the edges of $\mathcal{B}$, the $B_\mu$ term does not vanish
+
+\begin{itemize}
+  \item To arrive at staggered (Kogut-Susskind) fermions, we go back before the blocking and gauge the theory there and then follow similar blocking steps to the \(2^{D}\) hypercube
+\end{itemize}
+
+\begin{equation}
+S_{KS}=\frac{1}{2^{D / 2}} \frac{a^{D}}{2 a}\sum_{n , \mu} \phi_{n} \operatorname{Tr}\left[\Gamma^{n {\dagger}} \gamma_{\mu} \Gamma^{n+\hat{\mu}}\right]\left\{U_{\mu}(n) \phi_{n+\hat{\mu}}-U_{\mu}^{+}(n-\hat{\mu}) \phi_{n-\hat{\mu}}\right\}
+\end{equation}
+
+The blocking gives
+
+\begin{equation}
+\begin{aligned}
+S_{KS}=\frac{(2 a)^D}{2 a} \sum_{x, i , j} \sum_{\mu} \bar{\chi}_{x}^{i} \operatorname{Tr}\left[\Gamma^{\eta_{i} {\dagger}} \gamma_\mu \Gamma^{\eta_j} \right]\Big\{&U_{\mu}\left(x+\eta^{i}\right) \eta_{\mu}^{i} \chi_{x+2 \hat{\mu}}^{j}-U_{\mu}^{\dagger}\left(x+\eta^{i}-\hat{\mu}\right) \eta_{\mu}^{j} \chi_{x-2 \hat{\mu}}^{j} \\
+&\qquad +\left[U_{\mu}\left(x+\eta^{i}\right) \eta_{\mu}^{j}-U_{\mu}^{\dagger}\left(x+\eta^{i}-\hat{\mu}\right) \eta_{\mu}^{i}\right] \chi_{x}^{j}\Big\}
+\end{aligned}
+\end{equation}
+
+Note that this is gauge invariant due to the sub-block displacements even though it doesn't look it.
+The gauge invariance is made clearer after defining the unitarily rotated field, now involving gauge links
+
+\begin{equation}
+q_{\alpha a}(x)=\frac{1}{2^{D / 4}} \sum_{j} \Gamma_{\alpha a}^{n j} \mathbf{U}_{\eta_{j}}(x) \chi^{j}(x), \qquad \bar{q}_{\alpha a}(x)=\frac{1}{2^{D / 4}} \sum_{i} \bar{\chi}^{i}(x) \mathbf{U}_{\eta_{i}}^{\dagger}(x)\left(\Gamma^{\eta_{i}{\dagger}}\right)_{a \alpha}
+\end{equation}
+
+when \(\mathbf{U}_{\eta_{i}}(x)\) is a certain product of links in the \(2^{D}\) hypercube that we will not write down.\\
+Now the procedure used for DK fermions can be returned to, but a much more complicated action arises which we will omit
+
+\begin{itemize}
+  \item Staggered (and Dirac-K\"ahler) fermions have interesting symmetries, one of which is a remnant\aidx{chiral symmetry!remnant, staggered} \(U_{A}(1)\) chiral symmetry
+\end{itemize}
+
+\begin{equation}
+\psi \rightarrow \exp \left(i \theta {\gamma_{5}} \otimes \gamma_{5}\right) \psi, \qquad \bar{\psi} \rightarrow \bar{\psi} \exp \left(i \theta{\gamma_5} \otimes \gamma_{5}\right)
+\end{equation}
+
+which mixes spinor and ``flavour'' indices.
+This symmetry is sufficient to prevent additive mass renormalisation\aidx{additive mass renormalisation}
+
+\begin{itemize}
+  \item The four flavour that a staggered/DK fermion generates are degenerate in the continuum limit\aidx{continuum limit}, so not useful for quark phenomenology. To get back to a single flavour the fourth root of the fermion determinant\aidx{fermion determinant} is taken.
+  \begin{itemize}
+      \item This makes the theory nonlocal\aidx{locality (of lattice Dirac operators)} at nonzero lattice spacing\aidx{lattice spacing} in fairly violent ways and should probably be avoided
+      \item See various papers by Creutz and Golterman\&Shamir on the topic and an overview of the issue in Lattice 2005 by Sharpe
+  \end{itemize}
+  \item Rooted staggered fermions\aidx{rooting (staggered fermions)} are used in large scale numerical QCD calculations because their nice chiral properties make them relativity cheap to use with light quark masses and they are easily $\mathcal{O}(a^2)$ accurate.\\
+
+\section{Geometric interpretation of DK fermions}
+
+[Becher\&Joos, Z Phys C15(1982) 347]
+  \item First define geometrically in the continuum using differential geometry concepts
+  \item A differential $k-$form $w^k_x$ at a point $x$ on a manifold $\mathcal{M}$ is a function of $k$ vectors in the tangent space $T\mathcal{M}_x$ to $\mathcal{M}$ at $x$ that is $k-$linear and antisymmetric. Introducing coordinate basis $1-$forms $dx_i$ satisfying $dx_i(e_j) = \delta_{ij}$ where the $\{e_j\}$ are basis vectors, $i,j \in \{ 1,\ldots, n = \operatorname{dim}\mathcal{M}\}$, a general $k-$form can be written as the exterior product
+\end{itemize}
+
+\begin{equation}
+\omega^{k}=\sum_{i_{1}<\ldots<i_{k}} \omega_{i_{1} \ldots i_{k}}(x) d x_{i_{1}} \wedge \ldots \wedge d x_{i_{k}},
+\end{equation}
+
+where \(\quad d x_{i} \wedge d x_{j}=-d x_{\jmath} \wedge d x_{i} \quad\) (wedge product\aidx{differential forms}). [in other words the set $\{dx_{i_1}\wedge\ldots dx_{i_k}\}$ forms a basis for $k-$forms]
+
+\begin{itemize}
+  \item \(d x_{\mu_{1}} \wedge \ldots \wedge d x_{\mu_{h}} \equiv d x_{H} \quad H=\left\{\mu_{1}, \ldots, \mu_{h}\right\} \quad \mu_{1}<\mu_{2}<\ldots<\mu_{h}\)
+  \item $dx_H \wedge dx_K = dx_{H\cup K}\rho_{H,K}$ with $\rho_{H,K} = 0$ if $H \cap K \neq \emptyset$ and otherwise $\rho_{H,K} = \pm1$ depending on the number of reorderings needed to sort $H\cup K$
+  \item An inhomogeneous complex of differential forms on $\mathbb{R}^4$
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+\Phi & =\sum_{h=0}^{4} \sum_{\mu_{1} \ldots \mu_{h}} \frac{1}{h!} \Phi_{\mu_{1} \ldots \mu_{h}}(x) d x_{\mu_1} \wedge \ldots \wedge d x_{\mu_h},  \qquad \mu_{1}<\mu_{2}<\ldots<\mu_{h}\\
+& \equiv \sum_{H} \Phi_{H}(x) d x_{H} \quad H=\left\{\mu_{1}, \ldots, \mu_{h}\right\}
+\end{aligned}
+\end{equation}
+
+\begin{itemize}
+  \item The main automorphism \({\cal A}\) and antiautomorphism \({\cal B}\) are defined by
+\end{itemize}
+
+\begin{equation}
+\begin{array}{cc}
+{\cal A} d x_{H}=(-1)^{h} d x_{H}, & {\cal A}\left(\Phi \wedge \Xi\right)=({\cal A} \Phi) \wedge({\cal A} \Xi) \\
+{\cal B} d x_{H}=(-1)^{\left({\tiny \begin{array}{c}h \\2\end{array}}\right)} d x_{H}, & {\cal B}\left(\Phi \wedge \Xi\right)=({\cal B} \Xi) \wedge({\cal B} \Phi)
+\end{array}
+\end{equation}
+
+\begin{itemize}
+  \item The inner derivative (contraction) is a linear operator (``differentiation w.r.t. a differential'')
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+\varepsilon_{\mu} \neg: \qquad& \varepsilon_{\mu} \neg d x_{\nu}=\delta_{\mu \nu} \quad, \quad \varepsilon_{\mu} \neg 1=0 \\
+& \varepsilon_{\mu} \neg(\Phi \wedge \Xi)=\left(\varepsilon_{\mu} \neg \Phi\right) {\wedge} \Xi+({\cal A} \Phi) \wedge\left(\varepsilon_{\mu} \neg \Xi\right)
+\end{aligned}
+\end{equation}
+
+\begin{itemize}
+  \item The Clifford product\aidx{Clifford product} (bilinear and associative)
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+& d x_{\mu} \vee d x_{\nu}=d x_{\mu} \wedge d x_{\nu}+\delta_{\mu v} \\
+& \Rightarrow \\
+& d x_{\mu} \vee \Phi=d x_{\mu} \wedge \Phi+\varepsilon_{\mu} \neg \Phi \\
+\end{aligned}
+\end{equation}
+\begin{itemize}
+    \item NB: The Clifford product behaves like $\gamma$ matrices, because $d x_\mu \vee d x_\nu + d x_\nu \vee d x _\mu = 2 \delta_{\mu \nu}$
+    \item With partial derivatives acting on the coefficients $\Phi_H(x)$, one can define
+    \begin{itemize}
+        \item Exterior derivatives\aidx{exterior derivative}$d \equiv dx_\mu \wedge \partial_\mu$
+        \item Coderivative\aidx{coderivative} $\delta = \varepsilon_\mu \neg \partial_\mu$ ($\delta = - \star^{-1}d\star$, where $\star$ is the familiar Hodge star\aidx{Hodge star})
+        \item K\"ahler-Dirac operator\aidx{Dirac operator} $d-\delta = dx_\mu \vee \partial_\mu$
+    \end{itemize}
+    \item I.e. $d\Phi = dx_\mu \wedge \partial_\mu \Phi$, $\delta\Phi =  \varepsilon_\mu \neg \partial_\mu \Phi$, $(d-\delta)\Phi = dx_\mu \vee \partial_\mu \Phi$
+    \item Note that $d^2 = \delta^2 = 0$, since $dd\Phi = d(dx_\mu\wedge \partial_\mu\Phi) = dx_\nu \wedge dx_\mu \wedge \partial_\mu \partial_\nu \Phi = 0$.
+    Also,
+    \begin{equation}
+    \begin{aligned}
+    d\delta\Phi&=(dx_\mu\wedge\partial_\mu)(\varepsilon_\nu \neg\partial_\nu)\Phi=dx_\mu\wedge(\varepsilon_\nu\neg \partial_\mu\partial_\nu\Phi) \\
+    \delta d\Phi&=(\varepsilon_\nu \neg\partial_\nu)(dx_\mu\wedge\partial_\mu)\Phi=\partial_\mu\partial_\mu\Phi - dx_\mu\wedge(\varepsilon_\nu\neg \partial_\mu\partial_\nu\Phi) \\
+    \end{aligned}
+    \end{equation}
+    \item Thus, $(d-\delta)^2 = -(d \delta + \delta d) = \partial_\mu \partial_\mu = \Box$, so $d-\delta$ is the square root of the Laplacian just like $\slashed{\partial} = \gamma_\mu \partial_\mu$ in the Dirac eqn
+    \item The K\"ahler-Dirac equation for mass $m$ is then
+\end{itemize}
+\begin{equation}
+\label{eq:dke}
+\boxed{(d-\delta+m) \Phi=0}
+\end{equation}
+
+\begin{itemize}
+  \item To see what the KDE\aidx{K\"ahler-Dirac equation} implies, define the product of Dirac matrices\aidx{Dirac matrices, Euclidean}
+\end{itemize}
+
+\begin{equation}
+\gamma_{H}=\gamma_{\mu_{1}} \ldots \gamma_{\mu_h} \quad H=\left\{\mu_{1}, \ldots, \mu_{h}\right\}
+\end{equation}
+
+and introduce a new basis of differential forms ( \(a, b \in\{1,2,3,4\}\) ).
+\begin{equation}
+    Z_a^{(b)} = \sum_H (\gamma_H^T)_{ab}{\cal B} dx_H
+\end{equation}
+\begin{equation}
+    Z = 1 + \gamma_\mu^T dx_\mu - \gamma_\mu^T \gamma_\nu^T dx_\mu \wedge dx_\nu -\gamma_\mu^T \gamma_\nu^T \gamma_\rho^T dx_\mu \wedge dx_\nu \wedge dx_\rho + \gamma_1^T \gamma_2^T \gamma_3^T \gamma_4^Tdx_1\wedge\ldots\wedge dx_4.
+\end{equation}
+Note  that in $d=4$ the original basis is $\{1, dx_\mu, dx_\mu \wedge dx_\nu, dx_\mu \wedge dx_\nu \wedge dx_\rho, dx_1 \wedge \ldots \wedge dx_4\}$, where there is $1$ element of the first kind, there are $4$ of the second kind, $6$ of the third, then $4$ and $1$.
+
+Then
+
+\begin{equation}
+\begin{aligned}
+& d x_{\alpha} \vee Z_{a}^{(b)}=\left(d x_{\alpha} \wedge+\varepsilon_{\alpha} \neg\right) Z=\sum_{H}(-1)^{\binom{h}{2}}\left(\gamma_{H}\right)^{\top}\left(d x_{\alpha} \wedge+\varepsilon_{\alpha} \neg\right) d x_{H} \\
+& =d x_{\alpha}+\left(\gamma_{\alpha}^{T}+\gamma_{\mu}^{T} d x_{\alpha} \wedge d x_{\mu}\right)-\left\{\left(\gamma_{\mu}^{T} \gamma_{\alpha}^{T}-\gamma_{\alpha}^{T} \gamma_{\mu}^{T}\right) d x_{\mu}+\gamma_{\nu}^{T} \gamma_{\mu}^{T} d x_{\alpha} \wedge d x_{\mu} \wedge d x_{\nu}\right\}+\ldots \\
+& \left.=\left[\gamma_{\alpha}^{T} Z\right]_{a b} \text { (after a bit of rearrangement using } \gamma_{\mu}^{T} \gamma_{\nu}^{T}+\gamma_{\nu}^{T} \gamma_{\mu}^{T}=2 \delta_{\mu \nu}\right)
+\end{aligned}
+\end{equation}
+
+Also can show \(Z \vee d x_{\alpha}=Z \gamma_{\alpha}^{T}\) and \(Z_{a}^{(b)} \vee Z_{c}^{(d)}=Z_{a}^{(d)} \delta_{b c}\)\\
+Now expressing the general \(\Phi\) in terms of \(Z\)
+
+\begin{equation}
+\Phi=\sum_{H} \Phi_{H}(x) d x_{H}=\sum_{a b} \phi(x)_{a}^{(b)} Z_{a}^{(b)}
+\end{equation}
+
+where
+\begin{equation}
+    \Phi_{H}(x)=\operatorname{Tr}\left(\phi(x) \gamma_{H}^{T}\right), \qquad \phi(x)_{a}^{(b)}=\frac{1}{4} \sum_{H} \Phi_{H}(x)\left(\gamma_{H}\right)_{a b}
+\end{equation}
+so
+\begin{align}
+    0 = (d - \delta + m)\Phi &= (dx_\mu \vee \partial_\mu + m) \Phi = \sum_{ab}(\partial_\mu \phi(x)_a^b dx_\mu \vee Z_a^{(b)} + m \phi(x)_a^b Z_a^{(b)}) \nonumber \\
+    &= \sum_{a,b,c}(\partial_\mu \gamma_{\mu,ac}^T + m \delta_{ac})\phi_a^b(x)Z_c^{(b)}
+\end{align}
+must hold for each $Z_c^{(b)}$ since basis
+\begin{equation}
+\Rightarrow \quad\left(\partial_{\mu} \gamma_{\mu}+m\right) \phi^{(b)}(x)=0
+\end{equation}
+
+for each \(b=1,2,3,4 \Rightarrow 4\) independent Dirac equations
+
+\begin{itemize}
+  \item The global symmetry $\phi^{(b)}\rightarrow \Omega_{bd}\phi^{(d)}, \Omega \in SU(4)$ relating these solutions is the Susskind flavour symmetry\aidx{Susskind flavour symmetry}
+  \item Defining the scalar product $(\Phi, \Xi) \equiv \sum_H \Phi_H(x)\Xi_H(x)$, the KD action
+\end{itemize}
+\begin{align}
+    S_{KD} &= \int \text{d}x_{1234}(\bar{\Phi}, (d - \delta + m)\Phi), \qquad \bar{\Phi} = \sum_H \phi_H(x)^*\gamma_H^* \nonumber \\
+    &= \sum_b \int \text{d}x_{1234}\bar{\phi}^{(b)}(\gamma_\mu \partial_\mu + m)\phi^{(b)}
+\end{align}
+where $dx_{1234}=dx_1\wedge dx_2\wedge dx_3 \wedge dx_4$
+
+\begin{itemize}
+  \item Now, we can transition to lattice, making use of relations between $p$-form complexes and linear functions on simplicial complexes (triangulation of manifolds) - de Rham's theorem\aidx{de Rham's theorem}
+  \item The lattice geometry is a cubical complex\aidx{chains and cochains} consisting of $p-$cubes $p=0,1,2,3,4$ where $p=0$ are points, $p=1$ are links, ...
+  \item Using $H = \{ \mu_1, \ldots, \mu_h\}$ as before, a $h-$cube is $(x,H) = (x, \mu_1, \ldots, \mu_h)$ with $\mu_1 < \mu_2 < \ldots < \mu_h$.
+  \item A chain is a linear combination of $p-$cubes
+  \begin{equation}
+      C = \sum_{x,H}\alpha(x,H)(x,H),
+  \end{equation}
+  where $\alpha$ is a real or complex-valued weight of each $p-$cube $(x,H)$
+  \item The set of chains forms a vector space $\mathcal{C}$
+  \item If $\alpha(x,H) = 0$ except where $H$ has $p$ elements, then the chain is a $p-$chain
+  \item $p$-chains form subspaces $^p\mathcal{C}$ of $\mathcal{C}$ with $\mathcal{C} = \oplus_p {}^p \mathcal{C}$
+  \item The boundary $(\Delta)$ and coboundary $(\nabla)$ operators are linear operators on $\mathcal{C}$ 
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+& \Delta:{ }^{p} \mathcal{C} \rightarrow {}^{p-1} \mathcal{C}, \qquad \nabla:{ }^{p} \mathcal{C} \rightarrow {}^{p+1} \mathcal{C} \\
+& \Delta(x, H)=\sum_{\mu \in H} \rho_{\{\mu\}, H \backslash \{\mu\}}\{(x+\hat{\mu}, H \backslash\{\mu\})-(x, H \backslash\{\mu\})\} \\
+& \nabla(x, H)=\sum_{\mu \in {}^c H} \rho_{\{\mu\},H}\{(x-\hat{\mu}, H \cup\{\mu))-(x, H \cup\{\mu\})\},
+\end{aligned}
+\end{equation}
+where ${}^c H = \{1234\}\backslash H$ is the complement and the $\rho$ are sign function\aidx{fermions!overlap}s for the reordering, $\rho^{H,K} = (-1)^\alpha$ where $\alpha$ is the number of pairs $(i,j) \in H \times K$ with $i<j$.
+%
+See Fig.~\ref{fig:boundary} and Fig.~\ref{fig:coboundary} for examples of the action of these operators on a $1-$chain.
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-073.png}{fig-redraw-073.pdf}
+    \redrawcompare{fig-notes-096.pdf}{fig-redraw-096.pdf}
+    \caption{An example of the action of the boundary operator.}
+    \label{fig:boundary}
+\end{figure}
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-074.png}{fig-redraw-074.pdf}
+    \redrawcompare{fig-notes-097.pdf}{fig-redraw-097.pdf}
+    \caption{An example of the action of the coboundary operator.
+    \label{fig:coboundary}}
+\end{figure}
+
+\begin{itemize}
+  \item The dual spaces to \(\mathcal{C}\) and \({ }^{p} \mathcal{C}\) are spaces of cochains \(\breve{\mathcal{C}}\) and p-cochains \({}^p{\breve{\mathcal{C}}}\) with basis vectors \(d^{x, H}\) defined such that
+\end{itemize}
+
+\begin{equation}
+d^{x, H}\left(x^{\prime}, H^{\prime}\right)=\delta_{x x^{\prime}} \delta_{H H^{\prime}}
+\end{equation}
+
+I.e. cochains are functions of chains.
+
+The general cochain is
+
+\begin{equation}
+\breve{\Phi}=\sum_{x, H} \breve{\Phi}_{H}(x) d^{x, H},
+\end{equation}
+where $\breve{\Phi}_H(x)$ is in $\mathbb{R}$ or $\mathbb{C}$.
+
+\begin{itemize}
+  \item Dual boundary and coboundary operates \(\breve{\Delta}\) and $\breve{\nabla}$:
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+& \breve{\Delta} d^{x, H}=\sum_{\mu \in {}^c H} {\rho_{\{\mu\}, H}} \partial_{\mu}^{+} d^{x, H \cup\{\mu\}} \\
+& \breve{\nabla}d^{x,H} = - \sum_{\mu \in H} \rho_{\{\mu\}, H \backslash \{\mu \}} \partial_\mu^- d^{x, H \backslash \{ \mu\} }
+\end{aligned}
+\end{equation}
+for
+\begin{equation}
+\begin{aligned}
+    &\partial_\mu^+ = T_\mu - 1 \\
+    &\partial_\mu^- = 1 - T_\mu^{-1},
+\end{aligned}
+\end{equation}
+with the translation operator $T_\mu d^{x,H} = d^{{x - \hat{\mu}},H}$, and where again $\rho$ are sign functions.
+\begin{itemize}
+    \item The operators $\Delta, \nabla, \breve{\Delta},$ and $\breve{\nabla}$ are all nilpotent\aidx{Q-exact action@$Q$-exact action}, and the dual operators are defined by Stokes formula
+\end{itemize}
+
+\begin{equation}
+(\breve{\Delta} \Phi)(c)=\Phi(\Delta c), \qquad(\bar{\nabla} \Phi)(c)=\Phi(\nabla c), \quad \Phi \in \breve{\mathcal{C}}, c \in \mathcal{C}
+\end{equation}
+
+\begin{itemize}
+    \item Now the relation (de Rham's theorem) between $p$-form complexes and simplicial complexes gives the dictionary
+    \begin{itemize}
+        \item differential forms $\Phi$ $\leftrightarrow$ cochains $\breve{\Phi}$
+        \item exterior derivative $d$ $\leftrightarrow$ dual boundary operator $\breve{\Delta}$
+        \item coderivative $\delta$ $\leftrightarrow$ dual coboundary operator $\breve{\nabla}$
+    \end{itemize}
+    \item The lattice KD equation can then be written
+\end{itemize}
+\begin{equation}
+    (\breve{\Delta} - \breve{\nabla} + m )\breve{\Phi} = 0
+\end{equation}
+\begin{itemize}
+    \item The coefficients in expanding the general cochain are the fermion fields in the KD (or staggered) form: $(x, \{\})$ is at the site, $(x, \{\mu\})$ is a link $x \rightarrow x + \hat{\mu}$ which can be thought of as a site on the half lattice, $(x,\{\mu, \nu\})$ is the $\mu \nu$ plaquette\aidx{plaquette} which can be assigned to the half lattice as shown in Fig.~\ref{fig:plaq_half_lat}, and so on
+\end{itemize}
+\begin{figure}
+    \centering
+    \redrawcompare{fig-notes-075.png}{fig-redraw-075.pdf}
+    \caption{The assignment of the $\mu \nu$ plaquette to the half lattice.
+    \label{fig:plaq_half_lat}}
+\end{figure}
+
+\label{rmk:kd-cubic}%
+\remarkdraft[cell counts, the triangle obstruction and the $D_4$ spectrum are
+all verified numerically (\texttt{tools/kd\_d4/}); the prose is
+drafted]{This construction is specific to $\mathbb{Z}^4$.}{%
+It is easy to come away from the above with the impression that staggered and
+Dirac--K\"ahler fermions are a general geometrical statement about lattices.
+They are not: \emph{both} steps that converted a form into spinors used the
+hypercubic structure, and both fail on any other lattice.
+%
+\begin{itemize}
+  \item \emph{The Kawamoto--Smit rotation.} A site-dependent $\Gamma^{n}$
+    satisfying $\Gamma^{n\dagger}\gamma_\mu\Gamma^{n+\hat\mu}\propto\Id$ exists
+    if and only if the ordered product of Dirac matrices around \emph{every}
+    closed lattice loop is a multiple of the identity --- a criterion that does
+    not refer to $\Gamma$ at all. On $\mathbb{Z}^4$ the elementary loop is the
+    plaquette and $\gamma_\mu\gamma_\nu\gamma_\mu^\dagger\gamma_\nu^\dagger
+    =-\Id$ for $\mu\neq\nu$, so it holds. The moment the links are not along the
+    coordinate axes it fails. On the checkerboard lattice $D_4$ of
+    Exercise~\ref{ex:d4-gammae}, where a link $e$ carries
+    $\gamma_e=(\gamma_\mu\pm\gamma_\nu)/\sqrt2$ and the elementary loop is a
+    triangle, not one of the $96$ triangles through a site passes the test.
+    What one gets instead is
+    $\Gamma^{x\dagger}\gamma_e\Gamma^{x+e}=\pm i^{k}\gamma_{e'}$, with $e'$
+    another link direction in the same coordinate $2$-plane: a rotation, never
+    a phase. There is no staggered fermion on $D_4$.
+  \item \emph{The de Rham dictionary.} Reading the cochain $\breve\Phi$ as a
+    $4\times4$ matrix, and hence as four Dirac spinors, needs the $p$-cells at
+    a site to be a basis of $\Lambda^{p}(\mathbb{R}^4)$ --- that is, it needs
+    the cell counts to be $\binom{4}{p}=1,4,6,4,1$, whose sum $2^4=16$ is
+    exactly $\dim\mathrm{Cl}_4$. That coincidence is the statement that the
+    vertex figure of the complex is a hypercube, and nothing more. For $D_4$
+    the Delaunay complex is the $16$-cell honeycomb, with per site
+    \[
+      1 \text{ vertex},\quad 12 \text{ edges},\quad 32 \text{ triangles},\quad
+      24 \text{ tetrahedra},\quad 3 \text{ } 16\text{-cells}
+      \;=\; 72 ,
+    \]
+    (alternating sum zero, as it must be). Twelve edge directions cannot be a
+    basis of the $1$-forms, so cochains $\to$ forms is a surjection with an
+    eight-dimensional kernel per site; and $72/16$ is not an integer, so
+    $\breve\Phi$ cannot be read as a whole number of Dirac fields at all.
+\end{itemize}
+%
+What \emph{does} survive is everything homological. The nilpotency
+$\breve\Delta^2=\breve\nabla^2=0$ and the square-root property
+$(\breve\Delta-\breve\nabla)^2 = \text{Laplacian}$ follow from $\partial^2=0$
+alone and hold on any cell complex, so Eq.~\eqref{eq:dke} is perfectly well
+posed on $D_4$; Hodge theory even fixes the number of its exact zero modes on a
+torus at $\sum_p b_p(T^4)=16$, whatever the complex.
+
+And on $D_4$ that turns out not to be an empty consolation. Diagonalising
+$\breve\Delta-\breve\nabla$ on the $72$-dimensional cochain space, with the
+circumcentric Hodge star $w_p = |{\ast\sigma}|/|\sigma| =
+(2,\tfrac13,\tfrac12,3,\tfrac32)$ supplying the inner product, gives
+\begin{itemize}
+  \item $16$ branches vanishing at $k=0$, distributed over form degree as
+    $1,4,6,4,1$ --- the exterior algebra recovered exactly, out of $1,12,32,24,3$;
+  \item one common, isotropic velocity $|\lambda|=|k|$ for all sixteen, and no
+    other zero anywhere in the Brillouin zone: no doublers;
+  \item $56$ branches gapped by $2\sqrt2$ in lattice units, i.e.\ at the cutoff;
+  \item a leading discretisation error
+    $|\lambda|/|k| = 1 - |k|^2/64 + \mathcal{O}(k^4)$ that is
+    \emph{direction-inde\-pendent}, where the hypercubic complex gives
+    $-\sum_\mu k_\mu^4/24|k|^2$ and so varies by a factor of four between the
+    axis and the body diagonal.
+\end{itemize}
+The $U(1)$ chiral symmetry generated by $\Gamma=(-1)^p$ anticommutes with
+$\breve\Delta-\breve\nabla$ on any complex and is untouched.
+
+So the Delaunay complex of $D_4$ does carry four tastes' worth of massless Dirac
+fermions, with better rotational properties than the hypercubic one; what it does
+not carry is a \emph{site-by-site} identification of $\breve\Phi$ with an element
+of the Clifford algebra. It is that identification, not the K\"ahler--Dirac
+equation, that is cubic --- and the price of doing without it is the $72$ cochain
+components per site of which only $16$ are light. If a taste index is to be
+attached locally on $D_4$ it will have to come from somewhere else --- the
+natural candidate being the quotient $D_4/2D_4$, which still has order $16$, and
+whose classes split as $1$ (the origin) $+\,12$ (the antipodal link pairs)
+$+\,3$ (the second shell, permuted by triality).
+}
+
+\section{More fermions (that we won't discuss)}
+  \begin{itemize}
+  \item Other types of fermions that have been introduced include
+    \begin{itemize}
+      \item SLAC fermion\aidx{fermions!SLAC}: chirally invariant but non-local\aidx{locality (of lattice Dirac operators)}
+      \item Minimally doubled fermions\aidx{fermions!minimally doubled}: Only 2 doublers\aidx{fermion doubling} (Borici-Creutz/Karsten-Wilczek)
+      \item $D234$ fermions (improved beyond $\mathcal{O}(a^2)$)
+      \item \ldots
+    \end{itemize}
+\end{itemize}

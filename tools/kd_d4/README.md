@@ -1,7 +1,7 @@
 # Kähler–Dirac fermions on `D_4`
 
 Backs the remark at the end of §"Geometric interpretation of DK fermions"
-(`chapters/ch06-lattice-fermions/staggered.tex`).
+(`chapters/ch05-lattice-fermions/staggered.tex`).
 
     python3 complex.py                 # build both complexes, check ∂² = 0
     python3 hodge_weights.py           # derive w_p from the dual-cell volumes

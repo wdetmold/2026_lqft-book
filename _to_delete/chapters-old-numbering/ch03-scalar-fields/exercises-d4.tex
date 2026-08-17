@@ -1,0 +1,471 @@
+% ---------------------------------------------------------------------------
+% The D_4 thread, part I: scalar fields.
+% Continued in later chapters (gauge action improvement, minimally doubled
+% fermions, pure-gauge transfer matrix, bulk transition).
+% ---------------------------------------------------------------------------
+\section*{Exercises: the \texorpdfstring{$D_4$}{D4} lattice, I}
+
+The following sequence runs through the book. It develops scalar field theory on
+the four-dimensional checkerboard lattice
+\begin{equation}
+  D_4 \;=\; \bigl\{ x \in \mathbb{Z}^4 \;:\; \textstyle\sum_\mu x_\mu \ \text{even} \bigr\},
+\end{equation}
+whose points have $24$ nearest neighbours at distance $\sqrt{2}$, namely the
+vectors $(\pm1,\pm1,0,0)$ and their permutations. The payoff, established in
+Exercises~\ref{ex:d4-prop}--\ref{ex:d4-triality}, is that $D_4$ has a much
+larger point symmetry than the hypercubic lattice, and that this postpones
+rotational-symmetry violation from $\mathcal{O}(a^2)$ to $\mathcal{O}(a^4)$.
+Companion code is in \texttt{code/d4/}. The geometry, and the two conventions
+in play, are set up in the exercises of Chapter~\ref{ch:path-integrals}
+(Figs.~\ref{fig:d4-constructions} and~\ref{fig:d4-conventions}).
+
+% ---------------------------------------------------------------------------
+\problemdraft[convention: root-lattice $D_4$ throughout; switch to the BCH/$D_4^*$ normalisation if preferred]{\label{ex:d4-geom}\textbf{Geometry of $D_4$.}
+\begin{enumerate}
+\item[(a)] Show that the shortest nonzero vectors of $D_4$ have $|x|^2=2$ and
+  that there are $24$ of them. Show that the next two shells have $|x|^2=4$
+  (again $24$ vectors, of two apparent types) and $|x|^2=6$ ($96$ vectors).
+\item[(b)] The \emph{body-centred hypercubic} lattice in $d$ dimensions is
+  $\mathrm{BCH}_d = \mathbb{Z}^d \cup \bigl(\mathbb{Z}^d + (\tfrac12,\dots,\tfrac12)\bigr)$,
+  which is the dual lattice $D_d^*$. By comparing the lengths of its two
+  candidate shortest vectors, and then their multiplicities, show that $D_d$
+  and $D_d^*$ have the same kissing number only for $d=2$ and $d=4$
+  (Fig.~\ref{fig:d4-constructions}d), and that these are indeed the cases in
+  which the two lattices are similar. Why is $d=4$ nevertheless the only
+  interesting case? (Compare your earlier general-$d$ BCH calculation.)
+\item[(c)] Show that $D_4$ is \emph{not} bipartite by exhibiting three mutually
+  adjacent sites. How many triangles contain a given site?
+\item[(d)] Fix $x_4=t$. Show that the sites of $D_4$ in that hyperplane form
+  the even sublattice of $\mathbb{Z}^3$ for $t$ even and the odd sublattice for
+  $t$ odd --- in both cases a face-centred cubic lattice --- and that of the
+  $24$ nearest-neighbour bonds at a site, $12$ lie within its time slice and
+  $12$ connect to $t\pm1$. Verify that $(0,0,0,\pm1)$ is \emph{not} a
+  lattice vector: there is no ``straight'' temporal bond.
+\end{enumerate}}
+{(a) A vector of $\mathbb{Z}^4$ with even coordinate sum and $|x|^2=1$ would need
+a single $\pm1$, which has odd sum; so the minimum is $|x|^2=2$, attained by
+$\pm\hat\mu\pm\hat\nu$ for $\mu<\nu$. There are $\binom42=6$ pairs and $4$ sign
+choices each, giving $24$. For $|x|^2=4$ one has the $8$ vectors
+$(\pm2,0,0,0)$ and permutations, and the $16$ vectors $(\pm1,\pm1,\pm1,\pm1)$,
+totalling $24$; note both have even coordinate sum. For $|x|^2=6$ one finds
+$(\pm2,\pm1,\pm1,0)$ and permutations: $12$ position choices $\times\,8$ signs
+$=96$. (Exercise~\ref{ex:d4-triality} shows the two ``types'' in the second
+shell are in fact a single symmetry orbit.)
+
+(b) $D_d^*$ contains $\mathbb{Z}^d$, whose shortest vectors have $|x|^2=1$, and
+the glue vectors $(\pm\tfrac12,\dots,\pm\tfrac12)$, with $|x|^2=d/4$. So the
+minimal vectors of $D_d^*$ are the $2^d$ body diagonals for $d<4$, the $2d$
+axial vectors for $d>4$, and \emph{both}, $2d+2^d=24$, at $d=4$. Comparing with
+the $2d(d-1)$ minimal vectors of $D_d$:
+\begin{center}
+\begin{tabular}{lrrrrrr}
+ $d$        & 2 & 3 & 4 & 5 & 6 & 7\\ \hline
+ $D_d$      & 4 & 12 & 24 & 40 & 60 & 84\\
+ $D_d^*$    & 4 &  8 & 24 & 10 & 12 & 14
+\end{tabular}
+\end{center}
+they agree only at $d=2$ and $d=4$, and in both of those cases the lattices are
+in fact similar: $\sqrt{2}\,D_4^*$ has minimum norm $2$, covolume
+$(\sqrt2)^4\cdot\tfrac12=2$ and kissing number $24$, matching $D_4$, with the
+explicit similarity given by the orthogonal map $H$ of
+Exercise~\ref{ex:d4-triality}. So $\mathrm{BCH}_4\cong D_4$.
+
+The $d=2$ coincidence is degenerate: $D_2$ is just $\sqrt2\,\mathbb{Z}^2$
+rotated by $45^\circ$, so its isoduality is inherited from the self-duality of
+$\mathbb{Z}^2$ and tells us nothing new. What makes $d=4$ interesting is that
+$D_4$ is \emph{not} similar to $\mathbb{Z}^4$ --- kissing numbers $24$ against
+$8$ --- so it is a genuinely new isodual lattice, with a point group three
+times larger than the hypercubic one. That is the entire reason this sequence
+lives in four dimensions.
+
+(c) Take $0$, $e=(1,1,0,0)$ and $f=(1,0,1,0)$: then $e-f=(0,1,-1,0)$ also has
+$|x|^2=2$, so all three are mutually adjacent. Counting pairs $\{e,f\}$ from
+the shell with $e-f$ again in the shell gives $96$ triangles through each site.
+The hypercubic lattice is bipartite (colour by $\sum_\mu x_\mu \bmod 2$) and has
+none. This is a genuine structural difference and it will show up in the
+hopping expansion (Exercise~\ref{ex:d4-hopping}).
+
+(d) If $x_4=t$ then $x_1+x_2+x_3 \equiv t \pmod 2$, which is the stated
+alternation; each sublattice of $\mathbb{Z}^3$ is fcc. Of the $24$ shell
+vectors, those with $e_4=0$ are the $\pm\hat\imath\pm\hat\jmath$ with
+$i<j\le3$: $3\times4=12$. The rest have $e_4=\pm1$ together with
+$\pm\hat\imath$, $i\le3$: $3\times2\times2=12$. Finally $(0,0,0,1)$ has
+coordinate sum $1$, odd, so it is not in $D_4$; every step in Euclidean time
+carries a spatial displacement. Exercise~\ref{ex:d4-transfer} works out what
+this does to the transfer matrix.}
+
+% ---------------------------------------------------------------------------
+\problemdraft{\label{ex:d4-prop}\textbf{The free propagator has no quartic anisotropy.}
+Consider the free scalar action on $D_4$ with lattice spacing $a$,
+\begin{equation}
+  S \;=\; \frac{1}{2}\sum_{x\in D_4}\Bigl[\,
+      c\!\!\sum_{e\,\in\,\text{shell}}\!\!\bigl(\phi(x+ae)-\phi(x)\bigr)^2
+      + m^2\phi(x)^2 \Bigr],
+\end{equation}
+the inner sum running over all $24$ nearest-neighbour vectors.
+\begin{enumerate}
+\item[(a)] Show that the momentum-space kernel is
+  $\widehat{K}(p) = c\sum_e 2\bigl(1-\cos(a\,p\!\cdot\!e)\bigr) + m^2$.
+\item[(b)] Evaluate the second and fourth moments of the shell,
+  $\sum_e (p\!\cdot\!e)^2$ and $\sum_e (p\!\cdot\!e)^4$. The second is fixed by
+  symmetry; the fourth is the point of the exercise.
+\item[(c)] Deduce the small-$a$ expansion of the kernel with $c$ chosen so that
+  $\widehat{K}\to p^2+m^2$, and compare with the same calculation on
+  $\mathbb{Z}^4$ with its $8$ nearest neighbours. Which lattice artifact breaks
+  rotational invariance, and at what order in $a$?
+\end{enumerate}}
+{(a) Substituting $\phi(x)=e^{ipx}$, each term
+$(\phi(x+ae)-\phi(x))^2 \to |e^{iap\cdot e}-1|^2 = 2(1-\cos(a\,p\!\cdot\!e))$.
+
+(b) Group the $24$ vectors into the $6$ pairs $\{\mu,\nu\}$, each contributing
+the four sign choices $\pm\hat\mu\pm\hat\nu$. For one pair,
+\begin{align}
+  \sum_{4\ \text{signs}} (p\!\cdot\!e)^2
+    &= 2\bigl[(p_\mu+p_\nu)^2+(p_\mu-p_\nu)^2\bigr] = 4\,(p_\mu^2+p_\nu^2),\\
+  \sum_{4\ \text{signs}} (p\!\cdot\!e)^4
+    &= 2\bigl[(p_\mu+p_\nu)^4+(p_\mu-p_\nu)^4\bigr]
+     = 4p_\mu^4+4p_\nu^4+24\,p_\mu^2p_\nu^2 .
+\end{align}
+Each index sits in $3$ pairs, so summing over the $6$ pairs,
+\begin{equation}
+  \sum_e (p\!\cdot\!e)^2 = 12\,p^2, \qquad
+  \sum_e (p\!\cdot\!e)^4 = 12\sum_\mu p_\mu^4
+      + 12\Bigl[(p^2)^2-\sum_\mu p_\mu^4\Bigr] = 12\,(p^2)^2 .
+\end{equation}
+The anisotropic $\sum_\mu p_\mu^4$ cancels identically. This is the central
+identity of the sequence.
+
+(c) Using $2(1-\cos u) = u^2 - u^4/12 + u^6/360 - \dots$,
+\begin{equation}
+  \sum_e 2\bigl(1-\cos(a\,p\!\cdot\!e)\bigr)
+    = 12a^2p^2 - a^4 (p^2)^2 + \mathcal{O}(a^6),
+\end{equation}
+so with $c=1/12$,
+\begin{equation}
+  \widehat{K}(p) = p^2 + m^2 - \frac{a^2}{12}(p^2)^2 + \mathcal{O}(a^4).
+\end{equation}
+On $\mathbb{Z}^4$ the same steps give
+$\sum_e (p\!\cdot\!e)^2 = 2p^2$, $\sum_e (p\!\cdot\!e)^4 = 2\sum_\mu p_\mu^4$
+and, with $c=1/2$,
+\begin{equation}
+  \widehat{K}_{\mathbb{Z}^4}(p)
+    = p^2 + m^2 - \frac{a^2}{12}\sum_\mu p_\mu^4 + \mathcal{O}(a^4).
+\end{equation}
+Both have $\mathcal{O}(a^2)$ errors, but they are of completely different
+character. On $D_4$ the error is proportional to $(p^2)^2$: it is rotationally
+invariant, and can be absorbed into a redefinition of the fields and couplings.
+On $\mathbb{Z}^4$ it is $\sum_\mu p_\mu^4$, which is invariant only under the
+hypercubic group and therefore genuinely breaks rotations at
+$\mathcal{O}(a^2)$. The first rotational-symmetry violation on $D_4$ comes from
+the sextic moment and is $\mathcal{O}(a^4)$;
+Exercise~\ref{ex:d4-invariants} explains why this had to happen.}
+
+% ---------------------------------------------------------------------------
+\problemdraft{\label{ex:d4-invariants}\textbf{Why: $F_4$ and the missing quartic invariant.}
+\begin{enumerate}
+\item[(a)] The automorphism group of $D_4$ contains all signed coordinate
+  permutations, $|W(B_4)|=384$. Show that it also contains
+  \begin{equation}
+    H \;=\; \frac{1}{2}\begin{pmatrix}
+      1&1&1&1\\ 1&1&-1&-1\\ 1&-1&1&-1\\ 1&-1&-1&1 \end{pmatrix},
+  \end{equation}
+  by checking that $H$ is orthogonal and maps the nearest-neighbour shell to
+  itself. Note that $H$ is \emph{not} an integer matrix: it preserves $D_4$
+  without preserving $\mathbb{Z}^4$.
+\item[(b)] Granted that $\mathrm{Aut}(D_4)$ is the Weyl group of $F_4$, of order
+  $1152 = 384\times 3$, use the fact that its ring of polynomial invariants has
+  generators of degrees $2,6,8,12$ to explain the cancellation found in
+  Exercise~\ref{ex:d4-prop}. Contrast the hypercubic group, whose invariant
+  degrees are $2,4,6,8$.
+\item[(c)] Prove the following corollary: for \emph{any} $D_4$-invariant scalar
+  action built from \emph{any} set of shells with \emph{any} couplings, the
+  $\mathcal{O}(a^2)$ lattice artifact in the propagator is rotationally
+  invariant. Verify explicitly for the second and third shells that
+  $\sum_e (p\!\cdot\!e)^4 \propto (p^2)^2$.
+\item[(d)] Compute $\sum_e (p\!\cdot\!e)^6$ over the nearest-neighbour shell and
+  isolate the part that is not proportional to $(p^2)^3$. This is the leading
+  source of rotational-symmetry breaking on $D_4$.
+\end{enumerate}}
+{(a) The rows of $H$ are orthonormal ($4\times\tfrac14=1$; distinct rows share
+two $+\tfrac14$ and two $-\tfrac14$ products), so $H^\mathsf{T}H=\Id$ and
+$H^2=\Id$. On shell vectors, e.g.
+$H(1,1,0,0)^\mathsf{T}=(1,1,0,0)^\mathsf{T}$,
+$H(1,-1,0,0)^\mathsf{T}=(0,0,1,1)^\mathsf{T}$,
+$H(0,1,1,0)^\mathsf{T}=(1,0,0,-1)^\mathsf{T}$; checking a generating set
+suffices, since the shell spans $D_4$. Because $H$ maps the shell onto itself
+and the shell generates the lattice, $H\in\mathrm{Aut}(D_4)$. It has
+half-integer entries, so it is not an automorphism of $\mathbb{Z}^4$: this is
+exactly the extra symmetry $D_4$ enjoys and the hypercubic lattice does not.
+Together with $W(B_4)$ it generates a group of order $1152$, the extra factor of
+$3$ being the triality of $D_4$.
+
+(b) A degree-$4$ invariant polynomial in $p$ must lie in the space spanned by
+products of the generators of degree $\le 4$. For $W(F_4)$, whose generator
+degrees are $2,6,8,12$, the only degree-$4$ combination available is
+$(I_2)^2 = (p^2)^2$: the space of quartic invariants is one-dimensional. Since
+$\sum_e (p\!\cdot\!e)^4$ is manifestly an invariant of degree $4$, it
+\emph{must} be a multiple of $(p^2)^2$; the cancellation in
+Exercise~\ref{ex:d4-prop} is forced, not accidental. For the hypercubic group
+the degrees are $2,4,6,8$, so the quartic invariants are two-dimensional,
+spanned by $(p^2)^2$ and $\sum_\mu p_\mu^4$, and there is no reason for the
+anisotropic one to be absent --- and it is not. (One may confirm the degrees by
+computing the Molien series
+$|G|^{-1}\sum_{g}\det(\Id-tg)^{-1}$, which for $\mathrm{Aut}(D_4)$
+equals $\prod_{d\in\{2,6,8,12\}}(1-t^{d})^{-1}$.)
+
+(c) The $\mathcal{O}(a^2)$ term of any such action is a linear combination of
+the quartic moments of the shells used. Each shell is a union of
+$\mathrm{Aut}(D_4)$ orbits, so each moment is a degree-$4$ invariant, hence by
+(b) a multiple of $(p^2)^2$. No choice of couplings can generate anisotropy at
+this order. Explicitly, for $|x|^2=4$ one finds $\sum_e (p\!\cdot\!e)^2=24p^2$
+and $\sum_e (p\!\cdot\!e)^4=48(p^2)^2$; for $|x|^2=6$, $144p^2$ and
+$432(p^2)^2$.
+
+(d) Direct expansion gives
+$\sum_e (p\!\cdot\!e)^6 = 12\,(p^2)^3 + 24\,J_6$ with
+\begin{equation}
+  J_6 \;=\; \sum_{\mu\neq\nu} p_\mu^4 p_\nu^2
+        \;-\; 6\!\!\sum_{\mu<\nu<\rho}\!\! p_\mu^2p_\nu^2p_\rho^2 ,
+\end{equation}
+which is not proportional to $(p^2)^3$. It is the degree-$6$ generator of the
+$F_4$ invariant ring, and it enters the kernel at order $a^4$ --- as promised,
+the leading anisotropy on $D_4$ is $\mathcal{O}(a^4)$, two powers later than on
+the hypercubic lattice.}
+
+% ---------------------------------------------------------------------------
+\problemdraft{\label{ex:d4-triality}\textbf{An exact degeneracy from triality.}
+\begin{enumerate}
+\item[(a)] Show that $H$ of Exercise~\ref{ex:d4-invariants} maps
+  $(2,0,0,0)\mapsto(1,1,1,1)$, so that these two points lie in a single
+  $\mathrm{Aut}(D_4)$ orbit even though no signed permutation relates them.
+\item[(b)] Conclude that on $D_4$ the two-point function obeys
+  $G(2,0,0,0)=G(1,1,1,1)$ \emph{exactly} --- at any coupling, to all orders,
+  in the interacting theory, on any lattice volume respecting the symmetry ---
+  whereas on $\mathbb{Z}^4$ there is no reason for the two to agree.
+\item[(c)] Estimate the size of the hypercubic violation in the free massless
+  theory.
+\item[(d)] Going further: the shells $|x|^2 = 2,4,6,8,10,12,14,16$ of $D_4$ are
+  each a \emph{single} $\mathrm{Aut}(D_4)$ orbit. What does this say about
+  $G(x)$? Find the smallest shell that splits into two orbits, and give a
+  representative of each. What is the corresponding statement for
+  $\mathbb{Z}^4$?
+\end{enumerate}}
+{(a) $H(2,0,0,0)^\mathsf{T} = 2\cdot\tfrac12(1,1,1,1)^\mathsf{T}=(1,1,1,1)^\mathsf{T}$.
+A signed permutation cannot relate them because it preserves the multiset of
+absolute values of the coordinates, $\{2,0,0,0\}\neq\{1,1,1,1\}$. The second
+shell of $D_4$, of $24$ vectors, is therefore one orbit consisting of $8$
+vectors of the first type and $16$ of the second.
+
+(b) $G(x)=\langle\phi(0)\phi(x)\rangle$ is invariant under any symmetry of the
+action, and $H$ is a symmetry of every $D_4$-invariant action. Hence
+$G(Hx)=G(x)$ for all $x$, and in particular $G(2,0,0,0)=G(1,1,1,1)$. Nothing
+about weak coupling, the continuum limit or the free theory is used: it is an
+exact lattice Ward identity of the point group.
+
+(c) In the free theory $G(x)=\int_{\rm BZ}\!\frac{d^4p}{(2\pi)^4}
+\frac{e^{ipx}}{\widehat{K}(p)}$. Evaluating on $\mathbb{Z}^4$ at $m\to0$ and
+forming $A = 2(G_a-G_b)/(G_a+G_b)$ for the pair
+$a=(2,0,0,0)$, $b=(1,1,1,1)$ gives a violation of tens of percent --- the
+continuum $1/|x|^2$ would give zero. The Monte Carlo measurement in
+\texttt{code/d4/wolff\_ising.py} finds $A(\mathbb{Z}^4)=+0.331(12)$ against
+$A(D_4)=-0.008(6)$, i.e. consistent with the exact degeneracy at the level of
+the statistics.
+
+(d) If a shell is a single orbit then $G$ is \emph{constant} on it, so the
+lattice propagator on $D_4$ depends only on $|x|$ --- exact rotational
+invariance --- out to $|x|^2=16$. Anisotropy is not merely suppressed at short
+distance; on those shells it is identically zero. The first shell that splits
+is $|x|^2=18$, with $312$ vectors falling into two orbits, represented by
+$(3,3,0,0)$ and $(4,1,1,0)$; these are the points to use for a genuine
+anisotropy measurement (Exercise~\ref{ex:d4-numerics}). On $\mathbb{Z}^4$ the
+orbits of the hypercubic group are labelled by the multiset of $|x_\mu|$, so the
+splitting already occurs at $|x|^2=4$ --- the very pair in part (a).}
+
+% ---------------------------------------------------------------------------
+\problemdraft{\label{ex:d4-numerics}\textbf{Numerical project: measuring the artifact.}
+Using \texttt{code/d4/}, or your own implementation:
+\begin{enumerate}
+\item[(a)] Build periodic $L^4$ lattices for $D_4$ (even $L$; sites of even
+  coordinate sum) and $\mathbb{Z}^4$, with their neighbour tables.
+\item[(b)] Compute the free propagator $G(x)$ on both by summing over the
+  discrete momenta of the box. Verify numerically the exact degeneracy of
+  Exercise~\ref{ex:d4-triality}(b), and that it fails on $\mathbb{Z}^4$.
+\item[(c)] Define an anisotropy estimator on a pair of \emph{inequivalent}
+  points of equal length, $A = 2(G_a-G_b)/(G_a+G_b)$, using
+  $\lambda(3,3,0,0)$ versus $\lambda(4,1,1,0)$. Holding $|x|/\xi$ fixed, measure
+  $A$ as a function of the correlation length $\xi=1/m$ and fit
+  $A \sim \xi^{-n}$. Predict $n$ before you run it.
+\item[(d)] Repeat (b) in the interacting theory with a Wolff cluster algorithm
+  for the Ising-limit scalar near criticality. Which of the two effects, the
+  exact degeneracy or the scaling of $A$, is easier to see in a short Monte
+  Carlo run, and why?
+\end{enumerate}}
+{(b),(c) The free-field calculation gives fitted exponents
+$n=1.97$ on $\mathbb{Z}^4$ and $n=4.02$ on $D_4$ ($L=256$, $|x|/\xi$ fixed at
+$2.5$, coarsest points dropped), confirming $\mathcal{O}(a^2)$ versus
+$\mathcal{O}(a^4)$. Two traps are worth experiencing: if you choose the pair
+$(2,0,0,0)$/$(1,1,1,1)$ you measure identically zero on $D_4$ by
+Exercise~\ref{ex:d4-triality} and learn nothing about scaling; and if you hold
+$|x|$ fixed in lattice units rather than scaling it with $\xi$, $A$ saturates
+instead of scaling, because the artifact is controlled by $a/\xi$ at fixed
+physical separation.
+
+(d) The exact degeneracy is far easier. It is a symmetry statement, so it holds
+configuration by configuration in the ensemble average with no
+continuum-limit extrapolation, and the hypercubic violation is a $30\%$ effect:
+$A(\mathbb{Z}^4)=+0.331(12)$ versus $A(D_4)=-0.008(6)$ on $16^4$ with a few
+$10^4$ clusters. The $a^2$-versus-$a^4$ scaling, by contrast, requires
+inequivalent points at large $|x|$ where the signal is small; on a $16^4$
+lattice at criticality the constant pedestal $\langle m^2\rangle$ swamps $G(x)$
+at $|x|\sim4$--$6$ and all anisotropies come out within $1.5\sigma$ of zero.
+Recognising that a short Monte Carlo cannot resolve the hierarchy --- while the
+free-field calculation resolves it cleanly and cheaply --- is part of the
+exercise.}
+
+% ---------------------------------------------------------------------------
+\problemdraft[the $T^2$-positive/$T$-not argument in (d) wants a second look]{\label{ex:d4-transfer}\textbf{Transfer matrix and reflection positivity on $D_4$.}
+\begin{enumerate}
+\item[(a)] Using Exercise~\ref{ex:d4-geom}(d), explain why the transfer matrix
+  connecting slice $t$ to slice $t+1$ does not act on a fixed Hilbert space,
+  and what the natural remedy is.
+\item[(b)] Show that site reflection $\theta:(\vec{x},t)\mapsto(\vec{x},-t)$ is an
+  automorphism of $D_4$, but that the link reflection
+  $(\vec{x},t)\mapsto(\vec{x},1-t)$ is \emph{not}. Which of the two reflection
+  positivity arguments of this chapter survives?
+\item[(c)] Show that the $p_4$ dependence of the free kernel is
+  \begin{equation}
+    \widehat{K}(p) \;\supset\; -\,8\cos(ap_4)\sum_{i=1}^{3}\cos(ap_i),
+  \end{equation}
+  and hence that the single-particle energy at spatial momentum $\vec{p}$ is
+  determined by
+  $\cosh(aE) = \bigl[\widehat{K}_{\rm sp}(\vec{p})+24+m^2\bigr]\big/
+  \bigl[8\sum_i\cos(ap_i)\bigr]$,
+  with $\widehat{K}_{\rm sp}$ the purely spatial part.
+\item[(d)] For which spatial momenta does this have a solution with real
+  positive $E$? Interpret the failure.
+\end{enumerate}}
+{(a) The slices alternate between the two fcc sublattices of $\mathbb{Z}^3$, so
+the configuration space at even $t$ is not the same as at odd $t$: $T$ maps
+$\mathcal{H}_{\rm even}\to\mathcal{H}_{\rm odd}$ and is not an operator on one
+space. The remedy is to work with $T^2$, or equivalently to regard a pair of
+adjacent slices as one time step of a lattice with spacing $2a$ in time. This
+is the same bookkeeping that appears for staggered fermions, and it is why the
+spectrum must be read off from $T^2$.
+
+(b) $\theta$ sends $x$ with $\sum_\mu x_\mu$ even to a point with sum
+$\sum_i x_i - t = \sum_\mu x_\mu - 2t$, still even: an automorphism. The link
+reflection sends it to a point with coordinate sum $\sum_i x_i + 1 - t
+= \sum_\mu x_\mu +1 -2t$, which is \emph{odd}: the image is not in $D_4$ at all.
+So on $D_4$ only the site-reflection argument is available; the link-reflection
+argument does not merely fail to apply, its reflection is not a symmetry of the
+lattice.
+
+(c) The $12$ temporal bonds are $\pm\hat\imath\pm\hat4$ with $i\le3$. For fixed
+$i$ the four sign choices give
+$\sum 2(1-\cos(a p\!\cdot\!e)) = 8 - 8\cos(ap_i)\cos(ap_4)$; summing over
+$i=1,2,3$ yields $24 - 8\cos(ap_4)\sum_i\cos(ap_i)$. Setting
+$\widehat{K}=0$ and continuing $p_4\to iE$ gives the stated relation.
+
+(d) One needs $\cosh(aE)\ge1$ with a positive right-hand side, so a necessary
+condition is $\sum_i\cos(ap_i)>0$. For spatial momenta with
+$\sum_i \cos(ap_i)\le0$ --- a substantial region near the corner of the
+Brillouin zone --- there is no positive-$T$ mode: the temporal coupling in that
+sector has the wrong sign, and the corresponding correlator alternates in sign
+from slice to slice rather than decaying monotonically. This is not a
+contradiction with (b): \unverified{site reflection positivity controls $T^2$, which is
+positive, while $T$ itself need not be}. The practical lesson, which recurs when
+you build the pure-gauge transfer matrix on $D_4$, is that ``no straight
+temporal bond'' has real consequences: the time evolution is intrinsically
+spatial-momentum dependent.}
+
+% ---------------------------------------------------------------------------
+\problemdraft{\label{ex:d4-improve}\textbf{Symanzik improvement on $D_4$.}
+\begin{enumerate}
+\item[(a)] Argue from Exercise~\ref{ex:d4-triality}(a) that adding the second
+  shell to the action introduces exactly \emph{one} new coupling, not two,
+  despite the shell containing two apparent types of vector.
+\item[(b)] Fix the two couplings $c_1$ (nearest shell) and $c_2$ (second shell)
+  by demanding the correct normalisation of $p^2$ and the cancellation of the
+  $\mathcal{O}(a^2)$ term.
+\item[(c)] Carry out the corresponding exercise on $\mathbb{Z}^4$ using the
+  $(\pm1,0,0,0)$ and $(\pm2,0,0,0)$ shells. Compare what the two improvement
+  programmes actually buy you.
+\item[(d)] Is the improved $D_4$ action free of rotational-symmetry breaking at
+  $\mathcal{O}(a^4)$? If not, what would be required?
+\end{enumerate}}
+{(a) The second shell is a single $\mathrm{Aut}(D_4)$ orbit, so a symmetric
+action must weight all $24$ of its vectors equally: one coupling. On
+$\mathbb{Z}^4$ the analogous distance-$2$ vectors fall into two hypercubic
+orbits, $(\pm2,0,0,0)$ and $(\pm1,\pm1,0,0)$, requiring two independent
+couplings. Higher symmetry means fewer parameters to tune.
+
+(b) With $\sum_e (p\!\cdot\!e)^2 = 12p^2,\,24p^2$ and
+$\sum_e (p\!\cdot\!e)^4 = 12(p^2)^2,\,48(p^2)^2$ for the two shells,
+\begin{equation}
+  \widehat{K} = (12c_1+24c_2)\,a^2p^2 - (c_1+4c_2)\,a^4 (p^2)^2 + \mathcal{O}(a^6).
+\end{equation}
+Requiring $12c_1+24c_2 = 1/a^2 \cdot a^2$ (unit $p^2$) and $c_1+4c_2=0$ gives
+\begin{equation}
+  c_1 = \tfrac16, \qquad c_2 = -\tfrac1{24},
+\end{equation}
+a pleasingly simple improved Laplacian.
+
+(c) On $\mathbb{Z}^4$ the two shells give $2p^2,\,8p^2$ and
+$2\sum_\mu p_\mu^4,\,32\sum_\mu p_\mu^4$; imposing the same two conditions
+gives $c_1=\tfrac23$, $c_2=-\tfrac1{24}$. Note the difference in what is being
+achieved. On $\mathbb{Z}^4$ the $\mathcal{O}(a^2)$ error is entirely
+anisotropic, so improvement is what \emph{buys} rotational fidelity at
+$\mathcal{O}(a^2)$ --- the unimproved action does not have it. On $D_4$ the
+$\mathcal{O}(a^2)$ error was already isotropic, so improvement removes a
+harmless overall distortion; the rotational fidelity was there from the start.
+
+(d) No. The surviving $\mathcal{O}(a^4)$ term contains the degree-$6$ invariant
+$J_6$ of Exercise~\ref{ex:d4-invariants}(d), which both shells produce with
+different coefficients but which the two conditions already imposed leave
+untouched. Cancelling it as well requires a third orbit --- for instance the
+$96$-vector shell at $|x|^2=6$ --- and a third condition. Counting invariants
+tells you in advance how many orbits any given level of improvement will need.}
+
+% ---------------------------------------------------------------------------
+\problemdraft[$\beta_c(D_4)$ is a crude $16^4$ Binder crossing, not a finite-size-scaling determination]{\label{ex:d4-hopping}\textbf{Hopping expansion with $24$ neighbours.}
+\begin{enumerate}
+\item[(a)] For the Gaussian model with hopping parameter $\kappa$, locate the
+  critical point on a lattice of coordination number $q$ and evaluate it for
+  $D_4$ and $\mathbb{Z}^4$.
+\item[(b)] The hopping expansion is an expansion in closed walks. Compute the
+  number of closed $n$-step walks from the origin for $n\le5$ on both lattices.
+  Explain the qualitative difference in the odd terms using
+  Exercise~\ref{ex:d4-geom}(c).
+\item[(c)] Corrections to mean field are controlled by $1/q$. Using
+  $\beta_c(\mathbb{Z}^4)\simeq0.1497$ for the Ising-limit model, and your own
+  determination on $D_4$, check this expectation quantitatively.
+\end{enumerate}}
+{(a) The Gaussian propagator is
+$\bigl[1-2\kappa\sum_e\cos(p\!\cdot\!e)\bigr]^{-1}$; the susceptibility
+$\chi=\widehat{G}(0)$ diverges when $2\kappa q = 1$, so $\kappa_c = 1/(2q)$
+exactly: $1/16 = 0.0625$ on $\mathbb{Z}^4$ and $1/48 \simeq 0.0208$ on $D_4$.
+
+(b) Counting closed walks, e.g. as $\langle\lambda^n\rangle$ with
+$\lambda(p)=\sum_e\cos(p\!\cdot\!e)$ averaged over the Brillouin zone:
+\begin{center}
+\begin{tabular}{lrrrrr}
+ $n$            & 1 & 2 & 3 & 4 & 5\\ \hline
+ $D_4$          & 0 & 24 & 192 & 3384 & 51840\\
+ $\mathbb{Z}^4$ & 0 & 8 & 0 & 168 & 0
+\end{tabular}
+\end{center}
+All odd terms vanish on the hypercubic lattice because it is bipartite: any
+closed walk must take equally many steps in each direction. $D_4$ is not
+bipartite --- it has $96$ triangles through each site, and $192 = 2\times96$
+counts them with orientation --- so odd orders contribute and the series has a
+qualitatively different structure. (The same fact makes the antiferromagnetic
+model on $D_4$ frustrated.)
+
+(c) Mean field gives $\beta_c^{\rm MF}=1/q$: $0.125$ on $\mathbb{Z}^4$ against
+the true $0.1497$, a $20\%$ underestimate. On $D_4$, $\beta_c^{\rm MF}=1/24
+\simeq0.0417$; a short Binder-crossing determination on $16^4$ gives
+\unverified{$\beta_c\simeq0.0457(10)$}, an underestimate of about $10\%$. The ratio of the
+two discrepancies is consistent with the expected $1/q$ scaling, $8/24$ being
+the relevant factor to within the accuracy of this crude determination. A
+careful finite-size-scaling study of $\beta_c(D_4)$ would make this
+quantitative and is a worthwhile project in itself.}
